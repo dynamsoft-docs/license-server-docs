@@ -6,9 +6,24 @@ description: Sample folder index page
 breadcrumbText: Sample Folder
 ---
 
-You can configure a handshake code on the Handshake details page.
+# Manage the Handshake Codes for your licenses
 
-# FAQs
+#### Set consumption order
+
+If you have multiple license items for one handshake code, you can set the consumption order which determines which license is consumed first. In most cases, you can just keep the default order which is already optimized.
+
+#### Show Statistics
+
+Click "Statistics" button to view the usage report for each handshake code.
+
+Read more on ["Statistics Page"]({{site.about}}statistics-page.html)
+
+#### Edit or add a handshake code
+
+When you add or edit a handshake code, you are navigated to the "Handshake Details" page. Read more [here]({{site.selfhosting}}configure-handshake.html)
+
+
+## Check statistics
 
 ## How do I name a Handshake code?
 

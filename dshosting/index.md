@@ -6,26 +6,35 @@ description: Sample folder index page
 breadcrumbText: Sample Folder
 ---
 
-# Dynamsoft-Hosting License Tracking
+# Dynamsoft-hosting license tracking
 
-This article is about Dynamsoft-Hosting License Tracking, if you would rather track your license usage by yourself, check out [Self-hosting License Tracking]({{site.selfhosting}}index.html).
+> This article is about Dynamsoft-Hosting License Tracking, if you would rather track license usage yourself, please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
 
-If you have not purchased any Dynamsoft SDK license that requires usage tracking, please check out [how to purchase a license]({{site.about}}license-purchase.html).
+> If you have not purchased any Dynamsoft SDK license that requires usage tracking, please see [how to purchase a license]({{site.about}}purchase.html).
 
-The following assumes you have purchased a license, logged into the customer portal, [generated a license]({{site.about}}license-purchase.html#generate-a-license) and landed on the "License Detail" page.
+The following assumes you have purchased a trackable license and have chosen "Dynamsoft-Hosting" on the "Activate License" page in the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense).
 
 ## Activate the License
 
-To use Dynamsoft-Hosting License Tracking, you don't need a License File, so just click on the "Activate" button, choose "Hosted By Dynamsoft" for "License Server Deployment" and click "Activate"
+On the "Activate License" page, set an Alias for your license or leave the default Alias and click the "Activate" button.
 
-![CustomerPortal-License-GenerateLicense4]({{site.assets}}imgs/CustomerPortal-License-GenerateLicense4.png)
+> Read more on [What is an Alias]({{site.about}}terms.html#alias)
 
-Confirm the activation
+Once the activation is done, the next step is to [Configure the license](#configure-the-license).
 
-![CustomerPortal-License-GenerateLicense5]({{site.assets}}imgs/CustomerPortal-License-GenerateLicense5.png)
+## Configure the License
 
-Once the activation is done, you get a [Handshake Code]({{site.about}}terms.html#handshake-code) to use the license. Check out [how to use the handshake code]({{site.about}}how-license-works.html#how-to-use-the-handshake-code).
+To configure the license is to manage the Handshake Codes for the license. For more details, please see [how to manage the handshake code]({{site.common}}handshakeCodes.html).
 
-## Tracking the License
+> Read more on [What is a Handshake Code]({{site.about}}terms.html#handshake-code)
 
-Check out [how license tracking works]({{site.about}}how-license-works.html#how-license-tracking-works).
+## Track the License
+
+For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-service) hosted by Dynamsoft. You can
+
+* [View activated license items]({{site.common}}licenseitems.html)
+* [View the license usage statistics]({{site.common}}statistics.html)
+* [Get notified about license status]({{site.common}}usagealerttriggers.html)
+* [Add more quota to your license]({{site.about}}purchase.html#add-quota)
+
+> Read more on [the mechanism]({{site.common}}mechanism.html) behind license tracking.

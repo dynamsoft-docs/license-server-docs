@@ -6,7 +6,7 @@ description: sample page
 needAutoGenerateSidebar: true
 ---
 
-# How Trackable License works
+# How a license is tracked
 
 All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to authenticate at initialization as well as collect and report its usage during runtime.
 

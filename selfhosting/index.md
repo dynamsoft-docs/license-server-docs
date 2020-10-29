@@ -6,111 +6,51 @@ description: Sample folder index page
 breadcrumbText: Sample Folder
 ---
 
-# Self-Hosting License Tracking
+# Self-hosting license tracking
 
-This article is about Self-Hosting License Tracking, if you would rather let Dynamsoft track your license usage, check out [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html).
+> This article is about Self-Hosting License Tracking, if you would rather let Dynamsoft track your license usage, please see [Dynamsoft-hosting license tracking]({{site.dshosting}}index.html).
 
-If you have not purchased any Dynamsoft SDK license that requires usage tracking, please check out [how to purchase a license]({{site.about}}license-purchase.html).
+> If you have not purchased any Dynamsoft SDK license that requires usage tracking, please check out [how to purchase a license]({{site.about}}purchase.html).
 
-The following assumes you have purchased a license, logged into the customer portal, [generated a license]({{site.about}}license-purchase.html#generate-a-license) and landed on the "License Detail" page.
+The following assumes you have purchased a trackable license and have chosen "Self-Hosting" on the "Activate License" page in the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense).
 
-## Download the License File
+## Activate the License
 
-To track the license usage yourself, you need to install the "License Tracking Server" on a designated server machine in your environment which serves two purposes:
+On the "Activate License" page, there are a few steps for the activation.
 
-* Authorize a client device to use the SDK
-* Track the usage of the SDK 
+* Set an Alias for your license
 
-The License File that you have generated with your purchased license items is required to set up the LTS. Press the "Download License File" button to get it downloaded. It'll be used in the step [Import License File](#import-license-file).
+> This step is optional, you can just leave the default Alias. Read more on [What is an Alias]({{site.about}}terms.html#alias).
 
-> Check out [what is a license file]({{site.about}}terms.html#license-file)
+* Input the `UUID` of the `LTS` hosted on your server
 
-## Activate the license
+> This step is required, to get the `UUID` of your `LTS` , please see [How to set up LTS]({{site.selfhosting}}managelts.html#how-to-set-up-lts).
 
-Click "Activate" to go to the "Activate License" page. On this page, choose "On-Premise" and you will be asked to input a UUID. Check out [Generate UUID](#generate-uuid) on how to create a UUID for your LTS server.
+> Read more on [What is a LTS UUID]({{site.about}}terms.html#lts-uuid)
 
-Once the activation is completed, you get an activated license file.
+* Click the "Activate" button.
 
-## Install the License Tracking Server
+Once the activation is done, an activated License File will be generated and downloaded automatically, the next step is to [Import the license](#import-the-license).
 
-### Download the latest LTS from 
+> Read more on [What is a License File]({{site.about}}terms.html#license-file)
 
-* [Windows Server](somelink)
-* [Linux Server](somelink)
+## Import the License
 
-### Unzip the downloaded file and start LTS
+This step imports the License File into `LTS` so that you can configure and use the purchased license(s). Please see steps on [How to import the License File]({{site.selfhosting}}manageLTS.html#import-the-license-file).
 
-Run startup.bat to start the LTS
+## Configure the License
 
-### Verify LTS is running
+To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}handshakeCodes.html).
 
-Open the LTS management link http://localhost:48080/index and see if it works. If it does, then installation has completed
+> Read more on [What is a Handshake Code]({{site.about}}terms.html#handshake-code)
 
-## Use the LTS
+## Track the License
 
-### Set management password
+For Self-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-service) hosted by yourself. You can
 
-The first time you open the LTS home page http://localhost:48080/index, you'll be asked to set a password for it.
+* [View activated license items]({{site.common}}licenseitems.html)
+* [View the license usage statistics]({{site.common}}statistics.html)
+* [Get notified about license status]({{site.common}}usagealerttriggers.html)
+* [Add more quota to your license]({{site.about}}purchase.html#add-quota)
 
-![LTS-Usage-1]({{site.assets}}imgs/LTS-Usage-1.png)
-
-This password is very important because you will need it to manage and check the usage of your licenses later on. Make sure you don't lose it!
-
-The LTS management portal looks like this 
-
-![LTS-Usage-2]({{site.assets}}imgs/LTS-Usage-2.png)
-
-As it shows, there are 6 menu items on the left, we'll dive deep into what each one does.
-
-### Generate UUID
-
-The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound with the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine is for production usage which is stable.
-
-A UUID is bound to the hardware of the machine, choose one or multiple unique hardware identification labels to generate it. The available labels are
-
-* ProcessorId
-* Media Access Control Address
-* Machine ID
-* Motherboard Serial Number
-
-The more labels you choose, the stricter the license binding. But if the hardware changes and any of the bound labels is different, the license binding will fail and the license will be unusable. Therefore, be cautious and think ahead on which labels to include (at least one is required).
-
-Once a UUID is generated, you can go ahead and [activate the license](activate-the-license).
-
-### Import License File
-
-Here you import a license file that you downloaded from Dynamsoft Customer Portal.
-
-When you import the file, you'll be asked to input your credentials of your Dynamsoft account. This is to ensure that the license file is indeed used by the licensee.
-
-Once the import succeeds, you are redirected to "License Items"
-
---> Activation during the import or activate in the portal --> choose one!
-
-### License Items
-
-Here the activated items are listed, you can check details like quality, expiration date, etc.
-
-### Configurations
-
-Here you configure custom handshake codes. [What is a handshake code?]({{site.about}}terms.html#handshake-code)
-
-#### Set consumption order
-
-If you have multiple license items for one handshake code, you can set the consumption order which determines which license is consumed first. In most cases, you can just keep the default order which is already optimized.
-
-#### Show Statistics
-
-Click "Statistics" button to view the usage report for each handshake code.
-
-Read more on ["Statistics Page"]({{site.about}}statistics-page.html)
-
-#### Edit or add a handshake code
-
-When you add or edit a handshake code, you are navigated to the "Handshake Details" page. Read more [here]({{site.selfhosting}}configure-handshake.html)
-
-### Email Config
-
-When the quota on the license is about to be used up, you may want to be notified. The License Tracking Server does it via email notifications. In Email config, you can set the email sender and who to notify.
-
-Check out more on [Email Notification]({{site.selfhosting}}email-notification.html)
+> Read more on [the mechanism]({{site.common}}mechanism.html) behind license tracking.

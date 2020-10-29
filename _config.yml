@@ -27,6 +27,7 @@ docHomePage: /Dynamsoft-License-Tracking-Docs
 # with the first-level path rather than the root path of the repository.
 
 about: /Dynamsoft-License-Tracking-Docs/about/
+common: /Dynamsoft-License-Tracking-Docs/common/
 dshosting: /Dynamsoft-License-Tracking-Docs/dshosting/
 selfhosting: /Dynamsoft-License-Tracking-Docs/selfhosting/
 
