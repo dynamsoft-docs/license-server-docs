@@ -36,7 +36,7 @@ If you don't have a Dynamsoft account or you used an unregistered email to make 
 
 > You can also [register](https://www.dynamsoft.com/api-common/Regist/Regist) before making a purchase.
 
-After logging in, you will enter the "Licenses" page by default. If not, you can get there by clicking *License -> Full License*.
+After logging in, if you don't land on the "Licenses" page, you can get there by clicking *Customer Portal -> License -> Full License*.
 
 At this moment, the license(s) is not yet activated. Read on to learn [how to activate the license]({{site.about}}activate.html).
 

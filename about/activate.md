@@ -8,7 +8,7 @@ needAutoGenerateSidebar: true
 
 # How to activate a license
 
-You can choose one of the two activation options
+When you click on "Activate" for a purchase license, you can choose one of the two activation options
 
 > Once chosen, it can not be undone. So make sure you choose the correct one.
 
@@ -17,7 +17,7 @@ You can choose one of the two activation options
 
 Both options use the same software we call **License Tracking Service** ( `LTS` for short) to track the license usage. The differences are shown in the following table
 
-> Read more on [what is a License Tracking Service]({{site.about}}terms.html#license-tracking-service)
+> Read more on [What is a License Tracking Service]({{site.about}}terms.html#license-tracking-service)
 
 | Question | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|

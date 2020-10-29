@@ -12,11 +12,13 @@ These docs aim to help you learn and understand how Dynamsoft License Tracking w
 
 > The tracking is done on a per [handshake code]({{site.about}}terms.html#handshake-code) basis.
 
-## Dynamsoft Barcode Reader
+## Trackable licenses
+
+### Dynamsoft Barcode Reader
 
 For the Dynamsoft Barcode Reader SDK, Dynamsoft offers the following trackable license options
 
-### Per Barcode Scan
+#### Per Barcode Scan
 
 This option is simplest and recommended if you can predict the number of barcode scans in a certain period of time in your application.
 
@@ -37,7 +39,7 @@ Some examples for your reference:
 >
 > A scan duplicate is when a barcode result reads the same value as a previously scanned barcode within `duplicateForgetTime` , say, 3 seconds. Once a scan is duplicated, the [time stamp] refreshes to the time when the latest duplicate was read
 
-### Per Device
+#### Per Device
 
 This option is recommended if you have a known number of devices and unknown number of barcode scans or that you need to scan a large number of barcodes on limited devices.
 
@@ -55,7 +57,7 @@ Because of the way a UUID is generated and stored, a "device" refers to differen
 > * The same browsers accessing multiple websites with different domains is counted separated per domain.
 > * A UUID is cached in all cases, when the cached data is purged. The device will be regarded as a new one. In browsers, the UUID is cached in the indexedDB store for that specific website. In other cases, the UUID is cached in a hidden file.
 
-### Concurrent Device
+#### Concurrent Device
 
 This option is meant for the situation where you have a large number of client devices but the barcode reading is done sporadically and you can not predict how many barcode scans will be performed.
 
@@ -80,3 +82,7 @@ As mentioned in the answer to the previous question, a device is considered acti
 #### What happens if my license quota is used up?
 
 If the quota on your license is used up, all client devices will no longer be able to get an authentication token from the server and the SDK will throw a license error.
+
+## Acquire trackable licenses
+
+If you are interested in acquiring a trackable license to use one of Dynamsoft's SDKs, please see page [Purchase a License]({{site.about}}purchase.html).

@@ -1,14 +1,24 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Handshake Codes Management
+keywords: Handshake Codes, manage license
+description: This page is about managing handshake codes for licenses.
+breadcrumbText: Handshake Codes
 ---
 
 # Manage the Handshake Codes for your licenses
 
-#### Set consumption order
+Dynamsoft trackable licenses are consumed through Handshake codes. On this Handshake Codes page, you can
+
+* View existing handshake codes
+* Add new handshake codes
+* Edit current handshake codes
+* View the statistcs of a handshake code
+* Change license usage order for handshake codes which are configured with multiple license items
+
+We'll dive deeper into the 
+
+#### Change License Usage Order
 
 If you have multiple license items for one handshake code, you can set the consumption order which determines which license is consumed first. In most cases, you can just keep the default order which is already optimized.
 
@@ -21,7 +31,6 @@ Read more on ["Statistics Page"]({{site.about}}statistics-page.html)
 #### Edit or add a handshake code
 
 When you add or edit a handshake code, you are navigated to the "Handshake Details" page. Read more [here]({{site.selfhosting}}configure-handshake.html)
-
 
 ## Check statistics
 

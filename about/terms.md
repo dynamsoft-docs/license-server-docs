@@ -42,3 +42,6 @@ A UUID is bound to the hardware of the machine, choose one or multiple unique ha
 The more labels you choose, the stricter the license binding. But if the hardware changes and any of the bound labels is different, the license binding will fail and the license will be unusable. Therefore, be cautious and think ahead on which labels to include (at least one is required).
 
 Once a UUID is generated, you can go ahead and [activate the license](activate-the-license).
+
+## License Item
+
