@@ -8,6 +8,8 @@ breadcrumbText: Sample Folder
 
 # Terms
 
+## License 2.0
+
 ## Alias
 
 An Alias is basically a name for the license. You can set a meaningful Alias to a certain license so that you can easily identify the purpose of the license.
