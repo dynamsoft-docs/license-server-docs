@@ -1,14 +1,14 @@
 ---
 layout: default-layout
-title: Sample Sub-Folder Index Page
-keywords: sample, index page
-description: Sample sub-folder index page
-breadcrumbText: Sample Sub-folder
+title: About Dynamsoft License Tracking Docs
+keywords: License Tracking, index page
+description: This page introduces the docs and the license types involved
+breadcrumbText: About Dynamsoft License Tracking
 ---
 
 # About the docs
 
-These docs aim to help you learn and understand how Dynamsoft tracks License usage. Not all Dynamsoft Licenses are trackable, we say that a trackable license is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-2.0). The following are the current trackable licenses.
+These docs aim to help you learn and understand how Dynamsoft License Tracking works. Not all Dynamsoft Licenses are trackable, we say that a trackable license is one that isD compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-2.0). The following are the current trackable licenses.
 
 > The tracking is done on a per [handshake code]({{site.about}}terms.html#handshake-code) basis.
 
