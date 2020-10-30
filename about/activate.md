@@ -19,7 +19,7 @@ Both options use the same software we call **License Tracking Service** ( `LTS` 
 
 > Read more on [What is a License Tracking Service]({{site.about}}terms.html#license-tracking-service)
 
-| Question | Dynamsoft-hosting| Self-hosting |
+|  | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|
 | Need to designate a server to host `LTS` | No | Yes |
 | Need to install and manage `LTS` | No | Yes |
