@@ -4,6 +4,7 @@ title: Handshake Codes Management
 keywords: Handshake Codes, manage license
 description: This page is about managing handshake codes for licenses.
 breadcrumbText: Handshake Codes
+needAutoGenerateSidebar: true
 ---
 
 # Manage the Handshake Codes for your licenses

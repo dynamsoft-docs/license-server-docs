@@ -4,6 +4,7 @@ title: About Dynamsoft License Tracking Docs
 keywords: License Tracking, index page
 description: This page introduces the docs and the license types involved
 breadcrumbText: About Dynamsoft License Tracking
+needAutoGenerateSidebar: true
 ---
 
 # About the docs

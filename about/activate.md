@@ -1,8 +1,9 @@
 ---
 layout: default-layout
-title: Sample Page
-keywords: sample, page
-description: sample page
+title: How to activate a license
+keywords: license, activation
+description: This page describes how to activate a trackable license
+breadcrumbText: Activate a License
 needAutoGenerateSidebar: true
 ---
 

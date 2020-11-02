@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Terms involved in Dynamsoft License Tracking
+keywords: Terms, Dynamsoft, License Tracking, 
+description: This page has defintions and descriptions about Dynamsoft License Tracking Terms
+breadcrumbText: Terms
+needAutoGenerateSidebar: true
 ---
 
 # Terms
@@ -86,19 +87,42 @@ Dynamsoft.WebTwainEnv.SessionPassword = "";
 
 ## License File
 
+A License File describes one or multiple [License Items](#license-item) and the status of these items.
+
+Each License File has a unique `LicenseId` and an [ `Alias` ](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
+
+``` text
+LicenseId: 100028117
+Alias: 
+LicenseTextVersion: 2.0
+CustomerDynamId: 216998
+LicenseStatus: Activated
+LicenseItems:
+...//one or multiple License Items
+```
+
+When you place an order, a License File will be automatically generated which will contain all License Items in that order. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it'll say "Activated".
+
+If you are using Dynamsoft-Hosting License Tracking Service, the License Files are only information about your orders for your reference. However, if you are hosting the License Tracking Service yourself, you will need this License File in order to add the License Items to that service for license tracking.
+
 ## License Tracking Service
+
+The License Tracking Service is a proprietary software developed by Dynamsoft to track license usages.
+
+Dynamsoft hosts a copy of the Service on one server to provide License Tracking Service for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see 
+
+* [Self-hosting License Tracking]({{site.selfhosting}}index.html)
+* [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html)
 
 ## LTS UUID
 
 The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound with the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine is for production usage which is stable.
 
-A UUID is bound to the hardware of the machine, choose one or multiple unique hardware identification labels to generate it. The available labels are
+A UUID is bound to one or multiple unique hardware identification labels which include
 
 * ProcessorId
 * Media Access Control Address
 * Machine ID
 * Motherboard Serial Number
 
-The more labels you choose, the stricter the license binding. But if the hardware changes and any of the bound labels is different, the license binding will fail and the license will be unusable. Therefore, be cautious and think ahead on which labels to include (at least one is required).
-
-Once a UUID is generated, you can go ahead and [activate the license](activate-the-license).
+If the hardware changes and any of the bound labels is different, the license binding will fail and the license will be unusable. Therefore, be cautious when changing the server.

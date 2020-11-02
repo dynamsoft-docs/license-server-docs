@@ -1,8 +1,9 @@
 ---
 layout: default-layout
-title: Sample Page
-keywords: sample, page
-description: sample page
+title: How a license is tracked
+keywords: license tracking, mechanism
+description: This page describes how license tracking is done
+breadcrumbText: Mechanism
 needAutoGenerateSidebar: true
 ---
 

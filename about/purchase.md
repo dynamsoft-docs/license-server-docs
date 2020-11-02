@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Sub-Folder Index Page
-keywords: sample, index page
-description: Sample sub-folder index page
-breadcrumbText: Sample Sub-folder
+title: How to purchase a Dynamsoft License
+keywords: purchase, license
+description: This page shows how to purchase a Dynamsoft License
+breadcrumbText: Purchase a License
+needAutoGenerateSidebar: true
 ---
 
 # Purchase a License

@@ -4,6 +4,7 @@ title: About Dynamsoft Trackable Licenses
 keywords: License Tracking, Trackable License
 description: This page introduces the trackable licenses
 breadcrumbText: Trackable Licenses
+needAutoGenerateSidebar: true
 ---
 
 # Trackable licenses

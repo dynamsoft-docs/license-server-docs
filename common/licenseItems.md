@@ -4,6 +4,7 @@ title: License Items Page
 keywords: License Items, Import License
 description: About the License Items Page
 breadcrumbText: License Items
+needAutoGenerateSidebar: true
 ---
 
 # License Items Page
