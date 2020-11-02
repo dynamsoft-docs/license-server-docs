@@ -14,14 +14,12 @@ Minimum Server Configuration
 
 * CPU: 2C 
 * Memory：2G
-* Storage：系统盘8G，数据盘20G
+* Storage：30G
 * OS：CentOs7.4
 
 ## Installation
 
-* 准备部署域名并添加DNS解析：mtpl.dynamsoft.com 
-
-备份服务器域名：mtplres.dynamsoft.com
+Prepare a domain name for the License Tracking Service. In our case, we use "mtpl.dynamsoft.com" for the main service and "mtplres.dynamsoft.com" for the backup service.
 
 ### Initialize
 
