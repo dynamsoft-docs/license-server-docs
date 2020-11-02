@@ -6,13 +6,16 @@ description: Sample folder index page
 breadcrumbText: Sample Folder
 ---
 
-# Minimum Server Configuration
+# Install Dynamsoft License Tracking Service on Windows Server
+
+## Environment
 
 * CPU: Intel Core 2 Duo or AMD Athlon 64 X2 5600+
-* OS: Windows 7 / Windows 8 / Windows 10.
-* VIDEO CARD: NVIDIA GeForce 7600 GT or ATI Radeon HD 2600 XT or Intel HD Graphics 3000 or better.
-* FREE DISK SPACE: 30 GB.
-* DEDICATED VIDEO RAM: 64 MB.
+* Memory: 2G
+* OS: Windows Server 2016
+* Disk Space
+  + System: 30G
+  + Data: 20G
 
 ## Install LTS
 

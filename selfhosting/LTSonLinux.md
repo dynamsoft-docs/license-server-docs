@@ -8,18 +8,18 @@ breadcrumbText: Sample Folder
 
 # Install Dynamsoft License Tracking Service on Linux
 
-Minimum Server Configuration
-
 ## Environment
 
 * CPU: 2C 
 * Memory：2G
-* Storage：30G
+* Disk Space
+  + System: 8G
+  + Data: 20G
 * OS：CentOs7.4
 
 ## Installation
 
-Prepare a domain name for the License Tracking Service. In our case, we use "mtpl.dynamsoft.com" for the main service and "mtplres.dynamsoft.com" for the backup service.
+Prepare a domain name for the License Tracking Service. In our case, we use "mtpl.dynamsoft.com" for the main service and "mtplres.dynamsoft.com" for the backup service. Make sure DNS is configured for these domain names.
 
 ### Initialize
 
@@ -99,13 +99,13 @@ ps -ef |grep dynamsoft
 [root@localhost ~]# yum info nginx 
 ```
 
-![LTS-on-Linux-005]({{site.assets}}imgs/ltsonlinux-005.png)
-
 ### Install the web server with yum
 
 ``` shell
 [root@localhost ~]# yum install nginx
 ```
+
+![LTS-on-Linux-005]({{site.assets}}imgs/ltsonlinux-005.png)
 
 ### Start the web server
 
@@ -153,6 +153,8 @@ server_name test.com;
 [root@localhost nginx]# /usr/sbin/nginx -s reload
 ```
 
+<!--
+
 ### Add host to the hosts file
 
 Use the `SwitchHosts` tool to add a host to the hosts file. For example
@@ -166,6 +168,7 @@ In your case, you should use a public IP instead of "192.168.10.11" that later y
 ### Add exception in the firewall
 
 Add an exception for inbound requests so that your devices can connect to the License Tracking Service correctly.
+-->
 
 ### Add reverse proxy
 
@@ -181,7 +184,7 @@ Add an exception for inbound requests so that your devices can connect to the Li
 
 ### Configure SSL
 
-Use the following code the configure SSL
+Use the following code to configure SSL. After that, HTTP requests to the port 80 will be redirected to the SSL port 443.
 
 ``` shell
 yum -y install yum-utils 
