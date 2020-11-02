@@ -16,17 +16,17 @@ In these cases, usage alert emails are triggered
 
 > The usage is based on a single License Item
 
-* > 75%
-* > 90%
-* > 95%
-* > 100%
+* over 75%
+* over 90%
+* over 95%
+* over 100%
 
 ## Failed authorization requests / Total requests
 
 > The usage is based on single Handshake Code
 
-* > 10%
-* > 25%
-* > 50%
-* > 75%
-* > 90%
+* over 10%
+* over 25%
+* over 50%
+* over 75%
+* over 90%
