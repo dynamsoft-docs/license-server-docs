@@ -3,7 +3,7 @@ layout: default-layout
 title: Dynamsoft Barcode Reader Licensing FAQ
 keywords: Barcode reader, licensing
 description: This page lists the frequently asked questions about Dynamsoft Barcode Reader.
-breadcrumbText: Trackable Licenses
+breadcrumbText: Licensing FAQ
 needAutoGenerateSidebar: true
 ---
 
