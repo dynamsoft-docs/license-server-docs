@@ -9,6 +9,7 @@ description: Documentation Homepage
 # Dynamsoft License Tracking
 
 * [About]({{site.about}}index.html)
+    - [License Types]({{site.about}}licensetypes.html)
     - [Purchase]({{site.about}}purchase.html)
     - [Terms]({{site.about}}terms.html)
     - [Activate]({{site.about}}activate.html)
