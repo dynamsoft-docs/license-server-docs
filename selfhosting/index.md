@@ -12,7 +12,7 @@ breadcrumbText: Sample Folder
 
 > If you have not purchased any Dynamsoft SDK license that requires usage tracking, please check out [how to purchase a license]({{site.about}}purchase.html).
 
-The following assumes you have purchased a trackable license and have chosen "Self-Hosting" on the "Activate License" page in the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense).
+The following assumes you have purchased a trackable license and have chosen "Self-Hosting" on the "Activate License" page in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense).
 
 ## Activate the License
 
