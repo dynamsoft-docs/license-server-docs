@@ -89,7 +89,7 @@ Dynamsoft.WebTwainEnv.SessionPassword = "";
 
 A License File describes one or multiple [License Items](#license-item) and the status of these items.
 
-Each License File has a unique `LicenseId` and an [ `Alias` ](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
+Each License File has a unique `LicenseId` and an [`Alias`](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
 
 ``` text
 LicenseId: 100028117
