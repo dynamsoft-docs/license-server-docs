@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Self-hosting License Tracking
+keywords: self-hosting, activation, import
+description: This page is about how to use self-hosting license tracking.
+breadcrumbText: Self-hosting LTS
+needAutoGenerateSidebar: true
 ---
 
 # Self-hosting license tracking
@@ -20,7 +21,7 @@ On the "Activate License" page, there are a few steps for the activation.
 
 * Set an Alias for your license
 
-> This step is optional, you can just leave the default Alias. Read more on [What is an Alias]({{site.about}}terms.html#alias).
+> This step is optional, you can just use the default Alias. Read more on [What is an Alias]({{site.about}}terms.html#alias).
 
 * Input the `UUID` of the `LTS` hosted on your server
 

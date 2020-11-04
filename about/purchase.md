@@ -41,4 +41,22 @@ After logging in, if you don't land on the "Licenses" page, you can get there by
 
 At this moment, the license(s) is not yet activated. Read on to learn [how to activate the license]({{site.about}}activate.html).
 
-## Add quota
+## License Restrictions
+
+There are two restrictions for each trackable license
+
+* Time
+
+By default, a license is good for a year once activated. Before a license expires, you can renew it.
+
+* Quota
+
+A license comes with a fixed quota. If the quota is used up before the license expires, you can add extra quota.
+
+### Renew a license
+
+To renew a license is to add a new license that has the same quota but is good for another year starting from the day the old license expires.
+
+### Add quota
+
+To add quota is to add a new license with a specified quota, then configure the new license to the same Handshake Code.

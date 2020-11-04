@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
+title: Manage License Tracking Service
+keywords: License Tracking Service, management
+description: This page is about how to manage License Tracking Service
 breadcrumbText: Sample Folder
 ---
 
@@ -31,7 +31,7 @@ Please read one of the following guides
 Once LTS is installed and configured, you can open its managment portal in the browser. The URL has the following pattern
 
 ``` text
-https://{domain of IP of the server}:{port}/lts/page/#/index.html
+https://{domain or IP of the server}:{port}/lts/page/#/index.html
 ```
 
 The default credentials are 

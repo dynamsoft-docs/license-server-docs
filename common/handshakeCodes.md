@@ -31,11 +31,11 @@ After that, you can [add more Handshake Codes](#add-a-handshake-code) or [edit t
 
 > NOTE
 >  
-> Although default Handshake Codes are generated on a per order basis, the Handshake Code itself has nothing to do with the order. Instead, it is only related to the License Items configured for it, and these items can be from any order.
+> Although default Handshake Codes are generated on a per purchase order basis, the Handshake Code itself has nothing to do with the purchase order. Instead, it is only related to the License Items configured to it, and these items can be from any order.
 
 ## Change License Usage Order
 
-If multiple License Items are configured for one Handshake Code, the question of which License Item is used first will arise. Dynamsoft License Tracking Service has a different order for these License Items which follows these rules
+If multiple License Items are configured to one Handshake Code, the question of which License Item is used first will arise. Dynamsoft License Tracking Service has a default order which follows these rules
 
 * The one with the closest expiration date is consumed first
 * The one containing the most specific permit gets consumed first
@@ -58,14 +58,14 @@ When you add a Handshake Code, you can configure it in a few ways
 
 * Assign a string as the name of the Handshake Code. 
 
-The name of a Handshake Code consists of two parts
+  The name of a Handshake Code consists of two parts
 
-{Dynamsoft ID} - {custom string}
+  {Dynamsoft ID} - {custom string}
 
-The first part must be your Dynamsoft ID. The second part can be any valid string. For example
+  The first part must be your Dynamsoft ID. The second part can be any valid string. For example
 
-* 216998-100025900
-* 216998-vehicleCode
+  + 216998-100025900
+  + 216998-vehicleCode
 
 * Set one or multiple validation field(s). 
 
@@ -77,7 +77,7 @@ The first part must be your Dynamsoft ID. The second part can be any valid strin
 
 * Configure License Items for the Handshake Code
 
-All activated License Items will show up on the page, you can choose one or multiple items and add it to the Handshake Code.
+  All activated License Items will show up on the page, you can choose one or multiple items and add it to the Handshake Code.
 
 ## Edit a Handshake Code
 

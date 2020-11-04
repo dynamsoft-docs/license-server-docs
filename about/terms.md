@@ -32,7 +32,7 @@ A default Alias is created automatically that follows the patterm "DM_{License I
 A few things to know about the Alias
 
 * It can only be changed when the license is new. Once the license is activated, it can no longer be changed.
-* The Alias will show up in the [License File](#license-file) as a field.
+* The Alias will show up in the [License File](#license-file) as a field. A License File has just one Alias.
 
 ## License Item
 
@@ -77,7 +77,7 @@ A Validation Field is an unalterable characteristic of your application, at pres
 
 ## Session Password
 
-The Session Password is another way to protect your license. Unlike the Validation Field which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products use the same API, for example
+The Session Password is another way to protect your license. Unlike the Validation Field which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, for example
 
 * Dynamic Web TWAIN
 
@@ -126,3 +126,15 @@ A UUID is bound to one or multiple unique hardware identification labels which i
 * Motherboard Serial Number
 
 If the hardware changes and any of the bound labels is different, the license binding will fail and the license will be unusable. Therefore, be cautious when changing the server.
+
+## Client UUID
+
+Each client machine is also identified by its UUID, this UUID is generated the first time the client machine gets authorized to use a license. All usage reports generated on this client will include this UUID too.
+
+The following table shows the differences between LTS UUID and Client UUID
+
+| | LTS UUID | Client UUID |
+|:-:|:-:|:-:|
+| Bound in the License | Yes | No |
+| Bound in usage reports | No | Yes |
+| Hardware binding | Required | Optional |

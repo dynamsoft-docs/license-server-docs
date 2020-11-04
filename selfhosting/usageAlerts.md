@@ -1,27 +1,22 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: About usage alerts
+keywords: usage alert, notification
+description: This page is about the email notifcation feature (usage alerts) of Dynamsoft License Tracking Service
+breadcrumbText: Usage Alerts
 ---
 
-# FAQs
-
-## Can I add multiple recipants for the email notification?
-
-Yes, simply use a semi colon to separate different emails.
-
-## When do I receive the notifications?
-
-The notifications are sent based on the usage and the license type.
+# Usage Alerts
 
 The License Tracking Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered.
 
-### Per Barcode Scan, Per Page, Per Device
+## Dynamsoft Barcode Reader
 
-  
-Quota usage exceeds 
+### Per Barcode Scan, Per Page, Per Device  
+
+(Quota used) / (Total quota) exceeds 
+
+> The usage is based on a single License Item
 
 * 75%
 * 90%
@@ -32,6 +27,8 @@ Quota usage exceeds
 
 In the most recent 60 minutes, (the count of total authentication request failures) / (the count of total authentication requests) exceeds
 
+> The usage is based on single Handshake Code
+
 * 10%
 * 25%
 * 50%
@@ -39,7 +36,7 @@ In the most recent 60 minutes, (the count of total authentication request failur
 
 > NOTE
 >  
-> If the quota overflow continues to be true yet not passing the next level (like 10% ~ 25%), no new email will be triggered. For example
+> If the condition continues to be true yet not passing the next level (like 10% ~ 25%), no new email will be triggered. For example
 > * 12:40 Failure rate: 8%
 > * 12:50 Failure rate:13%, first email triggered
 > * 13:00 Failure rate:17%
@@ -51,6 +48,16 @@ In the most recent 60 minutes, (the count of total authentication request failur
 > * 14:00 Failure rate:51%, third email triggered
 > ...
 
-## Can I adjust the conditions under which notifications are sent?
+## Questions
+
+### Can I add multiple recipants for the email notification?
+
+Yes, simply use a semicolon to separate different emails.
+
+### When do I receive the notifications?
+
+The notifications are sent based on the usage and the license type as mentioned above.
+
+### Can I adjust the conditions under which notifications are sent?
 
 Currently, this is not supported.

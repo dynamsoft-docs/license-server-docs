@@ -32,7 +32,7 @@ During initialization, Dynamsoft SDKs connect to LTS to authenticate. The proces
 
 ### About the authentication request
 
-The request includes the device's UUID and the handshake code. The handshake code is fetched from your code, the UUID is fetched from cache. If no UUID exists, a new one is created.
+The request includes the Client UUID and the handshake code. The handshake code is fetched from your code, the UUID is fetched from cache. If no Client UUID exists, a new one is created.
 
 ## License Tracking
 
@@ -48,7 +48,7 @@ The report includes the following fields
 
 * Time label (indicates which 3-minute slot it covers)
 * handshake code
-* UUID
+* Client UUID
 * Count of barcodes
 * Type of barcodes
 
