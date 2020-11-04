@@ -1,13 +1,13 @@
 ---
 layout: default-layout
-title: Dynamsoft Barcode Reader Licensing FAQ
+title: Dynamsoft Licensing FAQ
 keywords: Barcode reader, licensing
-description: This page lists the frequently asked questions about Dynamsoft Barcode Reader.
+description: This page lists the frequently asked questions about Dynamsoft's License Tracking Service.
 breadcrumbText: Licensing FAQ
 needAutoGenerateSidebar: true
 ---
 
-# Dynamsoft Barcode Reader Licensing FAQ
+# Dynamsoft Licensing FAQ
 
 ## Can a client device work offline?
 
