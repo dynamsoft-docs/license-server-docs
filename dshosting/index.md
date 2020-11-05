@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Dynamsoft-hosting license tracking
+keywords: dynamsoft-hosting, license tracking
+description: This page is about license tracking with Dynamsoft-Hosting License Tracking Service
+breadcrumbText: Dynamsoft-Hosting License Tracking
+needAutoGenerateSidebar: true
 ---
 
 # Dynamsoft-hosting license tracking

@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Install Dynamsoft License Tracking Service on Windows
+keywords: Install, License Tracking Service, Windows
+description: Steps and information about how to install Dynamsoft License Tracking Service on Windows
+breadcrumbText: Install LTS on Windows
+needAutoGenerateSidebar: true
 ---
 
 # Install Dynamsoft License Tracking Service on Windows Server

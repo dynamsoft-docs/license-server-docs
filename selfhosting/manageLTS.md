@@ -3,7 +3,7 @@ layout: default-layout
 title: Manage License Tracking Service
 keywords: License Tracking Service, management
 description: This page is about how to manage License Tracking Service
-breadcrumbText: Sample Folder
+breadcrumbText: Mange LTS
 ---
 
 # Manage LTS

@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Install Dynamsoft License Tracking Service on Linux
+keywords: Install, License Tracking Service, Linux
+description: Steps and information about how to install Dynamsoft License Tracking Service on Linux
+breadcrumbText: Install LTS on Linux
+needAutoGenerateSidebar: true
 ---
 
 # Install Dynamsoft License Tracking Service on Linux

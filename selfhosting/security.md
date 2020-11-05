@@ -1,9 +1,10 @@
 ---
 layout: default-layout
-title: Sample Folder Index Page
-keywords: sample, index page
-description: Sample folder index page
-breadcrumbText: Sample Folder
+title: Manage Security - License Tracking Service
+keywords: License Tracking Service, Security
+description: How to manage security of License Tracking Service
+breadcrumbText: Manage LTS Security
+needAutoGenerateSidebar: true
 ---
 
 # Manage LTS security
