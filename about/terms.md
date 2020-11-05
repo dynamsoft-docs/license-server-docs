@@ -48,9 +48,9 @@ The permits in License Items are not consumed directly by applications because
 Therefore, Dynamsoft invented the concept of "Handshake Code". An application making use of Dynamsoft SDKs gets authorized by Dynamsoft [License Tracking Service](#license-tracking-service) through a specific Handshake Code. Within License Tracking Service
 
 * The same Handshake Code can be configured to contain permits from different License Items
-* The permit from the same License Item can be share by multiple Handshake Codes
+* The permit from the same License Item can be shared by multiple Handshake Codes
 
-By doing this, the part of the application in charge of license verification doesn't need to change even if different permits are needed at a later date. 
+By doing this, the license verification code in your application doesn't need to change even if different permits are needed at a later date. 
 
 A few things to note
 
@@ -59,7 +59,7 @@ A few things to note
 
 ## Validation Field
 
-A Handshake Code is just a string that shows up in your code. It is important to secure it so that other people who knows your Handshake Code can not use your license. The Validation Fields are designed for this purpose.
+A Handshake Code is just a string that shows up in your code. It is important to secure it so that other people who knows your Handshake Code cannot use your license. The Validation Fields are designed for this purpose.
 
 A Validation Field is an unalterable characteristic of your application, at present, the following three are supported
 
@@ -73,7 +73,7 @@ A Validation Field is an unalterable characteristic of your application, at pres
 
 * Process Name
 
-> Usage: Dynamsoft Barcode Reader Server Edition & Embedded Edition
+> Usage: Dynamsoft Barcode Reader for desktop and server deployments;  Dynamsoft Barcode Reader Embedded Edition
 
 ## Session Password
 
@@ -89,7 +89,7 @@ Dynamsoft.WebTwainEnv.SessionPassword = "";
 
 A License File describes one or multiple [License Items](#license-item) and the status of these items.
 
-Each License File has a unique `LicenseId` and an [ `Alias` ](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
+Each License File has a unique `LicenseId` and an [`Alias`](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
 
 ``` text
 LicenseId: 100028117
@@ -109,7 +109,7 @@ If you are using Dynamsoft-Hosting License Tracking Service, the License Files a
 
 The License Tracking Service is a proprietary software developed by Dynamsoft to track license usages.
 
-Dynamsoft hosts a copy of the Service on one server to provide License Tracking Service for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see 
+Dynamsoft hosts a copy of the Service to provide License Tracking Service for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see 
 
 * [Self-hosting License Tracking]({{site.selfhosting}}index.html)
 * [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html)
