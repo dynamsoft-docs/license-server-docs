@@ -9,11 +9,11 @@ description: Documentation Homepage
 # Dynamsoft License Tracking
 
 * [About]({{site.about}}index.html)
-    - [License Types]({{site.about}}licensetypes.html)
     - [Purchase]({{site.about}}purchase.html)
     - [License Types]({{site.about}}licensetypes.html)
     - [Terms]({{site.about}}terms.html)
     - [Activate]({{site.about}}activate.html)
+    - [FAQs]({{site.about}}licensefql.html)
 * [Dynamsoft-Hosting]({{site.dshosting}}index.html)
 * [Self-Hosting]({{site.selfhosting}}index.html)
     - [Install LTS on Windows]({{site.selfhosting}}ltsonwindows.html)
