@@ -73,7 +73,7 @@ A Validation Field is an unalterable characteristic of your application, at pres
 
 * Process Name
 
-> Usage: Dynamsoft Barcode Reader for desktop and server deployments;  Dynamsoft Barcode Reader Embedded Edition
+> Usage: Dynamsoft Barcode Reader for desktop and server deployments; Dynamsoft Barcode Reader Embedded Edition
 
 ## Session Password
 
@@ -89,7 +89,7 @@ Dynamsoft.WebTwainEnv.SessionPassword = "";
 
 A License File describes one or multiple [License Items](#license-item) and the status of these items.
 
-Each License File has a unique `LicenseId` and an [`Alias`](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
+Each License File has a unique `LicenseId` and an [ `Alias` ](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
 
 ``` text
 LicenseId: 100028117
@@ -138,3 +138,11 @@ The following table shows the differences between LTS UUID and Client UUID
 | Bound in the License | Yes | No |
 | Bound in usage reports | No | Yes |
 | Hardware binding | Required | Optional |
+
+### Questions
+
+#### Q: Does the UUID give away information about my device?
+
+A: No.
+
+While the UUID is based on the hardware information collected from the current device, it is also hashed via the irreversible SHA algorithm before sending to `LTS` for registration. As the generated output ciphertext cannot be converted back to the input text, the hardware info of the device never leaves the device itself and is very well protected.

@@ -13,7 +13,7 @@ description: Documentation Homepage
     - [License Types]({{site.about}}licensetypes.html)
     - [Terms]({{site.about}}terms.html)
     - [Activate]({{site.about}}activate.html)
-    - [FAQs]({{site.about}}licensefql.html)
+    - [FAQs]({{site.about}}licensefaq.html)
 * [Dynamsoft-Hosting]({{site.dshosting}}index.html)
 * [Self-Hosting]({{site.selfhosting}}index.html)
     - [Install LTS on Windows]({{site.selfhosting}}ltsonwindows.html)

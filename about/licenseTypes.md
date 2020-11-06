@@ -34,6 +34,14 @@ Some examples for your reference:
 >
 > A scan duplicate is when a barcode result reads the same value as a previously scanned barcode within `duplicateForgetTime` , say, 3 seconds. Once a scan is duplicated, the [time stamp] refreshes to the time when the latest duplicate was read
 
+#### Questions
+
+##### Q: Can I filter unwanted barcodes to reduce the consumption of my license?
+
+A: Yes. There are many pre-scanning settings you can apply to your barcode scanner.
+
+For example, you can specify barcode format, limit the scanning to predefined regions or return only high-confidence values. For more settings, please refer to  [this page](https://www.dynamsoft.com/barcode-reader/parameters/scenario-settings/decode-result.html).
+
 ### Per Device
 
 This option is recommended if you have a known number of devices and unknown number of barcode scans or that you need to scan a large number of barcodes on limited devices.
