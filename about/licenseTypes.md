@@ -84,4 +84,8 @@ As mentioned in the answer to the previous question, a device is considered acti
 
 ### What happens if my license quota is used up?
 
-If the quota on your license is used up, all client devices will no longer be able to get an authentication token from the server and the SDK will throw a license error.
+| License Type | Behavior |
+|:-:|:-:|
+| Per Barcode Scan | All clients fail with a license error |
+| Per Device | No new device can get authorized |
+| Concurrent Device | New devices will fail to get authorized until old devices become inactive |
