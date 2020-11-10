@@ -58,9 +58,12 @@
                 <div class="main row">
                     <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10" style="margin-bottom: 20px;">
                         {{ content }}
-                        
                     </div>
-                    <div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs">	
+                    <div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs">
+                        <div id="compatibleInfo">
+                            <p>This page is compatible for:</p>
+                            <p class="compatibleCurVersion">Version 7.5</p>
+                        </div>
                         <div id="feedbackFooter" style="color: #306877;">
                             <p class="fontOswald">Is this page helpful? </p>
                             <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
@@ -90,6 +93,9 @@
         integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
 
+    <script>
+        UrlReplace();
+    </script>
     {%- if page.needAutoGenerateSidebar -%}
     {%- unless page.needGenerateH3Content -%}
     <script>
@@ -105,10 +111,15 @@
         FullTreeMenuList(false);
     </script>
     {%- endif -%}
+  
+    <!-- for dbr downloads -->
+    <script type="text/javascript" src="{{ site.assets }}js/layout.js"></script>
 
+    <!-- dbr docs -->
     <script type="text/javascript">
         $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
         $('.container .head').css({'width': $('.docContainer').width() + 'px'})
+        $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
 
         if ($('.docContainer').height() + 125 > document.body.clientHeight) {
             $('.history').addClass('history-fixed')
@@ -145,10 +156,12 @@
                         $('#docHead').addClass('ch-fixed')
                     }
                     if (dcheight > document.body.clientHeight) {
-                        $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 170px)'})
-                        $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 170px)'})
+                        $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 120px)'})
+                        $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': 'calc(100vh - 180px)'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 110px)'})
                     } else {
                         $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
+                        $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
                         $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
                     }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
@@ -169,6 +182,15 @@
                         $('#sideBarCnt').addClass('ftm-fixed')
                         $('#docHead').addClass('ch-fixed')
                     }
+                    if (dcheight > document.body.clientHeight) {
+                        $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 120px)'})
+                        $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': 'calc(100vh - 180px)'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 110px)'})
+                    } else {
+                        $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
+                        $('#sideBarCnt.ftm-fixed #fullTreeMenuListContainer').css({'height': (dcheight - 90) + 'px'})
+                        $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
+                    }
                     $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
                 } else {
                     $('.subHeadWrapper').removeClass('shw-fixed')
@@ -176,6 +198,7 @@
                     $('#sideBarCnt').removeClass('ftm-fixed')
                     $('#docHead').removeClass('ch-fixed')
                     $('.markdown-body').css({'margin-top': '40px'})
+                    $('#fullTreeMenuListContainer').css({'height': 'calc(100vh - 245px)'})
                 }
             }
 
@@ -216,9 +239,15 @@
 
         $(document).click(function(){
             $('.otherVersions').hide()
+            $('.fullVersionInfo').hide()
         })
         $('.changeBtn').on('click', function(e) {
             $('.otherVersions').toggle()
+            stopPropagation(e);
+        })
+
+        $('.fvChange').on('click', function(e) {
+            $('.fullVersionInfo').toggle()
             stopPropagation(e);
         })
 
