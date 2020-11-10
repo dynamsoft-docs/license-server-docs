@@ -1,5 +1,4 @@
 {%- assign level_ary = page.url | split: '/' -%}
-<li><a class="bluelink" href = "https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a></li>
 <li><a class="bluelink" href = "{{ site.docHomePage }}">Documentation</a></li>
 {%- for cur_level in level_ary -%}
     {%- assign breadcrumbUrl = page.url | split: cur_level | first | strip -%}

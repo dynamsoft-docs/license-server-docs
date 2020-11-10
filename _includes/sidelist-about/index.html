@@ -1,0 +1,11 @@
+<li><a href="{{ site.about }}index.html" class="otherLinkColour">ABOUT</a>
+    <ul>
+        {%- if page.url contains '/about/' -%}
+        <li><a href="{{ site.about }}purchase.html" class="otherLinkColour">Purchase</a></li>
+        <li><a href="{{ site.about }}licensetypes.html" class="otherLinkColour">License Types</a></li>
+        <li><a href="{{ site.about }}terms.html" class="otherLinkColour">Terms</a></li>
+        <li><a href="{{ site.about }}activate.html" class="otherLinkColour">Activate</a></li>
+        <li><a href="{{ site.about }}licensefaq.html" class="otherLinkColour">FAQs</a></li>
+        {%- endif -%}
+    </ul>
+  </li>
