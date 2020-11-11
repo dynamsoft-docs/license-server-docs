@@ -84,3 +84,11 @@ When you add a Handshake Code, you can configure it in a few ways
 You can edit any existing Handshake Code, the things you can change are exactly the same as when you [add a Handshake Code](#add-a-handshake-code).
 
 > For Dynamsoft-Hosting License Tracking, the default names for the auto-generated Handshake Codes can not be changed.
+
+## Use a Handshake Code
+
+A Handshake Code can authorize a client device either via the Dynamsoft-hosting `LTS` or a Self-hosting `LTS` .
+
+Dynamsoft-hosting `LTS` servers are built into Dynamsoft SDKs and don't need to be set. The server domains are "https://mlts.dynamsoft.com" (main) and "https://slts.dynamsoft.com" (standby).
+
+For Self-hosting `LTS` , you need to set the `LTS` servers manually. See [How to Configure LTS]({{site.common}}mechanism.html#configure-lts) for more information.

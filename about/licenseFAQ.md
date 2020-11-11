@@ -13,6 +13,8 @@ needAutoGenerateSidebar: true
 
 Yes, once a client device gets authorized, it can be used offline for a maximum of 7 days after which it must connect to `LTS` again for further authorization. Otherwise, it will stop working.
 
+During the offline period, all usage data is kept on the client side and will be sent to the `LTS` all at once the next time the device gets online.
+
 ## Can I use Dynamsoft SDKs in an environment with no internet connection?
 
 Yes. There are two scenarios in this case

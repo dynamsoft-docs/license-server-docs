@@ -235,7 +235,7 @@ echo "0 0, 12 * * * root python -c 'import random; import time; time.sleep(rando
 
 With the above steps, you should be able to visit the License Tracking Service with the URL https://mtpl.dynamsoft.com/.
 
-Now we'll configure a main service and a backup service as well
+Now we'll configure a main service and a standby service as well
 
 ### The main service
 
@@ -243,18 +243,16 @@ Now we'll configure a main service and a backup service as well
 vim /data/lts-linux/lts.json
 {
 "serverMode": "main_standby", 
-"servers": ["self", "https://mtplres.dynamsoft.com"], 
-"bDynamHost": false
+"servers": ["self", "https://mainlts.yoursite.com"], 
 }
 ```
 
-### The backup service
+### The standby service
 
 ``` shell
 vim /data/lts-linux/lts.json
 {
 "serverMode": "main_standby", 
-"servers": ["https://mtpl.dynamsoft.com", "self"], 
-"bDynamHost": false
+"servers": ["https://standbylts.yoursite.com", "self"], 
 }
 ```
