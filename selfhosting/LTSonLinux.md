@@ -242,8 +242,8 @@ Now we'll configure a main service and a standby service as well
 ``` shell
 vim /data/lts-linux/lts.json
 {
-"serverMode": "main_standby", 
-"servers": ["self", "https://mainlts.yoursite.com"], 
+  "serverMode": "main_standby", 
+  "servers": ["self", "https://mainlts.yoursite.com"], 
 }
 ```
 
@@ -252,7 +252,7 @@ vim /data/lts-linux/lts.json
 ``` shell
 vim /data/lts-linux/lts.json
 {
-"serverMode": "main_standby", 
-"servers": ["https://standbylts.yoursite.com", "self"], 
+  "serverMode": "main_standby", 
+  "servers": ["https://standbylts.yoursite.com", "self"], 
 }
 ```
