@@ -13,13 +13,16 @@ All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to 
 
 ## Configure LTS
 
-LTS is set like this
+> Read more on [What is LTS]({{site.about}}terms.html#license-tracking-service)
+
+If you are using Dynamsoft-hosting LTS, then you can skip this step as the SDK has been configured to connect to the LTS hosted by Dynamsoft by default. Please read [Configure the Handshake code](#configure-the-handshake-code).
+
+If you have hosted LTS on your own server, you can configure the connection like this
 
 * JavaScript
 
 ``` javascript
 Dynamsoft.BarcodeReader.mainServerURL = "https://your.site.com";
-Dynamsoft.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
 ```
 
 * C++
@@ -28,6 +31,58 @@ Dynamsoft.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
 DM_LTSConnectionParameters ltspar;    
 reader.InitLTSConnectionParameters(&ltspar);
 ltspar.mainServerURL = "https://lts.yoursite.com";
+```
+
+* CSharp
+
+``` csharp
+DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
+ltspar.MainServerURL = "https://lts.yoursite.com";
+```
+
+* Java
+
+``` java
+BarcodeReader br = new BarcodeReader("")
+DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+ltspar.mainServerURL = "https://lts.yoursite.com";
+```
+
+On Android
+
+``` java
+DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+    @Override
+    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+        Assert.assertEquals(false, success);
+        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
+    }
+};
+DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+parameters.mainServerURL = "https://lts.yoursite.com";
+```
+
+On iOS
+
+``` c
+iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
+lts.mainServerURL = @"https://lts.yoursite.com";
+```
+
+## Configure the Handshake code
+
+* JavaScript
+
+``` javascript
+Dynamsoft.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
+let reader = await Dynamsoft.BarcodeReader.createInstance();
+```
+
+* C++
+
+``` cpp
+DM_LTSConnectionParameters ltspar;    
+reader.InitLTSConnectionParameters(&ltspar);
 ltspar.handshakeCode = "Your-HandshakeCode";
 iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
 ```
@@ -36,7 +91,6 @@ iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
 
 ``` csharp
 DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
-ltspar.MainServerURL = "https://lts.yoursite.com";
 ltspar.HandshakeCode = "Your-HandshakeCode";
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 ```
@@ -46,7 +100,6 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 ``` java
 BarcodeReader br = new BarcodeReader("")
 DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
-ltspar.mainServerURL = "https://lts.yoursite.com";
 ltspar.handshakeCode = "Your-HandshakeCode";
 br.initLicenseFromLTS(ltspar);
 ```
@@ -62,7 +115,6 @@ DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationLis
     }
 };
 DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
-parameters.mainServerURL = "https://lts.yoursite.com";
 parameters.handshakeCode = "Your-HandshakeCode";
 dbr.initLicenseFromLTS(parameters,ltsListener);
 ```
@@ -72,19 +124,17 @@ On iOS
 ``` c
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.handshakeCode = @"Your-HandshakeCode";
-lts.mainServerURL = @"https://lts.yoursite.com";
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
 
 * (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
-
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
     dispatch_async(dispatch_get_main_queue(), ^{
-    [self->m_verificationReceiver performSelector:self->m_verificationCallback withObject:boolNumber withObject:error];
-    NSLog(@"ifsuccess : %@",boolNumber);
-    NSLog(@"error code: %ld:",(long)error.code);
-    NSLog(@"errormsg : %@",error.userInfo);
-});
+        [self->m_verificationReceiver performSelector:self->m_verificationCallback withObject:boolNumber withObject:error];
+        NSLog(@"ifsuccess : %@",boolNumber);
+        NSLog(@"error code: %ld:",(long)error.code);
+        NSLog(@"errormsg : %@",error.userInfo);
+    });
 }
 ```
 
