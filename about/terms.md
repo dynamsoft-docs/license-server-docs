@@ -79,11 +79,91 @@ A Validation Field is an unalterable characteristic of your application, at pres
 
 The Session Password is another way to protect your license. Unlike the Validation Field which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, for example
 
+* Dynamsoft Barcode Reader
+
+* JavaScript
+
+``` javascript
+Dynamsoft.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
+Dynamsoft.BarcodeReader.sessionPassword = "The-Password-You-Set";
+let reader = await Dynamsoft.BarcodeReader.createInstance();
+```
+
+* C++
+
+``` cpp
+DM_LTSConnectionParameters ltspar;    
+reader.InitLTSConnectionParameters(&ltspar);
+ltspar.handshakeCode = "Your-HandshakeCode";
+ltspar.sessionPassword = "The-Password-You-Set";
+iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
+```
+
+* CSharp
+
+``` csharp
+DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
+ltspar.HandshakeCode = "Your-HandshakeCode";
+ltspar.SessionPassword = "The-Password-You-Set";
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
+```
+
+* Java
+
+``` java
+BarcodeReader br = new BarcodeReader("")
+DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+ltspar.handshakeCode = "Your-HandshakeCode";
+ltspar.sessionPassword = "The-Password-You-Set";
+br.initLicenseFromLTS(ltspar);
+```
+
+On Android
+
+``` java
+DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+    @Override
+    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+        Assert.assertEquals(false, success);
+        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
+    }
+};
+DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+parameters.handshakeCode = "Your-HandshakeCode";
+parameters.sessionPassword = "The-Password-You-Set";
+dbr.initLicenseFromLTS(parameters,ltsListener);
+```
+
+On iOS
+
+``` c
+iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
+lts.handshakeCode = @"Your-HandshakeCode";
+lts.sessionPassword = @"The-Password-You-Set";
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+
+* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+
+{
+    NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->m_verificationReceiver performSelector:self->m_verificationCallback withObject:boolNumber withObject:error];
+        NSLog(@"ifsuccess : %@",boolNumber);
+        NSLog(@"error code: %ld:",(long)error.code);
+        NSLog(@"errormsg : %@",error.userInfo);
+    });
+}
+```
+
+<!--
+
 * Dynamic Web TWAIN
 
 ``` javascript
 Dynamsoft.WebTwainEnv.SessionPassword = "";
 ```
+
+-->
 
 ## License File
 
