@@ -20,7 +20,7 @@ needAutoGenerateSidebar: true
 
 ## Installation
 
-Prepare a domain name for the License Tracking Service. In our case, we use "mtpl.dynamsoft.com" for the main service and "mtplres.dynamsoft.com" for the backup service. Make sure DNS is configured for these domain names.
+Prepare a domain name for the License Tracking Service. For example, use "https://mainlts.yoursite.com" for the main service and "https://standbylts.yoursite.com" for the backup service. Make sure DNS is configured for these domain names.
 
 ### Initialize
 
@@ -233,7 +233,7 @@ echo "0 0, 12 * * * root python -c 'import random; import time; time.sleep(rando
 
 ## Config License Trakcing Service
 
-With the above steps, you should be able to visit the License Tracking Service with the URL https://mtpl.dynamsoft.com/.
+With the above steps, you should be able to visit the License Tracking Service with the URL https://mainlts.yoursite.com/.
 
 Now we'll configure a main service and a standby service as well
 

@@ -24,7 +24,7 @@ needAutoGenerateSidebar: true
 
 ### Test the service
 
-Once the service is running, you can test it via the URL http://localhost:48080/Overview.html
+Once the service is running, you can test it via the URL [http://localhost:48080/page/index.html](http://localhost:48080/page/index.html).
 
 > If you changed the port during installation, you should use that port instead.
 
@@ -83,7 +83,7 @@ Download IIS URL Rewrite [here](https://www.iis.net/downloads/microsoft/url-rewr
 
 ![LTS-on-Windows-019]({{site.assets}}imgs/ltsonwin-019.png)
 
-We'll configure this rul for the service
+We'll configure this rule for the service
 
 ``` text
 Name：LTS-rewrite-rule

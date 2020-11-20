@@ -17,7 +17,7 @@ For the Dynamsoft Barcode Reader SDK, Dynamsoft offers the following trackable l
 
 This option is simplest and recommended if you can predict the number of barcode scans in a certain period of time in your application.
 
-A barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame.
+For the JavaScript edition and the mobile edition, a barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame.
 
 Some examples for your reference:
 
@@ -28,11 +28,9 @@ Some examples for your reference:
 | Continuous scanning (video mode) of one barcode * | 1 |
 | Two barcodes with the same encoded text but different symbologies | 2 |
 
-> * Scan Duplicates in Video Stream Mode:
->  
-> Developers can specify a time frame ( `duplicateForgetTime` , default to 3 seconds) to filter out duplicates.
->
-> A scan duplicate is when a barcode result reads the same value as a previously scanned barcode within `duplicateForgetTime` , say, 3 seconds. Once a scan is duplicated, the [time stamp] refreshes to the time when the latest duplicate was read
+> **How to decide whether a barcode is a duplicate**
+> Each scanned barcode is buffered for 3 seconds during which time newly found barcodes will be compared with it. If a new barcode is exactly the same, that new barcode is not counted and is buffered for another 3 seconds while the old one is no longer buffered. If no match is found in that 3 seconds, the barcode is removed from the buffer. 
+> For the mobile edition, 3 seconds is hardcoded. For the JavaScript edition, developers can specify the time with the API `duplicateForgetTime` which is 3 seconds by default.
 
 #### Questions
 
@@ -54,33 +52,82 @@ Because of the way a UUID is generated and stored, a "device" refers to differen
 * Mobile Edition, Embeded Edition: A UUID represents a device with the same CPU id, OS id and MAC address.
 * Server Edition: A UUID represents a device with one or multiple fixed hardware (optional hardware includes CPU, Motherboard, MAC, Machine ID, etc.)
 
+Dynamsoft supports two ways to generate a UUID, please see [UUID]({{site.about}}terms.html#client-uuid)
+
 > NOTE:
 >  
 > * Multiple browsers on the same device are counted multiple devices.
 > * The same browsers accessing multiple websites with different domains is counted separated per domain.
 > * A UUID is cached in all cases, when the cached data is purged. The device will be regarded as a new one. In browsers, the UUID is cached in the indexedDB store for that specific website. In other cases, the UUID is cached in a hidden file.
 
+Once a device gets authorized, it's considered active for 365 days, read more [here](#how-long-is-a-device-considered-active).
+
 ### Concurrent Device
 
 This option is meant for the situation where you have a large number of client devices but the barcode reading is done sporadically and you can not predict how many barcode scans will be performed.
 
-One such device is defined the same way as in the [Per Device](#per-device) option. Essentially, a concurrent device is a device that is configured to be active for only 3 minutes (by default, it's 366 days). Also, LTS checks the UUIDs for concurrent devices and remove expired ones much faster (done every minute as opposed to the default 24 hours).
+One such device is defined the same way as in the [Per Device](#per-device) option. However, a concurrent device is a device that is configured to be active for only 3~7 minutes (for other editions, it's 365 days, read more [here](#how-long-is-a-device-considered-active)).
+
+### Active Device
+
+This option allows adjustment of the duration for determining whether the device is active. As shown above, with the [Per Device](#per-device) option, devices are considered active for up to 365 days while with [Concurrent Device](#per-device), it's considered active for 3~7 minutes. With "Active Device", the duration is set to 7 days by default and can be changed to a different time no shorter than 7 days.
+
+The duration of the active status determines how many devices can actually use the software. Theoretically, the shorter the duration, the more devices can be used.
+
+This option is not public, if you are interested, please contact [Dynamsoft Sales](mailto:sales@dynamsoft.com).
+
+### Per Domain
+
+This option is suitable for large organizations that have a large number of users using the SDK and cannot estimate the number of barcode scans. The only limitation for this kind of license is that all usage must be within the specified domain (e.g. `*.dynamsoft.com` ).
+
+This option is not public, if you are interested, please contact [Dynamsoft Sales](mailto:sales@dynamsoft.com).
 
 ## Questions
 
 ### How long is a device considered active?
 
-By default, a device is considered active as long as its UUID stays in the usage database on the LTS. Once its UUID is removed, it is no longer active and considered "cleared".
+By default, a device is considered active as long as its UUID stays in the device list on the `LTS` . Once its UUID is removed, it is no longer active and considered "cleared".
 
-All usage reports are submitted to LTS which examines the data and extracts the UUID, if such a UUID already exists in the database, its removal time is set to 366 days from "now". This means a device is active for at most 366 days.
+#### How does LTS maintain the UUID list?
 
-LTS checks all UUIDs and removes those whose removal time has come. This is done every 24 hours.
+* Current Device
+
+The expiry time of the device is calculated like this
+
+``` text
+currentTime + (3 ~ 6 minutes)
+```
+
+`currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
+
+The reason why the expiry time ranges from 3 to 6 minutes is to align it to the end of an absolute 3-minute window. For example
+
+If `currentTime` is 00:00:00, expiry time is 00:06:00; 
+if `currentTime` is 00:01:25, expiry time is 00:06:00; 
+if `currentTime` is 00:02:59, expiry time is 00:06:00; 
+if `currentTime` is 00:03:00, expiry time is 00:09:00.
+
+`LTS` checks the list on every 1 minute and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 7 minutes (example: authorized at 00:00:00, expired at 00:06:00, removed at 00:07:00) and the shortest time is a bit more than 3 minutes (example: authorized at 00:02:59, expired at 00:06:00 and removed at 00:06:01).
+
+* Other license options except Active Device
+
+The expiry date of the device is calculated like this
+
+``` text
+max ( min ( currentTime + 365 days, expiry date of the license ), currentTime + 7 days )
+```
+
+`currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
+
+`LTS` reviews the list every 24 hours and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 372 days (example: authorized the same day the license is activated, re-authorized on the 365th day and get another 7 days, removed on the 372th day) and the shortest time is 7 days (example: authorized on the 365th day and removed on the 372th day).
+
+* Active Device
+
+The difference with the above one is that instead of 365 days, the duration can be a adjustable 7 or more days.
 
 ### Can I clear devices no longer using my application?
 
-Yes, it is possible to clear devices which are still considered active but no longer using your application. However, this can only be done by contacting Dynamsoft Support Team. 
-
-As mentioned in the answer to the previous question, a device is considered active for 366 days from its most recent usage of a Dynamsoft SDK. If you believe your client devices may alter in a shorter period, you can also request a special license that clears devices faster (say, 90 days).
+Yes, it is possible to clear devices which are still considered active but no longer using your application. However, this may come with a cost and can only be done by contacting [Dynamsoft Support Team](mailto:support@dynamsoft.com).
 
 ### What happens if my license quota is used up?
 
@@ -89,3 +136,5 @@ As mentioned in the answer to the previous question, a device is considered acti
 | Per Barcode Scan | All clients fail with a license error |
 | Per Device | No new device can get authorized |
 | Concurrent Device | New devices will fail to get authorized until old devices become inactive |
+| Active Device | Same as Per Device |
+| Per Domain | Not applicable |

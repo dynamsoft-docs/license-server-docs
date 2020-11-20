@@ -13,7 +13,7 @@ Dynamsoft recommends that you change the default password the first time you log
 
 A few things to note
 
-* The default password is `12345678`
+* The default password is empty
 * The user name is `admin` and it can not be changed
 * Currently, there isn't a way to retrieve the password should it be lost. Therefore, please keep the password secure
 

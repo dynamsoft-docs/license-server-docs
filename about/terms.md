@@ -27,7 +27,7 @@ The following table shows the differences between License 1.0 and 2.0
 
 An Alias is basically a name for the license. You can set a meaningful Alias to a certain license so that you can easily identify the purpose of the license.
 
-A default Alias is created automatically that follows the patterm "DM_{License Id}_Date{Activation Date}", a more meaningful Alias could be something like "BarcodeReader_License_For_Dynamsoft_ABC_Project".
+A default Alias is created automatically that follows the pattern "DM_{License Id}_Date{Activation Date}", a more meaningful Alias could be something like "BarcodeReader_License_For_Dynamsoft_ABC_Project".
 
 A few things to know about the Alias
 
@@ -209,7 +209,7 @@ If the hardware changes and any of the bound labels is different, the license bi
 
 ## Client UUID
 
-Each client machine is also identified by its UUID, this UUID is generated the first time the client machine gets authorized to use a license. All usage reports generated on this client will include this UUID too.
+Each client machine (a device) is also identified by its UUID, this UUID is generated the first time the client machine gets authorized to use a license. All usage reports generated on this client will include this UUID too.
 
 The following table shows the differences between LTS UUID and Client UUID
 
@@ -219,10 +219,36 @@ The following table shows the differences between LTS UUID and Client UUID
 | Bound in usage reports | No | Yes |
 | Hardware binding | Required | Optional |
 
+For each device, a UUID is generated which is used to uniquely identify the device. In other words, we take the number of UUIDs as the number of devices.
+
+### Generate a UUID
+
+* JavaScript Edition: A random number is generated and mapped into a UUID-compatible string. This UUID is cached in the browser's indexedDB. A UUID represents a specific browser on a certain domain.
+
+> NOTE:
+>  
+> * Multiple browsers on the same device are counted multiple devices.
+> * The same browsers accessing multiple websites with different domains is counted separately per domain.
+
+* Mobile Edition, Embeded Edition: A UUID represents a device with the same CPU id, OS id and MAC address.
+
+* Server Edition: A UUID represents a device with one or multiple fixed hardware (optional hardware includes CPU, Motherboard, MAC, Machine ID, etc.)
+
+### Soft Binding
+
+For editions other than the JavaScript edition, by default the UUID is generated via "Soft Binding" which means the gathered hardware information is combined with a random number to generate the UUID. This random number is only cached on the devie and not sent anywhere. This means 
+
+* With the UUID alone, it is impossible to know the actual hardware information thus ensures privacy
+* If the cached random number is accidently lost, the UUID will fail to identify this device and it'll be regarded as a new device
+
+If you don't mind sharing the hardware information with `LTS` , you can also generate UUID via "Hard Binding".
+
+### Hard Binding
+
+"Hard Binding" means a UUID is directly generated with the collected hardware information (only for editions other than the JavaScript edition). The good news is that as long as the core hardware on the device remains unchanged, it will always be recognized by `LTS` , the bad news is that `LTS` can decrypt the UUID to obtain the actual hardware informaiton.
+
 ### Questions
 
 #### Q: Does the UUID give away information about my device?
 
-A: No.
-
-While the UUID is based on the hardware information collected from the current device, it is also hashed via the irreversible SHA algorithm before sending to `LTS` for registration. As the generated output ciphertext cannot be converted back to the input text, the hardware info of the device never leaves the device itself and is very well protected.
+A: By default, the answer is no because [Soft Binding](soft-binding) is used. But if you choose to use [Hard Binding](hand-binding), the hardware informaiton will be sent to `LTS` .

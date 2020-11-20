@@ -12,7 +12,7 @@ The License Tracking Server checks the usage data every 10 minutes and if one of
 
 ## Dynamsoft Barcode Reader
 
-### Per Barcode Scan, Per Page, Per Device  
+### Per Barcode Scan, Per Device  
 
 (Quota used) / (Total quota) exceeds 
 
@@ -50,7 +50,7 @@ In the most recent 60 minutes, (the count of total authentication request failur
 
 ## Questions
 
-### Can I add multiple recipants for the email notification?
+### Can I add multiple recipients for the email notification?
 
 Yes, simply use a semicolon to separate different emails.
 

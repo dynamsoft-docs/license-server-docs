@@ -34,11 +34,11 @@ Once LTS is installed and configured, you can open its managment portal in the b
 https://{domain or IP of the server}:{port}/lts/page/#/index.html
 ```
 
-The default credentials are 
+The default credentials are (the password is empty by default)
 
 ``` text
 UserName: admin
-Password: 12345678
+Password: 
 ```
 
 > If you are logging in for the first time, please don't forget to [change the password]({{site.selfhosting}}security.html#change-the-password)

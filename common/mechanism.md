@@ -22,7 +22,7 @@ If you have hosted LTS on your own server, you can configure the connection like
 * JavaScript
 
 ``` javascript
-Dynamsoft.BarcodeReader.mainServerURL = "https://your.site.com";
+Dynamsoft.BarcodeReader.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
 ```
 
 * C++
@@ -127,6 +127,7 @@ lts.handshakeCode = @"Your-HandshakeCode";
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
 
 * (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
     dispatch_async(dispatch_get_main_queue(), ^{
