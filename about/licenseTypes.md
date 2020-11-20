@@ -42,23 +42,7 @@ For example, you can specify barcode format, limit the scanning to predefined re
 
 ### Per Device
 
-This option is recommended if you have a known number of devices and unknown number of barcode scans or that you need to scan a large number of barcodes on limited devices.
-
-For each device, a random number is generated and mapped into a UUID-compatible string (also referred to as a UUID here), which is used to uniquely identify the device. In other words, we take the number of UUIDs as the number of devices.
-
-Because of the way a UUID is generated and stored, a "device" refers to different things in different editions:
-
-* JavaScript Edition: A UUID represents a specific browser on a certain domain.
-* Mobile Edition, Embeded Edition: A UUID represents a device with the same CPU id, OS id and MAC address.
-* Server Edition: A UUID represents a device with one or multiple fixed hardware (optional hardware includes CPU, Motherboard, MAC, Machine ID, etc.)
-
-Dynamsoft supports two ways to generate a UUID, please see [UUID]({{site.about}}terms.html#client-uuid)
-
-> NOTE:
->  
-> * Multiple browsers on the same device are counted multiple devices.
-> * The same browsers accessing multiple websites with different domains is counted separated per domain.
-> * A UUID is cached in all cases, when the cached data is purged. The device will be regarded as a new one. In browsers, the UUID is cached in the indexedDB store for that specific website. In other cases, the UUID is cached in a hidden file.
+This option is recommended if you have a known number of devices and unknown number of barcode scans or that you need to scan a large number of barcodes on limited devices. Dynamsoft supports two ways to generate a UUID, please see [Client UUID]({{site.about}}terms.html#client-uuid)
 
 Once a device gets authorized, it's considered active for 365 days, read more [here](#how-long-is-a-device-considered-active).
 
