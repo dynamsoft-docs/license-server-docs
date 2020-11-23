@@ -139,18 +139,32 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelega
 }
 ```
 
-## Authentication
+## Authorization
 
-During initialization, Dynamsoft SDKs connect to LTS to authenticate. The process is simplified as follows
+During initialization, Dynamsoft SDKs connect to `LTS` to get authorized. The process is simplified as follows
 
-* DSSDK sends an authentication request to LTS
-* LTS extracts the handshake code from the request and checks its status in the usage database
-* If the handshake code exists and its quota is not used up, LTS returns an authentication token
+* The SDK sends a request to `LTS`
+* `LTS` extracts the handshake code from the request and checks its status in the usage database
+* If the handshake code exists and its quota is not used up,  `LTS` returns a token
 * Otherwise, a failure message is returned
 
-### About the authentication request
+### About the request
 
-The request includes the Client UUID and the handshake code. The handshake code is fetched from your code, the UUID is fetched from cache. If no Client UUID exists, a new one is created.
+The request includes the Client UUID and the handshake code. The handshake code is fetched from your code, the UUID is fetched from cache or generated on the fly if it is not found in the cache.
+
+### Handle authorization error
+
+For better user experience, you need to handle the authorization error should it happens. Take the JavaScript edition for example
+
+``` javascript
+try {
+    reader = await Dynamsoft.BarcodeReader.createInstance();
+} catch (ex) {
+    // Check the error message and if it's a license error, like
+    // "License has exceeded its limit."
+    // Try to notify the user to try again or to contact the site administrator
+}
+```
 
 ## License Tracking
 
