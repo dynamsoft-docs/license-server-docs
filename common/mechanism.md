@@ -13,7 +13,7 @@ All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to 
 
 ## Configure LTS
 
-> Read more on [What is LTS]({{site.about}}terms.html#license-tracking-service)
+> Read more on [What is LTS]({{site.about}}terms.html#license-tracking-server)
 
 If you are using Dynamsoft-hosting LTS, then you can skip this step as the SDK has been configured to connect to the LTS hosted by Dynamsoft by default. Please read [Configure the Handshake code](#configure-the-handshake-code).
 

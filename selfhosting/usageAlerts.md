@@ -2,7 +2,7 @@
 layout: default-layout
 title: About usage alerts
 keywords: usage alert, notification
-description: This page is about the email notifcation feature (usage alerts) of Dynamsoft License Tracking Service
+description: This page is about the email notifcation feature (usage alerts) of Dynamsoft License Tracking Server
 breadcrumbText: Usage Alerts
 ---
 

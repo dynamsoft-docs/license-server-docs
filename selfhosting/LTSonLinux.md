@@ -1,15 +1,15 @@
 ---
 layout: default-layout
-title: Install Dynamsoft License Tracking Service on Linux
-keywords: Install, License Tracking Service, Linux
-description: Steps and information about how to install Dynamsoft License Tracking Service on Linux
+title: Install Dynamsoft License Tracking Server on Linux
+keywords: Install, License Tracking Server, Linux
+description: Steps and information about how to install Dynamsoft License Tracking Server on Linux
 breadcrumbText: Install LTS on Linux
 needAutoGenerateSidebar: true
 ---
 
-# Install Dynamsoft License Tracking Service on Linux
+# Install Dynamsoft License Tracking Server on Linux
 
-## Environment
+## Example Environment
 
 * CPU: 2C 
 * Memory：2G
@@ -20,7 +20,7 @@ needAutoGenerateSidebar: true
 
 ## Installation
 
-Prepare a domain name for the License Tracking Service. For example, use "https://mainlts.yoursite.com" for the main service and "https://standbylts.yoursite.com" for the backup service. Make sure DNS is configured for these domain names.
+Prepare a domain name for the License Tracking Server. For example, use "https://mainlts.yoursite.com" for the main server and "https://standbylts.yoursite.com" for the backup server. Make sure DNS is configured for these domain names.
 
 ### Initialize
 
@@ -71,14 +71,14 @@ tar zxvf dynamsoft_lts-linux_x86_64-v2.0.1.tar.gz
 chmod -R 777 /data/lts-linux
 ```
 
-### Start License Tracking Service
+### Start License Tracking Server
 
 ``` shell
 cd /data/lts-linux
 sh startup.sh
 ```
 
-### Check the Status to make sure the service is up
+### Check the Status to make sure the server is up
 
 ``` shell
 ps -ef |grep dynamsoft
@@ -111,13 +111,13 @@ ps -ef |grep dynamsoft
 ### Start the web server
 
 ``` shell
- [root@localhost ~]#systemctl start nginx.service
+ [root@localhost ~]#systemctl start nginx.server
  ```
 
 ### Configure the web server to start with the OS
 
 ``` shell
-systemctl enable nginx.service 
+systemctl enable nginx.server 
 ```
 
 ### Check the version of the web server
@@ -168,7 +168,7 @@ In your case, you should use a public IP instead of "192.168.10.11" that later y
 
 ### Add exception in the firewall
 
-Add an exception for inbound requests so that your devices can connect to the License Tracking Service correctly.
+Add an exception for inbound requests so that your devices can connect to the License Tracking Server correctly.
 -->
 
 ### Add reverse proxy
@@ -231,13 +231,13 @@ certbot --nginx
 echo "0 0, 12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew" | sudo tee -a /etc/crontab > /dev/null 
 ```
 
-## Config License Trakcing Service
+## Config License Trakcing Server
 
-With the above steps, you should be able to visit the License Tracking Service with the URL https://mainlts.yoursite.com/.
+With the above steps, you should be able to visit the License Tracking Server with the URL https://mainlts.yoursite.com/.
 
-Now we'll configure a main service and a standby service as well
+Now we'll configure a main server and a standby server as well
 
-### The main service
+### The main server
 
 ``` shell
 vim /data/lts-linux/lts.json
@@ -247,7 +247,7 @@ vim /data/lts-linux/lts.json
 }
 ```
 
-### The standby service
+### The standby server
 
 ``` shell
 vim /data/lts-linux/lts.json

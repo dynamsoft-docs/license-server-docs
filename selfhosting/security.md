@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Manage Security - License Tracking Service
-keywords: License Tracking Service, Security
-description: How to manage security of License Tracking Service
+title: Manage Security - License Tracking Server
+keywords: License Tracking Server, Security
+description: How to manage security of License Tracking Server
 breadcrumbText: Manage LTS Security
 needAutoGenerateSidebar: true
 ---

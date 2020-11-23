@@ -45,7 +45,7 @@ The permits in License Items are not consumed directly by applications because
 * The same permit can be used by multiple applications
 * The same application can use multiple permits from different License Items
 
-Therefore, Dynamsoft invented the concept of "Handshake Code". An application making use of Dynamsoft SDKs gets authorized by Dynamsoft [License Tracking Service](#license-tracking-service) through a specific Handshake Code. Within License Tracking Service
+Therefore, Dynamsoft invented the concept of "Handshake Code". An application making use of Dynamsoft SDKs gets authorized by Dynamsoft [License Tracking Server](#license-tracking-server) through a specific Handshake Code. Within License Tracking Server
 
 * The same Handshake Code can be configured to contain permits from different License Items
 * The permit from the same License Item can be shared by multiple Handshake Codes
@@ -183,13 +183,13 @@ LicenseItems:
 
 When you place an order, a License File will be automatically generated which will contain all License Items in that order. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it'll say "Activated".
 
-If you are using Dynamsoft-Hosting License Tracking Service, the License Files are only information about your orders for your reference. However, if you are hosting the License Tracking Service yourself, you will need this License File in order to add the License Items to that service for license tracking.
+If you are using Dynamsoft-Hosting License Tracking Server, the License Files are only information about your orders for your reference. However, if you are hosting the License Tracking Server yourself, you will need this License File in order to add the License Items to that `LTS` for license tracking.
 
-## License Tracking Service
+## License Tracking Server
 
-The License Tracking Service is a proprietary software developed by Dynamsoft to track license usages.
+The License Tracking Server is a proprietary software developed by Dynamsoft to track license usages.
 
-Dynamsoft hosts a copy of the Service to provide License Tracking Service for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see 
+Dynamsoft hosts a copy of the Server to provide License Tracking Server for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see 
 
 * [Self-hosting License Tracking]({{site.selfhosting}}index.html)
 * [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html)

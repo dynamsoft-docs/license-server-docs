@@ -1,14 +1,14 @@
 ---
 layout: default-layout
-title: Manage License Tracking Service
-keywords: License Tracking Service, management
-description: This page is about how to manage License Tracking Service
+title: Manage License Tracking Server
+keywords: License Tracking Server, management
+description: This page is about how to manage License Tracking Server
 breadcrumbText: Mange LTS
 ---
 
 # Manage LTS
 
-> Read more on [What is a LTS]({{site.about}}terms.html#license-tracking-service)
+> Read more on [What is a LTS]({{site.about}}terms.html#license-tracking-server)
 
 ## How to set up LTS
 

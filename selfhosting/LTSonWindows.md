@@ -1,15 +1,15 @@
 ---
 layout: default-layout
-title: Install Dynamsoft License Tracking Service on Windows
-keywords: Install, License Tracking Service, Windows
-description: Steps and information about how to install Dynamsoft License Tracking Service on Windows
+title: Install Dynamsoft License Tracking Server on Windows
+keywords: Install, License Tracking Server, Windows
+description: Steps and information about how to install Dynamsoft License Tracking Server on Windows
 breadcrumbText: Install LTS on Windows
 needAutoGenerateSidebar: true
 ---
 
-# Install Dynamsoft License Tracking Service on Windows Server
+# Install Dynamsoft License Tracking Server on Windows Server
 
-## Environment
+## Example Environment
 
 * CPU: Intel Core 2 Duo or AMD Athlon 64 X2 5600+
 * Memory: 2G
@@ -22,20 +22,21 @@ needAutoGenerateSidebar: true
 
 ### Run the installer
 
-### Test the service
+### Test the server
 
-Once the service is running, you can test it via the URL [http://localhost:48080/page/index.html](http://localhost:48080/page/index.html).
+Once the server is running, you can test it via the URL [http://localhost:48080/page/index.html](http://localhost:48080/page/index.html).
 
 > If you changed the port during installation, you should use that port instead.
 
-If you see the following page showing up, then the service is installed correctly.
+If you see the following page showing up, then the server is installed correctly.
 
 ![LTS-on-Windows-001]({{site.assets}}imgs/ltsonwin-001.png)
 
 ## Install IIS
 
+> This step assumes
+
 Go to ServerManager / Dashboard / Add and follow the screenshots below to add IIS web server.
- 
 
 ![LTS-on-Windows-002]({{site.assets}}imgs/ltsonwin-002.png)
 
@@ -83,7 +84,7 @@ Download IIS URL Rewrite [here](https://www.iis.net/downloads/microsoft/url-rewr
 
 ![LTS-on-Windows-019]({{site.assets}}imgs/ltsonwin-019.png)
 
-We'll configure this rule for the service
+We'll configure this rule for the server
 
 ``` text
 Name：LTS-rewrite-rule
@@ -107,6 +108,42 @@ Rewrite URL：http://localhost:48080/{R:1}
 
 ## Test that the configuration works
 
-Open http://localhost/lts/Overview.html and if you see the following page then the configuration is complete.
+Open http://localhost/lts/page/index.html and if you see the following page then the configuration is complete.
 
 ![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-026.png)
+
+## Configure SSL
+
+Prepare a SSL certificate for your site (e.g. https://www.yourdomain.com).
+
+* Open Microsoft Management Console (run -> search -> mmc).
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-027.png)
+
+* Add Snap-in for the root certificate
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-028.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-029.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-030.png)
+
+* Import the certificate
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-031.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-032.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-033.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-034.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-035.png)
+
+* Add the SSL port to your site
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-036.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-037.png)
+
+![LTS-on-Windows-026]({{site.assets}}imgs/ltsonwin-038.png)

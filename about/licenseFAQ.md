@@ -2,7 +2,7 @@
 layout: default-layout
 title: Dynamsoft Licensing FAQ
 keywords: Barcode reader, licensing
-description: This page lists the frequently asked questions about Dynamsoft's License Tracking Service.
+description: This page lists the frequently asked questions about Dynamsoft's License Tracking Server.
 breadcrumbText: Licensing FAQ
 needAutoGenerateSidebar: true
 ---
@@ -15,23 +15,23 @@ The library is based on JavaScript and WebAssembly. At runtime, the browser runn
 
 Once the reading completes, the library returns the results in a callback to be further processed in customers’ own JavaScript code. The image data is purged as soon as the reading is done. The results stay in the memory for a little while before it’s purged. Neither is sent anywhere.
 
-For licensing purposes, by default the library keeps track of the symbology types and the number of scans (nothing about the actual barcode text) and will send the info to the License Tracking Service for license tracking purpose. Also, the library generates a random number and map that to an UUID which identifies the device for license tracking purpose. All the information is encrypted and stored in the browsers’ indexed DB and will be purged once it's submitted to the License Tracking Service.
+For licensing purposes, by default the library keeps track of the symbology types and the number of scans (nothing about the actual barcode text) and will send the info to the License Tracking Server for license tracking purpose. Also, the library generates a random number and map that to an UUID which identifies the device for license tracking purpose. All the information is encrypted and stored in the browsers’ indexed DB and will be purged once it's submitted to the License Tracking Server.
 
 A few things to note
 
-* The License Tracking Service can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
+* The License Tracking Server can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
 * Offline license that doesn't require any information to be sent anywhere is also supported. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 * For debugging purposes, the actual images that are read for barcodes can be exported and saved. However, this is controlled by customer's code.
 
-## How secure is the License Tracking Service?
+## How secure is the License Tracking Server?
 
-The License Tracking Service is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of the service matters. The following are the security features of the service.
+The License Tracking Server ( `LTS` ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of `LTS` matters. The following are the security features of `LTS` .
 
-* The service is responsible for authorizing the library as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on the server nor from the server to the requesting clients.
-* The service supports HTTPS and should be used after HTTPS has been configured.
-* The service supports domain binding. With domain binding, authorization to use the library is only granted to requests sent from the specified domains.
-* The authorization sent back from the service and the usage reports sent to the service are both encrypted.
-* The service also supports setting a session password to avoid abuse.
+* `LTS` is responsible for authorizing the library as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on `LTS` nor from `LTS` to the requesting clients.
+* `LTS` supports HTTPS and should be used after HTTPS has been configured.
+* `LTS` supports domain binding. With domain binding, authorization to use the library is only granted to requests sent from the specified domains.
+* The authorization sent back from `LTS` and the usage reports sent to `LTS` are both encrypted.
+* `LTS` also supports setting a session password to avoid abuse.
 
 ## Can a client device work offline?
 

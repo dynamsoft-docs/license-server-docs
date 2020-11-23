@@ -47,7 +47,7 @@ To configure the license is to manage the Handshake Code for the license. For mo
 
 ## Track the License
 
-For Self-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-service) hosted by yourself. You can
+For Self-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-server) hosted by yourself. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)

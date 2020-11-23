@@ -2,7 +2,7 @@
 layout: default-layout
 title: Dynamsoft-hosting license tracking
 keywords: dynamsoft-hosting, license tracking
-description: This page is about license tracking with Dynamsoft-Hosting License Tracking Service
+description: This page is about license tracking with Dynamsoft-Hosting License Tracking Server
 breadcrumbText: Dynamsoft-Hosting License Tracking
 needAutoGenerateSidebar: true
 ---
@@ -31,7 +31,7 @@ To configure the license is to manage the Handshake Codes for the license. For m
 
 ## Track the License
 
-For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-service) hosted by Dynamsoft. You can
+For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-server) hosted by Dynamsoft. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)
