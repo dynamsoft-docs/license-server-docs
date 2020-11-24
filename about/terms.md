@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## License 2.0
 
-License 2.0 is the second-generation license protocol designed and implemented by Dynamsoft in products including Dynamsoft Barcode Reader and Dynamic Web TWAIN, etc.
+License 2.0 is the second-generation licensing protocol designed and implemented by Dynamsoft in our products such as Dynamsoft Barcode Reader and Dynamic Web TWAIN, etc.
 
 The following table shows the differences between License 1.0 and 2.0
 
@@ -25,14 +25,15 @@ The following table shows the differences between License 1.0 and 2.0
 
 ## Alias
 
-An Alias is basically a name for the license. You can set a meaningful Alias to a certain license so that you can easily identify the purpose of the license.
+An Alias is another way to identify a license. You can set a meaningful Alias to a license so that you can easily identify the purpose of the license.
 
 A default Alias is created automatically that follows the pattern "DM_{License Id}_Date{Activation Date}", a more meaningful Alias could be something like "BarcodeReader_License_For_Dynamsoft_ABC_Project".
 
 A few things to know about the Alias
 
 * It can only be changed when the license is new. Once the license is activated, it can no longer be changed.
-* The Alias will show up in the [License File](#license-file) as a field. A License File has just one Alias.
+* The Alias will show up in the [License File](#license-file) as a field. 
+* A License File has just one Alias.
 
 ## License Item
 
@@ -45,12 +46,12 @@ The permits in License Items are not consumed directly by applications because
 * The same permit can be used by multiple applications
 * The same application can use multiple permits from different License Items
 
-Therefore, Dynamsoft invented the concept of "Handshake Code". An application making use of Dynamsoft SDKs gets authorized by Dynamsoft [License Tracking Server](#license-tracking-server) through a specific Handshake Code. Within License Tracking Server
+Therefore, Dynamsoft invented the concept of "Handshake Code". An application making use of Dynamsoft SDKs gets authorized by Dynamsoft [License Tracking Server](#license-tracking-server) through a specific Handshake Code within License Tracking Server
 
 * The same Handshake Code can be configured to contain permits from different License Items
 * The permit from the same License Item can be shared by multiple Handshake Codes
 
-By doing this, the license verification code in your application doesn't need to change even if different permits are needed at a later date. 
+By doing this, the license verification code in your application doesn't need to change, even if different permits are needed at a later date. 
 
 A few things to note
 
@@ -59,25 +60,25 @@ A few things to note
 
 ## Validation Field
 
-A Handshake Code is just a string that shows up in your code. It is important to secure it so that other people who knows your Handshake Code cannot use your license. The Validation Fields are designed for this purpose.
+A Handshake Code is a string that is set in your code. It is important to secure your Handshake Code so that other people who knows your Handshake Code cannot use your license. The Validation Fields are designed for this purpose.
 
-A Validation Field is an unalterable characteristic of your application, at present, the following three are supported
+A Validation Field is an unalterable characteristic of your application. At present, the following three Validation Fields are supported
 
 * Website Domain
 
-> Usage: Dynamsoft Barcode Reader JavaScript Edition, Dynamic Web TWAIN
+> Applicable Products: Dynamsoft Barcode Reader JavaScript Edition, Dynamic Web TWAIN
 
 * Application ID
 
-> Usage: Dynamsoft Barcode Reader Mobile Edition
+> Applicable Products: Dynamsoft Barcode Reader Mobile Edition
 
 * Process Name
 
-> Usage: Dynamsoft Barcode Reader for desktop and server deployments; Dynamsoft Barcode Reader Embedded Edition
+> Applicable Products: Dynamsoft Barcode Reader for desktop and server deployments; Dynamsoft Barcode Reader Embedded Edition
 
 ## Session Password
 
-The Session Password is another way to protect your license. Unlike the Validation Field which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, for example
+The Session Password is another way to protect your license. Unlike the Validation Field, which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, for example
 
 ### Dynamsoft Barcode Reader
 
@@ -181,7 +182,7 @@ LicenseItems:
 ...//one or multiple License Items
 ```
 
-When you place an order, a License File will be automatically generated which will contain all License Items in that order. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it'll say "Activated".
+When you place an order, a License File will be automatically generated which will contain all License Items in that order. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it will say "Activated".
 
 If you are using Dynamsoft-Hosting License Tracking Server, the License Files are only information about your orders for your reference. However, if you are hosting the License Tracking Server yourself, you will need this License File in order to add the License Items to that `LTS` for license tracking.
 
