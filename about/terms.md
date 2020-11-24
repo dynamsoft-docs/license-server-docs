@@ -79,7 +79,7 @@ A Validation Field is an unalterable characteristic of your application, at pres
 
 The Session Password is another way to protect your license. Unlike the Validation Field which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, for example
 
-* Dynamsoft Barcode Reader
+### Dynamsoft Barcode Reader
 
 * JavaScript
 
@@ -251,4 +251,84 @@ If you don't mind sharing the hardware information with `LTS` , you can also gen
 
 #### Q: Does the UUID give away information about my device?
 
-A: By default, the answer is no because [Soft Binding](soft-binding) is used. But if you choose to use [Hard Binding](hand-binding), the hardware informaiton will be sent to `LTS` .
+A: By default, the answer is no because [Soft Binding](#soft-binding) is used. But if you choose to use [Hard Binding](#hand-binding), the hardware informaiton will be sent to `LTS` .
+
+#### Q: How to switch from Soft Binding to Hard Binding and vice versa?
+
+A: There is an API for making the switch. Since [Soft Binding](#soft-binding) is used by default, the following showcases how to switch to [Hard Binding](#hand-binding).
+
+* C
+
+``` c
+char errorBuf[512]; 
+DMLTSConnectionParameters paramters; 
+DBR_InitLTSConnectionParameters(&paramters); 
+paramters.DM_UUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+paramters.handshakeCode = "handshakeCode"; // Please replace the handshakeCode with your own
+DBR_InitLicenseFromLTS(&paramters, errorBuf, 512); 
+```
+
+* C++
+
+``` cpp
+DM_LTSConnectionParameters ltspar;
+reader.InitLTSConnectionParameters(&ltspar);
+paramters.DM_UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+iRet = reader.InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+```
+
+* C#
+
+``` csharp
+DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters(); 
+ltspar.EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+ltspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
+```
+
+* Java
+
+``` java
+BarcodeReader br = new BarcodeReader("")
+DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters(); 
+ltspar. EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+ltspar.deploymentType = EnumDMDeploymentType. DM_DT_DESKTOP; // Please replace the deploymentType with your own
+br.initLicenseFromLTS(ltspar); 
+```
+
+* Objective-C
+
+``` c
+iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init]; 
+lts.handshakeCode = @"handshakeCode"; // Please replace the handshakeCode with your own
+lts.EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self]; 
+
+* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+
+{
+
+    NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
+    dispatch_async(dispatch_get_main_queue(), ^{
+    [self->m_verificationReceiver performSelector:self->m_verificationCallback withObject:boolNumber withObject:error];
+    });
+}
+```
+
+* Java on Android
+
+``` java
+DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+    @Override
+    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+        Assert.assertEquals(false, success);
+        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
+    }
+}; 
+DMLTSConnectionParameters parameters = new DMLTSConnectionParameters(); 
+parameters. EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+parameters.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+dbr.initLicenseFromLTS(parameters, ltsListener); 
+```
