@@ -236,16 +236,21 @@ For each device, a UUID is generated which is used to uniquely identify the devi
 
 ### Soft Binding
 
-For editions other than the JavaScript edition, by default the UUID is generated via "Soft Binding" which means the gathered hardware information is combined with a random number to generate the UUID. This random number is only cached on the devie and not sent anywhere. This means 
+For editions other than the JavaScript edition, by default the UUID is generated via "Soft Binding" which means the gathered device information is combined with a random number to generate the UUID. This random number is only cached on the devie and not sent anywhere. This means 
 
-* With the UUID alone, it is impossible to know the actual hardware information thus ensures privacy
-* If the cached random number is accidently lost, the UUID will fail to identify this device and it'll be regarded as a new device
+* With the UUID alone, it is impossible to know the actual device information thus ensures privacy
+* If the cached random number is accidentally lost, the UUID will fail to identify this device and it'll be regarded as a new device
 
-If you don't mind sharing the hardware information with `LTS` , you can also generate UUID via "Hard Binding".
+If you don't mind sharing the device information with `LTS` , you can also generate UUID via "Hard Binding".
 
 ### Hard Binding
 
-"Hard Binding" means a UUID is directly generated with the collected hardware information (only for editions other than the JavaScript edition). The good news is that as long as the core hardware on the device remains unchanged, it will always be recognized by `LTS` , the bad news is that `LTS` can decrypt the UUID to obtain the actual hardware informaiton.
+"Hard Binding" means a UUID is directly generated with the collected device information (only for Desktop/Server/Mobile/Embeded editions).
+
+* Desktop/Server/Embeded: the CPU ID and OS ID are collected
+* Mobile: the unique device string provided by the device itself is collected
+
+The good news is that as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by `LTS` , the bad news is that `LTS` can decrypt the UUID to obtain the actual device informaiton.
 
 ### Questions
 
@@ -260,29 +265,29 @@ A: There is an API for making the switch. Since [Soft Binding](#soft-binding) is
 * C
 
 ``` c
-char errorBuf[512]; 
-DMLTSConnectionParameters paramters; 
-DBR_InitLTSConnectionParameters(&paramters); 
-paramters.DM_UUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+char errorBuf[512];
+DMLTSConnectionParameters paramters;
+DBR_InitLTSConnectionParameters(&paramters);
+paramters.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
 paramters.handshakeCode = "handshakeCode"; // Please replace the handshakeCode with your own
-DBR_InitLicenseFromLTS(&paramters, errorBuf, 512); 
+DBR_InitLicenseFromLTS(&paramters, errorBuf, 512);
 ```
 
 * C++
 
 ``` cpp
-DM_LTSConnectionParameters ltspar;
+DM_LTSConnectionParameters ltspar;    
 reader.InitLTSConnectionParameters(&ltspar);
-paramters.DM_UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
 ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-iRet = reader.InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
 ```
 
 * C#
 
 ``` csharp
 DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters(); 
-ltspar.EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
 ltspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 ```
@@ -291,28 +296,28 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 
 ``` java
 BarcodeReader br = new BarcodeReader("")
-DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters(); 
-ltspar. EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+ltspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
 ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-ltspar.deploymentType = EnumDMDeploymentType. DM_DT_DESKTOP; // Please replace the deploymentType with your own
-br.initLicenseFromLTS(ltspar); 
+ltspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
+br.initLicenseFromLTS(ltspar);
 ```
 
 * Objective-C
 
 ``` c
-iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init]; 
+iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.handshakeCode = @"handshakeCode"; // Please replace the handshakeCode with your own
-lts.EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self]; 
+lts.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
 
 * (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
 {
-
-    NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
-    dispatch_async(dispatch_get_main_queue(), ^{
+NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
+dispatch_async(dispatch_get_main_queue(), ^{
     [self->m_verificationReceiver performSelector:self->m_verificationCallback withObject:boolNumber withObject:error];
+
     });
 }
 ```
@@ -326,9 +331,9 @@ DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationLis
         Assert.assertEquals(false, success);
         Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
     }
-}; 
-DMLTSConnectionParameters parameters = new DMLTSConnectionParameters(); 
-parameters. EnumDMUUIDGenerationMethod = DM_UUIDGM_HARDWARE; 
+};
+DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+parameters.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
 parameters.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-dbr.initLicenseFromLTS(parameters, ltsListener); 
+dbr.initLicenseFromLTS(parameters,ltsListener);
 ```

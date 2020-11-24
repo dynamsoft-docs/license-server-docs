@@ -107,7 +107,7 @@ max ( min ( currentTime + 365 days, expiry date of the license ), currentTime + 
 
 * Active Device
 
-The difference with the above one is that instead of 365 days, the duration can be a adjustable 7 or more days.
+The difference with the above one is that instead of 365 days, the duration can be an adjustable 7 or more days. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 
 ### Can I clear devices no longer using my application?
 
