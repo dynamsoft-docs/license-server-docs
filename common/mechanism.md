@@ -22,7 +22,7 @@ If you have hosted LTS on your own server, you can configure the connection like
 * JavaScript
 
 ``` javascript
-Dynamsoft.BarcodeReader.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
+Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
 ```
 
 * C++
@@ -74,8 +74,8 @@ lts.mainServerURL = @"https://lts.yoursite.com";
 * JavaScript
 
 ``` javascript
-Dynamsoft.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
-let reader = await Dynamsoft.BarcodeReader.createInstance();
+Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
+let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 ```
 
 * C++
@@ -158,7 +158,7 @@ For better user experience, you need to handle the authorization error should it
 
 ``` javascript
 try {
-    reader = await Dynamsoft.BarcodeReader.createInstance();
+    reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 } catch (ex) {
     // Check the error message and if it's a license error, like
     // "License has exceeded its limit."

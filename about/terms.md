@@ -84,9 +84,9 @@ The Session Password is another way to protect your license. Unlike the Validati
 * JavaScript
 
 ``` javascript
-Dynamsoft.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
-Dynamsoft.BarcodeReader.sessionPassword = "The-Password-You-Set";
-let reader = await Dynamsoft.BarcodeReader.createInstance();
+Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
+Dynamsoft.DBR.BarcodeReader.sessionPassword = "The-Password-You-Set";
+let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 ```
 
 * C++

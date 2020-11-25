@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## Example Environment
 
-* CPU: 2C 
+* CPU: 2 Core
 * Memory：2G
 * Disk Space
   + System: 8G

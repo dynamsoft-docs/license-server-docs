@@ -74,7 +74,11 @@ By default, a device is considered active as long as its UUID stays in the devic
 
 #### How does LTS maintain the UUID list?
 
-* Current Device
+* Per Barcode Scan
+
+Not applicable.
+
+* Concurrent Device
 
 The expiry time of the device is calculated like this
 
