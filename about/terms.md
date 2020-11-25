@@ -93,16 +93,16 @@ let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 
 ``` cpp
 DM_LTSConnectionParameters ltspar;    
-reader.InitLTSConnectionParameters(&ltspar);
+CBarcodeReader::InitLTSConnectionParameters(&ltspar);
 ltspar.handshakeCode = "Your-HandshakeCode";
 ltspar.sessionPassword = "The-Password-You-Set";
-iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
+iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar,szErrorMsg,256);
 ```
 
 * CSharp
 
 ``` csharp
-DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
+DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
 ltspar.HandshakeCode = "Your-HandshakeCode";
 ltspar.SessionPassword = "The-Password-You-Set";
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
@@ -121,29 +121,24 @@ br.initLicenseFromLTS(ltspar);
 On Android
 
 ``` java
-DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
-    @Override
-    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
-        Assert.assertEquals(false, success);
-        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
-    }
+DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() { 
+    @Override  
+    public void LTSLicenseVerificationCallback(boolean success, Exception error) { 
+        if (error != null){ Log.i("lts error: ", error.getMessage());  } 
+    } 
 };
-DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
-parameters.handshakeCode = "Your-HandshakeCode";
-parameters.sessionPassword = "The-Password-You-Set";
-dbr.initLicenseFromLTS(parameters,ltsListener);
 ```
 
 On iOS
 
 ``` c
+@interface <DMLTSLicenseVerificationDelegate>
+
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.handshakeCode = @"Your-HandshakeCode";
 lts.sessionPassword = @"The-Password-You-Set";
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
-
 * (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
-
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
     dispatch_async(dispatch_get_main_queue(), ^{
