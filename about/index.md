@@ -1,3 +1,4 @@
+
 ---
 layout: default-layout
 title: About Dynamsoft License Tracking Docs
@@ -13,15 +14,15 @@ These docs aim to help you learn and understand how Dynamsoft License Tracking w
 
 ## Purchase licenses
 
-If you are interested in acquiring a trackable license to use one of Dynamsoft's SDKs, please see page [Purchase a License]({{site.about}}purchase.html).
+If you are interested in acquiring a trackable license to use one of Dynamsoft's SDKs, please visit the [purchase page]({{site.about}}purchase.html).
 
 ## Types of trackable licenses
 
-Not all Dynamsoft Licenses are trackable, we say that a trackable license is one that is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-2.0). To learn more, please see page [Trackable Licenses]({{site.about}}licensetypes.html).
+Not all Dynamsoft Licenses are trackable, a trackable license is one that is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-2.0). To learn more, please see the [Trackable Licenses]({{site.about}}licensetypes.html) page.
 
 ## Terms
 
-To learn about the definitions of handshake codes, license items, and other terminologies, please see page [Terms]({{site.about}}terms.html).
+To learn about handshake codes, license items, and other terminologies, please see the [Terms]({{site.about}}terms.html) page.
 
 ## Activate trackable licenses
 

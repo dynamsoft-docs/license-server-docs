@@ -1,3 +1,4 @@
+
 ---
 layout: default-layout
 title: How to purchase a Dynamsoft License
@@ -17,7 +18,7 @@ The Licenses to use Dynamsoft Products can be purchased in a few ways
   + [Purchase Dynamic Web TWAIN](https://www.dynamsoft.com/store/dynamic-web-twain/)
   + [Purchase Dynamsoft Barcode Reader](https://www.dynamsoft.com/store/dynamsoft-barcode-reader/)
 
-> This option is the easiest, you get the license within minutes.
+> This option is the easiest and provides you with the license in minutes.
 
 * Purchase via a Purchase Order
 
@@ -33,7 +34,7 @@ Each purchased item is registered to a specific Dynamsoft account associated wit
 
 If you already have a Dynamsoft account and you used the same email to make the purchase, you can [log in](https://www.dynamsoft.com/api-common/Login/Login) and check the purchased items.
 
-If you don't have a Dynamsoft account or you used an unregistered email to make the purchase, a new Dynamsoft account will be automatically created with that email. In this case, you must first click [Forgot Password?](https://www.dynamsoft.com/api-common/Regist/ForgotPassword) and use the same email to set a password before logging in.
+If you don't have a Dynamsoft account or you used an unregistered email to make the purchase, a new Dynamsoft account will be automatically created with that email. In this case, you must first use the [Forgot Password?](https://www.dynamsoft.com/api-common/Regist/ForgotPassword) link and use the same email to set a password before logging in.
 
 > You can also [register](https://www.dynamsoft.com/api-common/Regist/Regist) before making a purchase.
 
@@ -51,12 +52,12 @@ By default, a license is good for a year once activated. Before a license expire
 
 * Quota
 
-A license comes with a fixed quota. If the quota is used up before the license expires, you can add extra quota.
+A license comes with a fixed quota. If the quota is used up before the license expires or you find that quota cannot handle the application traffic, you can add extra quota by contacting the [Dynamsoft Sales Team](mailto:sales@dynamsoft.com).
 
 ### Renew a license
 
-To renew a license is to add a new license that has the same quota but is good for another year starting from the day the old license expires.
+Renewing a license provides you with a license that has the same quota but is good for another year starting from the day the old license expires.
 
 ### Add quota
 
-To add quota is to add a new license with a specified quota, then configure the new license to the same Handshake Code.
+Adding quota adds a new license with a specified quota, then the new license is configured to the same Handshake Code.
