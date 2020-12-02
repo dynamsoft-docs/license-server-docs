@@ -111,11 +111,10 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 * Java
 
 ``` java
-BarcodeReader br = new BarcodeReader("")
-DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
 ltspar.handshakeCode = "Your-HandshakeCode";
 ltspar.sessionPassword = "The-Password-You-Set";
-br.initLicenseFromLTS(ltspar);
+BarcodeReader.initLicenseFromLTS(ltspar);
 ```
 
 On Android
