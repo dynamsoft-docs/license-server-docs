@@ -63,7 +63,7 @@ A few things to note
 
 ## Validation Field
 
-A Handshake Code is a string that is set in your code and it is important to secure it so that cannot e used by any other third parties. For that, the Handshake Code comes with a set of Validation Fields designed to offer better security of the Handshake Code.
+A Handshake Code is a string that is set in your code and it is important to secure it so that cannot be used by any other third parties. For that, the Handshake Code comes with a set of Validation Fields designed to offer better security of the Handshake Code.
 
 A Validation Field is a static characteristic of your application, meaning that once set, it cannot be changed. At present, the following three Validation Fields are supported
 
