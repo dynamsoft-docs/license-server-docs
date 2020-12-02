@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: Dynamsoft Licensing FAQ
@@ -10,13 +9,11 @@ needAutoGenerateSidebar: true
 
 # Dynamsoft Licensing FAQ
 
-## Does the Barcode Reader JavaScript library disclose any information to the outside world?
+## Does the Barcode Reader library disclose any information to the outside world?
 
-The library is based on JavaScript and WebAssembly. At runtime, the browser running the barcode reading page will download & compile the `.wasm` file from the server. After that, all barcode reading is done inside the browser. In other words, the images or video stream that are passed to the library for barcode reading will stay in the browser memory and go no further.
+No, once the barcode reading is complete, the library returns the results in a callback, to be further processed by the remaining code. The image data is purged as soon as the reading is done. The results stay in the memory for a little while before it’s purged. Neither is sent anywhere.
 
-Once barcode reading is complete, the library returns the results in a callback, to be further processed by the remaining JavaScript code. The image data is purged as soon as the reading is done. The results stay in the memory for a little while before it’s purged. Neither is sent anywhere.
-
-For licensing purposes, the library by default keeps track of the symbology types and the number of scans (nothing about the actual barcode text) and will send the info to the License Tracking Server for license usage tracking purposes. In addition, the library generates a random number and maps that to an UUID which identifies the device for license tracking purposes. All the information is encrypted and stored in the browser's indexed DB and will be purged once it's submitted to the License Tracking Server.
+For licensing purposes, the library by default keeps track of the symbology types and the number of scans (nothing about the actual barcode text) and will send the info to the License Tracking Server for license usage tracking purposes. Once submitted, the records are purged. In addition, the library generates an UUID which identifies the device for license tracking purposes. This UUID is included in all communications with the License Tracking Server. Check out more information about [Generate a UUID]({{site.about}}terms.html#generate-a-uuid).
 
 A few things to note
 
