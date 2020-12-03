@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: About Dynamsoft License Tracking Docs

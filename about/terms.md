@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: Terms involved in Dynamsoft License Tracking

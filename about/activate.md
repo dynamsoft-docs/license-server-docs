@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: How to activate a license
