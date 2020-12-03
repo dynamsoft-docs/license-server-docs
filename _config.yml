@@ -9,7 +9,7 @@ docRootName: Dynamsoft License Tracking
 # then set docFullPath with https://www.dynamsoft.com/barcode-reader
 
 # docFullPath: <full url of the published site> (eg - https://www.dynamsoft.com/barcode-reader)
-docFullPat: https://www.dynamsoft.com/license-tracking/docs
+docFullPath: https://www.dynamsoft.com/license-tracking/docs
 
 # Relative path to first-level domain name without last '/'.
 # For example: the full url of dbr doc sit is https://www.dynamsoft.com/barcode-reader/
