@@ -1,3 +1,4 @@
+
 ---
 layout: default-layout
 title: Install Dynamsoft License Tracking Server on Windows
@@ -15,12 +16,14 @@ needAutoGenerateSidebar: true
 * Memory: 2G
 * OS: Windows Server 2016
 * Disk Space
-  + System: 30G
-  + Data: 20G
+  + System: 30 GB
+  + Data: 20 GB
 
 ## Installation
 
 ### Run the installer
+
+If you do not have the installer, please contact the [Dynamsoft Support team](mailto:support@dynamsoft.com).
 
 ### Test the server
 
@@ -28,13 +31,13 @@ Once the server is running, you can test it via the URL [http://localhost:48080/
 
 > If you changed the port during installation, you should use that port instead.
 
-If you see the following page showing up, then the server is installed correctly.
+If you the following page shows up, then the server is installed correctly.
 
 ![LTS-on-Windows-001]({{site.assets}}imgs/ltsonwin-001.png)
 
 ## Install IIS
 
-> This step assumes
+> This step assumes that IIS has been 
 
 Go to ServerManager / Dashboard / Add and follow the screenshots below to add IIS web server.
 
@@ -84,7 +87,7 @@ Download IIS URL Rewrite [here](https://www.iis.net/downloads/microsoft/url-rewr
 
 ![LTS-on-Windows-019]({{site.assets}}imgs/ltsonwin-019.png)
 
-We'll configure this rule for the server
+Let's configure the following rule for the server
 
 ``` text
 Name：LTS-rewrite-rule

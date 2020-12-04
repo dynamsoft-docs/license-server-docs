@@ -1,3 +1,4 @@
+
 ---
 layout: default-layout
 title: Install Dynamsoft License Tracking Server on Linux
@@ -12,15 +13,15 @@ needAutoGenerateSidebar: true
 ## Example Environment
 
 * CPU: 2 Core
-* Memory：2G
+* Memory：2 GB
 * Disk Space
-  + System: 8G
-  + Data: 20G
+  + System: 8 GB
+  + Data: 20 GB
 * OS：CentOs7.4
 
-## Installation
+## Initialization
 
-Prepare a domain name for the License Tracking Server. For example, use "https://mainlts.yoursite.com" for the main server and "https://standbylts.yoursite.com" for the backup server. Make sure DNS is configured for these domain names.
+First off, prepare a domain name for the License Tracking Server. For example, use "https://mainlts.yoursite.com" for the main server and "https://standbylts.yoursite.com" for the backup server. Make sure DNS is configured for these domain names.
 
 ### Initialize
 
@@ -132,7 +133,7 @@ systemctl enable nginx.server
 [root@localhost ~]# curl -i localhost 
 ```
 
-If successfuly, you should say a message like
+If successful, you should see a message like
 
 ``` text
 ······ Welcome to nginx! ······ 
@@ -195,12 +196,12 @@ yum -y install certbot python2-certbot-nginx
 certbot --nginx 
 ```
 
-You may get error like this
+You may get an error like this
 
 ![LTS-on-Linux-009]({{site.assets}}imgs/ltsonlinux-009.png)
 
  
-In this case, try
+If you do, try running the following
 
 ``` shell
 pip uninstall requests 
@@ -211,7 +212,7 @@ pip uninstall urllib3
 yum -y install python-urllib3 
 ```
 
-If you get error about `urllib3` , reinstall with
+If you get error about `urllib3` , reinstall it with
 
 ``` shell
 pip install -I 'requests==2.6.0' urllib3 
@@ -231,11 +232,11 @@ certbot --nginx
 echo "0 0, 12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew" | sudo tee -a /etc/crontab > /dev/null 
 ```
 
-## Config License Trakcing Server
+## Configuring the License Trakcing Server
 
 With the above steps, you should be able to visit the License Tracking Server with the URL https://mainlts.yoursite.com/.
 
-Now we'll configure a main server and a standby server as well
+Now let's configure a main server and a standby server as well
 
 ### The main server
 
@@ -256,3 +257,4 @@ vim /data/lts-linux/lts.json
   "servers": ["https://standbylts.yoursite.com", "self"], 
 }
 ```
+And now the License Tracking Server should be configured and ready to use.
