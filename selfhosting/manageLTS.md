@@ -34,16 +34,9 @@ Once LTS is installed and configured, you can open its managment portal in the b
 https://{domain or IP of the server}:{port}/lts/page/#/index.html
 ```
 
-The default credentials are (the password is empty by default)
+You need to input a password to access the portal. If the password has not been set, you will be asked to set one.
 
-``` text
-UserName: admin
-Password: 
-```
-
-> If you are logging in for the first time, please don't forget to [change the password]({{site.selfhosting}}security.html#change-the-password)
-
-Once logged in, you should be able to see the `UUID` of the `LTS` on the home page.
+Once logged in, you should be able to see the `UUID` of the `LTS` on the home page(index.html).
 
 ## Add license to LTS
 

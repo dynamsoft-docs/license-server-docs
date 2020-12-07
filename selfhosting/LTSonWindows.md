@@ -34,7 +34,7 @@ If you see the following page showing up, then the server is installed correctly
 
 ## Install IIS
 
-> This step assumes
+> This step assumes you have not installed IIS, if you have IIS already, you can skip this step.
 
 Go to ServerManager / Dashboard / Add and follow the screenshots below to add IIS web server.
 
