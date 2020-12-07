@@ -1,3 +1,4 @@
+
 ---
 layout: default-layout
 title: About usage alerts
@@ -12,9 +13,9 @@ The License Tracking Server checks the usage data every 10 minutes and if one of
 
 ## Dynamsoft Barcode Reader
 
-### Per Barcode Scan, Per Device  
+### Per Barcode Scan/Per Device  
 
-(Quota used) / (Total quota) exceeds 
+Notification emails are triggered when the ratio of consumed to total quota reaches the following targets: 
 
 > The usage is based on a single License Item
 
@@ -25,7 +26,7 @@ The License Tracking Server checks the usage data every 10 minutes and if one of
 
 ### Concurrent Device
 
-In the most recent 60 minutes, (the count of total authentication request failures) / (the count of total authentication requests) exceeds
+When the ratio of authentication request failures to the total number of requests reaches the following targets over the latest 60 minutes of app activity:
 
 > The usage is based on single Handshake Code
 
@@ -36,7 +37,7 @@ In the most recent 60 minutes, (the count of total authentication request failur
 
 > NOTE
 >  
-> If the condition continues to be true yet not passing the next level (like 10% ~ 25%), no new email will be triggered. For example
+> If the condition continues to be true, yet the ratio is not passing the next level (let's take the jump from 10% to 25%), no new email will be triggered. For example
 > * 12:40 Failure rate: 8%
 > * 12:50 Failure rate:13%, first email triggered
 > * 13:00 Failure rate:17%
