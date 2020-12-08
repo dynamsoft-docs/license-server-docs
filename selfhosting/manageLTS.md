@@ -12,12 +12,9 @@ breadcrumbText: Mange LTS
 
 ## How to set up LTS
 
-### Download the latest LTS
+### Acquire the installer for the latest LTS
 
-At present, `LTS` is provided for either Windows or Linux. Download one that fits your environment.
-
-* [For Windows Server](https://tst.dynamsoft.com/public/download/lts/Dynamsoft-Licensing-Tracking-Server.exe)
-* [For Linux Server](somelink)
+At present, `LTS` is provided for either Windows or Linux. If you do not have the installer, please contact the [Dynamsoft Support team](mailto:support@dynamsoft.com).
 
 ### Install and configure LTS
 
@@ -49,7 +46,7 @@ During [license activation]({{site.selfhosting}}index.html#activate-the-license)
 ### Import the License File
 
 * Click "License Items" on the license menu to go to the "License Items" page
-* Click "Select File" to open the License File you just downloaed and press "Import"
+* Click "Select File" to open the License File you just downloaded and select "Import"
 
 Once the importing is done
 
@@ -60,9 +57,9 @@ Once the importing is done
 
 ## Configure the License
 
-To configure the license is to manage the Handshake Code for the license. For more details, please see [How to manage the handshake code]({{site.common}}handshakeCodes.html).
+To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}handshakeCodes.html).
 
-> Read more on [What is a Handshake Code]({{site.about}}terms.html#handshake-code)
+> Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
 
 ## Configure usage alerts
 
@@ -70,4 +67,4 @@ When the quota on the license is about to be used up, you may want to be notifie
 
 ## Manage security
 
-`LTS` manages your licenses, it's important to restrict access to the management portal. Therefore, make sure to [change the default password]({{site.selfhosting}}security.html#change-the-password) and keep the password secure.
+`LTS` manages your licenses, so it's important to restrict access to the management portal. Therefore, make sure to [change the default password]({{site.selfhosting}}security.html#change-the-password) and keep the password secure.
