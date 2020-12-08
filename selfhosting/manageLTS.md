@@ -16,7 +16,7 @@ breadcrumbText: Mange LTS
 
 At present, `LTS` is provided for either Windows or Linux. Download one that fits your environment.
 
-* [For Windows Server](somelink)
+* [For Windows Server](https://tst.dynamsoft.com/public/download/lts/Dynamsoft-Licensing-Tracking-Server.exe)
 * [For Linux Server](somelink)
 
 ### Install and configure LTS
