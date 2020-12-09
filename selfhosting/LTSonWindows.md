@@ -30,13 +30,13 @@ Once the server is running, you can test it via the URL [http://localhost:48080/
 
 > If you changed the port during installation, you should use that port instead.
 
-If you the following page shows up, then the server is installed correctly.
+If the following page shows up, then the server is installed correctly.
 
 ![LTS-on-Windows-001]({{site.assets}}imgs/ltsonwin-001.png)
 
 ## Install IIS
 
-> This step assumes you have not installed IIS, if you have IIS already, you can skip this step.
+> IIS is used to handle IIS rewrites as well as SSL connection. This step assumes you have not installed IIS, if you have IIS already, you can skip this step.
 
 Go to ServerManager / Dashboard / Add and follow the screenshots below to add IIS web server.
 
@@ -56,17 +56,9 @@ Go to ServerManager / Dashboard / Add and follow the screenshots below to add II
 
 ![LTS-on-Windows-009]({{site.assets}}imgs/ltsonwin-009.png)
 
-## Install Application Request Routing
-
-Download Microsoft Application Request Routing [here](https://www.microsoft.com/en-us/download/confirmation.aspx?id=47333) and follow the screenshots below to get it installed.
-
-![LTS-on-Windows-010]({{site.assets}}imgs/ltsonwin-010.png)
-
-![LTS-on-Windows-011]({{site.assets}}imgs/ltsonwin-011.png)
-
-![LTS-on-Windows-012]({{site.assets}}imgs/ltsonwin-012.png)
-
 ## Install IIS URL Rewrite
+
+> The IIS URL Rewrite tool can help us direct URLs of a certain pattern to the License Tracking Server.
 
 Download IIS URL Rewrite [here](https://www.iis.net/downloads/microsoft/url-rewrite) and follow the screenshots below to get it installed.
 
@@ -99,6 +91,18 @@ Rewrite URL：http://localhost:48080/{R:1}
 ![LTS-on-Windows-021]({{site.assets}}imgs/ltsonwin-021.png)
 
 ![LTS-on-Windows-022]({{site.assets}}imgs/ltsonwin-022.png)
+
+## Install Application Request Routing
+
+> Application Request Routing is used to route specific requests for the License Tracking Server to it.
+
+Download Microsoft Application Request Routing [here](https://www.microsoft.com/en-us/download/confirmation.aspx?id=47333) and follow the screenshots below to get it installed.
+
+![LTS-on-Windows-010]({{site.assets}}imgs/ltsonwin-010.png)
+
+![LTS-on-Windows-011]({{site.assets}}imgs/ltsonwin-011.png)
+
+![LTS-on-Windows-012]({{site.assets}}imgs/ltsonwin-012.png)
 
 ## Configure the proxy
 
