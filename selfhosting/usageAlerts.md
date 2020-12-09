@@ -56,12 +56,12 @@ Yes. This is done differently for different hosting options.
 
 For Self-hosting LTS, simply use a semicolon to separate different emails in the LTS management portal
 
-![Configure recipients for notification on Self hosting]({{site.assets}}imgs/usagealerts-001.png})
+![Configure recipients for notification on Self hosting]({{site.assets}}imgs/usagealerts-001.png)
 
 For Dynamsoft-hosting LTS, email notifications are sent to all contacts configured for a specific order. You can check the contacts or add more in the customer portl
 
-![Configure recipients for notification on DS hosting1]({{site.assets}}imgs/usagealerts-002.png})
-![Configure recipients for notification on DS hosting2]({{site.assets}}imgs/usagealerts-003.png})
+![Configure recipients for notification on DS hosting1]({{site.assets}}imgs/usagealerts-002.png)
+![Configure recipients for notification on DS hosting2]({{site.assets}}imgs/usagealerts-003.png)
 
 ### When do I receive the notifications?
 
