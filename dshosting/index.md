@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: Dynamsoft-hosting license tracking

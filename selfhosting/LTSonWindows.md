@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: Install Dynamsoft License Tracking Server on Windows

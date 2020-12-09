@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: Self-hosting License Tracking
