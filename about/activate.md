@@ -9,9 +9,9 @@ needAutoGenerateSidebar: true
 
 # How to activate a license
 
-When you activate a purchased license, you can choose one of two activation options
+When you activate a purchased license, you will choose one of two activation options
 
-> Once chosen and activated, it can not be undone. So make sure you choose the correct one.
+> Once chosen and activated, this cannot be changed. So make sure you choose the correct one for your application.
 
 * Dynamsoft-Hosting
 * Self-Hosting
