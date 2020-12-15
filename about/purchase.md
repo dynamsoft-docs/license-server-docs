@@ -59,4 +59,4 @@ Renewing a license provides you with a license that has the same quota but is go
 
 ### Add quota
 
-Adding quota adds a new license with a specified quota, then the new license is configured to the same Handshake Code.
+Adding quota adds a new license with a specified quota, then the new license is configured to the same [Handshake Code]({{site.about}}terms.md#handshake-code).

@@ -186,7 +186,7 @@ If you are using the Dynamsoft-hosted License Tracking Server, the License Files
 
 The License Tracking Server, or `LTS` for short, is a proprietary software developed by Dynamsoft to track license usage.
 
-Dynamsoft hosts a copy of the Server to provide the License Tracking Server for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves and would like to not use the Dynamsoft-hosted License Tracking Server, the software can also be self-hosted. For more information, please see:
+Dynamsoft hosts a copy of the software for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see:
 
 * [Self-hosting License Tracking]({{site.selfhosting}}index.html)
 * [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html)
