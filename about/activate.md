@@ -24,7 +24,7 @@ Both options use the same software, **License Tracking Server** ( `LTS` for shor
 |:-:|:-:|:-:|
 | Need to designate a server to host `LTS` | No | Yes |
 | Need to install and manage `LTS` | No | Yes |
-| Must maintain connection to Dynamsoft | Yes | No |
+| Must have connection to Dynamsoft | Yes | No |
 | Must send usage data to Dynamsoft | Yes | No |
 
 Generally, you choose to host your own `LTS` if

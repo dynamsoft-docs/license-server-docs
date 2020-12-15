@@ -39,6 +39,8 @@ If you don't have a Dynamsoft account or you used an unregistered email to make 
 
 After logging in, if you don't land on the "Licenses" page, you can get there by clicking *Customer Portal -> License -> Full License*.
 
+![Check the purchased items]({{website.assets}}imgs/purchase-001.png)
+
 At this moment, the license(s) is not yet activated. Read on to learn [how to activate the license]({{site.about}}activate.html).
 
 ## License Restrictions
