@@ -51,7 +51,7 @@ ltspar.mainServerURL = "https://lts.yoursite.com";
 * Python
 
 ``` python
-br = new BarcodeReader();
+br = BarcodeReader();
 ltspar = reader.init_lts_connection_parameters();
 ltspar.mainServerURL = "https://lts.yoursite.com";
 ```
