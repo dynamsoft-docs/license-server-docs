@@ -48,6 +48,14 @@ DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
 ltspar.mainServerURL = "https://lts.yoursite.com";
 ```
 
+* Python
+
+``` python
+BarcodeReader br = new BarcodeReader();
+DMLTSConnectionParameters ltspar = reader.init_lts_connection_parameters();
+ltspar.mainServerURL = "https://lts.yoursite.com";
+```
+
 On Android
 
 ``` java
@@ -103,6 +111,16 @@ DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
 ltspar.handshakeCode = "Your-HandshakeCode";
 br.initLicenseFromLTS(ltspar);
 ```
+
+* Python
+
+``` python
+BarcodeReader reader = new BarcodeReader();
+DMLTSConnectionParameters ltspar = reader.init_lts_connection_parameters();
+ltspar.handshakeCode = "Your-HandshakeCode";
+iRet = reader.init_license_from_lts(ltspar);
+```
+
 
 On Android
 
