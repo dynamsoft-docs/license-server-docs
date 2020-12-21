@@ -11,6 +11,8 @@ needAutoGenerateSidebar: true
 
 When you activate a purchased license, you will choose one of two activation options
 
+![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
+
 > Once chosen and activated, this cannot be changed. So make sure you choose the correct one for your application.
 
 * Dynamsoft-Hosting

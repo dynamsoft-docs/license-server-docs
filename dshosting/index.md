@@ -19,6 +19,8 @@ The following assumes you have purchased a trackable license and have chosen "Dy
 
 On the "Activate License" page, set an Alias for your license or leave the default Alias and click the "Activate" button.
 
+![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
+
 > Read more on [what is an Alias]({{site.about}}terms.html#alias)
 
 Once the activation is done, the next step is to [configure the license](#configure-the-license).

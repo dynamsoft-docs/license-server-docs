@@ -29,17 +29,17 @@ The Licenses to use Dynamsoft Products can be purchased in a few ways
 
 ## Check the purchased items
 
-Each purchased item is registered to a specific Dynamsoft account associated with your organization. You can check your purchases in the customer portal once you log in with your account.
+All purchased items are registered to the Dynamsoft account associated with your organization. You can check your purchases in the customer portal once you log in with your account.
 
-If you already have a Dynamsoft account and you used the same email to make the purchase, you can [log in](https://www.dynamsoft.com/api-common/Login/Login) and check the purchased items.
+If you already have a Dynamsoft account and you used the same email to make the purchase, you can [log in](https://www.dynamsoft.com/api-common/Login/Login) and [check the purchase orders](https://www.dynamsoft.com/customer/order/list).
 
-If you don't have a Dynamsoft account or you used an unregistered email to make the purchase, a new Dynamsoft account will be automatically created with that email. In this case, you must first use the [Forgot Password?](https://www.dynamsoft.com/api-common/Regist/ForgotPassword) link and use the same email to set a password before logging in.
+If you don't have an existing Dynamsoft account or you used an unregistered email to make the purchase, a new Dynamsoft account will be automatically created with that email. In this case, you must first use the [Forgot Password?](https://www.dynamsoft.com/api-common/Regist/ForgotPassword) link and use the same email to set a password before logging in.
 
 > You can also [register](https://www.dynamsoft.com/api-common/Regist/Regist) before making a purchase.
 
 After logging in, if you don't land on the "Licenses" page, you can get there by clicking *Customer Portal -> License -> Full License*.
 
-![Check the purchased items]({{website.assets}}imgs/purchase-001.png)
+![Check the purchase orders]({{site.assets}}imgs/purchase-001.png)
 
 At this moment, the license(s) is not yet activated. Read on to learn [how to activate the license]({{site.about}}activate.html).
 
