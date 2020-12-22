@@ -42,6 +42,16 @@ For example, you can specify barcode format, limit the scanning to predefined re
 
 ### Per Device
 
+A device could mean different client in different deployment types.
+
+| Deployment Type | Client Type |
+|:-:|:-:|
+| Browser | A specific browser |
+| Mobile | A mobile device running iOS or Android |
+| Server | Per 4 vCPU on a Server machine |
+| Desktop | Per 4 vCPU on a desktop |
+| Embedded | Per 4 vCPU (if applicable) on an embedded device |
+
 This option is recommended if you have a known number of devices and unknown number of barcode scans or that you need to scan a large number of barcodes on limited devices. Dynamsoft supports two ways to generate a UUID, please see [Client UUID]({{site.about}}terms.html#client-uuid)
 
 Once a device gets authorized, it's considered active for 365 days, read more [here](#how-long-is-a-device-considered-active).

@@ -53,6 +53,7 @@ By default, a license is good for a year once activated. Before a license expire
 
 * Quota
 
+<!--TODO add quota should be doable by customer-->
 A license comes with a fixed quota. If the quota is used up before the license expires or you find that quota cannot handle the application traffic, you can add extra quota by contacting the [Dynamsoft Sales Team](mailto:sales@dynamsoft.com).
 
 ### Renew a license

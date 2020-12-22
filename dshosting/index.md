@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # Dynamsoft-hosting license tracking
 
-> This article is about Dynamsoft-Hosting License Tracking, if you would rather track license usage yourself using your own self-hosted license tracking server, please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
+> This article is about Dynamsoft-Hosting License Tracking, if you would rather track license usage yourself using your own self-hosting License Tracking Server, please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
 
 > If you have not purchased any Dynamsoft SDK license that requires usage tracking, please see [how to purchase a license]({{site.about}}purchase.html).
 
@@ -29,7 +29,7 @@ Once the activation is done, the next step is to [configure the license](#config
 
 To configure the license is to manage the Handshake Codes for the license. For more details, please see [how to manage handshake codes]({{site.common}}handshakeCodes.html).
 
-> Read more on [What is a Handshake Code]({{site.about}}terms.html#handshake-code)
+> Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
 
 ## Track the License
 

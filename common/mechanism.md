@@ -13,9 +13,9 @@ All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to 
 
 ## Configure LTS
 
-> Read more on [What is LTS]({{site.about}}terms.html#license-tracking-server)
+> Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
 
-If you are using Dynamsoft-hosting LTS, then you can skip this step as the SDK has been configured to connect to the LTS hosted by Dynamsoft by default. Please read [Configure the Handshake code](#configure-the-handshake-code).
+If you are using Dynamsoft-hosting LTS, then you can skip to the [next step](#configure-the-handshake-code) as the SDK has been configured to connect to the LTS hosted by Dynamsoft by default.
 
 If you have hosted LTS on your own server, you can configure the connection like this
 
@@ -77,7 +77,7 @@ iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.mainServerURL = @"https://lts.yoursite.com";
 ```
 
-## Configure the Handshake code
+## Configure the Handshake Code
 
 * JavaScript
 
@@ -85,6 +85,10 @@ lts.mainServerURL = @"https://lts.yoursite.com";
 Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 ```
+
+For backward compatibility, the Handshake Code can also be set in the script tag as `data-productKeys` , as shown below
+
+<script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@8/dist/dbr.js" data-productKeys="DynamsoftID-CustomCode"></script>
 
 * C++
 
@@ -120,7 +124,6 @@ ltspar = reader.init_lts_connection_parameters();
 ltspar.handshakeCode = "Your-HandshakeCode";
 iRet = reader.init_license_from_lts(ltspar);
 ```
-
 
 On Android
 
@@ -161,18 +164,18 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelega
 
 During initialization, Dynamsoft SDKs connect to `LTS` to get authorized. The process is simplified as follows
 
-* The SDK sends a request to `LTS`
-* `LTS` extracts the handshake code from the request and checks its status in the usage database
-* If the handshake code exists and its quota is not used up,  `LTS` returns a token
-* Otherwise, a failure message is returned
+* The SDK sends a request to `LTS`.
+* `LTS` extracts the Handshake Code from the request and checks its status in the database.
+* If the Code exists and its quota is not used up,  `LTS` returns the authorization.
+* Otherwise, a failure message is returned.
 
 ### About the request
 
-The request includes the Client UUID and the handshake code. The handshake code is fetched from your code, the UUID is fetched from cache or generated on the fly if it is not found in the cache.
+The request includes the Client UUID and the Handshake Code among other information. The Handshake Code is fetched from [your code](#configure-the-handshake-code) and the UUID is fetched from the local cache. If the UUID is not found in the cache, a new one is generated.
 
 ### Handle authorization error
 
-For better user experience, you need to handle the authorization error should it happens. Take the JavaScript edition for example
+For better user experience, you need to handle the authorization error should it happens. The following sample assumes JavaScript is used:
 
 ``` javascript
 try {
@@ -186,36 +189,36 @@ try {
 
 ## License Tracking
 
-### Dynamsoft Barcode Reader
+When a Dynamsoft SDK uses a trackable license, it will record every successful operation that needs to be tracked. Then it generates a minimum report for each 3-minute time slot and sumbit the report every 3 minutes. We'll dive deeper into the mechanism below.
 
-The main purpose of the Barcode Reader is to locate and decode barcodes, therefore, its usage is about successful barcode scans.
+### Usage report
 
-Each successful scan is recorded and a minimum report is generated every 3 minutes, the report is submitted every 3 minutes too. We'll dive deeper into the mechanism below.
+#### Dynamsoft Barcode Reader
 
-#### Usage report
-
-The report includes the following fields
+The main purpose of the Barcode Reader is to locate and decode barcodes, therefore, its usage is about successful barcode scans and its report includes the following fields
 
 * Time label (indicates which 3-minute slot it covers)
-* handshake code
+* Handshake Code
 * Client UUID
 * Count of barcodes
 * Type of barcodes
 
-### About time
+### Time
 
 * 3-minute for reports
 
-Dynamsoft uses absolute time when generating usage reports. This means, each time slot is fixed, for example, the first time slot is always 00:00:01 ~ 00:03:00 and the second is 00:03:01 ~ 00:06:00 and so on. Each barcode scan has a time stamp of its own and is counted in the 3-minute window in which it is done.
+  Dynamsoft uses absolute time when generating usage reports. This means, each time slot is fixed, for example, the first time slot is always 00:00:00 ~ 00:03:00 and the second is 00:03:00 ~ 00:06:00 and so on. Each successful operation (like a barcode scan) has a time stamp of its own and is counted in the 3-minute window in which it is done.
 
 * 3-minute for submitting reports
 
-Unlike the time used for reporting, report submitting is better done in a more timely manner. Therefore, the moment Dynamsoft SDKs initializes, it'll check whether there are any usage reports left unsubmitted and submit all of them at once, after that, it'll submit the next report after 3 minutes, and so on and so forth.
+  Unlike the time used for report generating which must be precise, report submitting needs to be done timely. Therefore, the moment the SDK finishes initialization, it'll check whether there are usage reports left unsubmitted and submit them if any. After that, it'll submit new report (if any) every 3 minutes.
 
 ### Report submission
 
-Dynamsoft SDKs submit usage reports to LTS with HTTP Post requests. If the submission succeeds, it'll remove the local copy of the report, otherwise, the report remains on the device and will be submitted again the next time the SDK initializes. Note that the SDK won't attempt to submit failed reports during the same session.
+Dynamsoft SDKs submit usage reports to `LTS` with HTTP Post requests. If the submission succeeds, it'll remove the local copy of the report, otherwise, the report remains on the device and will be submitted again the next time the SDK initializes. Note that the SDK won't attempt to submit failed reports during the same session.
+
+If a report is not submitted, it'll be kept on the client for up to 30 days after which it'll be purged.
 
 ### Report analysis
 
-LTS receives usage reports from client devices and does the math to make overall usage reports. These reports are done per each handshake code. Read more on [statistics page]({{site.about}}statistics-page.html).
+LTS receives usage reports from client devices and does the math to make overall usage reports. These reports are done per each Handshake Code. Read more on [statistics page]({{site.common}}statistics.html).

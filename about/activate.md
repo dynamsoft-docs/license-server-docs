@@ -20,7 +20,7 @@ When you activate a purchased license, you will choose one of two activation opt
 
 Both options use the same software, **License Tracking Server** ( `LTS` for short), to track the license usage. The differences are shown in the following table
 
-> Read more on [What is a License Tracking Server]({{site.about}}terms.html#license-tracking-server)
+> Read more on [what is a License Tracking Server]({{site.about}}terms.html#license-tracking-server)
 
 |  | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|

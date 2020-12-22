@@ -1,5 +1,6 @@
 ---
 layout: default-layout
+noTitleIndex: true
 title: About the statistics page
 keywords: statistics
 description: This page is about the statistics page for trackable licenses
