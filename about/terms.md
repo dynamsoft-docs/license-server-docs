@@ -39,7 +39,7 @@ A few things to know about the Alias
 
 A License Item contains a permit to use a product. The license item cannot be split. 
 
-For instance, if a license item is for a 10,000-scan package for the JavaScript edition of the Barcode Reader SDK, the full quota of scans cannot be split into multiple license items, each with its own quantity and purpose.
+For instance, if a license item is for a 10,000-scan package for "Browser Deployment" of the Barcode Reader SDK, the full quota of scans cannot be split into multiple license items, each with its own quantity and purpose.
 
 ## Handshake Code
 
@@ -68,11 +68,11 @@ A Validation Field is a static characteristic of your application, meaning that 
 
 * Website Domain
 
-> Applicable Products: Dynamsoft Barcode Reader JavaScript Edition, Dynamic Web TWAIN
+> Applicable Products: Dynamsoft Barcode Reader via "Browser Deployment", Dynamic Web TWAIN
 
 * Application ID
 
-> Applicable Products: Dynamsoft Barcode Reader Mobile Edition
+> Applicable Products: Dynamsoft Barcode Reader via "Mobile Deployment"
 
 * Process Name
 
@@ -224,7 +224,7 @@ For each device, a UUID is generated which is used to uniquely identify the devi
 
 > NOTE:
 >  
-> * Multiple browsers on the same device are counted as multiple devices since there will be a UUID generated for each browser used.
+> * Multiple browsers on the same device are counted as multiple devices since there will be a UUID generated for each browser.
 > * The same browsers accessing multiple websites with different domains is counted separately per domain.
 
 * Mobile Edition, Embedded Edition: A UUID represents a device with the same CPU id, OS id and MAC address.

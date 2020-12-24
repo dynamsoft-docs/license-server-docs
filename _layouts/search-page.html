@@ -112,11 +112,11 @@
         <div class="subHeader container">
             <div class="row">
                 <ul class="subHeaderMenuUl col-xs-12 clearfix">
-                    <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
+                    <!-- <li class="title"><a class="f18 fontOswald" href="https://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx">Dynamsoft Barcode Reader</a> <span class="fc9">|</span> Developer's Center</li>
                     <li class="on"><a class="orangelink" href="{{ site.docHomePage }}">Documentation</a></li>
                     <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code Gallery</a></li>
                     <li><a class="whitelink hide-xs" href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
-                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li>
+                    <li class="fr" style="margin-right: 0; padding: 0;"><a class="btn d-btn bgOrange hide-sm hide-xs" href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Download.aspx">Download 30-Day Free Trial</a></li> -->
                 </ul>
             </div>
             <div class="row mobileSubHeaderMenu">
@@ -136,8 +136,8 @@
                   <div id="searchResult" class="container pt40 pb60 sm-pt50">
                       <div class="row">
                           <div class="col-xs-12">
-                              <h1>Search</h1>                        
-                              <script async src="https://cse.google.com/cse.js?cx=32039cdf85bc7ae2b"></script>
+                              <h1>Search</h1>                  
+                              <script async src="https://cse.google.com/cse.js?cx=e2f74fb13e6c52343"></script>
                               <div class="gcse-search"></div>
                           </div>
                       </div>
@@ -154,8 +154,6 @@
         {%- include page_footer.html -%}
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
-        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
 
     {%- if page.needAutoGenerateSidebar -%}
@@ -175,85 +173,6 @@
     {%- endif -%}
 
     <script type="text/javascript">
-      $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
-      $('.container .head').css({'width': $('.docContainer').width() + 'px'})
-
-      $(window).resize(function() {
-          $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
-          $('.container .head').css({'width': $('.docContainer').width() + 'px'})
-          realFunc()
-      })
-      
-      window.addEventListener('scroll', realFunc);
-
-      function realFunc(){
-          var sd = $(window).scrollTop();
-          var dcheight = $('.docContainer').height() + 65 - sd
-          if (breakpoint() == 'lg') {
-              if (sd > 65 && dcheight>0) {
-                  if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
-                      $('.subHeadWrapper').addClass('shw-fixed')
-                      $('.docContainer').addClass('dc-fixed')
-                      $('#sideBarCnt').addClass('ftm-fixed')
-                      $('.rightSideMenu').addClass('rsm-fixed')
-                      $('#docHead').addClass('ch-fixed')
-                  }
-                  if (dcheight > document.body.clientHeight) {
-                      $('#sideBarCnt.ftm-fixed').css({'height': 'calc(100vh - 170px)'})
-                      $('.rightSideMenu.rsm-fixed').css({'height': 'calc(100vh - 170px)'})
-                  } else {
-                      $('#sideBarCnt.ftm-fixed').css({'height': (dcheight - 40) + 'px'})
-                      $('.rightSideMenu.rsm-fixed').css({'height': (dcheight - 40) + 'px'})
-                  }
-                  $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-              } else {
-                  $('.subHeadWrapper').removeClass('shw-fixed')
-                  $('.docContainer').removeClass('dc-fixed')
-                  $('#sideBarCnt').removeClass('ftm-fixed')
-                  $('.rightSideMenu').removeClass('rsm-fixed')
-                  $('.container .head').removeClass('ch-fixed')
-                  $('.markdown-body').css({'margin-top': '40px'})
-              }
-          }
-          if (breakpoint() == 'md') {
-              if (sd > 65 && dcheight > 0) {
-                  if (!$('.subHeadWrapper').hasClass('shw-fixed')) {
-                      $('.subHeadWrapper').addClass('shw-fixed')
-                      $('.docContainer').addClass('dc-fixed')
-                      $('#sideBarCnt').addClass('ftm-fixed')
-                      $('#docHead').addClass('ch-fixed')
-                  }
-                  $('.markdown-body').css({'margin-top': (100 + $('.container .head').height()) + 'px'})
-              } else {
-                  $('.subHeadWrapper').removeClass('shw-fixed')
-                  $('.docContainer').removeClass('dc-fixed')
-                  $('#sideBarCnt').removeClass('ftm-fixed')
-                  $('#docHead').removeClass('ch-fixed')
-                  $('.markdown-body').css({'margin-top': '40px'})
-              }
-          }
-      }
-
-      $('.sideBarIcon').click(function() {
-          $(".sideBar").toggleClass('hide-sm');
-          $(".sideBar").toggleClass('hide-xs');
-          setTimeout(function() {
-              console.log('sidebar' + $('.sideBar').width())
-              $('#sideBarCnt').css({'width': $('.sideBar').width() + 'px'})
-          }, 100)
-      })
-
-      let timeInt = setInterval(function() {
-          var container = $('#sideBarCnt'), scrollTo = $('#sideBarCnt .activeLink');
-          console.log(scrollTo)
-          if (scrollTo.length>0) {
-              container.scrollTop(
-                  scrollTo.offset().top - container.offset().top + container.scrollTop()
-              );
-              clearInterval(timeInt)
-          }
-      }, 500)
-  
       function onSearchFinish(e) {
           var evt = window.event || e;
           if (evt.keyCode == 13) {
@@ -263,7 +182,7 @@
 
       $('#txtSearch').keydown(function(e) { 
           if (e.keyCode == 13) {
-              window.location.href = '/barcode-reader/search.html?q=' + $('#txtSearch').val()
+              window.location.href = '/license-tracking/docs/search.html?q=' + $('#txtSearch').val()
           }
       })
 
