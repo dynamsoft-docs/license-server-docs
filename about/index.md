@@ -26,3 +26,7 @@ To learn about handshake codes, license items, and other terminologies, please s
 ## Activate trackable licenses
 
 Activation is required for trackable licenses to work. Please see [How to Activate a license]({{site.about}}activate.html).
+
+## FAQ
+
+You can also check out the [frequently asked questions]({{site.about}}licensefaq.html).
