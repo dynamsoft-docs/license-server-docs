@@ -58,8 +58,8 @@ A license comes with a fixed quota. If the quota is used up before the license e
 
 ### Renew a license
 
-Renewing a license provides you with a license that has the same quota but is good for another year starting from the day the old license expires.
+Renewing a license provides you with a license that has the same quota but is good for another year starting from the day the old license expires. This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code.
 
 ### Add quota
 
-Adding quota adds a new license with a specified quota, then the new license is configured to the same [Handshake Code]({{site.about}}terms.md#handshake-code).
+Adding quota adds a new license with a specified quota, then the new license is configured to the same [Handshake Code]({{site.about}}terms.md#handshake-code). This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code.

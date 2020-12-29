@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: About usage alerts
@@ -11,6 +10,8 @@ breadcrumbText: Usage Alerts
 
 The License Tracking Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered.
 
+> If multiple conditions are met, the email will contain all the information.
+
 ## Dynamsoft Barcode Reader
 
 ### Per Barcode Scan/Per Device  
@@ -22,7 +23,8 @@ Notification emails are triggered when the ratio of consumed to total quota reac
 * 75%
 * 90%
 * 95%
-* 100%
+* 100%: Normal quota is used up.
+* 105% (Per Barcode Scan) or 110% (Per Device): The License Item is then deactivated.
 
 ### Concurrent Device
 
@@ -49,6 +51,13 @@ When the ratio of authentication request failures to the total number of request
 > * 14:00 Failure rate:51%, third email triggered
 > ...
 
+Other than that, when authorized devices are used offline, their usage during that time period will be submitted when they get online the next time and this will cause exceptions (an exception is defined when an excessive device is active at a given 3-minute time slot). Dynamsoft allows a number of exceptions per each License Item. With the passage of time and the increase in activity usage, this number also increases. At each check point (the 10-minute mark), if the ratio of raised exceptions to total allowed exceptions reaches the following targets, an email will be triggered as well.
+
+* 50%
+* 75%
+* 90%
+* 100%: The License Item is then deactivated.
+
 ## Questions
 
 ### Can I add multiple recipients for the email notification?
@@ -62,11 +71,12 @@ For Self-hosting LTS, simply use a semicolon to separate different emails in the
 For Dynamsoft-hosting LTS, email notifications are sent to all contacts configured for a specific order. You can check the contacts or add more in the customer portl
 
 ![Configure recipients for notification on DS hosting1]({{site.assets}}imgs/usagealerts-002.png)
+
 ![Configure recipients for notification on DS hosting2]({{site.assets}}imgs/usagealerts-003.png)
 
 ### When do I receive the notifications?
 
-The notifications are sent based on the usage and the license type as mentioned above.
+The notification emails are sent based on the usage and the license type as mentioned above.
 
 ### Can I adjust the conditions under which notifications are sent?
 
