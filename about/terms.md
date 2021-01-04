@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## License 2.0
 
-License 2.0 is the second-generation licensing protocol designed and implemented by Dynamsoft for our products, including Dynamsoft Barcode Reader, Dynamic Web TWAIN, and more.
+License 2.0 is the next-generation licensing protocol designed and implemented by Dynamsoft for our products, including Dynamsoft Barcode Reader, Dynamic Web TWAIN, and more.
 
 The following table shows the differences between License 1.0 and 2.0
 
@@ -27,7 +27,7 @@ The following table shows the differences between License 1.0 and 2.0
 
 An Alias is another way to identify a license. You can set a meaningful Alias to a license so that you can easily identify the purpose of the license.
 
-A default Alias is created automatically that follows the pattern "DM_{License Id}_Date{Activation Date}".  A more meaningful Alias could be something like "BarcodeReader_License_For_Dynamsoft_ABC_Project".
+A default Alias is created automatically that follows the pattern `DM_{License Id}_Date{Activation Date}` .  A more meaningful Alias could be something like `BarcodeReader_License_For_Dynamsoft_ABC_Project` .
 
 A few things to know about the Alias
 
@@ -37,9 +37,7 @@ A few things to know about the Alias
 
 ## License Item
 
-A License Item contains a permit to use a product. The license item cannot be split. 
-
-For instance, if a license item is for a 10,000-scan package for "Browser Deployment" of the Barcode Reader SDK, the full quota of scans cannot be split into multiple license items, each with its own quantity and purpose.
+A License Item contains a permit to use a product (for example, a license item can be described as a "10, 000-Barcode-Scan package for using Dynamsoft Barcode Reader within Browsers". The license item cannot be split. 
 
 ## Handshake Code
 
@@ -53,16 +51,16 @@ Therefore, Dynamsoft invented the concept of a "Handshake Code". An application 
 * The same Handshake Code can be configured to contain permits from different License Items
 * The permit from a single License Item can be shared by multiple Handshake Codes
 
-By doing this, the license verification code in your application doesn't need to change, even if different permits are needed at a later date.
+By doing this, the code of your application doesn't need to change, even if different permits are needed at a later date.
 
 A few things to note
 
 * Quota consumption is counted against the License Item in use
-* Statistics are summarized per Handshake Code
+* Statistics are also summarized per Handshake Code
 
 ## Validation Field
 
-A Handshake Code is a string that is set in your code and it is important to secure it so that cannot be used by any other third parties. For that, the Handshake Code comes with a set of Validation Fields designed to offer better security of the Handshake Code.
+A Handshake Code is a string that is set in your code and it is important to secure it so that it cannot be used by any other parties. For that, the Handshake Code comes with a security setting called `Validation Field` .kk
 
 A Validation Field is a static characteristic of your application, meaning that once set, it cannot be changed. At present, the following three Validation Fields are supported
 
@@ -140,7 +138,9 @@ iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.handshakeCode = @"Your-HandshakeCode";
 lts.sessionPassword = @"The-Password-You-Set";
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+
 * (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
     dispatch_async(dispatch_get_main_queue(), ^{
