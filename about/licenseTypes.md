@@ -92,7 +92,7 @@ The expiry time of each active device is calculated like this
 currentTime + (3 ~ 6 minutes)
 ```
 
-`currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
+`currentTime` : the time that the device connects to the `LTS` either to get an authorization or to perform a barcode scan.
 
 The reason why the expiry time ranges from 3 to 6 minutes is to align it to the end of an absolute 3-minute slot. For example
 
