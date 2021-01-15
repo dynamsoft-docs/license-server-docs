@@ -36,11 +36,13 @@ A device could mean different client in different deployment types.
 
 | Deployment Type | Client Type |
 |:-:|:-:|
-| Browser | A specific browser |
+| Browser | A specific browser on a specific domain |
 | Mobile | A mobile device running iOS or Android |
 | Server | Per 4 vCPUs on a Server machine |
 | Desktop | Per 4 vCPUs on a desktop |
 | Embedded | Per 4 vCPUs (if applicable) on an embedded device |
+
+> For "Browser" type, a specific domain means the same origin. Read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
 
 A client is identified by its [UUID]({{site.about}}terms.html#client-uuid).
 
