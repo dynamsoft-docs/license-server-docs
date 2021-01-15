@@ -3,7 +3,7 @@
 
 # repositoryUrl: <full url of the public repository>/blob/<branch name>
 repositoryUrl: https://github.com/dynamsoft/license-tracking-docs/blob/main
-repository: dynamsoft/license-tracking-docs
+repository: Dynamsoft/license-tracking-docs
 docRootName: Dynamsoft License Tracking
 # Full url of the publicshed site without last '/'.
 # For example: the full url of dbr doc sit is https://www.dynamsoft.com/barcode-reader/
