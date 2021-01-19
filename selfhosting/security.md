@@ -1,4 +1,3 @@
-
 ---
 layout: default-layout
 title: Manage Security - License Tracking Server
