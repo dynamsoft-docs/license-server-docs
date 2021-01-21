@@ -30,7 +30,7 @@ This option is only for the Dynamsoft Barcode Reader SDK. It counts the number o
 
 ## Per Device
 
-Choose this option if you plan to scan a large number of barcodes with a limited number of devices. 
+Choose this option if you plan to perform a large number of operations like barcode scanning with a limited number of devices. 
 
 A device could mean different client in different deployment types.
 
@@ -50,7 +50,7 @@ Once a device gets authorized, it's considered active for 365 days, read more [h
 
 ## Concurrent Device
 
-This option is meant for the situation where you have a large number of client devices performing an unknown number of barcode scans sporadically.
+This option is meant for the situation where you have a large number of client devices performing an unknown number of opeations like barcode scanning sporadically.
 
 One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured to be active for only 3 minutes instead of 365 days, read more [here](#how-long-is-a-device-considered-active).
 
@@ -65,6 +65,10 @@ One such device is maintained the same way as a concurrent device except that it
 This option is meant for the situation where multiple instances of the SDK are created to work on multiple tasks at the same time. It is also based on the [Concurrent Device](#concurrent-device) license except that the limit is on the total number of active instances instead of the number of devices (UUIDs).
 
 At present, this option is limited to server deployment.
+
+## Per Domain
+
+This option is meant for the situation where a unknow and most likly very large number of devices will be used to 
 
 ## Questions
 
@@ -99,16 +103,13 @@ max ( min ( currentTime + 365 days, expiry date of the license ), currentTime + 
 The expiry time of each active device is calculated like this
 
 ``` text
-currentTime + (3 ~ 6 minutes)
+currentTime + (4 ~ 7 minutes)
 ```
 
 `currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
 
-The reason why the expiry time ranges from 3 to 6 minutes is to align it to the end of an absolute 3-minute slot. For example
+The reason why the expiry time ranges from 4 to 7 minutes is to align it to the end of an absolute 3-minute slot. For example
 
-If `currentTime` is 00:00:00, expiry time is 00:06:00; 
-if `currentTime` is 00:01:25, expiry time is 00:06:00; 
-if `currentTime` is 00:02:59, expiry time is 00:06:00; 
-if `currentTime` is 00:03:00, expiry time is 00:09:00.
+If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 4 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
 
-`LTS` checks the list every 1 minute and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 7 minutes (example: authorized at 00:00:00, expired at 00:06:00, removed at 00:07:00) and the shortest time is a bit more than 3 minutes (example: authorized at 00:02:59, expired at 00:06:00 and removed at 00:06:01).
+The reason for covering the next one or two 3-minute slot(s) is to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach `LTS`. 
