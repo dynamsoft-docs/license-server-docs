@@ -9,17 +9,16 @@ needAutoGenerateSidebar: true
 
 # Dynamsoft Licensing FAQ
 
-## Does the Barcode Reader library disclose any information to the outside world?
+## Does license tracking disclose any private information to the outside world?
 
-No, once the barcode reading is complete, the library returns the results in a callback to be further processed by the remaining code. The image data is purged as soon as the reading is done. The results stay in the memory for a little while before it’s purged. Neither is sent anywhere.
+For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( `LTS` ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
 
-For licensing purposes, the library by default keeps track of the symbology types and the number of scans (nothing about the actual barcode text) and will send the info to the License Tracking Server for license usage tracking purposes. Once submitted, the records are purged. In addition, the library generates an UUID which identifies the device for license tracking purposes. This UUID is included in all communications with the License Tracking Server. Check out more information on [Generate a UUID]({{site.about}}terms.html#generate-a-uuid).
+In addition, to uniquely identify a device, the SDK generates an UUID that is cached locally and included in all communication with the `LTS`. By default, this UUID is random and doesn't contain any information about the device itself. For more information, check out [How to generate a UUID]({{site.about}}terms.html#generate-a-uuid).
 
 A few things to note
 
-* The License Tracking Server can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
+* The `LTS` can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
 * Offline licenses that do not require any information to be sent anywhere are also supported. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
-* For debugging purposes, the actual barcode images that are read can be exported and saved. However, this is controlled in customer's code.
 
 ## How secure is the License Tracking Server?
 
@@ -35,7 +34,7 @@ The License Tracking Server ( `LTS` ) is the only software that Dynamsoft SDKs w
 
 Yes, once a client device gets authorized, it can be used offline for no more than 7 days. After that, it must connect to `LTS` again for another authorization. Otherwise, it will stop working.
 
-During the offline period, all usage data is kept on the client side and will be sent to the `LTS` all at once the next time the device is online.
+During the offline period, all usage data is kept on the client side and will be sent to the `LTS` all at once the next time the device gets online.
 
 Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you would like your devices to work offline for a longer period of time.
 
@@ -53,11 +52,15 @@ Yes. There are two scenarios in this case
 
 ## Can I unregister inactive devices?
 
-As mentioned in [per device license]({{site.about}}licensetypes.html#per-device), Dynamsoft keeps a list of UUIDs which identify the active devices. By default, if a device hasn't been used for over 365 days, its UUID will be removed from the list. However, if you are in a business with a high turnover rate of your devices/users, you might want inactive devices to be removed sooner. In this case, you can contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for a special license.
+As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-device), Dynamsoft keeps a list of UUIDs which identify the active devices. By default, only if a device hasn't been used for over 365 days will its UUID be removed from the list. This is done automatically.
+
+If you are in a business with a high turnover rate of your devices/users, you can choose a differnt license option, like [Concurrent Device license]({{site.about}}licensetypes.html#cucurrent-device) or [Per Active Device license]({{site.about}}licensetypes.html#per-active-device).
+
+If you use a Per-Device license and would like to clear the registered devices so that you can use other devices. You can contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) and pay a certain amount for the service (which comes in the form of temporary quota expansion).
 
 ## Can I extend the quota of my license to support more devices or process more documents?
 
-Yes. If you are using Dynamsoft-Hosting `LTS` , you can either contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) to add quota or log in the [customer portal](https://www.dynamsoft.com/customer/order/list) and place an order for extra quota yourself. Rest assured that the [Handshake Code]({{site.about}}terms.html#handshake-code) remains unchanged during the upgrade process, so no code change is required to your application once the quota is added.
+Yes. If you are using Dynamsoft-Hosting `LTS` , you can either contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) to add quota or log in the [customer portal](https://www.dynamsoft.com/customer/order/list) and place an order for extra quota yourself. Rest assured that the [Handshake Code]({{site.about}}terms.html#handshake-code) remains unchanged during the process, so no code change is required to your application once the quota is added.
 
 If you are hosting your own `LTS` , all you need to do is purchase another license, import it in the `LTS` and configure it to the Handshake Code you have been using.
 

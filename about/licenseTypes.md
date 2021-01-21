@@ -54,9 +54,17 @@ This option is meant for the situation where you have a large number of client d
 
 One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured to be active for only 3 minutes instead of 365 days, read more [here](#how-long-is-a-device-considered-active).
 
+## Per Active Device
+
+This option is meant for the situation where you have a large number of client devices, each of which is supposed to work continuously for a long time but not all the time.
+
+One such device is maintained the same way as a concurrent device except that it is considered active for 24 hours instead of 3 minutes, read more [here](#how-long-is-a-device-considered-active).
+
 ## Per Instance
 
-This option is meant for the situation where multiple instances of the SDK are created to work on multiple tasks at the same time. It is based on the [Concurrent Device](#concurrent-device) license except that the limit is on the total number of active instances instead of the number of devices (UUIDs).
+This option is meant for the situation where multiple instances of the SDK are created to work on multiple tasks at the same time. It is also based on the [Concurrent Device](#concurrent-device) license except that the limit is on the total number of active instances instead of the number of devices (UUIDs).
+
+At present, this option is limited to server deployment.
 
 ## Questions
 
