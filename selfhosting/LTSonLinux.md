@@ -231,7 +231,7 @@ certbot --nginx
 echo "0 0, 12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && certbot renew" | sudo tee -a /etc/crontab > /dev/null 
 ```
 
-## Configuring the License Trakcing Server
+## Configuring the License Tracking Server
 
 With the above steps, you should be able to visit the License Tracking Server with the URL https://mainlts.yoursite.com/.
 
