@@ -23,15 +23,37 @@ needAutoGenerateSidebar: true
 First off, prepare a domain name for the License Tracking Server. For example, use "https://mainlts.yoursite.com" for the main server and "https://standbylts.yoursite.com" for the backup server. Make sure DNS is configured for these domain names.
 
 ### Initialize
-
-``` shell
+### summary
+```shell
+# prepare a new disk to store LTS data(optional) 
 mkdir /data
 mkfs -t ext4 /dev/nvme1n1
+mount /dev/nvme1n1 /data
+vim /etc/fstab
+/dev/nvme1n1 /data auto defaults 0 2
+mount -a
+
+# downloaded the file, or just copy it over to the dir `/data`
+cd /data
+wget http://********
+
+# unzip the file and run
+tar zxvf dynamsoft_lts-linux_x86_64-v2.0.1.tar.gz
+chmod -R 777 /data/lts-linux
+cd /data/lts-linux
+sh startup.sh
+
+# Check the Status to make sure the server is up
+ps -ef |grep dynamsoft
 ```
+
+###  every steps describtion
 
 ![LTS-on-Linux-001]({{site.assets}}imgs/ltsonlinux-001.png)
 
 ``` shell 
+mkdir /data
+mkfs -t ext4 /dev/nvme1n1
 mount /dev/nvme1n1 /data
 df -h
 
