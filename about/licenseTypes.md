@@ -38,9 +38,9 @@ A device could mean different client in different deployment types.
 |:-:|:-:|
 | Browser | A specific browser on a specific domain |
 | Mobile | A mobile device running iOS or Android |
-| Server | Per 4 vCPUs on a Server machine |
-| Desktop | Per 4 vCPUs on a desktop |
-| Embedded | Per 4 vCPUs (if applicable) on an embedded device |
+| Server | A computer running Windows or Linux which works as a server |
+| Desktop (Workstation) | A computer running Windows, Linux or macOS |
+| Embedded | An ARM-based computer running Linux |
 
 > For "Browser" type, a specific domain means the same origin. Read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
 
