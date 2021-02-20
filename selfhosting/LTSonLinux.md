@@ -27,6 +27,8 @@ First off, prepare a domain name for the License Tracking Server. For example, u
 ``` shell
 mkdir /data
 mkfs -t ext4 /dev/nvme1n1
+
+
 ```
 
 ![LTS-on-Linux-001]({{site.assets}}imgs/ltsonlinux-001.png)
