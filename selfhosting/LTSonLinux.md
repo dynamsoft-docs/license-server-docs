@@ -72,7 +72,7 @@ vim /etc/fstab
 mount -a
 ```
 
-### Retrieve the LTS files
+Retrieve the LTS files
 
 > If you already downloaded the file, you can just copy it over to the dir `/data`
 
@@ -81,26 +81,26 @@ cd /data
 wget http://********
 ```
 
-### Unzip
+Unzip
 
 ``` shell
 tar zxvf dynamsoft_lts-linux_x86_64-v2.0.1.tar.gz
 ```
 
-### Set permissions
+Set permissions
 
 ``` shell
 chmod -R 777 /data/lts-linux
 ```
 
-### Start License Tracking Server
+Start License Tracking Server
 
 ``` shell
 cd /data/lts-linux
 sh startup.sh
 ```
 
-### Check the Status to make sure the server is up
+Check the Status to make sure the server is up
 
 ``` shell
 ps -ef |grep dynamsoft
