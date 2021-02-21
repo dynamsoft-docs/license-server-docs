@@ -44,7 +44,7 @@ cd /data
 wget https://********
 ```
 
-### Unzip the file and run
+### Unzip and start the License Tracking Server
 
 ``` shell
 # Unzip the installer
