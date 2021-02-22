@@ -70,4 +70,4 @@ sudo apt install net-tools
 ps -ef |grep dynamsoft
 ```
 
-Now, if you visit http://localhost:48080/page/index.html#/ in the browser, you should be able to see the management portal of the License Tracking Server which indicates that it is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment for it with the help of `nginx`. Read more on [Configure network for LTS on Linux]({{site.selfhosting}}configureltsonlinux.html#configure-lts-on-linux).
+Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the License Tracking Server which indicates that it is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment for it with the help of `nginx`. Read more on [Configure network for LTS on Linux]({{site.selfhosting}}configureltsonlinux.html#configure-lts-on-linux).
