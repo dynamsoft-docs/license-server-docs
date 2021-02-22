@@ -41,7 +41,7 @@ mount -a
 
 ``` shell
 cd /data
-wget https://********
+wget https://tst.dynamsoft.com/public/download/lts/dynamsoft_lts-linux_x64-v2.1.0.tar.gz
 ```
 
 ### Unzip and start the License Tracking Server
