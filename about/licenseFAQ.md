@@ -5,7 +5,98 @@ keywords: Barcode reader, licensing
 description: This page lists the frequently asked questions about Dynamsoft's License Tracking Server.
 breadcrumbText: Licensing FAQ
 needAutoGenerateSidebar: true
+hasCustomLdJson: true
+customLdJsonScript: 
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Does license tracking disclose any private information to the outside world?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
+    }
+  },{
+    "@type": "Question",
+    "name": "How secure is the License Tracking Server?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The License Tracking Server ( LTS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of LTS matters."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can a client device work offline?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, once a client device gets authorized, it can be used offline for no more than 7 days. After that, it must connect to LTS again for another authorization. Otherwise, it will stop working.
+During the offline period, all usage data is kept on the client side and will be sent to the LTS all at once the next time the device gets online."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I use Dynamsoft SDKs in an environment with no internet connection?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. There are two scenarios in this case.
+All client devices can connect to a local network within the organization. In this case, you can simply host your own LTS for license tracking. Please see Self-hosting License Tracking.
+Client devices never connect to any network. In this case, you may require a special license. Please contact Dynamsoft Support Team for details."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I unregister inactive devices?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "As mentioned in Per Device license, Dynamsoft keeps a list of UUIDs which identify the active devices. By default, only if a device hasn’t been used for over 365 days will its UUID be removed from the list. This is done automatically."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I extend the quota of my license to support more devices or process more documents?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. If you are using Dynamsoft-Hosting LTS, you can either contact sales@dynamsoft.com to add quota or log in the customer portal and place an order for extra quota yourself. Rest assured that the Handshake Code remains unchanged during the process, so no code change is required to your application once the quota is added.
+If you are hosting your own LTS, all you need to do is purchase another license, import it in the LTS and configure it to the Handshake Code you have been using."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I renew my license before its current expiration date?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, you can log into the customer portal to renew your license by credit card or PayPal any time before it expires. Alternatively, you can contact sales@dynamsoft.com if you prefer other payment methods (wire transfer or check)."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I purchase a license valid for more than one year?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Please contact sales@dynamsoft.com with your request."
+    }
+  },{
+    "@type": "Question",
+    "name": "Will the unused quota be rolled over to the next period?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No."
+    }
+  },{
+    "@type": "Question",
+    "name": "What is counted as a single application?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Definition of a single application >"
+    }
+  },{
+    "@type": "Question",
+    "name": "Policies",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Learn more about our policies ›"
+    }
+  }]
+}
+</script>
+
 
 # Dynamsoft Licensing FAQ
 
