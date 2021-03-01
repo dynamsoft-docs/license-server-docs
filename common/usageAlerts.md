@@ -4,6 +4,7 @@ title: About usage alerts
 keywords: usage alert, notification
 description: This page is about the email notifcation feature (usage alerts) of Dynamsoft License Tracking Server
 breadcrumbText: Usage Alerts
+needAutoGenerateSidebar: true
 ---
 
 # Usage Alerts
