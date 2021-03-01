@@ -1,8 +1,20 @@
 <li><a href="{{ site.selfhosting }}index.html" class="otherLinkColour">Self-hosting</a>
     <ul>
         {%- if page.url contains '/selfhosting/' -%}
-        <li><a href="{{ site.selfhosting }}ltsonwindows.html" class="otherLinkColour">Install LTS on Windows</a></li>
-        <li><a href="{{ site.selfhosting }}ltsonlinux.html" class="otherLinkColour">Install LTS on Linux</a></li>
+        <li><a href="{{ site.selfhosting }}ltsonwindows.html" class="otherLinkColour">Install LTS on Windows</a>
+            <ul>
+                <li><a href="{{ site.selfhosting }}configurereverseproxyusingiis.html" class="otherLinkColour">Configure
+                        Reverse Proxy Using IIS</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{{ site.selfhosting }}ltsonlinux.html" class="otherLinkColour">Install LTS on Linux</a>
+            <ul>
+                <li><a href="{{ site.selfhosting }}configurereverseproxyusingnginx.html"
+                        class="otherLinkColour">Configure Reverse Proxy Using Nginx</a>
+                </li>
+            </ul>
+        </li>
         <li><a href="{{ site.common }}usagealerts.html" class="otherLinkColour">Usage Alerts</a></li>
         <li><a href="{{ site.selfhosting }}security.html" class="otherLinkColour">Security</a></li>
         {%- endif -%}
