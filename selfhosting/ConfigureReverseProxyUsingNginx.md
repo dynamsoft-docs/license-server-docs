@@ -7,9 +7,9 @@ breadcrumbText: Configure HTTPS on Linux
 needAutoGenerateSidebar: true
 ---
 
-# Configure LTS on Linux
+# Configure Reverse Proxy Using Nginx
 
-To configure LTS on Linux, we first need a web server. We use `nginx` as an example.
+The following is an example on how to set up a reverse proxy using `nginx` for `LTS` for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to "https://www.yoursite.com/lts/\*" to "https://127.0.0.1:48080/\*".
 
 ## Install nginx
 
@@ -112,7 +112,7 @@ After you have configured a secure port, you can then access the server by "http
 
 ## Configure the License Tracking Server
 
-With the above steps, you should be able to visit the License Tracking Server with the URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the backup. Assume the backup URL is "https://backup.yoursite.com/lts/", the following shows how to configure the server to be used in the JavaScript edition of Dynamsoft Barcode Reader as an example. Read more information [here]({{site.common}}mechanism.html#configure-lts).
+With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the backup. Assume the backup URL is "https://backup.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/lts/", "https://backup.yoursite.com/lts/"];
