@@ -20,6 +20,7 @@ description: Documentation Homepage
         - [Configure Reverse Proxy Using IIS]({{site.selfhosting}}configurereverseproxyusingiis.html)
     - [Install LTS on Linux]({{site.selfhosting}}ltsonlinux.html)
         - [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html)
+    - [Usage Alerts]({{ site.common }}usagealerts.html)
     - [Security]({{site.selfhosting}}security.html)
 * [Manage LTS]({{site.selfhosting}}managelts.html)
     - [License Items]({{site.common}}licenseitems.html)
