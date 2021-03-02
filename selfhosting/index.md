@@ -51,7 +51,7 @@ For Self-Hosting License Tracking, all usage data is submitted to the [ `LTS` ](
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)
-* [Get notified about license status]({{site.common}}usagealerttriggers.html)
+* [Get notified about license status]({{site.common}}usagealerts.html)
 * [Add more quota to your license]({{site.about}}purchase.html#add-quota)
 
 > Read more on [the mechanism]({{site.common}}mechanism.html) behind license tracking.

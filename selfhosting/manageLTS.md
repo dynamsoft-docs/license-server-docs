@@ -63,7 +63,7 @@ To configure the license is to manage the Handshake Code for the license. For mo
 
 ## Configure usage alerts
 
-When the quota on the license is about to be used up, you may want to be notified. `LTS` does it via email notifications. For more details, please see [How to manage usage alerts]({{site.common}}usagealerttriggers.html).
+When the quota on the license is about to be used up, you may want to be notified. `LTS` does it via email notifications. For more details, please see [How to manage usage alerts]({{site.common}}usagealerts.html).
 
 ## Manage security
 
