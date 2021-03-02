@@ -23,11 +23,25 @@ Please read one of the following guides
 * [On Windows]({{site.selfhosting}}ltsonwindows.html)
 * [On Linux]({{site.selfhosting}}ltsonlinux.html)
 
+### Configure a backup LTS
+
+For maximum up time, a backup LTS is necessary. The following are the steps to configure a back LTS.
+
+* Find the file `lts.json.sample` in the LTS directory, rename it to `lts.json`
+
+* In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main LTS URL and the second, the backup URL.
+
+  + For the main LTS: `"servers": ["self", "https://www.yoursite.com/lts/"]`
+
+  + For the standby LTS: `"servers": ["https://backup.yoursite.com/lts/", "self"]`
+
+> NOTE that you need to configure both the main LTS and the backup LTS separately.
+
 ### Log in LTS management portal
 
 Once LTS is installed and configured, you can open its managment portal in the browser. The URL has the following pattern
 
-``` text
+```
 https://{domain or IP of the server}:{port}/lts/page/#/index.html
 ```
 

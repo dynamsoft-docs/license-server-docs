@@ -22,8 +22,6 @@ rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0
 yum install nginx
 ```
 
-![LTS-on-Linux-005]({{site.assets}}imgs/ltsonlinux-005.png)
-
 * Start
 
 ``` shell
@@ -112,7 +110,7 @@ After you have configured a secure port, you can then access the server by "http
 
 ## Configure the License Tracking Server
 
-With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the backup. Assume the backup URL is "https://backup.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
+With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the backup (read more on [configure the LTS as the backup]({{site.selfhosting}}manageLTS.html#configure-a-backup-lts)). Assume the backup URL is "https://backup.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/lts/", "https://backup.yoursite.com/lts/"];

@@ -65,7 +65,7 @@ Prepare a SSL certificate for your site (e.g. https://www.yoursite.com) and conf
 
 ## Configure the License Tracking Server
 
-With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the backup. Assume the backup URL is "https://backup.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
+With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the backup(read more on [configure the LTS as the backup]({{site.selfhosting}}manageLTS.html#configure-a-backup-lts)). Assume the backup URL is "https://backup.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/lts/", "https://backup.yoursite.com/lts/"];
