@@ -68,7 +68,9 @@ One such device is maintained the same way as a concurrent device except that it
 
 ## Per Domain
 
-This option is meant for the situation where a unknow and most likly very large number of devices will be used to 
+This option is meant for the situation where a very large number of devices will be used to scan a very large number of barcodes and they all connect to a website on the same domain. The only limitation of this license type is the domain.
+
+This option is not available on Dynamsoft Web Store, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) for if you are interested.
 
 ## Questions
 
