@@ -104,6 +104,13 @@ server {
 }
 ```
 
+If your system doesn't have the self-signed certificate. You can install it like this
+
+``` shell
+sudo apt-get install ssl-cert
+sudo make-ssl-cert generage-default-snakeoil
+```
+
 > NOTE that you shouldn't use self-signed certs in your production server.
 
 After you have configured a secure port, you can then access the server by "https://www.yoursite.com/lts/page/index.html#/".
