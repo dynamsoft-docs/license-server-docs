@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## Per Barcode Scan
 
-This option is only for the Dynamsoft Barcode Reader SDK. It counts the number of barcodes successful found by the SDK. It is recommended if you can predict the number of barcode scans in a certain period of time in your application.
+This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) and its [DPM feature](https://www.dynamsoft.com/barcode-reader/direct-part-marking/). It counts the number of barcodes successful found by the SDK. It is recommended if you can predict the number of barcode scans in a certain period of time in your application.
 
 > For the JavaScript edition and the mobile edition, a barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame. Some examples for your reference:
 >
@@ -28,9 +28,18 @@ This option is only for the Dynamsoft Barcode Reader SDK. It counts the number o
 >  
 > For the mobile edition, 3 seconds is hardcoded. For the JavaScript edition, developers can specify the time with the API `duplicateForgetTime` which is 3 seconds by default.
 
+## Per Page
+
+This option is recommended if you can predict the number of pages to process in a certain period of time in your application. It is used by:
+
+* The [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and the [Webcam SDK](https://www.dynamsoft.com/web-twain/webcam-sdk-features/) where it counts the number of pages successfully acquired or imported into the buffer by the SDK at runtime.
+* The [PDF Rasterizer](https://www.dynamsoft.com/web-twain/pdf-to-image-javascript/) where it counts the pages rasterized from PDF files.
+* The [OCR SDK](https://www.dynamsoft.com/web-twain/cpp-ocr-library/) where it counts the number of pages successfully recognized.
+* The advanced feature of [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) where it counts the number of intermediate result images.
+
 ## Per Device
 
-Choose this option if you plan to perform a large number of operations like barcode scanning with a limited number of devices. 
+Choose this option if you plan to perform a large number of operations like page scanning, barcode scanning or label recognition with a limited number of devices. 
 
 A device could mean different client in different deployment types.
 
@@ -42,17 +51,20 @@ A device could mean different client in different deployment types.
 | Desktop | A computer running Windows, Linux or macOS |
 | Embedded | An ARM-based computer running Linux |
 
-> For "Browser" type, a specific domain means the same origin. Read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
+> NOTE
+>
+> * For [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/), the only deployment type allowed is "Browser".
+> * For "Browser" type, a specific domain means the same origin. Read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
 
 A client is identified by its [UUID]({{site.about}}terms.html#client-uuid).
 
-Once a device gets authorized, it's considered active for 365 days, read more [here](#how-long-is-a-device-considered-active).
+Once a device gets authorized, it's considered active for a limited time, read more [here](#how-long-is-a-device-considered-active).
 
 ## Concurrent Device
 
 This option is meant for the situation where you have a large number of client devices performing an unknown number of opeations like barcode scanning sporadically.
 
-One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured to be active for only 3 minutes instead of 365 days, read more [here](#how-long-is-a-device-considered-active).
+One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured active for only 3 minutes as opposed to the much longer duration for a [Per Device](#per-device) license, read more [here](#how-long-is-a-device-considered-active).
 
 ## Concurrent Instance
 
@@ -60,11 +72,15 @@ This option is meant for the situation where multiple instances of the SDK are c
 
 At present, this option is limited to server deployment.
 
+This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) for if you are interested.
+
 ## Per Active Device
 
 This option is meant for the situation where you have a large number of client devices, each of which is supposed to work continuously for a long time but not all the time.
 
 One such device is maintained the same way as a concurrent device except that it is considered active for 24 hours instead of 3 minutes, read more [here](#how-long-is-a-device-considered-active).
+
+This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) for if you are interested.
 
 ## Per Domain
 
@@ -84,7 +100,7 @@ For example, you can specify barcode format, limit the scanning to predefined re
 
 By default, a device is considered active as long as its UUID stays in the device list on the `LTS` . Once its UUID is removed, it is no longer considered "active". The following shows how LTS maintains the device list.
 
-* Per Barcode Scan
+* Per Barcode Scan | Per Page
 
 Not applicable as no such list exists with this option.
 
@@ -105,13 +121,13 @@ max ( min ( currentTime + 365 days, expiry date of the license ), currentTime + 
 The expiry time of each active device is calculated like this
 
 ``` text
-currentTime + (4 ~ 7 minutes)
+currentTime + (4 ~ 6 minutes)
 ```
 
 `currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
 
-The reason why the expiry time ranges from 4 to 7 minutes is to align it to the end of an absolute 3-minute slot. For example
+The reason why the expiry time ranges from 4 to 6 minutes is to align it to the end of an absolute 3-minute slot. For example
 
-If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 4 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
+If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 3 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
 
-The reason for covering the next one or two 3-minute slot(s) is to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach `LTS`. 
+The reason for covering the next 3-minute slotis to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach `LTS` . 
