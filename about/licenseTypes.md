@@ -32,10 +32,19 @@ This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsof
 
 This option is recommended if you can predict the number of pages to process in a certain period of time in your application. It is used by:
 
-* The [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and the [Webcam SDK](https://www.dynamsoft.com/web-twain/webcam-sdk-features/) where it counts the number of pages successfully acquired or imported into the buffer by the SDK at runtime.
-* The [PDF Rasterizer](https://www.dynamsoft.com/web-twain/pdf-to-image-javascript/) where it counts the pages rasterized from PDF files.
-* The [OCR SDK](https://www.dynamsoft.com/web-twain/cpp-ocr-library/) where it counts the number of pages successfully recognized.
-* The advanced feature of [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) where it counts the number of intermediate result images.
+* The [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and its extra modules (add-ons) such as the [Webcam Library](https://www.dynamsoft.com/web-twain/webcam-sdk-features/), the [PDF Rasterizer](https://www.dynamsoft.com/web-twain/pdf-to-image-javascript/) and the [OCR Engines](https://www.dynamsoft.com/web-twain/cpp-ocr-library/). The following shows how the counting is done.
+
+| Module | How to count the pages |
+|:-:|:-:|
+| Core | The number of pages acquired from a scanner or imported from existing files. |
+| Webcam | The number of frames captured. |
+| PDFR | The number of pages rasterized from PDF files. |
+| OCR | The number of pages processed by the OCR engine. |
+
+> NOTE
+> 
+> * When Dynamic Web TWAIN is under a 'Per Page' license, the Barcode Reader can also be used as a module but its license will be [Per Barcode Scan](#per-barcode-scan).
+> * Dynamsoft Barcode Reader has a feature called [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) and it also use a 'Per Page' license where the number of intermediate result images are counted.
 
 ## Per Device
 
@@ -121,13 +130,13 @@ max ( min ( currentTime + 365 days, expiry date of the license ), currentTime + 
 The expiry time of each active device is calculated like this
 
 ``` text
-currentTime + (4 ~ 6 minutes)
+currentTime + (4 ~ 7 minutes)
 ```
 
 `currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
 
-The reason why the expiry time ranges from 4 to 6 minutes is to align it to the end of an absolute 3-minute slot. For example
+The reason why the expiry time ranges from 4 to 7 minutes is to align it to the end of an absolute 3-minute slot. For example
 
-If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 3 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
+If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 4 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
 
 The reason for covering the next 3-minute slotis to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach `LTS` . 
