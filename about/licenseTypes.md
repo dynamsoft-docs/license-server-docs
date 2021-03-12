@@ -44,7 +44,7 @@ This option is recommended if you can predict the number of pages to process in 
 > NOTE
 > 
 > * When Dynamic Web TWAIN is under a 'Per Page' license, the Barcode Reader can also be used as a module but its license will be of the type [Per Barcode Scan](#per-barcode-scan).
-> * Dynamsoft Barcode Reader has a feature called [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) and it also uses a 'Per Page' license where the number of intermediate result images are counted.
+> * Dynamsoft Barcode Reader has a feature called [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) and it also uses a 'Per Page' license where the number of images processed with this feature turned on are counted.
 
 ## Per Device
 
