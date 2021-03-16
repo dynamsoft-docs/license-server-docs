@@ -23,6 +23,20 @@ The following table shows the differences between License 1.0 and 2.0
 | Use Handshake Code | No | Yes |
 | Use the license itself | Yes | No |
 
+## Public Trial License
+
+A public trial license is a special license provided by Dynamsoft for all users to test Dynamsoft Products for up to 7 days. This license is built into the samples and the product and is identified by the organization id of 200001.
+
+This license is based on License 2.0, therefore, network is required for it to work.
+
+Dynamsoft is gradually rolling out this license in the products. As of March, 2021, only the mobile editon of Dynamsoft Barcode Reader 8.2 supports this license.
+
+## Private Trial License
+
+The old trial license was a string of alphanumeric characters and was not tracked. A private trial license is designed to replace it.
+
+Simply put, a private trial license is a [Per Device]({{site.about}}licensetypes.html#per-device) license good for 30 days and 30 devices and should only be used for product evaluation purposes.
+
 ## Alias
 
 An Alias is another way to identify a license. You can set a meaningful Alias to a license so that you can easily identify the purpose of the license.
