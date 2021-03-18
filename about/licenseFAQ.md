@@ -17,7 +17,7 @@ customLdJsonScript:
     "name": "Does license tracking disclose any private information to the outside world?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
+      "text": "No, the license tracking proces does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
     }
   },{
     "@type": "Question",
@@ -102,9 +102,13 @@ If you are hosting your own LTS, all you need to do is purchase another license,
 
 ## Does license tracking disclose any private information to the outside world?
 
+No, the license tracking proces does not disclose any private information.
+
 For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( `LTS` ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
 
-In addition, to uniquely identify a device, the SDK generates an UUID that is cached locally and included in all communication with the `LTS`. By default, this UUID is random and doesn't contain any information about the device itself. For more information, check out [How to generate a UUID]({{site.about}}terms.html#generate-a-uuid).
+In addition, to uniquely identify a device, the SDK generates an UUID that is cached locally and included in all communication with the `LTS`. This UUID is random and doesn't contain any information about the device itself. For more information, check out [How to generate a UUID]({{site.about}}terms.html#generate-a-uuid).
+
+Apart from the license usage and the UUID, the `LTS` collects no more information which means it does not know anything about the user or device except that it is using Dynamsoft SDKs.
 
 A few things to note
 
