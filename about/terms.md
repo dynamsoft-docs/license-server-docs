@@ -19,7 +19,7 @@ The following table shows the differences between License 1.0 and 2.0
 |:-:|:-:|:-:|
 | Expirable | Yes | Yes |
 | Usage Trackable | No | Yes |
-| Hardware binding | Optional | Required |
+| Hardware binding | Required | Optional |
 | Use Handshake Code | No | Yes |
 | Use the license itself | Yes | No |
 
