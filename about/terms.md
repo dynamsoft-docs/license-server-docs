@@ -209,6 +209,8 @@ Dynamsoft hosts a copy of the software for customers who don't want to track the
 
 The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
 
+You can find the UUID of your `LTS` on the [admin portal](https://www.dynamsoft.com/license-tracking/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed `LTS`.
+
 A UUID is bound to one or multiple unique hardware identification labels which include
 
 * ProcessorId
