@@ -17,7 +17,7 @@ customLdJsonScript:
     "name": "Does license tracking disclose any private information to the outside world?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No, the license tracking proces does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
+      "text": "No, the license tracking process does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
     }
   },{
     "@type": "Question",
@@ -102,7 +102,7 @@ If you are hosting your own LTS, all you need to do is purchase another license,
 
 ## Does license tracking disclose any private information to the outside world?
 
-No, the license tracking proces does not disclose any private information.
+No, the license tracking process does not disclose any private information.
 
 For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( `LTS` ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
 
