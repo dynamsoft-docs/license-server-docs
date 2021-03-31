@@ -53,6 +53,10 @@ A few things to know about the Alias
 
 A License Item contains a permit to use a product (for example, a license item can be described as a "10, 000-Barcode-Scan package for using Dynamsoft Barcode Reader within Browsers". The license item cannot be split. 
 
+## Organization ID
+
+An Organization ID uniquely specifies an organization which represents the licensee of one or multiple License Item(s).
+
 ## Handshake Code
 
 The permits in License Items are not consumed directly by applications because 
@@ -71,6 +75,10 @@ A few things to note
 
 * Quota consumption is counted against the License Item in use
 * Statistics are also summarized per Handshake Code
+
+## Default Handshake Code
+
+For each new organization added to a [ `LTS` ](#license-tracking-server), a default Handshake Code is created. This Handshake Code is used by default when an application only specifies the license by its [Organization ID](#organization-id).
 
 ## Validation Field
 
@@ -209,7 +217,7 @@ Dynamsoft hosts a copy of the software for customers who don't want to track the
 
 The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
 
-You can find the UUID of your `LTS` on the [admin portal](https://www.dynamsoft.com/license-tracking/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed `LTS`.
+You can find the UUID of your `LTS` on the [admin portal](https://www.dynamsoft.com/license-tracking/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed `LTS` .
 
 A UUID is bound to one or multiple unique hardware identification labels which include
 
