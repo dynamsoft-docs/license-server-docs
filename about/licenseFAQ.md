@@ -104,7 +104,7 @@ If you are hosting your own LTS, all you need to do is purchase another license,
 
 No, the license tracking process does not disclose any private information.
 
-For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( `LTS` ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
+For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to the License Tracking Server ( `LTS` ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
 
 In addition, to uniquely identify a device, the SDK generates an UUID that is cached locally and included in all communication with the `LTS`. This UUID is random and doesn't contain any information about the device itself. For more information, check out [How to generate a UUID]({{site.about}}terms.html#generate-a-uuid).
 
