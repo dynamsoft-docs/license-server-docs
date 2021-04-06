@@ -204,6 +204,18 @@ When you place an order, a License File containing all the License Items will au
 
 If you are using the Dynamsoft-hosted License Tracking Server, the License Files are only information about your orders for your reference and are not required for the license to operate. However, if you are hosting the License Tracking Server yourself, you need the License File in order to add the License Items to that `LTS` for license tracking.
 
+## Deployment Type
+
+The deployment type means how and where the software is being used. For example. The type "mobile" means the software runs in native mobile applications on iOS and Android while the type "browser" means the software runs in web applications within browsers on any operating system. At present, the types are
+
+| Deployment Type | Application Type |
+|:-:|:-:|
+| Browser | A web application running in browsers |
+| Mobile | A native application running on iOS or Android |
+| Server (Workstation) | A desktop application running on Windows or Linux |
+| Desktop | A desktop application running on Windows, Linux or macOS |
+| Embedded | An application running on ARM-based Linux |
+
 ## License Tracking Server
 
 The License Tracking Server, or `LTS` for short, is a proprietary software developed by Dynamsoft to track license usage.

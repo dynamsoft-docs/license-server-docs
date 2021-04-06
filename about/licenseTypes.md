@@ -42,7 +42,7 @@ This option is recommended if you can predict the number of pages to process in 
 | OCR | The number of pages processed by the OCR engine. |
 
 > NOTE
-> 
+>  
 > * When Dynamic Web TWAIN is under a 'Per Page' license, the Barcode Reader can also be used as a module but its license will be of the type [Per Barcode Scan](#per-barcode-scan).
 > * Dynamsoft Barcode Reader has a feature called [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) and it also uses a 'Per Page' license where the number of images processed with this feature turned on are counted.
 
@@ -50,7 +50,7 @@ This option is recommended if you can predict the number of pages to process in 
 
 Choose this option if you plan to perform a large number of operations like page scanning, barcode scanning or label recognition with a limited number of devices. 
 
-A device could mean different client in different deployment types.
+A device has different meanings for different [deployment types]({{site.about}}terms.html#deployment-type).
 
 | Deployment Type | Client Type |
 |:-:|:-:|
