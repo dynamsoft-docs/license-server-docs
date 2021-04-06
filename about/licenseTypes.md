@@ -13,7 +13,7 @@ needAutoGenerateSidebar: true
 
 This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) and its [DPM feature](https://www.dynamsoft.com/barcode-reader/direct-part-marking/). It counts the number of barcodes successful found by the SDK. It is recommended if you can predict the number of barcode scans in a certain period of time in your application.
 
-> For the JavaScript edition and the mobile edition, a barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame. Some examples for your reference:
+> A barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame. Some examples for your reference:
 >
 > | Examples	| Count of barcode scan |
 > |:-:|:-:|
@@ -22,7 +22,7 @@ This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsof
 > | Continuous scanning (video mode) of one barcode * | 1 |
 > | Two barcodes with the same encoded text but different symbologies | 2 |
 >
-> *How to decide whether a barcode is a duplicate*
+> *How to decide whether a barcode is unique*
 >  
 > Each scanned barcode is buffered for 3 seconds during which time newly found barcodes will be compared with it. If a new barcode is exactly the same, that new barcode is not counted and is buffered for another 3 seconds while the old one is no longer buffered. If no match is found in that 3 seconds, the barcode is removed from the buffer.
 >  
