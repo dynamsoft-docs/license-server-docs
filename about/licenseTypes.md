@@ -22,7 +22,7 @@ This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsof
 > | Continuous scanning (video mode) of one barcode | 1 |
 > | Two barcodes with the same encoded text but different symbologies | 2 |
 >
-> *How to decide whether a barcode is a duplicate*
+> *How to decide whether a barcode is unique*
 >  
 > Each scanned barcode is buffered for 3 seconds during which time newly found barcodes will be compared with it. If a new barcode is exactly the same, that new barcode is not counted and it replaces the old one and gets buffered for another 3 seconds. If no match is found in that 3 seconds, the barcode is removed from the buffer.
 >  
