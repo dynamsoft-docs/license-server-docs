@@ -11,14 +11,14 @@ needAutoGenerateSidebar: true
 
 When you activate a purchased license, you will choose one of two activation options
 
+* Dynamsoft-Hosting
+* Self-Hosting
+
 ![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
 
 > Once chosen and activated, this cannot be changed. So make sure you choose the correct one for your application.
 
-* Dynamsoft-Hosting
-* Self-Hosting
-
-Both options use the same software, **License Tracking Server** ( `LTS` for short), to track the license usage. The differences are shown in the following table
+Both options use the same software, License Tracking Server ( `LTS` for short), to track the license usage. The differences are shown in the following table
 
 > Read more on [what is a License Tracking Server]({{site.about}}terms.html#license-tracking-server)
 

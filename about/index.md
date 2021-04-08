@@ -17,15 +17,15 @@ If you are interested in acquiring a trackable license to use one of Dynamsoft's
 
 ## Types of trackable licenses
 
-Not all Dynamsoft Licenses are trackable, a trackable license is one that is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-2.0). To learn more, please see the [Trackable Licenses]({{site.about}}licensetypes.html) page.
+Not all Dynamsoft Licenses are trackable, a trackable license is one that is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-20). To learn more, please see the [Trackable Licenses]({{site.about}}licensetypes.html) page.
 
 ## Terms
 
-To learn about handshake codes, license items, and other terminologies, please see the [Terms]({{site.about}}terms.html) page.
+To learn about Handshake Codes, License Items, and other terminologies, please see the [Terms]({{site.about}}terms.html) page.
 
 ## Activate trackable licenses
 
-Activation is required for trackable licenses to work. Please see [How to Activate a license]({{site.about}}activate.html).
+Activation is required for trackable licenses to work. Please see [how to Activate a license]({{site.about}}activate.html).
 
 ## FAQ
 

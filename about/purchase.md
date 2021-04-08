@@ -13,19 +13,20 @@ needAutoGenerateSidebar: true
 
 The Licenses to use Dynamsoft Products can be purchased in a few ways
 
-* Purchase on the Dynamsoft Store
-  + [Purchase Dynamic Web TWAIN](https://www.dynamsoft.com/store/dynamic-web-twain/)
-  + [Purchase Dynamsoft Barcode Reader](https://www.dynamsoft.com/store/dynamsoft-barcode-reader/)
+### Purchase on the Dynamsoft Store
 
-> This option is the easiest and provides you with the license in minutes.
+* [Purchase Dynamic Web TWAIN](https://www.dynamsoft.com/store/dynamic-web-twain/)
+* [Purchase Dynamsoft Barcode Reader](https://www.dynamsoft.com/store/dynamsoft-barcode-reader/)
 
-* Purchase via a Purchase Order
+> This option is the simplest and can provide you with a license in a matter of minutes.
 
-> This usually means sending a digital copy of the order to [Dynamsoft Sales Team](mailto:sales@dynamsoft.com). Since the order is processed manually, this option usually takes one business day.
+### Purchase via a Purchase Order
 
-* Purchase via a Reseller
+> This usually means sending a digital copy of the order to [Dynamsoft Sales Team](mailto:sales@dynamsoft.com) which will then be processed manually. This option usually takes one or several business days.
 
-> Dynamsoft has many resellers around the world, you can buy from one that is most convenient for you. Find the reseller list [here](https://www.dynamsoft.com/Partner/Resellers.aspx).
+### Purchase via a Reseller
+
+> Dynamsoft has many distributors all over the world, you can buy from the most convenient distributor. Find the full list [here](https://www.dynamsoft.com/Partner/Resellers.aspx).
 
 ## Check the purchased items
 
@@ -41,25 +42,25 @@ After logging in, if you don't land on the "Licenses" page, you can get there by
 
 ![Check the purchase orders]({{site.assets}}imgs/purchase-001.png)
 
-At this moment, the license(s) is not yet activated. Read on to learn [how to activate the license]({{site.about}}activate.html).
+At this moment, the license(s) is not yet activated. You must [activate the license]({{site.about}}activate.html) before using it.
 
 ## License Restrictions
 
-There are two restrictions for each trackable license
+There are two basic restrictions for each trackable license
 
 * Time
 
-By default, a license is good for a year once activated. Before a license expires, you can renew it.
+By default, the license is good for a year once activated. You can renew it before it expires.
 
 * Quota
 
 <!--TODO add quota should be doable by customer-->
-A license comes with a fixed quota. If the quota is used up before the license expires or you find that quota cannot handle the application traffic, you can add extra quota by contacting the [Dynamsoft Sales Team](mailto:sales@dynamsoft.com).
+The license comes with a fixed quota. If the quota is used up before the license expires, or you find that the quota cannot handle application traffic, you can add additional quota by contacting the [Dynamsoft Sales Team](mailto:sales@dynamsoft.com).
 
 ### Renew a license
 
-Renewing a license provides you with a license that has the same quota but is good for another year starting from the day the old license expires. This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code.
+Renewing a license essentially means obtaining a new license with the same quota that can be used for another year. This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same [Handshake Code]({{site.about}}terms.md#handshake-code) automatically, otherwise, you will need to manually configure it to the old Handshake Code.
 
 ### Add quota
 
-Adding quota adds a new license with a specified quota, then the new license is configured to the same [Handshake Code]({{site.about}}terms.md#handshake-code). This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code.
+Adding quota means obtaining a new license with a specified quota and configured it to the same [Handshake Code]({{site.about}}terms.md#handshake-code). This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code automatically, otherwise, you will need to manually configure it to the old Handshake Code.

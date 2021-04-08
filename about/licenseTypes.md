@@ -11,26 +11,26 @@ needAutoGenerateSidebar: true
 
 ## Per Barcode Scan
 
-This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) and its [DPM feature](https://www.dynamsoft.com/barcode-reader/direct-part-marking/). It counts the number of barcodes successful found by the SDK. It is recommended if you can predict the number of barcode scans in a certain period of time in your application.
+This option is meant for the [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/). It counts the number of barcodes successfully found by the SDK. It is recommended if you can predict the number of barcode scans in a certain period of time in your application.
 
-> For the JavaScript edition and the mobile edition, a barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame. Some examples for your reference:
+> For the JavaScript edition and the Mobile edition, a barcode scan means a unique barcode value (of the same symbology) decoded from an image or a video frame. Some examples for your reference:
 >
 > | Examples	| Count of barcode scan |
 > |:-:|:-:|
 > | Two duplicated barcodes on an image | 1 |
 > | Two different barcodes on an image | 2 |
-> | Continuous scanning (video mode) of one barcode * | 1 |
+> | Continuous scanning (video mode) of one barcode | 1 |
 > | Two barcodes with the same encoded text but different symbologies | 2 |
 >
 > *How to decide whether a barcode is a duplicate*
 >  
-> Each scanned barcode is buffered for 3 seconds during which time newly found barcodes will be compared with it. If a new barcode is exactly the same, that new barcode is not counted and is buffered for another 3 seconds while the old one is no longer buffered. If no match is found in that 3 seconds, the barcode is removed from the buffer.
+> Each scanned barcode is buffered for 3 seconds during which time newly found barcodes will be compared with it. If a new barcode is exactly the same, that new barcode is not counted and it replaces the old one and gets buffered for another 3 seconds. If no match is found in that 3 seconds, the barcode is removed from the buffer.
 >  
-> For the mobile edition, 3 seconds is hardcoded. For the JavaScript edition, developers can specify the time with the API `duplicateForgetTime` which is 3 seconds by default.
+> For the Mobile edition, 3 seconds is hardcoded. For the JavaScript edition, developers can specify the time with the API `duplicateForgetTime` which is 3 seconds by default.
 
 ## Per Page
 
-This option is recommended if you can predict the number of pages to process in a certain period of time in your application. It is used by:
+This option is recommended if you can predict the number of pages to be processed in a certain period of time in your application. It is used by:
 
 * The [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and its extra modules (add-ons) such as the [Webcam Library](https://www.dynamsoft.com/web-twain/webcam-sdk-features/), the [PDF Rasterizer](https://www.dynamsoft.com/web-twain/pdf-to-image-javascript/) and the [OCR Engines](https://www.dynamsoft.com/web-twain/cpp-ocr-library/). The following shows how the counting is done.
 
@@ -44,13 +44,13 @@ This option is recommended if you can predict the number of pages to process in 
 > NOTE
 >  
 > * When Dynamic Web TWAIN is under a 'Per Page' license, the Barcode Reader can also be used as a module but its license will be of the type [Per Barcode Scan](#per-barcode-scan).
-> * Dynamsoft Barcode Reader has a feature called [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) and it also uses a 'Per Page' license where the number of images processed with this feature turned on are counted.
+> * The [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) has a feature called [Intermediate Results](https://www.dynamsoft.com/barcode-reader/image-processing-intermediate-output/) and it also uses a 'Per Page' license where the number of images processed by this feature are counted.
 
 ## Per Device
 
 Choose this option if you plan to perform a large number of operations like page scanning, barcode scanning or label recognition with a limited number of devices. 
 
-A device has different meanings for different [deployment types]({{site.about}}terms.html#deployment-type).
+Note that a device has different meanings for different [deployment types]({{site.about}}terms.html#deployment-type).
 
 | Deployment Type | Client Type |
 |:-:|:-:|
@@ -62,7 +62,7 @@ A device has different meanings for different [deployment types]({{site.about}}t
 
 > NOTE
 >
-> * For [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/), the only deployment type allowed is "Browser".
+> * For [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/), its trackable licenses only allow the "Browser" deployment type.
 > * For "Browser" type, a specific domain means the same origin. Read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
 
 A client is identified by its [UUID]({{site.about}}terms.html#client-uuid).
@@ -73,15 +73,15 @@ Once a device gets authorized, it's considered active for a limited time, read m
 
 This option is meant for the situation where you have a large number of client devices performing an unknown number of opeations like barcode scanning sporadically.
 
-One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured active for only 3 minutes as opposed to the much longer duration for a [Per Device](#per-device) license, read more [here](#how-long-is-a-device-considered-active).
+One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured active for only a few minutes as opposed to the much longer duration for a [Per Device](#per-device) license, read more [here](#how-long-is-a-device-considered-active).
 
 ## Concurrent Instance
 
 This option is meant for the situation where multiple instances of the SDK are created to work on multiple tasks at the same time. It is also based on the [Concurrent Device](#concurrent-device) license except that the limit is on the total number of active instances instead of the number of devices (UUIDs).
 
-At present, this option is limited to server deployment.
+At present, this option is limited to the "Server" deployment type.
 
-This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) for if you are interested.
+This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) if you are interested.
 
 ## Per Active Device
 
@@ -89,13 +89,13 @@ This option is meant for the situation where you have a large number of client d
 
 One such device is maintained the same way as a concurrent device except that it is considered active for 24 hours instead of 3 minutes, read more [here](#how-long-is-a-device-considered-active).
 
-This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) for if you are interested.
+This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) if you are interested.
 
 ## Per Domain
 
-This option is meant for the situation where a very large number of devices will be used to scan a very large number of barcodes and they all connect to a website on the same domain. The only limitation of this license type is the domain.
+This option is meant for the situation where a very large number of devices will be performing an unknown number of opeations like barcode scanning and they all connect to a website on the same domain. The only limitation of this license type is the domain.
 
-This option is not available on Dynamsoft Web Store, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) for if you are interested.
+This option is not available on Dynamsoft Web Store, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) if you are interested.
 
 ## Questions
 
@@ -118,12 +118,12 @@ Not applicable as no such list exists with this option.
 The expiry date of the device is calculated like this
 
 ``` text
-max ( min ( currentTime + 365 days, expiry date of the license ), currentTime + 7 days )
+max ( min ( currentTime + 90 days, expiry date of the license ), currentTime + 7 days )
 ```
 
 `currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
 
-`LTS` reviews the list every 24 hours and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 372 days (example: authorized the same day the license is activated, re-authorized on the 365th day and get another 7 days, removed on the 372th day) and the shortest time is 7 days (example: authorized on the 365th day and removed on the 372th day).
+`LTS` reviews the list every 24 hours and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 91 days and the shortest time is 7 days.
 
 * Concurrent Device
 
