@@ -225,6 +225,20 @@ Dynamsoft hosts a copy of the software for customers who don't want to track the
 * [Self-hosting License Tracking]({{site.selfhosting}}index.html)
 * [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html)
 
+## Tolerance Stage
+
+Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. For difference license types, this stage means different things:
+
+| License Type | Tolerance Stage |
+|:-:|:-:|
+| `Per Barcode Scan` | `round(5% * quota)` is allowed after the actual quota runs out. |
+| `Per Page` | `round(5% * quota)` is allowed after the actual quota runs out. |
+| `Per Device` | `round(10% * quota)` is allowed after the actual quota runs out. |
+| `Concurrent Device` | A number of exceptions are allowed and the number grows as time passes. |
+| `Concurrent Instance` | A number of exceptions are allowed and the number grows as time passes. |
+| `Active Device` | A number of exceptions are allowed and the number grows as time passes. |
+| All Types | 7 days are allowed after the license expires. |
+
 ## LTS UUID
 
 The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
@@ -284,20 +298,6 @@ If you don't mind sharing the device information with the `LTS` , you can also g
 * Mobile: the unique device string provided by the device itself is collected
 
 The good news is that as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by the `LTS` . On the other hand, this means that the `LTS` can decrypt the UUID to obtain the actual device information.
-
-### Tolerance Stage
-
-Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. For difference license types, this stage means different things:
-
-| License Type | Tolerance Stage |
-|:-:|:-:|
-| `Per Barcode Scan` | `5% * quota` is allowed after the actual quota runs out. |
-| `Per Page` | `5% * quota` is allowed after the actual quota runs out. |
-| `Per Device` | `10% * quota` is allowed after the actual quota runs out. |
-| `Concurrent Device` | A number of exceptions are allowed and the number grows as time passes. |
-| `Concurrent Instance` | A number of exceptions are allowed and the number grows as time passes. |
-| `Active Device` | A number of exceptions are allowed and the number grows as time passes. |
-| All Types | 7 days are allowed after the license expires. |
 
 ### Questions
 
