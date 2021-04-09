@@ -285,6 +285,20 @@ If you don't mind sharing the device information with the `LTS` , you can also g
 
 The good news is that as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by the `LTS` . On the other hand, this means that the `LTS` can decrypt the UUID to obtain the actual device information.
 
+### Tolerance Stage
+
+Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. For difference license types, this stage means different things:
+
+| License Type | Tolerance Stage |
+|:-:|:-:|
+| `Per Barcode Scan` | `5% * quota` is allowed after the actual quota runs out. |
+| `Per Page` | `5% * quota` is allowed after the actual quota runs out. |
+| `Per Device` | `10% * quota` is allowed after the actual quota runs out. |
+| `Concurrent Device` | A number of exceptions are allowed and the number grows as time passes. |
+| `Concurrent Instance` | A number of exceptions are allowed and the number grows as time passes. |
+| `Active Device` | A number of exceptions are allowed and the number grows as time passes. |
+| All Types | 7 days are allowed after the license expires. |
+
 ### Questions
 
 #### Q: Does the UUID give away information about my device?

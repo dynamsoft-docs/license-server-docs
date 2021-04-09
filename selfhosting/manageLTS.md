@@ -31,9 +31,9 @@ For maximum up time, a backup LTS is necessary. The following are the steps to c
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main LTS URL and the second, the backup URL.
 
-  + For the main LTS: `"servers": ["self", "https://www.yoursite.com/lts/"]`
+  + For the main LTS: `"servers": ["self", "https://backup.yoursite.com/lts/"]`
 
-  + For the standby LTS: `"servers": ["https://backup.yoursite.com/lts/", "self"]`
+  + For the standby LTS: `"servers": ["https://www.yoursite.com/lts/", "self"]`
 
 > NOTE that you need to configure both the main LTS and the backup LTS separately.
 

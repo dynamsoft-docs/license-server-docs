@@ -15,19 +15,23 @@ All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to 
 
 > Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
 
-If you are using Dynamsoft-hosting LTS, then you can skip to the [next step](#configure-the-handshake-code) as the SDK has been configured to connect to the LTS hosted by Dynamsoft by default.
+If you are using Dynamsoft-hosting LTS, you can skip to the [next step](#configure-the-handshake-code).
 
 If you have hosted LTS on your own server, you can configure the connection like this
 
 * JavaScript
 
 ``` javascript
+// DBR 
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
+// DWT
+Dynamsoft.DWT.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
 ```
 
 * C++
 
 ``` cpp
+// DBR
 DM_LTSConnectionParameters ltspar;    
 reader.InitLTSConnectionParameters(&ltspar);
 ltspar.mainServerURL = "https://lts.yoursite.com";
@@ -36,6 +40,7 @@ ltspar.mainServerURL = "https://lts.yoursite.com";
 * CSharp
 
 ``` csharp
+// DBR
 DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
 ltspar.MainServerURL = "https://lts.yoursite.com";
 ```
@@ -43,6 +48,7 @@ ltspar.MainServerURL = "https://lts.yoursite.com";
 * Java
 
 ``` java
+// DBR
 BarcodeReader br = new BarcodeReader("")
 DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
 ltspar.mainServerURL = "https://lts.yoursite.com";
@@ -51,6 +57,7 @@ ltspar.mainServerURL = "https://lts.yoursite.com";
 * Python
 
 ``` python
+// DBR
 br = BarcodeReader();
 ltspar = reader.init_lts_connection_parameters();
 ltspar.mainServerURL = "https://lts.yoursite.com";
@@ -59,6 +66,7 @@ ltspar.mainServerURL = "https://lts.yoursite.com";
 On Android
 
 ``` java
+// DBR
 DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
     @Override
     public void LTSLicenseVerificationCallback(boolean success, Exception error) {
@@ -73,26 +81,37 @@ parameters.mainServerURL = "https://lts.yoursite.com";
 On iOS
 
 ``` c
+// DBR
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.mainServerURL = @"https://lts.yoursite.com";
 ```
 
 ## Configure the Handshake Code
 
+> Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code)
+
 * JavaScript
 
 ``` javascript
+// DBR
 Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
+
+// DWT
+Dynamsoft.DWT.handshakeCode = "DynamsoftID-CustomCode";
+Dynamsoft.DWT.Load();
 ```
 
-For backward compatibility, the Handshake Code can also be set in the script tag as `data-productKeys` , as shown below
+For Dynamsoft Barcode Reader JavaScript Edition, the Handshake Code can also be set in the script tag as `data-productKeys` as shown below
 
+``` html
 <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@8/dist/dbr.js" data-productKeys="DynamsoftID-CustomCode"></script>
+```
 
 * C++
 
 ``` cpp
+// DBR
 DM_LTSConnectionParameters ltspar;    
 reader.InitLTSConnectionParameters(&ltspar);
 ltspar.handshakeCode = "Your-HandshakeCode";
@@ -102,6 +121,7 @@ iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
 * CSharp
 
 ``` csharp
+// DBR
 DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
 ltspar.HandshakeCode = "Your-HandshakeCode";
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
@@ -110,6 +130,7 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 * Java
 
 ``` java
+// DBR
 BarcodeReader br = new BarcodeReader("")
 DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
 ltspar.handshakeCode = "Your-HandshakeCode";
@@ -119,6 +140,7 @@ br.initLicenseFromLTS(ltspar);
 * Python
 
 ``` python
+// DBR
 reader = BarcodeReader();
 ltspar = reader.init_lts_connection_parameters();
 ltspar.handshakeCode = "Your-HandshakeCode";
@@ -128,6 +150,7 @@ iRet = reader.init_license_from_lts(ltspar);
 On Android
 
 ``` java
+// DBR
 DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
     @Override
     public void LTSLicenseVerificationCallback(boolean success, Exception error) {
@@ -143,6 +166,7 @@ dbr.initLicenseFromLTS(parameters,ltsListener);
 On iOS
 
 ``` c
+// DBR
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.handshakeCode = @"Your-HandshakeCode";
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
@@ -171,7 +195,7 @@ During initialization, Dynamsoft SDKs connect to `LTS` to get authorized. The pr
 
 ### About the request
 
-The request includes the Client UUID and the Handshake Code among other information. The Handshake Code is fetched from [your code](#configure-the-handshake-code) and the UUID is fetched from the local cache. If the UUID is not found in the cache, a new one is generated.
+The request includes the [Client UUID]({{site.about}}terms.html#client-uuid) and the Handshake Code among other information. The Handshake Code is fetched from [your code](#configure-the-handshake-code) and the UUID is fetched from the local cache. If the UUID is not found in the cache, a new one is generated.
 
 ### Handle authorization error
 
@@ -189,13 +213,23 @@ try {
 
 ## License Tracking
 
-When a Dynamsoft SDK uses a trackable license, it will record every successful operation that needs to be tracked. Then it generates a minimum report for each 3-minute time slot and sumbit the report every 3 minutes. We'll dive deeper into the mechanism below.
+When a Dynamsoft SDK uses a trackable license, it will record every successful operation that needs to be tracked. Then it generates a minimum report for each 3-minute time slot and sumbits the report every 3 minutes. We'll dive deeper into the mechanism below.
 
 ### Usage report
 
+#### Dynamic Web TWAIN
+
+Dynamic Web TWAIN is used to scan documents or load existing documents for further operations, etc., its usage report includes fields such as
+
+* Time label (indicates which 3-minute slot it covers)
+* Handshake Code
+* Client UUID
+* Count of total processed pages
+* Type of importing operations (whether the pages are scanned, captured, etc.)
+
 #### Dynamsoft Barcode Reader
 
-The main purpose of the Barcode Reader is to locate and decode barcodes, therefore, its usage is about successful barcode scans and its report includes the following fields
+The main purpose of the Barcode Reader is to locate and decode barcodes, therefore, its usage is about successful barcode scans and its report includes fields such as
 
 * Time label (indicates which 3-minute slot it covers)
 * Handshake Code
@@ -207,7 +241,7 @@ The main purpose of the Barcode Reader is to locate and decode barcodes, therefo
 
 * 3-minute for reports
 
-  Dynamsoft uses absolute time when generating usage reports. This means, each time slot is fixed, for example, the first time slot is always 00:00:00 ~ 00:03:00 and the second is 00:03:00 ~ 00:06:00 and so on. Each successful operation (like a barcode scan) has a time stamp of its own and is counted in the 3-minute window in which it is done.
+  Dynamsoft uses absolute time when generating usage reports. This means, each time slot is fixed, for example, the first time slot of the day is always 00:00:00 ~ 00:03:00 and the second is 00:03:00 ~ 00:06:00 and so on. Each successful operation (like a barcode scan) has a time stamp of its own and is counted in the 3-minute window in which it is done.
 
 * 3-minute for submitting reports
 
@@ -221,4 +255,4 @@ If a report is not submitted, it'll be kept on the client for up to 30 days afte
 
 ### Report analysis
 
-LTS receives usage reports from client devices and does the math to make overall usage reports. These reports are done per each Handshake Code. Read more on [statistics page]({{site.common}}statistics.html).
+LTS receives usage reports from client devices, count the usage against certain license items, and then does the math to make overall usage reports. These reports are done per each Handshake Code and per License Item. Read more on [statistics page]({{site.common}}statistics.html).

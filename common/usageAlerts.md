@@ -24,12 +24,12 @@ Notification emails are triggered when the ratio of consumed to total quota reac
 * 75%
 * 90%
 * 95%
-* 100%: Normal quota is used up.
-* 105% (Per Barcode Scan) or 110% (Per Device): The License Item is then deactivated.
+* 100%: Normal quota is used up, entering the tolerance stage.
+* 105% (Per Barcode Scan) or 110% (Per Device): Tolerance used up, the License Item is deactivated.
 
 ### Concurrent Device
 
-When the ratio of authentication request failures to the total number of requests reaches the following targets over the latest 60 minutes of app activity:
+When the ratio of failed authorization requests to the total number of requests reaches the following targets over the last 60 minutes of app activity:
 
 > The usage is based on single Handshake Code
 
@@ -52,12 +52,12 @@ When the ratio of authentication request failures to the total number of request
 > * 14:00 Failure rate:51%, third email triggered
 > ...
 
-Other than that, when authorized devices are used offline, their usage during that time period will be submitted when they get online the next time and this will cause exceptions (an exception is defined when an excessive device is active at a given 3-minute time slot). Dynamsoft allows a number of exceptions per each License Item. With the passage of time and the increase in activity usage, this number also increases. At each check point (the 10-minute mark), if the ratio of raised exceptions to total allowed exceptions reaches the following targets, an email will be triggered as well.
+Other than that, when authorized devices are used offline, their usage during that time period will be submitted when they get online the next time and this may cause exceptions (an exception is counted when active devices exceed the quota for any given 3-minute time slot). Dynamsoft allows a number of exceptions per each License Item. As time passed and activity usage increased, this number also increased. At each check point (the 10-minute mark), if the ratio of raised exceptions to total allowed exceptions reaches the following targets, an email will be triggered as well.
 
 * 50%
 * 75%
 * 90%
-* 100%: The License Item is then deactivated.
+* 100%: Too many exceptions, the License Item is deactivated.
 
 ## Questions
 

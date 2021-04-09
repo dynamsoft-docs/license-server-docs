@@ -38,6 +38,5 @@ For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ `LT
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)
 * [Get notified about license status]({{site.common}}usagealerts.html)
-* [Add extra quota to your license]({{site.about}}purchase.html#add-quota)
 
 > Read more about [the mechanism]({{site.common}}mechanism.html) behind license tracking.
