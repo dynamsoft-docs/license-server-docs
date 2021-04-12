@@ -162,6 +162,8 @@ The License Tracking Server ( `LTS` ) is the only software that Dynamsoft SDKs w
 * `LTS` also supports setting a session password to avoid abuse.
 * The authorization sent back from `LTS` and the usage reports sent to `LTS` are both encrypted.
 
+Last but not least, Dynamsoft is [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) certified.
+
 ## How reliable is the Dynamsoft-Hosting License Tracking Server?
 
 Customer devices rely on the License Tracking Server to get authorized for using Dynamsoft SDKs, therefore, its reliability is crucial. The following are the measures we have in place for maximum uptime:
