@@ -115,11 +115,18 @@ let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 * C++
 
 ``` cpp
+int iRet = -1;
+char szErrorMsg[256];
 DM_LTSConnectionParameters ltspar;    
 CBarcodeReader::InitLTSConnectionParameters(&ltspar);
-ltspar.handshakeCode = "Your-HandshakeCode";
-ltspar.sessionPassword = "The-Password-You-Set";
-iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar,szErrorMsg,256);
+ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+ltspar.SessionPassword = "The-Password-You-Set";
+iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+if (iRet != DBR_OK)
+{
+    printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
+    return -1;
+}
 ```
 
 * CSharp
@@ -323,17 +330,24 @@ DBR_InitLicenseFromLTS(&paramters, errorBuf, 512);
 * C++
 
 ``` cpp
+int iRet = -1;
+char szErrorMsg[256];
 DM_LTSConnectionParameters ltspar;    
-reader.InitLTSConnectionParameters(&ltspar);
+CBarcodeReader::InitLTSConnectionParameters(&ltspar);
 ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
+ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+if (iRet != DBR_OK)
+{
+    printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
+    return -1;
+}
 ```
 
 * C#
 
 ``` csharp
-DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters(); 
+DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters(); 
 ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
 ltspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
@@ -342,12 +356,11 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 * Java
 
 ``` java
-BarcodeReader br = new BarcodeReader("")
-DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
 ltspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
 ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
 ltspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
-br.initLicenseFromLTS(ltspar);
+BarcodeReader.initLicenseFromLTS(ltspar);
 ```
 
 * Objective-C for iOS

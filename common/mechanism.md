@@ -32,16 +32,19 @@ Dynamsoft.DWT.licenseServer = ["https://your.mainServer.com", "https://your.back
 
 ``` cpp
 // DBR
+int iRet = -1;
+char szErrorMsg[256];
 DM_LTSConnectionParameters ltspar;    
-reader.InitLTSConnectionParameters(&ltspar);
-ltspar.mainServerURL = "https://lts.yoursite.com";
+CBarcodeReader::InitLTSConnectionParameters(&ltspar);
+ltspar.mainServerURL = "https://lts.yoursite.com"; // Please replace the server URL with your own
+iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
 ```
 
 * CSharp
 
 ``` csharp
 // DBR
-DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
+DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
 ltspar.MainServerURL = "https://lts.yoursite.com";
 ```
 
@@ -49,8 +52,7 @@ ltspar.MainServerURL = "https://lts.yoursite.com";
 
 ``` java
 // DBR
-BarcodeReader br = new BarcodeReader("")
-DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
 ltspar.mainServerURL = "https://lts.yoursite.com";
 ```
 
@@ -155,17 +157,24 @@ For Dynamsoft Barcode Reader JavaScript Edition, the Handshake Code can also be 
 
 ``` cpp
 // DBR
+int iRet = -1;
+char szErrorMsg[256];
 DM_LTSConnectionParameters ltspar;    
-reader.InitLTSConnectionParameters(&ltspar);
-ltspar.handshakeCode = "Your-HandshakeCode";
-iRet = reader.InitLicenseFromLTS(&ltspar,szErrorMsg,256);
+CBarcodeReader::InitLTSConnectionParameters(&ltspar);
+ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+if (iRet != DBR_OK)
+{
+    printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
+    return -1;
+}
 ```
 
 * CSharp
 
 ``` csharp
 // DBR
-DMLTSConnectionParameters ltspar = _br.InitLTSConnectionParamters();           
+DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
 ltspar.HandshakeCode = "Your-HandshakeCode";
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 ```
@@ -174,10 +183,9 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
 
 ``` java
 // DBR
-BarcodeReader br = new BarcodeReader("")
-DMLTSConnectionParameters ltspar = br.initLTSConnectionParameters();
+DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
 ltspar.handshakeCode = "Your-HandshakeCode";
-br.initLicenseFromLTS(ltspar);
+BarcodeReader.initLicenseFromLTS(ltspar);
 ```
 
 * Python
