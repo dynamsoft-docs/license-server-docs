@@ -86,7 +86,50 @@ iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
 lts.mainServerURL = @"https://lts.yoursite.com";
 ```
 
-## Configure the Handshake Code
+## Specify the Organization ID
+
+> Read more on [what is an Organization ID]({{site.about}}terms.html#organization-id)
+
+You can acquire the license from `LTS` by specifying your Organization ID. At present, this is supported in the Android and iOS editions of Dynamsoft Barcode Reader.
+
+On Android
+
+``` java
+// DBR
+DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+    @Override
+    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+        Assert.assertEquals(false, success);
+        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
+    }
+};
+DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+parameters.organizationId = "Your-OrganizationId";
+dbr.initLicenseFromLTS(parameters,ltsListener);
+```
+
+On iOS
+
+``` c
+// DBR
+iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
+lts.organizationId = @"Your-OrganizationId";
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+
+* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+
+{
+    NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->m_verificationReceiver performSelector:self->m_verificationCallback withObject:boolNumber withObject:error];
+        NSLog(@"ifsuccess : %@",boolNumber);
+        NSLog(@"error code: %ld:",(long)error.code);
+        NSLog(@"errormsg : %@",error.userInfo);
+    });
+}
+```
+
+## Specify the Handshake Code
 
 > Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code)
 
