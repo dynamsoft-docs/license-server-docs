@@ -176,6 +176,14 @@ Customer devices rely on the License Tracking Server to get authorized for using
 
 Also, Dynamsoft has been a online service provider for over 13 years and has an experienced team who have been maintaining products like SourceAnywhere Hosted, SCMAnywhere Hosted, TFS Hosted, etc.
 
+## How can I protect my license?
+
+A trackable license is accessed by either the [organization ID]({{site.about}}terms.html#organization-id) or the [handshake code]({{site.about}}terms.html#handshake-code) or both. When you use the organization ID, it is equivalent to using the [default Handshake Code]({{site.about}}terms.html#default-handshake-code). Therefore, to protect your license is to restrict the access of a specific handshake code. The following are the measures we have in place
+
+* You can set a [session password]({{site.about}}terms.html#session-password) for this handshake code. The license only works when the password in your application matches the one you set for the code in the `LTS`, therefore you can update this password each time you update your application.
+
+* You can limit the access by [validation fields]({{site.about}}terms.html#valication-field). A validation field is acquired at runtime from the application (e.g. the domain or the process name of the application) and sent to the server. If it doesn't match any field you have set on the `LTS`, the authorization fails.
+
 ## What happens if my license runs out?
 
 Generally, each trackable license has a fixed quota. If the quota is used up, the license will no longer be valid and the software will stop running. Of course, this is unacceptable for production use, and Dynamsoft has the following measures to ensure that it does not happen accidentally.

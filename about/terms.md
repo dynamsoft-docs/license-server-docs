@@ -82,7 +82,7 @@ For each new organization added to a [ `LTS` ](#license-tracking-server), a defa
 
 ## Validation Field
 
-A Handshake Code is a string that is set in your code and it is important to secure it so that it cannot be used by any other parties. For that, the Handshake Code comes with a security setting called `Validation Field` .kk
+A Handshake Code is a string that is set in your code and it is important to secure it so that it cannot be used by any other parties. For that, the Handshake Code comes with a security setting called `Validation Field` .
 
 A Validation Field is a static characteristic of your application, meaning that once set, it cannot be changed. At present, the following three Validation Fields are supported
 
