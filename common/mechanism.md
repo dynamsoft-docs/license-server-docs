@@ -15,17 +15,21 @@ All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to 
 
 > Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
 
-If you are using Dynamsoft-hosting LTS, you can skip to the [next step](#configure-the-handshake-code).
+> If you are using an old browser like IE 9 to access a web application. Check out [Special Notice for IE 9](#special-notice-for-ie-9).
 
-If you have hosted LTS on your own server, you can configure the connection like this
+The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting `LTS`, you should specify the server as "https://mlts.dynamsoft.com".
+
+> Important NOTE
+> 
+> If you are using Dynamic Web TWAIN 17.0, it's mandatory to specify the `licenseServer` in your code. Use "https://mlts.dynamsoft.com" if you are using Dynamsoft-Hosting `LTS`.
 
 * JavaScript
 
 ``` javascript
 // DBR 
-Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
+Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://your.mainServer.com"];
 // DWT
-Dynamsoft.DWT.licenseServer = ["https://your.mainServer.com", "https://your.backupServer.com"];
+Dynamsoft.DWT.licenseServer = ["https://your.mainServer.com"];
 ```
 
 * C++
@@ -36,7 +40,7 @@ int iRet = -1;
 char szErrorMsg[256];
 DM_LTSConnectionParameters ltspar;    
 CBarcodeReader::InitLTSConnectionParameters(&ltspar);
-ltspar.mainServerURL = "https://lts.yoursite.com"; // Please replace the server URL with your own
+ltspar.mainServerURL = "https://your.mainServer.com"; // Please replace the server URL with your own
 iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
 ```
 
@@ -45,7 +49,7 @@ iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
 ``` csharp
 // DBR
 DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
-ltspar.MainServerURL = "https://lts.yoursite.com";
+ltspar.MainServerURL = "https://your.mainServer.com";
 ```
 
 * Java
@@ -53,7 +57,7 @@ ltspar.MainServerURL = "https://lts.yoursite.com";
 ``` java
 // DBR
 DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
-ltspar.mainServerURL = "https://lts.yoursite.com";
+ltspar.mainServerURL = "https://your.mainServer.com";
 ```
 
 * Python
@@ -62,7 +66,7 @@ ltspar.mainServerURL = "https://lts.yoursite.com";
 // DBR
 br = BarcodeReader();
 ltspar = reader.init_lts_connection_parameters();
-ltspar.mainServerURL = "https://lts.yoursite.com";
+ltspar.mainServerURL = "https://your.mainServer.com";
 ```
 
 On Android
@@ -77,7 +81,7 @@ DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationLis
     }
 };
 DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
-parameters.mainServerURL = "https://lts.yoursite.com";
+parameters.mainServerURL = "https://your.mainServer.com";
 ```
 
 On iOS
@@ -85,7 +89,7 @@ On iOS
 ``` c
 // DBR
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.mainServerURL = @"https://lts.yoursite.com";
+lts.mainServerURL = @"https://your.mainServer.com";
 ```
 
 ## Specify the Organization ID
@@ -307,3 +311,10 @@ If a report is not submitted, it'll be kept on the client for up to 30 days afte
 ### Report analysis
 
 LTS receives usage reports from client devices, count the usage against certain license items, and then does the math to make overall usage reports. These reports are done per each Handshake Code and per License Item. Read more on [statistics page]({{site.common}}statistics.html).
+
+## Special Notice for IE 9
+
+For IE 9, in order to use the license, you must make sure of two things
+
+* The option `Access data sources across domains` must be set to `Enabled` in "Security Settings"
+* The [License Server URL](#configure-lts) and your own web site URL must both be included in "Trusted Sites"
