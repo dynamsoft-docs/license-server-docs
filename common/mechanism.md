@@ -11,17 +11,13 @@ needAutoGenerateSidebar: true
 
 All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to get authorization at initialization as well as collect and report its usage during runtime.
 
+> If you are using an old browser like IE 9 to access a web application. Check out [Special Notice for IE 9](#special-notice-for-ie-9).
+
 ## Configure LTS
 
 > Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
 
-> If you are using an old browser like IE 9 to access a web application. Check out [Special Notice for IE 9](#special-notice-for-ie-9).
-
-The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting `LTS`, you should specify the server as "https://mlts.dynamsoft.com".
-
-> Important NOTE
-> 
-> If you are using Dynamic Web TWAIN 17.0, it's mandatory to specify the `licenseServer` in your code. Use "https://mlts.dynamsoft.com" if you are using Dynamsoft-Hosting `LTS`.
+The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting `LTS`, you can skip to this step.
 
 * JavaScript
 
