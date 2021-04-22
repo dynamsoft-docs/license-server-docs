@@ -13,9 +13,9 @@ needAutoGenerateSidebar: true
 > 
 > The following content assumes that you have already activated your license, if you haven't, please first [activate it]({{site.about}}activate.html).
 
-All Dynamsoft SDKs that support tracked licenses have a built-in mechanism to get authorization at initialization as well as collect and report its usage during runtime.
+All Dynamsoft SDKs that support tracked licenses have a built-in mechanism to get authorization at initialization as well as collect and report its usage during runtime. This article is about how to use such a tracked license.
 
-> If you are using an old browser like IE 9 to access a web application. Check out [Special Notice for IE 9](#special-notice-for-ie-9).
+NOTE: If you are using an old browser like IE 9 to access a web application, please also check out [Special Notice for IE 9](#special-notice-for-ie-9).
 
 ## Configure LTS
 
