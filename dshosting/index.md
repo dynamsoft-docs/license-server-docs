@@ -9,11 +9,16 @@ needAutoGenerateSidebar: true
 
 # Dynamsoft-hosting license tracking
 
+> NOTE:
+> 
+> To learn how secure and reliable Dynamsoft-hosting `LTS` is, you can refer to [this page]({{site.about}}licensefaq.html).
+
 > This article is about Dynamsoft-Hosting License Tracking, if you would rather track license usage yourself using your own self-hosting License Tracking Server, please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
 
 > If you have not purchased any Dynamsoft SDK license that requires usage tracking, please see [how to purchase a license]({{site.about}}purchase.html).
 
 The following assumes you have purchased a trackable license and have chosen "Dynamsoft-Hosting" on the "Activate License" page in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense).
+
 
 ## Activate the License
 
