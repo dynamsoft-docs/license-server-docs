@@ -2,31 +2,16 @@
 <html lang="en-US">
 
 {%- include head.html -%}
+<style>
+#docHead { top: 95px }
+.docContainer, .sideBar { padding-top: 0px; }
+#sideBarCnt.sidebar-fixed { position: fixed; top: 0px; max-height: unset; }
+.rightSideMenu.rsm-fixed { position: fixed; top: 20px; }
+</style>
 
 <body>
     <div class="headWrapper">
         {%- include page_header.html -%}
-    </div>
-    <div class="subHeadWrapper">
-        <div class="subHeader container">
-            <!--<div class="row">
-                <ul class="subHeaderMenuUl col-xs-12 clearfix">
-                     Replace with your product information 
-                    <li class="on"><a class="orangelink" href = "{{ site.docHomePage }}">Documentation</a></li>
-                </ul>
-            </div>-->
-            <div class="row mobileSubHeaderMenu">
-                <ul class="col-xs-12 show-xs">
-                    <!-- Replace with your product information -->
-                    <li><a class="orangelink" href="{{ site.docHomePage }}">Documentation</a></li>
-                    <li><a class="whitelink"
-                            href="https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx">Code
-                            Gallery</a></li>
-                    <li><a class="whitelink"
-                            href="https://www.dynamsoft.com/Products/Barcode-Reader-Resources.aspx">Resources</a></li>
-                </ul>
-            </div>
-        </div>
     </div>
     <div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
     <div class="container">
@@ -88,7 +73,6 @@
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
-
     <script>anchors.add();</script>
 
     <script>
@@ -115,6 +99,34 @@
         $('#txtSearch').keydown(function (e) {
             if (e.keyCode == 13) {
                 window.location.href = '/license-tracking/docs/search.html?q=' + $('#txtSearch').val()
+            }
+        })
+
+        $(document).ready(function(){ 
+            var sd = $(window).scrollTop()
+            if(sd > 0) {
+                realFunc2();
+            }
+
+            $(window).resize(function() {
+                realFunc2();
+            })
+
+            window.addEventListener('scroll', realFunc2);
+
+            function realFunc2() {
+                if (breakpoint() == 'lg') {
+                    var menuHeight = $('#overall-header').height();
+                    var sd = $(window).scrollTop();
+                    if (sd >= $('#overall-header').height()) {
+                        // head and sidebar fixed
+                        $('#docHead').css({'top': '0px'});
+                    } else {
+                        $('#docHead').css({'top': (menuHeight - sd + 1) + 'px'});
+                    }
+                } else {
+                    $('#docHead').css({'top': 'unset'});
+                }
             }
         })
     </script>
