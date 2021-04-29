@@ -51,19 +51,21 @@ Once logged in, you should be able to see the `UUID` of the `LTS` on the home pa
 
 ### Download the License File
 
-During [license activation]({{site.selfhosting}}index.html#activate-the-license), the License File should have already been downloaded. If you don't have the file yet, you can also download it from the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense) by clicking the "Download License File (Activated)" button for that license.
+During [license activation]({{site.selfhosting}}index.html#activate-the-license), the License File should have already been downloaded. If you don't have the file yet, you can download it from the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense) by clicking the download icon for that license.
 
-> If the button reads "Download License File (Not Activated)", please first [activate the license]({{site.selfhosting}}index.html#activate-the-license).
+![Full-License-Page-001]({{site.assets}}imgs/full-license-page-001)
 
 ### Import the License File
 
 * Click "License Items" on the license menu to go to the "License Items" page
 * Click "Select File" to open the License File you just downloaded and select "Import"
 
-Once the importing is done
+Once imported
 
-* You will see the license items contained in that License File in the *Activated License Items* table
-* A Handshake Code is generated for that imported License File which includes all the license items and the next step is to [Configure the License](#configure-the-license)
+* You will see the license items contained in that License File in the *Activated License Items* table.
+* A Handshake Code will be generated for that imported License File which includes all the license items.
+
+The next step is to [Configure the License](#configure-the-license)
 
 > Read more on [About License Items]({{site.common}}licenseitems.html)
 
