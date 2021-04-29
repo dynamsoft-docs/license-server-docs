@@ -12,10 +12,6 @@ breadcrumbText: Mange LTS
 
 ## How to set up LTS
 
-### Acquire the installer for the latest LTS
-
-At present, `LTS` is provided for either Windows or Linux. If you do not have the installer, please contact the [Dynamsoft Support team](mailto:support@dynamsoft.com).
-
 ### Install and configure LTS
 
 Please read one of the following guides
@@ -25,7 +21,9 @@ Please read one of the following guides
 
 ### Configure a backup LTS
 
-For maximum up time, a backup LTS is necessary. The following are the steps to configure a back LTS.
+> This step is optional but highly recommended, if you are installing LTS for the first time, you can skip this step and come back to this step once the main LTS is installed and working properly.
+
+For maximum up time, a backup LTS is necessary. The following are the steps to configure a backup LTS.
 
 * Find the file `lts.json.sample` in the LTS directory, rename it to `lts.json`
 
@@ -33,7 +31,7 @@ For maximum up time, a backup LTS is necessary. The following are the steps to c
 
   + For the main LTS: `"servers": ["self", "https://backup.yoursite.com/lts/"]`
 
-  + For the standby LTS: `"servers": ["https://www.yoursite.com/lts/", "self"]`
+  + For the backup LTS: `"servers": ["https://www.yoursite.com/lts/", "self"]`
 
 > NOTE that you need to configure both the main LTS and the backup LTS separately.
 
@@ -41,7 +39,7 @@ For maximum up time, a backup LTS is necessary. The following are the steps to c
 
 Once LTS is installed and configured, you can open its managment portal in the browser. The URL has the following pattern
 
-```
+``` 
 https://{domain or IP of the server}:{port}/lts/page/#/index.html
 ```
 

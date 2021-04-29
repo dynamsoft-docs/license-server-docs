@@ -70,4 +70,14 @@ sudo apt install net-tools
 ps -ef |grep dynamsoft
 ```
 
-Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the License Tracking Server which indicates that it is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx`. Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html).
+Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the License Tracking Server. 
+
+> If you changed the port during installation, you should use that port instead.
+
+Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this `LTS` .
+
+> This UUID is require when [activating your licenses]({{site.selfhosting}}index.html#activate-the-license).
+
+![LTS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
+
+If you see the above page, `LTS` is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` . Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html).

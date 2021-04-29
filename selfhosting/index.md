@@ -9,11 +9,20 @@ needAutoGenerateSidebar: true
 
 # Self-hosting license tracking
 
-> This article addresses Self-Hosted License Tracking. If you would rather let Dynamsoft track your license usage and not have to set up your own server for tracking, please see [Dynamsoft-hosting license tracking]({{site.dshosting}}index.html).
+> This article addresses Self-Hosting License Tracking. If you would rather let Dynamsoft track your license usage and not have to set up your own server for tracking, please see [Dynamsoft-hosting license tracking]({{site.dshosting}}index.html).
 
 > If you have not purchased any Dynamsoft SDK license that requires usage tracking, please check out [how to purchase a license]({{site.about}}purchase.html).
 
 The following assumes you have purchased a trackable license and have chosen "Self-Hosting" on the "Activate License" page in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense).
+
+## Set Up LTS
+
+To track the license yourself, you first need to install the License Tracking Server (LTS). Please read one of the following guides
+
+* [Set up LTS on Windows]({{site.selfhosting}}ltsonwindows.html)
+* [Set up LTS on Linux]({{site.selfhosting}}ltsonlinux.html)
+
+After you have installed `LTS` on your server and got its UUID, you can proceed to the next step.
 
 ## Activate the License
 
@@ -23,9 +32,9 @@ On the "Activate License" page, there are a few steps for the activation.
 
 > This step is optional, you can just use the default Alias. Read more on [what is an Alias]({{site.about}}terms.html#alias).
 
-* Input the `UUID` of the `LTS` hosted on your server
+* Input the `UUID` of the `LTS` hosted on your server, the UUID is found on the home page of your `LTS`.
 
-> This step is required. To get the `UUID` of your `LTS` , please see [how to set up LTS]({{site.selfhosting}}managelts.html#how-to-set-up-lts).
+![LTS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
 
 > Read more on [what is a LTS UUID]({{site.about}}terms.html#lts-uuid)
 

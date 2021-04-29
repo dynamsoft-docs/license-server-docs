@@ -209,7 +209,7 @@ LicenseItems:
 
 When you place an order, a License File containing all the License Items will automatically be generated. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it will say "Activated".
 
-If you are using the Dynamsoft-hosted License Tracking Server, the License Files are only information about your orders for your reference and are not required for the license to operate. However, if you are hosting the License Tracking Server yourself, you need the License File in order to add the License Items to that `LTS` for license tracking.
+If you are using the Dynamsoft-hosting License Tracking Server, the License Files are only information about your orders for your reference and are not required for the license to operate. However, if you are hosting the License Tracking Server yourself, you need the License File in order to add the License Items to that `LTS` for license tracking.
 
 ## Deployment Type
 
