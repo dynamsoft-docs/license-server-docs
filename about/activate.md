@@ -11,8 +11,8 @@ needAutoGenerateSidebar: true
 
 When you activate a purchased license, you will choose one of two activation options
 
-* Dynamsoft-Hosting
-* Self-Hosting
+* [Dynamsoft-Hosting]({{site.dshosting}}index.html).
+* [Self-Hosting]({{site.selfhosting}}index.html)
 
 ![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
 
