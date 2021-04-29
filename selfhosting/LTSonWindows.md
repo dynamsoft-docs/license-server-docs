@@ -22,7 +22,9 @@ needAutoGenerateSidebar: true
 
 ### Run the installer
 
-If you do not have the installer, please contact the [Dynamsoft Support team](mailto:support@dynamsoft.com).
+Download the installer from
+
+[Dynamsoft-Licensing-Tracking-Server](https://tst.dynamsoft.com/public/download/lts/2.2/Dynamsoft-Licensing-Tracking-Server.exe)
 
 ### Test the server
 
