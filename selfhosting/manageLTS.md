@@ -53,7 +53,7 @@ Once logged in, you should be able to see the `UUID` of the `LTS` on the home pa
 
 During [license activation]({{site.selfhosting}}index.html#activate-the-license), the License File should have already been downloaded. If you don't have the file yet, you can download it from the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense) by clicking the download icon for that license.
 
-![Full-License-Page-001]({{site.assets}}imgs/full-license-page-001)
+![Full-License-Page-001]({{site.assets}}imgs/full-license-page-001.png)
 
 ### Import the License File
 
