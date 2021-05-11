@@ -155,15 +155,15 @@ In both cases, you get a license that belongs to your organization (if you didn'
 
 * For the purchased commercial license, you need to activate it manually. During the activation, you can choose whether to configure it to the default `handshakeCode`.
 
-Read more on [The relationship between `organizationID` and `handshakeCode` ](#what-is-the-relationship-between-organizationID-and-handshakeCode).
+Read more on [The relationship between organizationID and handshakeCode](#what-is-the-relationship-between-organizationid-and-handshakecode).
 
 > NOTE: 
 >  
 > To protect your licenses, you can specify a session password. This password corresponds to the handshake code specified by the above API `handshakeCode` or the default one if only the `organizationID` is specified. Read more about [How can I protect my license?]({{site.about}}licensefaq.html?ver=latest#how-can-i-protect-my-license).
 
-## What is the relationship between `organizationID` and `handshakeCode` ?
+## What is the relationship between organizationID and handshakeCode?
 
-| `organizationID` | `handshakeCode` | Result |
+| organizationID | handshakeCode | Result |
 | :-: | :-: | :-: |
 | Specified | Empty | Return license items configured to the default `handshakeCode` of that organization. |
 | Specified | Specified | If the `handshakeCode` exists within that organization, return license items configured to the specified `handshakeCode` . |
