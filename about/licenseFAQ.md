@@ -135,6 +135,41 @@ If you are hosting your own LTS, all you need to do is purchase another license,
 
 # Dynamsoft Licensing FAQ
 
+## How to use a trackable license?
+
+A trackable license is fetched from the License Tracking Server (either hosted by Dynamsoft or yourself, `LTS` for short) at runtime. Therefore, connection to the `LTS` is required.
+
+The `LTS` can store one or multiple license items, you can specify which ones you want to fetch with the APIs [ `organizationID` ]({{site.common}}mechanism.html#specify-the-organization-id) and / or [ `handshakeCode` ]({{site.common}}mechanism.html#specify-the-handshake-code).
+
+If you have just started evaluating a Dynamsoft SDK which supports trackable licenses, you don't need to specify anything. As long as you have network connection, a 7-day (public) trial license will be automatically fetched from the `LTS` hosted by Dynamsoft.
+
+If you require more time to test the SDK or you have decided to use it in your application, you can get your own license and then make use of it with the associated organization id and/or handshake code.
+
+* To get a 30-day (private) trial license, you can [email trial@dynamsoft.com](mailto:trial@dynamsoft.com?subject=privateTrial), note that the keyword "privateTrial" must be included in the email subject.
+
+* To get a commercial license, you can [purchase a license](https://www.dynamsoft.com/purchase-center/).
+
+In both cases, you get a license that belongs to your organization (if you didn't have an organization / account with us before, a new one will be created). 
+
+* For the 30-day (private) trial license, it's activated automatically and configured to the default `handshakeCode` of your organization which means you can get the license by simply [specifying your organization id]({{site.common}}mechanism.html#specify-the-organization-id). 
+
+* For the purchased commercial license, you need to activate it manually. During the activation, you can choose whether to configure it to the default `handshakeCode`.
+
+Read more on [The relationship between `organizationID` and `handshakeCode` ](#what-is-the-relationship-between-organizationID-and-handshakeCode).
+
+> NOTE: 
+>  
+> To protect your licenses, you can specify a session password. This password corresponds to the handshake code specified by the above API `handshakeCode` or the default one if only the `organizationID` is specified. Read more about [How can I protect my license?]({{site.about}}licensefaq.html?ver=latest#how-can-i-protect-my-license).
+
+## What is the relationship between `organizationID` and `handshakeCode` ?
+
+| `organizationID` | `handshakeCode` | Result |
+| :-: | :-: | :-: |
+| Specified | Empty | Return license items configured to the default `handshakeCode` of that organization. |
+| Specified | Specified | If the `handshakeCode` exists within that organization, return license items configured to the specified `handshakeCode` . |
+| Empty | Specified | Return license items configured to the specified `handshakeCode` . |
+| Empty | Empty | If the device never used the SDK before, return a 7-day (public) trial license. |
+
 ## Does license tracking disclose any private information?
 
 No, the license tracking process does not disclose any private information.

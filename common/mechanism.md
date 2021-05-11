@@ -1,19 +1,19 @@
 ---
 layout: default-layout
-title: How to use a tracked license
+title: How trackable licenses work
 keywords: license tracking, mechanism
 description: This page describes how license tracking is done
 breadcrumbText: Mechanism
 needAutoGenerateSidebar: true
 ---
 
-# How to use a tracked license
+# How trackable licenses work
 
 > Important NOTE
 > 
 > The following content assumes that you have already activated your license, if you haven't, please first [activate it]({{site.about}}activate.html).
 
-All Dynamsoft SDKs that support tracked licenses have a built-in mechanism to get authorization at initialization as well as collect and report its usage during runtime. This article is about how to use such a tracked license.
+All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to get authorization at initialization as well as collect and report its usage during runtime. This article is about how to use such a trackable license.
 
 NOTE: If you are using an old browser like IE 9 to access a web application, please also check out [Special Notice for IE 9](#special-notice-for-ie-9).
 
@@ -268,7 +268,7 @@ try {
 
 ## License Tracking
 
-When a Dynamsoft SDK uses a tracked license, it will record every successful operation that needs to be tracked. Then it generates a minimum report for each 3-minute time slot and sumbits the report every 3 minutes. We'll dive deeper into the mechanism below.
+When a Dynamsoft SDK uses a trackable license, it will record every successful operation that needs to be trackable. Then it generates a minimum report for each 3-minute time slot and sumbits the report every 3 minutes. We'll dive deeper into the mechanism below.
 
 ### Usage report
 
