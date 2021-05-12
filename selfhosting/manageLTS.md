@@ -45,7 +45,7 @@ https://{domain or IP of the server}:{port}/lts/page/#/index.html
 
 You need to input a password to access the portal. If the password has not been set, you will be asked to set one.
 
-Once logged in, you should be able to see the `UUID` of the `LTS` on the home page(index.html).
+Once logged in, you should be able to see the `UUID` of the LTS on the home page(index.html).
 
 ## Add license to LTS
 
@@ -77,8 +77,8 @@ To configure the license is to manage the Handshake Code for the license. For mo
 
 ## Configure usage alerts
 
-When the quota on the license is about to be used up, you may want to be notified. `LTS` does it via email notifications. For more details, please see [How to manage usage alerts]({{site.common}}usagealerts.html).
+When the quota on the license is about to be used up, you may want to be notified. LTS does it via email notifications. For more details, please see [How to manage usage alerts]({{site.common}}usagealerts.html).
 
 ## Manage security
 
-`LTS` manages your licenses, so it's important to restrict access to the management portal. Therefore, make sure to [change the default password]({{site.selfhosting}}security.html#change-the-password) and keep the password secure.
+LTS manages your licenses, so it's important to restrict access to the management portal. Therefore, make sure to [change the default password]({{site.selfhosting}}security.html#change-the-password) and keep the password secure.

@@ -22,7 +22,7 @@ To track the license yourself, you first need to install the License Tracking Se
 * [Set up LTS on Windows]({{site.selfhosting}}ltsonwindows.html)
 * [Set up LTS on Linux]({{site.selfhosting}}ltsonlinux.html)
 
-After you have installed `LTS` on your server and got its UUID, you can proceed to the next step.
+After you have installed LTS on your server and got its UUID, you can proceed to the next step.
 
 ## Activate the License
 
@@ -32,7 +32,7 @@ On the "Activate License" page, there are a few steps for the activation.
 
 > This step is optional, you can just use the default Alias. Read more on [what is an Alias]({{site.about}}terms.html#alias).
 
-* Input the `UUID` of the `LTS` hosted on your server, the UUID is found on the home page of your `LTS`.
+* Input the `UUID` of the LTS hosted on your server, the UUID is found on the home page of your LTS.
 
 ![LTS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
 
@@ -46,7 +46,7 @@ Once the activation is done, an activated License File will be generated and dow
 
 ## Import the License
 
-This step imports the License File into `LTS` so that you can configure and use the purchased license(s). Please see steps on [how to import the License File]({{site.selfhosting}}manageLTS.html#import-the-license-file).
+This step imports the License File into LTS so that you can configure and use the purchased license(s). Please see steps on [how to import the License File]({{site.selfhosting}}manageLTS.html#import-the-license-file).
 
 ## Configure the License
 
@@ -56,7 +56,7 @@ To configure the license is to manage the Handshake Code for the license. For mo
 
 ## Track the License
 
-For Self-Hosting License Tracking, all usage data is submitted to the [ `LTS` ]({{site.about}}terms.html#license-tracking-server) hosted by yourself. You can
+For Self-Hosting License Tracking, all usage data is submitted to the [ LTS ]({{site.about}}terms.html#license-tracking-server) hosted by yourself. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)

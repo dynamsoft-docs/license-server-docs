@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # Manage LTS security
 
-Dynamsoft recommends that you change the default password the first time you log in the management portal for `LTS`. Moreover, it is recommended to change the password every few months.
+Dynamsoft recommends that you change the default password the first time you log in the management portal for LTS. Moreover, it is recommended to change the password every few months.
 
 A few things to note
 

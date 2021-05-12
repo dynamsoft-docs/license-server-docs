@@ -107,7 +107,7 @@ For example, you can specify barcode format, limit the scanning to predefined re
 
 ### How long is a device considered active?
 
-By default, a device is considered active as long as its UUID stays in the device list on the `LTS` . Once its UUID is removed, it is no longer considered "active". The following shows how LTS maintains the device list.
+By default, a device is considered active as long as its UUID stays in the device list on the LTS . Once its UUID is removed, it is no longer considered "active". The following shows how LTS maintains the device list.
 
 * Per Barcode Scan | Per Page
 
@@ -121,9 +121,9 @@ The expiry date of the device is calculated like this
 max ( min ( currentTime + 90 days, expiry date of the license ), currentTime + 7 days )
 ```
 
-`currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
+`currentTime` : the time that the device connects to the LTS either to get an authorization or to submit a usage report.
 
-`LTS` reviews the list every 24 hours and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 91 days and the shortest time is 7 days.
+LTS reviews the list every 24 hours and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 91 days and the shortest time is 7 days.
 
 * Concurrent Device
 
@@ -133,10 +133,10 @@ The expiry time of each active device is calculated like this
 currentTime + (4 ~ 7 minutes)
 ```
 
-`currentTime` : the time that the device connects to the `LTS` either to get an authorization or to submit a usage report.
+`currentTime` : the time that the device connects to the LTS either to get an authorization or to submit a usage report.
 
 The reason why the expiry time ranges from 4 to 7 minutes is to align it to the end of an absolute 3-minute slot. For example
 
 If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 4 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
 
-The reason for covering the next 3-minute slotis to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach `LTS` . 
+The reason for covering the next 3-minute slotis to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach LTS . 

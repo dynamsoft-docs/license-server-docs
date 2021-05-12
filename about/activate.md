@@ -18,18 +18,18 @@ When you activate a purchased license, you will choose one of two activation opt
 
 > Once chosen and activated, this cannot be changed. So make sure you choose the correct one for your application.
 
-Both options use the same software, License Tracking Server ( `LTS` for short), to track the license usage. The differences are shown in the following table
+Both options use the same software, License Tracking Server ( LTS for short), to track the license usage. The differences are shown in the following table
 
 > Read more on [what is a License Tracking Server]({{site.about}}terms.html#license-tracking-server)
 
 |  | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|
-| Need to designate a server to host `LTS` | No | Yes |
-| Need to install and manage `LTS` | No | Yes |
+| Need to designate a server to host LTS | No | Yes |
+| Need to install and manage LTS | No | Yes |
 | Must have connection to Dynamsoft | Yes | No |
 | Must send usage data to Dynamsoft | Yes | No |
 
-Generally, you choose to host your own `LTS` if
+Generally, you choose to host your own LTS if
 
 * Your client devices may not be able to connect to the internet
 * You don't want to share your usage data with Dynamsoft

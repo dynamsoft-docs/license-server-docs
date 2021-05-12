@@ -32,7 +32,7 @@ Once the server is running, you can test it via the URL [http://127.0.0.1:48080/
 
 > If you changed the port during installation, you should use that port instead.
 
-Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this `LTS` .
+Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this LTS .
 
 > This UUID is require when [activating your licenses]({{site.selfhosting}}index.html#activate-the-license).
 

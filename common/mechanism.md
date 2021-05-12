@@ -21,7 +21,7 @@ NOTE: If you are using an old browser like IE 9 to access a web application, ple
 
 > Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
 
-The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting `LTS` , you can skip this step.
+The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting LTS , you can skip this step.
 
 * JavaScript
 
@@ -96,7 +96,7 @@ lts.mainServerURL = @"https://your.mainServer.com";
 
 > Read more on [what is an Organization ID]({{site.about}}terms.html#organization-id)
 
-You can acquire the license from `LTS` by specifying your Organization ID. At present, this is supported in the Android and iOS editions of Dynamsoft Barcode Reader.
+You can acquire the license from LTS by specifying your Organization ID. At present, this is supported in the Android and iOS editions of Dynamsoft Barcode Reader.
 
 On Android
 
@@ -241,11 +241,11 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelega
 
 ## Authorization
 
-During initialization, Dynamsoft SDKs connect to `LTS` to get authorized. The process is simplified as follows
+During initialization, Dynamsoft SDKs connect to LTS to get authorized. The process is simplified as follows
 
-* The SDK sends a request to `LTS`.
-* `LTS` extracts the Handshake Code from the request and checks its status in the database.
-* If the Code exists and its quota is not used up,  `LTS` returns the authorization.
+* The SDK sends a request to LTS.
+* LTS extracts the Handshake Code from the request and checks its status in the database.
+* If the Code exists and its quota is not used up,  LTS returns the authorization.
 * Otherwise, a failure message is returned.
 
 ### About the request
@@ -304,7 +304,7 @@ The main purpose of the Barcode Reader is to locate and decode barcodes, therefo
 
 ### Report submission
 
-Dynamsoft SDKs submit usage reports to `LTS` with HTTP Post requests. If the submission succeeds, it'll remove the local copy of the report, otherwise, the report remains on the device and will be submitted again the next time the SDK initializes. Note that the SDK won't attempt to submit failed reports during the same session.
+Dynamsoft SDKs submit usage reports to LTS with HTTP Post requests. If the submission succeeds, it'll remove the local copy of the report, otherwise, the report remains on the device and will be submitted again the next time the SDK initializes. Note that the SDK won't attempt to submit failed reports during the same session.
 
 If a report is not submitted, it'll be kept on the client for up to 30 days after which it'll be purged.
 
