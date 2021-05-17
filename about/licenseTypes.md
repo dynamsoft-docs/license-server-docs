@@ -71,7 +71,7 @@ Once a device gets authorized, it's considered active for a limited time, read m
 
 ## Concurrent Device
 
-This option is meant for the situation where you have a large number of client devices performing an unknown number of opeations like barcode scanning sporadically.
+This option is meant for the situation where you have a large number of client devices performing an unknown number of operations like barcode scanning sporadically.
 
 One such device is defined the same way as with the [Per Device](#per-device) option. However, a concurrent device is a device that is configured active for only a few minutes as opposed to the much longer duration for a [Per Device](#per-device) license, read more [here](#how-long-is-a-device-considered-active).
 
