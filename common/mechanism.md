@@ -96,12 +96,23 @@ lts.mainServerURL = @"https://your.mainServer.com";
 
 > Read more on [what is an Organization ID]({{site.about}}terms.html#organization-id)
 
-You can acquire the license from LTS by specifying your Organization ID. At present, this is supported in the Android and iOS editions of Dynamsoft Barcode Reader.
+You can acquire the license from LTS by specifying your Organization ID. At present, this is supported in 
+
+* JavaScript, Android and iOS editions of Dynamsoft Barcode Reader
+* Android and iOS editions of Dynamsoft Label Recognition
+* Android and iOS editions of Dynamsoft Camera Enhancer
+
+The following code snippets take Dynamsoft Barcode Reader as an example
+
+* JavaScript
+
+``` javascript
+Dynamsoft.DBR.BarcodeReader.organizationID = "123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
+```
 
 On Android
 
 ``` java
-// DBR
 DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
     @Override
     public void LTSLicenseVerificationCallback(boolean success, Exception error) {
@@ -110,16 +121,15 @@ DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationLis
     }
 };
 DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
-parameters.organizationId = "Your-OrganizationId";
+parameters.organizationId = "123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
 dbr.initLicenseFromLTS(parameters,ltsListener);
 ```
 
 On iOS
 
 ``` c
-// DBR
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.organizationId = @"Your-OrganizationId";
+lts.organizationId = @"123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
 
 * (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
