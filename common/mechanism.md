@@ -110,7 +110,15 @@ The following code snippets take Dynamsoft Barcode Reader as an example
 Dynamsoft.DBR.BarcodeReader.organizationID = "123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
 ```
 
-On Android
+> NOTE
+> 
+> If you are using a long product key with the API `productKeys` as shown below, you can replace it with `organizationID` once you get your own organization ID after requesting the trial. Although both ways of licensing are supported, they cannot be used together.
+>
+> ```javascript
+> Dynamsoft.DBR.BarcodeReader.productKeys = "t0069oQAAAAWAfpGnxxsFYz....."; // The traditional product key
+> ```
+
+* Android
 
 ``` java
 DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
@@ -125,7 +133,7 @@ parameters.organizationId = "123456"; // replace the number 123456 with YOUR-ORG
 dbr.initLicenseFromLTS(parameters,ltsListener);
 ```
 
-On iOS
+* iOS
 
 ``` c
 iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
