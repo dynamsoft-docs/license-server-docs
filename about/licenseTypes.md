@@ -57,8 +57,8 @@ Note that a device has different meanings for different [deployment types]({{sit
 | Browser | A specific browser on a specific domain |
 | Mobile | A mobile device running iOS or Android |
 | Server (Workstation) | A computer running Windows or Linux which works as a server |
-| Desktop | A computer running Windows, Linux or macOS |
-| Embedded | An ARM-based computer running Linux |
+| Desktop | A computer running Windows, Linux or macOS (not working as a server) |
+| Embedded | An ARM-based computer running Linux (not working as a server) |
 
 > NOTE
 >

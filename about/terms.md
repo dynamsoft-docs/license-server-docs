@@ -219,9 +219,9 @@ The deployment type means how and where the software is being used. For example.
 |:-:|:-:|
 | Browser | A web application running in browsers |
 | Mobile | A native application running on iOS or Android |
-| Server (Workstation) | A desktop application running on Windows or Linux |
-| Desktop | A desktop application running on Windows, Linux or macOS |
-| Embedded | An application running on ARM-based Linux |
+| Server (Workstation) | An application running on Windows or Linux that processes requests from other client devices |
+| Desktop | An application running on Windows, Linux or macOS that handles requests on this specific device. |
+| Embedded | An application running on ARM-based Linux that handles requests on this specific device. |
 
 ## License Tracking Server
 
