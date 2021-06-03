@@ -145,7 +145,7 @@ If you have just started evaluating a Dynamsoft SDK which supports trackable lic
 
 If you require more time to test the SDK or you have decided to use it in your application, you can get your own license and then make use of it with the associated organization id and/or handshake code.
 
-* To get a 30-day (private) trial license, you can [email trial@dynamsoft.com](mailto:trial@dynamsoft.com?subject=privateTrial), note that the keyword "privateTrial" must be included in the email subject.
+* To get a 30-day (private) trial license, you can log into the customer portal (register for an Dynamsoft account if you haven't already done so) and navigate to the [Free Trial](https://www.dynamsoft.com/customer/license/trialLicense) page.
 
 * To get a commercial license, you can [purchase a license](https://www.dynamsoft.com/purchase-center/).
 
