@@ -98,7 +98,8 @@ lts.mainServerURL = @"https://your.mainServer.com";
 
 You can acquire the license from LTS by specifying your Organization ID. At present, this is supported in 
 
-* JavaScript, Android and iOS editions of Dynamsoft Barcode Reader
+* Dynamic Web TWAIN (17.1+)
+* JavaScript, Android and iOS editions of Dynamsoft Barcode Reader (8.2.5+)
 * Android and iOS editions of Dynamsoft Label Recognition
 * Android and iOS editions of Dynamsoft Camera Enhancer
 
