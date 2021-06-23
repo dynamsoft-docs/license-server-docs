@@ -81,7 +81,7 @@ This option is meant for the situation where multiple instances of the SDK are c
 
 At present, this option is limited to the "Server" deployment type.
 
-This option is not available on Dynamsoft Web Store yet, [contact Dynamsoft Team](mailto:sales@dynamsoft.com) if you are interested.
+Read more on [How to use a Concurrent-Instance License](#how-to-use-a-concurrent-instance-license).
 
 ## Per Active Device
 
@@ -140,3 +140,55 @@ The reason why the expiry time ranges from 4 to 7 minutes is to align it to the 
 If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 4 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
 
 The reason for covering the next 3-minute slotis to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach LTS . 
+
+### How to use a Concurrent-Instance License?
+
+To use a concurrent-instance license, there are a few steps
+
+1. Identify how many instances are needed on the device, then request the license seats from LTS; 
+
+  > Note that these license seats are shared by all barcode-reading applications on the device
+
+2. Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance;
+3. Destroy an instance when it finishes its job to release the license seat.
+
+The following shows a simple code snippet in C
+
+```cpp
+int main()
+{
+    char errorMsg[512];
+    DM_LTSConnectionParameters connParameters;
+    CBarcodeReader::InitLTSConnectionParameters(&connParameters);
+
+    char handshakeCode[] = "Input your own handshake code.";
+    connParameters.handshakeCode = handshakeCode;
+    // Identify and request a certain number of license seats
+    connParameters.maxConcurrentInstanceCount = 4;  
+    int errorCode = CBarcodeReader::InitLicenseFromLTS(&connParameters, errorMsg, 512);
+    if(errorCode != DBR_OK)
+    {
+        cout << errorMsg << endl;
+        return -1;
+    }
+
+    // Check available license seats
+    int count = CBarcodeReader::GetIdleInstancesCount();   
+    if (count > 0)
+    {
+        // Create a new instance when there are seats left
+        CBarcodeReader* reader = new CBarcodeReader();
+        errorCode = reader.DecodeFile("Input image path");
+        OutputResult(reader, errorCode);
+        // Delete the instance after use
+        delete reader;
+    }
+    else
+    {
+        // Request more seats from LTS or just wait for vacancies
+        cout << "No license seat left!" << endl;
+        return -1;
+    }
+    return 0;
+}
+```
