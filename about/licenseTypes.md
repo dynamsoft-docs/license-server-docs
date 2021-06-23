@@ -109,7 +109,7 @@ For example, you can specify barcode format, limit the scanning to predefined re
 
 By default, a device is considered active as long as its UUID stays in the device list on the LTS . Once its UUID is removed, it is no longer considered "active". The following shows how LTS maintains the device list.
 
-* Per Barcode Scan | Per Page
+* Per Barcode Scan , Per Page
 
 Not applicable as no such list exists with this option.
 
