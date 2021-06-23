@@ -143,16 +143,17 @@ The reason for covering the next 3-minute slotis to avoid the license seat taken
 
 ### How to use a Concurrent-Instance License?
 
-To use a concurrent-instance license, there are a few steps
+Using a concurrent license involves a few steps
 
-1. Identify how many instances are needed on the device, then request the license seats from LTS; 
+1. Identify how many instances are needed on the device, then request the license seats from LTS
 
   > Note that these license seats are shared by all barcode-reading applications on the device
 
-2. Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance;
-3. Destroy an instance when it finishes its job to release the license seat.
+2. Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance.
+3. Instantiate a new `BarcodeReader` instance using the main constructor.
+4. Delete the instance when the decoding is done to release the license seat.
 
-The following shows a simple code snippet in C
+Here is the C/C++ code snippet:
 
 ```cpp
 int main()
