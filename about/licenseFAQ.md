@@ -135,6 +135,25 @@ If you are hosting your own LTS, all you need to do is purchase another license,
 
 # Dynamsoft Licensing FAQ
 
+Table of Contents
+
+* How to use a trackable license?
+* What is the relationship between organizationID and handshakeCode?
+* Does license tracking disclose any private information?
+* How secure is the License Tracking Server?
+* How reliable is the Dynamsoft-Hosting License Tracking Server?
+* How can I protect my license?
+* What happens if my license runs out?
+* Can a client device work offline?
+* Can I use Dynamsoft SDKs in an environment with no internet connection?
+* Can I unregister inactive devices?
+* Can I extend the quota of my license to support more devices or process more documents?
+* Can I renew my license before its current expiration date?
+* Can I purchase a license valid for more than one year?
+* Will the unused quota be rolled over to the next period?
+* What is counted as a single application?
+* Policies
+
 ## How to use a trackable license?
 
 A trackable license is fetched from the License Tracking Server (either hosted by Dynamsoft or yourself, LTS for short) at runtime. Therefore, connection to the LTS is required.
