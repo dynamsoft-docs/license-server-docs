@@ -50,17 +50,17 @@ There are two basic restrictions for each trackable license
 
 * Time
 
-By default, the license is good for a year once activated. You can renew it before it expires.
+    By default, the license is good for a year once activated. You can renew it before it expires.
 
 * Quota
 
-<!--TODO add quota should be doable by customer-->
-The license comes with a fixed quota. If the quota is used up before the license expires, or you find that the quota cannot handle application traffic, you can add additional quota by contacting the [Dynamsoft Sales Team](mailto:sales@dynamsoft.com).
+    <!--TODO add quota should be doable by customer-->
+    The license comes with a fixed quota. If the quota is used up before the license expires, or you find that the quota cannot handle application traffic, you can add additional quota by contacting the [Dynamsoft Sales Team](mailto:sales@dynamsoft.com).
 
 ### Renew a license
 
-Renewing a license essentially means obtaining a new license with the same quota that can be used for another year. This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same [Handshake Code]({{site.about}}terms.md#handshake-code) automatically, otherwise, you will need to manually configure it to the old Handshake Code.
+Renewing a license essentially means obtaining a new license with the same quota that can be used for another year. This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same [Handshake Code](./terms.md#handshake-code) automatically, otherwise, you will need to manually configure it to the old Handshake Code.
 
 ### Add quota
 
-Adding quota means obtaining a new license with a specified quota and configured it to the same [Handshake Code]({{site.about}}terms.md#handshake-code). This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code automatically, otherwise, you will need to manually configure it to the old Handshake Code.
+Adding quota means obtaining a new license with a specified quota and configured it to the same [Handshake Code](./terms.md#handshake-code). This new license will be automatically activated based on the old license. If you are using Dynamsoft-Hosting LTS, the new license will be configured to the same old Handshake Code automatically, otherwise, you will need to manually configure it to the old Handshake Code.
