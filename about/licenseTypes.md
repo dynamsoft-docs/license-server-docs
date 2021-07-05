@@ -107,7 +107,7 @@ For example, you can specify barcode format, limit the scanning to predefined re
 
 ### How long is a device considered active?
 
-By default, a device is considered active as long as its UUID stays in the device list on the LTS . Once its UUID is removed, it is no longer considered "active". The following shows how LTS maintains the device list.
+By default, a device is considered active as long as its UUID stays in the device list on the LTS. Once its UUID is removed, it is no longer considered "active". The following shows how LTS maintains the device list.
 
 * Per Barcode Scan , Per Page
 
