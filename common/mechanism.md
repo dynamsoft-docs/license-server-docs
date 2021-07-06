@@ -19,7 +19,7 @@ NOTE: If you are using an old browser like IE 9 to access a web application, ple
 
 ## Configure LTS
 
-> Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
+> Read more on [what is LTS]({{site.about}}terms.html#license--server)
 
 The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting LTS , you can skip this step.
 

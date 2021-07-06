@@ -68,7 +68,7 @@ You can edit any existing Handshake Code, the things you can change are exactly 
 
 ## Change License Usage Order
 
-If multiple License Items are configured to one Handshake Code, the question of which License Item is used first will arise. Dynamsoft License Tracking Server has a default order which follows these rules
+If multiple License Items are configured to one Handshake Code, the question of which License Item is used first will arise. Dynamsoft Dynamsoft License Server has a default order which follows these rules
 
 * The one with the closest expiration date is consumed first or
 * The one containing the most specific permit is consumed first or

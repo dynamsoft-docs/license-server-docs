@@ -17,7 +17,7 @@ The following assumes you have purchased a trackable license and have chosen "Se
 
 ## Set Up LTS
 
-To track the license yourself, you first need to install the License Tracking Server (LTS). Please read one of the following guides
+To track the license yourself, you first need to install the Dynamsoft License Server (LTS). Please read one of the following guides
 
 * [Set up LTS on Windows]({{site.selfhosting}}ltsonwindows.html)
 * [Set up LTS on Linux]({{site.selfhosting}}ltsonlinux.html)
@@ -56,7 +56,7 @@ To configure the license is to manage the Handshake Code for the license. For mo
 
 ## Track the License
 
-For Self-Hosting License Tracking, all usage data is submitted to the [ LTS ]({{site.about}}terms.html#license-tracking-server) hosted by yourself. You can
+For Self-Hosting License Tracking, all usage data is submitted to the [ LTS ]({{site.about}}terms.html#license--server) hosted by yourself. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)

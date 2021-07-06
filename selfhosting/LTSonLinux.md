@@ -1,13 +1,13 @@
 ---
 layout: default-layout
-title: Install Dynamsoft License Tracking Server on Linux
-keywords: Install, License Tracking Server, Linux
-description: Steps and information about how to install Dynamsoft License Tracking Server on Linux
+title: Install Dynamsoft Dynamsoft License Server on Linux
+keywords: Install, Dynamsoft License Server, Linux
+description: Steps and information about how to install Dynamsoft Dynamsoft License Server on Linux
 breadcrumbText: Install LTS on Linux
 needAutoGenerateSidebar: true
 ---
 
-# Install Dynamsoft License Tracking Server on Linux
+# Install Dynamsoft Dynamsoft License Server on Linux
 
 ## Example Environment
 
@@ -20,7 +20,7 @@ needAutoGenerateSidebar: true
 
 ## Installation
 
-The following shows all the commands and steps required to set up the License Tracking Server
+The following shows all the commands and steps required to set up the Dynamsoft License Server
 
 ### Prepare a new disk to store LTS data (optional)
 
@@ -37,14 +37,14 @@ vim /etc/fstab
 mount -a
 ```
 
-### Download the License Tracking Server installer (dynamsoft_lts-linux_x86_64-v2.0.1.tar.gz), or just copy it over to the dir `/data`
+### Download the Dynamsoft License Server installer (dynamsoft_lts-linux_x86_64-v2.0.1.tar.gz), or just copy it over to the dir `/data`
 
 ``` shell
 cd /data
 wget https://tst.dynamsoft.com/public/download/lts/dynamsoft_lts-linux_x64-v2.1.0.tar.gz
 ```
 
-### Unzip and start the License Tracking Server
+### Unzip and start the Dynamsoft License Server
 
 ``` shell
 # Unzip the installer
@@ -70,7 +70,7 @@ sudo apt install net-tools
 ps -ef |grep dynamsoft
 ```
 
-Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the License Tracking Server. 
+Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the Dynamsoft License Server. 
 
 > If you changed the port during installation, you should use that port instead.
 

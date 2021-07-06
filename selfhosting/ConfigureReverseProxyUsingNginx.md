@@ -1,7 +1,7 @@
 ---
 layout: default-layout
 title: Configure HTTPS on Linux
-keywords: Install, License Tracking Server, Linux, HTTPS
+keywords: Install, Dynamsoft License Server, Linux, HTTPS
 description: Steps and information about how to configure HTTPS on Linux
 breadcrumbText: Configure HTTPS on Linux
 needAutoGenerateSidebar: true
@@ -80,7 +80,7 @@ At this point, you can access the server with the URL "http://www.yoursite.com/l
 
 ## Configure SSL
 
-For security, we should access the License Tracking Server via HTTPS. For demoing and testing purposes, we can try the self-signed certificate when configuring `nginx` by uncommenting the 3 lines as shown below.
+For security, we should access the Dynamsoft License Server via HTTPS. For demoing and testing purposes, we can try the self-signed certificate when configuring `nginx` by uncommenting the 3 lines as shown below.
 
 ``` shell
 server {
@@ -115,9 +115,9 @@ sudo make-ssl-cert generage-default-snakeoil
 
 After you have configured a secure port, you can then access the server by "https://www.yoursite.com/lts/page/index.html#/".
 
-## Configure the License Tracking Server
+## Configure the Dynamsoft License Server
 
-With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the standby server(read more on [configure the LTS as the standby]({{site.selfhosting}}manageLTS.html#configure-a-standby-lts)). Assume the standby URL is "https://standby.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
+With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the LTS as the standby]({{site.selfhosting}}manageLTS.html#configure-a-standby-lts)). Assume the standby URL is "https://standby.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/lts/", "https://standby.yoursite.com/lts/"];

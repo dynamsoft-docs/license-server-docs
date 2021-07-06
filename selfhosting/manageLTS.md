@@ -1,14 +1,14 @@
 ---
 layout: default-layout
-title: Manage License Tracking Server
-keywords: License Tracking Server, management
-description: This page is about how to manage License Tracking Server
+title: Manage Dynamsoft License Server
+keywords: Dynamsoft License Server, management
+description: This page is about how to manage Dynamsoft License Server
 breadcrumbText: Mange LTS
 ---
 
 # Manage LTS
 
-> Read more on [What is a LTS]({{site.about}}terms.html#license-tracking-server)
+> Read more on [What is a LTS]({{site.about}}terms.html#license--server)
 
 ## How to set up LTS
 

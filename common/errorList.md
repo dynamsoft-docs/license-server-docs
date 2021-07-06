@@ -13,7 +13,7 @@ needAutoGenerateSidebar: true
 |:-|:-|
 | -20100 | The standby LTS refuses to provide service while the main LTS is working. |
 | -20100 | LTS refuses to provide service while under construction. |
-| -20101 | The handshake code you are using does not exist on the License Tracking Server. |
+| -20101 | The handshake code you are using does not exist on the Dynamsoft License Server. |
 | -20102 | Session password is incorrect. |
 | -20103 | AppDomain for handshake is not matched. |
 | -20104 | No item matched. Please check your handshake and client settings. |

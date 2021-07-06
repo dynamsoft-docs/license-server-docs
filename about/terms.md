@@ -64,7 +64,7 @@ The permits in License Items are not consumed directly by applications because
 * The same permit can be used by multiple applications
 * The same application can use multiple permits from different License Items
 
-Therefore, Dynamsoft invented the concept of a "Handshake Code". An application using a Dynamsoft SDK gets authorized by Dynamsoft's [License Tracking Server](#license-tracking-server) through a specific Handshake Code within the License Tracking Server.
+Therefore, Dynamsoft invented the concept of a "Handshake Code". An application using a Dynamsoft SDK gets authorized by Dynamsoft's [Dynamsoft License Server](#license--server) through a specific Handshake Code within the Dynamsoft License Server.
 
 * The same Handshake Code can be configured to contain permits from different License Items
 * The permit from a single License Item can be shared by multiple Handshake Codes
@@ -78,7 +78,7 @@ A few things to note
 
 ## Default Handshake Code
 
-For each new organization added to a [ LTS ](#license-tracking-server), a default Handshake Code is created. This Handshake Code is used by default when an application only specifies the license by its [Organization ID](#organization-id).
+For each new organization added to a [ LTS ](#license--server), a default Handshake Code is created. This Handshake Code is used by default when an application only specifies the license by its [Organization ID](#organization-id).
 
 ## Validation Field
 
@@ -209,7 +209,7 @@ LicenseItems:
 
 When you place an order, a License File containing all the License Items will automatically be generated. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it will say "Activated".
 
-If you are using the Dynamsoft-hosting License Tracking Server, the License Files are only information about your orders for your reference and are not required for the license to operate. However, if you are hosting the License Tracking Server yourself, you need the License File in order to add the License Items to that LTS for license tracking.
+If you are using the Dynamsoft-hosting Dynamsoft License Server, the License Files are only information about your orders for your reference and are not required for the license to operate. However, if you are hosting the Dynamsoft License Server yourself, you need the License File in order to add the License Items to that LTS for license tracking.
 
 ## Deployment Type
 
@@ -223,9 +223,9 @@ The deployment type means how and where the software is being used. For example.
 | Desktop | An application running on Windows, Linux or macOS that handles requests on this specific device. |
 | Embedded | An application running on ARM-based Linux that handles requests on this specific device. |
 
-## License Tracking Server
+## Dynamsoft License Server
 
-The License Tracking Server, or LTS for short, is a proprietary software developed by Dynamsoft to track license usage.
+The Dynamsoft License Server, or LTS for short, is a proprietary software developed by Dynamsoft to track license usage.
 
 Dynamsoft hosts a copy of the software for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see:
 
@@ -250,7 +250,7 @@ Dynamsoft allows excessive usage of the licenses in case the licensee fails to e
 
 The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
 
-You can find the UUID of your LTS on the [admin portal](https://www.dynamsoft.com/license-tracking/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed LTS .
+You can find the UUID of your LTS on the [admin portal](https://www.dynamsoft.com/license-/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed LTS .
 
 A UUID is bound to one or multiple unique hardware identification labels which include
 
