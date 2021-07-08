@@ -62,7 +62,7 @@ Note that a device has different meanings for different [deployment types]({{sit
 
 > NOTE
 >
-> * For [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/), its trackable licenses only allow the "Browser" deployment type.
+> * For [Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/) Desktop Service Edition, its trackable licenses only allow the "Desktop" deployment type; for WebAssembly Edition, its trackable licenses only allow the "Browser" deployment type;
 > * For "Browser" type, a specific domain means the same origin. Read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
 
 A client is identified by its [UUID]({{site.about}}terms.html#client-uuid).
