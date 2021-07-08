@@ -6,7 +6,7 @@ breadcrumbText: HomePage
 description: Documentation Homepage
 ---
 
-# Dynamsoft License Tracking
+# Dynamsoft License Server
 
 * [About]({{site.about}}index.html)
     - [Purchase]({{site.about}}purchase.html)

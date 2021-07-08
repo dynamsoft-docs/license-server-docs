@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Terms involved in Dynamsoft License Tracking
+title: Terms involved in Dynamsoft License Server
 keywords: Terms, Dynamsoft, License Tracking, 
-description: This page has defintions and descriptions about Dynamsoft License Tracking Terms
+description: This page has defintions and descriptions about Dynamsoft License Server Terms
 breadcrumbText: Terms
 needAutoGenerateSidebar: true
 ---

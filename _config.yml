@@ -4,7 +4,7 @@
 # repositoryUrl: <full url of the public repository>/blob/<branch name>
 repositoryUrl: https://github.com/dynamsoft/license-server-docs/blob/main
 repository: Dynamsoft/license-server-docs
-docRootName: Dynamsoft License Tracking
+docRootName: Dynamsoft License Server
 # Full url of the publicshed site without last '/'.
 # For example: the full url of dbr doc sit is https://www.dynamsoft.com/barcode-reader/
 # then set docFullPath with https://www.dynamsoft.com/barcode-reader
@@ -21,7 +21,7 @@ firstLevelUrl: /license-server/docs
 
 # docHomePage: #<relative path of homepage to first-level domain>
 # if index.md in the repo is the homepage, set the value same as firstLevelUrl.
-docHomePage: /license-server/docs
+docHomePage: /license-server/docs/about/
 
 # Notice the root of the path is the first-level domain, so the relative path shall be started 
 # with the first-level path rather than the root path of the repository.
