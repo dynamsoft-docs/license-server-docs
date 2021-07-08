@@ -1,9 +1,9 @@
 ---
 layout: default-layout
-title: About Dynamsoft Trackable Licenses
-keywords: License Tracking, Trackable License
-description: This page introduces the trackable licenses
-breadcrumbText: Trackable Licenses
+title: About Dynamsoft License Options
+keywords: Licensing mode, licensing options
+description: This page introduces all common licensing options
+breadcrumbText: License Options
 needAutoGenerateSidebar: true
 ---
 
