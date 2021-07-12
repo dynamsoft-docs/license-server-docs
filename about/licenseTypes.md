@@ -69,8 +69,7 @@ A client is identified by its [UUID]({{site.about}}terms.html#client-uuid). Once
 
 The local license duration time would be expired if a device has not been used the SDK for the assigned length of validity time. Once expired, the license seat taken by the device would be automatically released from the license seat and thus can be reassigned to any active device. 
 
-You can read more [here](#how-long-is-a-device-considered-active).
-
+You can read more [here](#how-long-is-a-client-device-considered-active).
 
 ## Per Server
 #### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
