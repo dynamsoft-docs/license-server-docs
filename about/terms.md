@@ -181,6 +181,21 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelega
 }
 ```
 
+* Python
+```
+reader = BarcodeReader()
+ connection_paras = reader.init_lts_connection_parameters()
+ # Please replace the handshakeCode with your own
+ connection_paras.handshake_code = "Your-HandshakeCode"
+ connection_paras.session_password = "The-Password-You-Set"
+ try:
+     error = reader.init_licesne_from_lts(connection_paras)
+     if error[0] != EnumErrorCode.DBR_OK:
+         print(error[1])
+ except BarcodeReaderError as bre:
+     print(bre)
+     ```
+
 <!--
 
 * Dynamic Web TWAIN
@@ -403,7 +418,8 @@ dbr.initLicenseFromLTS(parameters,ltsListener);
 reader = BarcodeReader()
  connection_paras = reader.init_lts_connection_parameters()
  # Please replace the handshakeCode with your own
- connection_paras.handshake_code = "200***001-1000*****"
+ connection_paras.handshake_code = "Your-HandshakeCode"
+ connection_paras.uuid_generation_method = EnumDMUUIDGenerationMethod.DM_UUIDGM_HARDWARE
  try:
      error = reader.init_licesne_from_lts(connection_paras)
      if error[0] != EnumErrorCode.DBR_OK:
