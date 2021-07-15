@@ -100,11 +100,21 @@ A Validation Field is a static characteristic of your application, meaning that 
 
 The Session Password is another way to protect your license. Unlike the Validation Field, which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, let's take the Barcode Reader for example:
 
+### Dynamic Web TWAIN
+
+```javascript
+Dynamsoft.DWT.organizationID = "Your-Organization-ID";
+Dynamsoft.DWT.handshakeCode = "DynamsoftID-CustomCode";
+Dynamsoft.DWT.sessionPassword = "The-Password-You-Set";
+Dynamsoft.DWT.Load();
+```
+
 ### Dynamsoft Barcode Reader
 
 * JavaScript
 
 ```javascript
+Dynamsoft.DWT.BarcodeReader.organizationID = "Your-Organization-ID";
 Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
 Dynamsoft.DBR.BarcodeReader.sessionPassword = "The-Password-You-Set";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
@@ -115,11 +125,12 @@ let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 ```cpp
 int iRet = -1;
 char szErrorMsg[256];
-DM_DLSConnectionParameters ltspar;    
-CBarcodeReader::InitDLSConnectionParameters(&ltspar);
-ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
-ltspar.SessionPassword = "The-Password-You-Set";
-iRet = CBarcodeReader::InitLicenseFromDLS(&ltspar, szErrorMsg, 256);
+DM_DLSConnectionParameters dlspar;    
+CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+dlspar.organizationID = "Your-Organization-ID";
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+dlspar.SessionPassword = "The-Password-You-Set";
+iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 if (iRet != DBR_OK)
 {
     printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
@@ -130,30 +141,38 @@ if (iRet != DBR_OK)
 * CSharp
 
 ```csharp
-DMDLSConnectionParameters ltspar = BarcodeReader.InitDLSConnectionParamters();           
-ltspar.HandshakeCode = "Your-HandshakeCode";
-ltspar.SessionPassword = "The-Password-You-Set";
-EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(ltspar, out strErrorMSG);
+DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters();    
+dlspar.OrganizationID = "Your-Organization-ID";       
+dlspar.HandshakeCode = "Your-HandshakeCode";
+dlspar.SessionPassword = "The-Password-You-Set";
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```
 
 * Java
 
 ```java
-DMDLSConnectionParameters ltspar = BarcodeReader.initDLSConnectionParameters();
-ltspar.handshakeCode = "Your-HandshakeCode";
-ltspar.sessionPassword = "The-Password-You-Set";
-BarcodeReader.initLicenseFromDLS(ltspar);
+DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+dlspar.organizationID = "Your-Organization-ID";
+dlspar.handshakeCode = "Your-HandshakeCode";
+dlspar.sessionPassword = "The-Password-You-Set";
+BarcodeReader.initLicenseFromDLS(dlspar);
 ```
 
 * Java for Android
 
 ```java
-DBRDLSLicenseVerificationListener ltsListener = new DBRDLSLicenseVerificationListener() { 
-    @Override  
-    public void DLSLicenseVerificationCallback(boolean success, Exception error) { 
-        if (error != null){ Log.i("lts error: ", error.getMessage());  } 
-    } 
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
+    @Override
+    public void DLSLicenseVerificationCallback(boolean success, Exception error) {
+        Assert.assertEquals(false, success);
+        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
+    }
 };
+DMDLSConnectionParameters dlspar = new DMDLSConnectionParameters();
+dlspar.organizationID = "Your-Organization-ID";
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+dlspar.sessionPassword = "The-Password-You-Set";
+dbr.initLicenseFromDLS(dlspar,dlsListener);
 ```
 
 * Objective-C for iOS
@@ -161,10 +180,11 @@ DBRDLSLicenseVerificationListener ltsListener = new DBRDLSLicenseVerificationLis
 ```c
 @interface <DMDLSLicenseVerificationDelegate>
 
-iDMDLSConnectionParameters* lts = [[iDMDLSConnectionParameters alloc] init];
-lts.handshakeCode = @"Your-HandshakeCode";
-lts.sessionPassword = @"The-Password-You-Set";
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:lts verificationDelegate:self];
+iDMDLSConnectionParameters* dlspar = [[iDMDLSConnectionParameters alloc] init];
+dlspar.organizationID = @"Your-Organization-ID";
+dlspar.handshakeCode = @"Your-HandshakeCode";
+dlspar.sessionPassword = @"The-Password-You-Set";
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDelegate:self];
 
 * (void)DLSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
@@ -183,12 +203,13 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:lts verificationDelega
 
 ```python
 reader = BarcodeReader()
- connection_paras = reader.init_lts_connection_parameters()
+ connection_paras = reader.init_dls_connection_parameters()
  # Please replace the handshakeCode with your own
+ connection_paras.organization_id = "Your-Organization-ID"
  connection_paras.handshake_code = "Your-HandshakeCode"
  connection_paras.session_password = "The-Password-You-Set"
  try:
-     error = reader.init_licesne_from_lts(connection_paras)
+     error = reader.init_licesne_from_dls(connection_paras)
      if error[0] != EnumErrorCode.DBR_OK:
          print(error[1])
  except BarcodeReaderError as bre:
@@ -345,11 +366,11 @@ DBR_InitLicenseFromDLS(&paramters, errorBuf, 512);
 ```cpp
 int iRet = -1;
 char szErrorMsg[256];
-DM_DLSConnectionParameters ltspar;    
-CBarcodeReader::InitDLSConnectionParameters(&ltspar);
-ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
-iRet = CBarcodeReader::InitLicenseFromDLS(&ltspar, szErrorMsg, 256);
+DM_DLSConnectionParameters dlspar;    
+CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 if (iRet != DBR_OK)
 {
     printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
@@ -360,29 +381,29 @@ if (iRet != DBR_OK)
 * C#
 
 ```csharp
-DMDLSConnectionParameters ltspar = BarcodeReader.InitDLSConnectionParamters(); 
-ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
-ltspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(ltspar, out strErrorMSG);
+DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters(); 
+dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
+dlspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```
 
 * Java
 
 ```java
-DMDLSConnectionParameters ltspar = BarcodeReader.initDLSConnectionParameters();
-ltspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
-ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-ltspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
-BarcodeReader.initLicenseFromDLS(ltspar);
+DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+dlspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
+dlspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+dlspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
+BarcodeReader.initLicenseFromDLS(dlspar);
 ```
 
 * Objective-C for iOS
 
 ```c
-iDMDLSConnectionParameters* lts = [[iDMDLSConnectionParameters alloc] init];
-lts.handshakeCode = @"handshakeCode"; // Please replace the handshakeCode with your own
-lts.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:lts verificationDelegate:self];
+iDMDLSConnectionParameters* dlspar = [[iDMDLSConnectionParameters alloc] init];
+dlspar.handshakeCode = @"handshakeCode"; // Please replace the handshakeCode with your own
+dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDelegate:self];
 
 * (void)DLSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
@@ -398,29 +419,29 @@ dispatch_async(dispatch_get_main_queue(), ^{
 * Java for Android
 
 ```java
-DBRDLSLicenseVerificationListener ltsListener = new DBRDLSLicenseVerificationListener() {
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
     @Override
     public void DLSLicenseVerificationCallback(boolean success, Exception error) {
         Assert.assertEquals(false, success);
         Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
     }
 };
-DMDLSConnectionParameters parameters = new DMDLSConnectionParameters();
-parameters.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
-parameters.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-dbr.initLicenseFromDLS(parameters,ltsListener);
+DMDLSConnectionParameters dlspar = new DMDLSConnectionParameters();
+dlspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+dbr.initLicenseFromDLS(dlspar,dlsListener);
 ```
 
 * Python
 
 ```python
 reader = BarcodeReader()
- connection_paras = reader.init_lts_connection_parameters()
+ connection_paras = reader.init_dls_connection_parameters()
  # Please replace the handshakeCode with your own
  connection_paras.handshake_code = "Your-HandshakeCode"
  connection_paras.uuid_generation_method = EnumDMUUIDGenerationMethod.DM_UUIDGM_HARDWARE
  try:
-     error = reader.init_licesne_from_lts(connection_paras)
+     error = reader.init_licesne_from_dls(connection_paras)
      if error[0] != EnumErrorCode.DBR_OK:
          print(error[1])
  except BarcodeReaderError as bre:
