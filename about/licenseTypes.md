@@ -10,27 +10,27 @@ needAutoGenerateSidebar: true
 # Dynamsoft License Options
 
 ## Per Barcode Scan
-#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
 
-With a Per Barcode Scan License, the SDK can be used to support a given number of unique barcode scans. For example, if the SDK is used to scan an image with four unique barcodes, it will be counted as four scans. When continuously scanning barcodes from a video stream, duplicated codes will be counted as one scan.
+#### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
 
- Some examples for your reference:
+With a Per Barcode Scan License, the SDK can be used to support a given number of unique barcode scans. For example, if the SDK is used to scan an image with four barcodes, it will be counted as four scans. 
 
- | Examples	| Count of barcode scan |
- |:-:|:-:|
- | Two duplicated barcodes on an image | 1 |
- | Two different barcodes on an image | 2 |
- | Continuous scanning (video mode) of one barcode | 1 |
- | Two barcodes with the same encoded text but different symbologies | 2 |
+In order to filter unneeded barcodes to reduce license consumption, you can preset your barcode scanner in a few ways. For example, you can specify barcode format, limit the scanning to predefined regions or return only high-confidence values. For more settings, please refer to  [this page](https://www.dynamsoft.com/barcode-reader/parameters/scenario-settings/decode-result.html).
 
- By default, each scanned barcode is buffered for 3 seconds during which time newly found barcodes will be compared with it. If a new barcode is exactly the same, that new barcode is not counted and it replaces the old one and gets buffered for another 3 seconds. If no match is found in that 3 seconds, the barcode is removed from the buffer.
- For the JavaScript edition, developers can change the buffer time setting with the API `duplicateForgetTime`.
+NOTE: For the mobile and JavaScript editions which usually scan consecutive image frames from a video input, there is a built-in deduplication logic which significantly lowers the number of scans. Check out the examples in the following table.
 
-> NOTE
-> 
-> The Windows & Linux versions of Dynamsoft Barcode Reader SDK don't support the above duplicate-filtering logic, but please contact support@dynamosft.com for a workaround if you need to avoid per-scan license consumption by duplicate barcodes.
+| Examples	| Count of barcode scans |
+|:-:|:-:|
+| 2 identical barcodes on the same image frame | 1 |
+| 2 different barcodes on the same image frame | 2 |
+| Multiple identical barcodes on consecutive image frames | 1 |
+
+> Identical barcodes mean barcodes with the same symbology and content.
+
+> The deduplication is based on a preset interval which by default is 3 seconds. For the JavaScript edition, the interval can be set with the API `duplicateForgetTime` .
 
 ## Per Page
+
 #### Applicable products: [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
 With a Per Page License, the SDK can be used for processing a given number of document pages. For example, with a license for 100K pages of the scanner module of the SDK, you can scan up to 100K document pages and save them to your server.
@@ -42,14 +42,13 @@ With a Per Page License, the SDK can be used for processing a given number of do
 | PDFR | The number of pages rasterized from PDF files. |
 | OCR | The number of pages processed by the OCR engine. |
 
-> NOTE
->  
-> * The 'Per Page' license option is also available for addons of the Dynamic Web TWAIN SDK, except for the Barcode Reader addon which uses [Per Barcode Scan](#per-barcode-scan).
+NOTE: The 'Per Page' license option is also available for addons of the Dynamic Web TWAIN SDK, except for the Barcode Reader addon which uses [Per Barcode Scan](#per-barcode-scan).
 
 ## Per Client Device
-#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
-A client device can be any client-side hardware device (running a non-WebAssembly SDK) or any browser client (running a WebAssembly SDK). See blow table for more detail: 
+#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/), [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/)
+
+A client device normally refers to the machine itself that runs a native application which has incorporated one of the SDKs. However, for a web application that uses the javascript editions of the SDKs, a client device means a browser on the machine. The difference is based on the [Deployment Type]({{site.about}}terms.html#deployment-type) of the license as shown in the following table.
 
 | Deployment Type | Client Type |
 |:-:|:-:|
@@ -58,100 +57,67 @@ A client device can be any client-side hardware device (running a non-WebAssembl
 | Desktop | A desktop computer running Windows, Linux or macOS |
 | Embedded | An ARM-based computer running Linux |
 
-A client is identified by its [UUID]({{site.about}}terms.html#client-uuid). Once a device gets authorized, it gets assigned a local license duration time. The local license duration time is decided by the specific type of device license you use. 
+A client is identified by its [UUID]({{site.about}}terms.html#client-uuid). Once a device gets authorized, it gets assigned a local license. The validity period of the local license is determined by the license type, as shown in the following table.
 
-| Per-Device License Type | Local License Duration Time |
+| Per-Device License Type | Local License Validity Period |
 |:-:|:-:|
-| Quarterly Active Device License | 90 days |
-| Monthly Active Device License | 30 days |
-| Daily Active Device License | 1 day (24 hours) |
-| Concurrent Device License | 4 ~ 7 minutes |
+| Quarterly Active Device License | min(currentTime + 90 days, expiry time of the license) |
+| Monthly Active Device License | min(currentTime + 30 days, expiry time of the license) |
+| Daily Active Device License | min(currentTime + 24 hours, expiry time of the license) |
 
-The local license duration time would be expired if a device has not been used the SDK for the assigned length of validity time. Once expired, the license seat taken by the device would be automatically released from the license seat and thus can be reassigned to any active device. 
-
-You can read more on [How long is a client-device considered active](#how-long-is-a-client-device-considered-active).
+The UUID of the device remains on the license server during the validity period of the local license and takes a license seat. After the validity period expires, the UUID on the license server will be deleted and the license seat becomes available again.
 
 ## Per Server
+
 #### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
 A Server is a device or computer that has the SDK loaded into its RAM. Server includes the following: 
 (i) a networked device with the SDK installed that's accessible by multiple users who can independently operate the SDK from another machine, 
 (ii) a networked device with the SDK running as a service that accepts connections from other machines or applications, 
 (iii) a computer with the SDK running to service the public or multiple users, e.g. a kiosk or a scan station, and 
-(iv) a web server with the SDK deployed that accepts end user connection to run the SDK on the client machines.
+(iv) a web server with the SDK deployed that accepts end user connection to **run the SDK on the client machines**.
 
-Please contact support@dynamsoft.com for more info about how to use a server license.
-
-
-## Per Concurrent Instance
-#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition)
-
-The 'instance' here is the software instance for barcode reading created via APIs of the SDK. By creating N barcode reading instances, it means you can handle N barcode image reading requests simultaneously. 
-
-At present, this option is limited to the "Server" deployment type.
-
-Read more on [How to use a Concurrent-Instance License](#how-to-use-a-concurrent-instance-license).
-
+Please contact support@dynamsoft.com for more info about how to use a per-server license.
 
 ## Per Domain
+
 #### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (JavaScript edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
-A Domain License allows unlimited usage of the SDK within one web application under a specific domain (e.g. *.dynamsoft.com). Subdomains like subdomainA.company.com and subdomainB.company.com are counted as one Domain.
+A Domain License allows unlimited usage of the SDK within one web application under a specific domain (e.g. *.dynamsoft.com). Multiple subdomains like subdomainA.company.com and subdomainB.company.com are counted as one Domain.
 
 For websites that use public domain names of multi-tenant cloud platforms (e.g. force.com), the domain license would be limited the unique subdomain such as dynamsoft.force.com.
 
 If you are interested in this option, please [contact Dynamsoft Team](mailto:sales@dynamsoft.com).
 
-## FAQs
+## Per Concurrent Device
 
-### Can I filter unwanted barcodes to reduce the consumption of my license?
+#### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
 
-Yes. There are many pre-scanning settings you can apply to your barcode scanner.
+With a N-concurrent-device license, N devices are allowed to read barcodes concurrently.
 
-For example, you can specify barcode format, limit the scanning to predefined regions or return only high-confidence values. For more settings, please refer to  [this page](https://www.dynamsoft.com/barcode-reader/parameters/scenario-settings/decode-result.html).
+During peak business hours, more devices than usual might be reading barcodes and exceed the purchased quota. The license server allows mild overuse of the license at no additional cost. 
 
-### How long is a client device considered active?
+> The concurrency calculation is based on absolute 3-minute time slots. Each day is devided into 480 such time slots. When a device reports barcode scans to the license server, the server records an active device for the specific time slot during which the barcode scans were performed. Therefore, for each time slot, there could be many active devices. When the number of active devices for a specific time slot exceeds the quota of the license (N), exceptions are recorded. The license server allows for the overuse by allowing a number of exceptions.
 
-By default, a device is considered active as long as its UUID stays in the device list on the LTS. Once its UUID is removed, it is no longer considered "active". The following shows how the license server maintains the device list.
+For more details on this licensing option, please [contact Dynamsoft Team](mailto:sales@dynamsoft.com).
 
-* Per Device (Quarterly Active)
+## Per Concurrent Instance
 
-The expiry date of the device is calculated like this
+#### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition)
 
-``` text
-max ( min ( currentTime + 90 days, expiry date of the license ), currentTime + 7 days )
-```
+An instance refers to a barcode reader object. With a N Concurrent Instance License, you can have up to N objects reading barcodes simultaneously.
 
-`currentTime` : the time that the device connects to the LTS either to get an authorization or to submit a usage report.
+> The concurrency calculation is similar to how it is done for [Per Concurrent Device](#per-concurrent-device) license. However, each device (server) can request x instances for it to use and the license server will record x instances active/used for the specific time slot no matter how many instances were actually in use on that machine. 
 
-LTS reviews the list every 24 hours and removes all expired devices. Therefore, the longest time a device is regarded as active without actual usage is 91 days and the shortest time is 7 days.
+At present, this option is limited to the "Server" [Deployment Type]({{site.about}}terms.html#deployment-type).
 
+To use a concurrent-instance license in your application, there are a few steps
 
-* Concurrent Device
-
-The expiry time of each active device is calculated like this
-
-``` text
-currentTime + (4 ~ 7 minutes)
-```
-
-`currentTime` : the time that the device connects to the LTS either to get an authorization or to submit a usage report.
-
-The reason why the expiry time ranges from 4 to 7 minutes is to align it to the end of an absolute 3-minute slot. For example
-
-If `currentTime` is 00:00:00 ~ 00:01:59, expiry time is 00:06:00 and the valid time ranges from 4 to 6 minutes; if `currentTime` is 00:02:01 ~ 00:03:00, expiry time is 00:09:00 and the valid time ranges from 6 to 7 minutes. Expired devices are removed at the end of each 3-minute slot.
-
-The reason for covering the next 3-minute slotis to avoid the license seat taken by another device while the previous device stays active and the reason why there is at least 4 minutes is to account for the time spent for requests from clients to reach LTS . 
-
-### How to use a Concurrent-Instance License?
-
-To use a concurrent-instance license, there are a few steps
-
-1. Identify how many instances are needed on the device, then request the license seats from LTS; 
+1. Identify how many instances might be needed on the device (server), then request the license seats from the license server; 
 
   > Note that these license seats are shared by all barcode-reading applications on the device
 
-2. Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance;
+2. Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance; 
 3. Destroy an instance when it finishes its job to release the license seat.
 
 The following shows a simple code snippet in C
@@ -160,20 +126,19 @@ The following shows a simple code snippet in C
 int main()
 {
     char errorMsg[512];
-    DM_LTSConnectionParameters connParameters;
-    CBarcodeReader::InitLTSConnectionParameters(&connParameters);
+    DM_DLSConnectionParameters connParameters;
+    CBarcodeReader::InitDLSConnectionParameters(&connParameters);
 
     char handshakeCode[] = "Input your own handshake code.";
     connParameters.handshakeCode = handshakeCode;
     // Identify and request a certain number of license seats
     connParameters.maxConcurrentInstanceCount = 4;  
-    int errorCode = CBarcodeReader::InitLicenseFromLTS(&connParameters, errorMsg, 512);
+    int errorCode = CBarcodeReader::InitLicenseFromDLS(&connParameters, errorMsg, 512);
     if(errorCode != DBR_OK)
     {
         cout << errorMsg << endl;
         return -1;
     }
-
     // Check available license seats
     int count = CBarcodeReader::GetIdleInstancesCount();   
     if (count > 0)
@@ -187,10 +152,12 @@ int main()
     }
     else
     {
-        // Request more seats from LTS or just wait for vacancies
+        // Request more seats from license server or wait for vacancies on the machine
         cout << "No license seat left!" << endl;
         return -1;
     }
     return 0;
 }
 ```
+
+For more details on this licensing option, please [contact Dynamsoft Team](mailto:sales@dynamsoft.com).
