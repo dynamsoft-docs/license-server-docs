@@ -199,6 +199,25 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDel
 }
 ```
 
+* Swift for iOS
+```swift
+let dlspar = iDMLTSConnectionParameters();
+dlspar.handshakeCode = "*****-hs-****";
+dlspar.sessionPassword = "******";
+_dbr = DynamsoftBarcodeReader(licenseFromLTS: dlspar, verificationDelegate: self);
+
+func ltsLicenseVerificationCallback(_ isSuccess: Bool, error: Error?)
+{
+    if isSuccess {
+        DispatchQueue.main.async{
+            print("ifsuccess : \(isSuccess)");
+            print("error code : \(error.code)");
+            print("errormsg : \(error.userInfo)");      
+        }
+    }
+}
+```
+
 * Python
 
 ```python
