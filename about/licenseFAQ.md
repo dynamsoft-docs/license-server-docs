@@ -2,7 +2,7 @@
 layout: default-layout
 title: Dynamsoft Licensing FAQ
 keywords: Barcode reader, licensing
-description: This page lists the frequently asked questions about Dynamsoft's License Tracking Server.
+description: This page lists the frequently asked questions about Dynamsoft's Dynamsoft License Server.
 breadcrumbText: Licensing FAQ
 needAutoGenerateSidebar: true
 hasCustomLdJson: true
@@ -18,17 +18,17 @@ customLdJsonScript:
     "name": "Does license tracking disclose any private information?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No, the license tracking process does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
+      "text": "No, the license tracking process does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
 
     }
 
   }, {
 
     "@type": "Question",
-    "name": "How secure is the License Tracking Server?",
+    "name": "How secure is the Dynamsoft License Server?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The License Tracking Server ( LTS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of LTS matters."
+      "text": "The Dynamsoft License Server ( LTS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of LTS matters."
 
     }
 
@@ -135,9 +135,28 @@ If you are hosting your own LTS, all you need to do is purchase another license,
 
 # Dynamsoft Licensing FAQ
 
+Table of Contents
+
+* How to use a trackable license?
+* What is the relationship between organizationID and handshakeCode?
+* Does license tracking disclose any private information?
+* How secure is the Dynamsoft License Server?
+* How reliable is the Dynamsoft-Hosting Dynamsoft License Server?
+* How can I protect my license?
+* What happens if my license runs out?
+* Can a client device work offline?
+* Can I use Dynamsoft SDKs in an environment with no internet connection?
+* Can I unregister inactive devices?
+* Can I extend the quota of my license to support more devices or process more documents?
+* Can I renew my license before its current expiration date?
+* Can I purchase a license valid for more than one year?
+* Will the unused quota be rolled over to the next period?
+* What is counted as a single application?
+* Policies
+
 ## How to use a trackable license?
 
-A trackable license is fetched from the License Tracking Server (either hosted by Dynamsoft or yourself, LTS for short) at runtime. Therefore, connection to the LTS is required.
+A trackable license is fetched from the Dynamsoft License Server (either hosted by Dynamsoft or yourself, LTS for short) at runtime. Therefore, connection to the LTS is required.
 
 The LTS can store one or multiple license items, you can specify which ones you want to fetch with the APIs [ `organizationID` ]({{site.common}}mechanism.html#specify-the-organization-id) and / or [ `handshakeCode` ]({{site.common}}mechanism.html#specify-the-handshake-code).
 
@@ -174,7 +193,7 @@ Read more on [The relationship between organizationID and handshakeCode](#what-i
 
 No, the license tracking process does not disclose any private information.
 
-For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to the License Tracking Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
+For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( LTS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
 
 > Read more about [the mechanism]({{site.common}}mechanism.html) behind license tracking.
 
@@ -187,9 +206,9 @@ A few things to note
 * The LTS can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
 * Offline licenses that do not require any information to be sent anywhere are also supported. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 
-## How secure is the License Tracking Server?
+## How secure is the Dynamsoft License Server?
 
-The License Tracking Server ( LTS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of LTS matters. The following are the security features of LTS :
+The Dynamsoft License Server ( LTS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of LTS matters. The following are the security features of LTS :
 
 * LTS is responsible for authorizing the SDK as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on LTS nor from LTS to the requesting clients.
 * LTS supports HTTPS and it is highly recommended that it runs via HTTPS.
@@ -199,9 +218,9 @@ The License Tracking Server ( LTS ) is the only software that Dynamsoft SDKs wou
 
 Last but not least, Dynamsoft is [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) certified.
 
-## How reliable is the Dynamsoft-Hosting License Tracking Server?
+## How reliable is the Dynamsoft-Hosting Dynamsoft License Server?
 
-Customer devices rely on the License Tracking Server to get authorized for using Dynamsoft SDKs, therefore, its reliability is crucial. The following are the measures we have in place for maximum uptime:
+Customer devices rely on the Dynamsoft License Server to get authorized for using Dynamsoft SDKs, therefore, its reliability is crucial. The following are the measures we have in place for maximum uptime:
 
 * LTS is hosted on AWS.
 * LTS database is backed up every 12 minutes.

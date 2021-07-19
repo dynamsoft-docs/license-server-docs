@@ -1,6 +1,6 @@
 ---
 layout: search-page
-title: Dynamsoft License Tracking Documentation Search
-keywords: Dynamsoft License Tracking Documentation Search
+title: Dynamsoft License Server Documentation Search
+keywords: Dynamsoft License Server Documentation Search
 breadcrumbText: HomePage
 ---

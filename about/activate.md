@@ -18,9 +18,9 @@ When you activate a purchased license, you will choose one of two activation opt
 
 > Once chosen and activated, this cannot be changed. So make sure you choose the correct one for your application.
 
-Both options use the same software, License Tracking Server ( LTS for short), to track the license usage. The differences are shown in the following table
+Both options use the same software, Dynamsoft License Server ( LTS for short), to track the license usage. The differences are shown in the following table
 
-> Read more on [what is a License Tracking Server]({{site.about}}terms.html#license-tracking-server)
+> Read more on [what is a Dynamsoft License Server]({{site.about}}terms.html#license--server)
 
 |  | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|

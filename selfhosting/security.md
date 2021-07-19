@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Manage Security - License Tracking Server
-keywords: License Tracking Server, Security
-description: How to manage security of License Tracking Server
+title: Manage Security - Dynamsoft License Server
+keywords: Dynamsoft License Server, Security
+description: How to manage security of Dynamsoft License Server
 breadcrumbText: Manage LTS Security
 needAutoGenerateSidebar: true
 ---

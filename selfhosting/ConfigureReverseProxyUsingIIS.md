@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Install Dynamsoft License Tracking Server on Windows
-keywords: Install, License Tracking Server, Windows
-description: Steps and information about how to install Dynamsoft License Tracking Server on Windows
+title: Install Dynamsoft Dynamsoft License Server on Windows
+keywords: Install, Dynamsoft License Server, Windows
+description: Steps and information about how to install Dynamsoft Dynamsoft License Server on Windows
 breadcrumbText: Install LTS on Windows
 needAutoGenerateSidebar: true
 ---
@@ -63,9 +63,9 @@ Open http://www.yoursite.com/lts/page/index.html and if you see the following pa
 
 Prepare a SSL certificate for your site (e.g. https://www.yoursite.com) and configure it properly. After that, you should be able to access the server by "https://www.yoursite.com/lts/page/index.html#/".
 
-## Configure the License Tracking Server
+## Configure the Dynamsoft License Server
 
-With the above steps, the License Tracking Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another License Tracking Server on another machine as the standby Server(read more on [configure the LTS as the standby]({{site.selfhosting}}manageLTS.html#configure-a-standby-lts)). Assume the standby URL is "https://standby.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
+With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another Dynamsoft License Server on another machine as the standby Server(read more on [configure the LTS as the standby]({{site.selfhosting}}manageLTS.html#configure-a-standby-lts)). Assume the standby URL is "https://standby.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/lts/", "https://standby.yoursite.com/lts/"];

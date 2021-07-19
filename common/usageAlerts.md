@@ -2,14 +2,14 @@
 layout: default-layout
 title: About usage alerts
 keywords: usage alert, notification
-description: This page is about the email notifcation feature (usage alerts) of Dynamsoft License Tracking Server
+description: This page is about the email notifcation feature (usage alerts) of Dynamsoft Dynamsoft License Server
 breadcrumbText: Usage Alerts
 needAutoGenerateSidebar: true
 ---
 
 # Usage Alerts
 
-The License Tracking Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered.
+The Dynamsoft License Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered.
 
 > If multiple conditions are met, the email will contain all the information.
 

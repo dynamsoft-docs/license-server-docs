@@ -1,6 +1,6 @@
 ---
 layout: default-layout
-title: License Tracking Server - Stable Releases
+title: Dynamsoft License Server - Stable Releases
 keywords: LTS Stable Release
 noTitleIndex: false
 description: This page is about the releases of LTS

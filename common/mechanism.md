@@ -19,7 +19,7 @@ NOTE: If you are using an old browser like IE 9 to access a web application, ple
 
 ## Configure LTS
 
-> Read more on [what is LTS]({{site.about}}terms.html#license-tracking-server)
+> Read more on [what is LTS]({{site.about}}terms.html#license--server)
 
 The following code snippets show how to configure LTS. If you are using Dynamsoft-Hosting LTS , you can skip this step.
 
@@ -103,12 +103,17 @@ You can acquire the license from LTS by specifying your Organization ID. At pres
 * Android and iOS editions of Dynamsoft Label Recognition
 * Android and iOS editions of Dynamsoft Camera Enhancer
 
-The following code snippets take Dynamsoft Barcode Reader as an example
+Check out the code snippets:
 
 * JavaScript
 
 ``` javascript
-Dynamsoft.DBR.BarcodeReader.organizationID = "123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
+// DBR for JavaScript
+Dynamsoft.DBR.BarcodeReader.organizationID = "YOUR-ORGANIZATION-ID";
+let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
+// DWT
+Dynamsoft.DWT.organizationID = "YOUR-ORGANIZATION-ID";
+Dynamsoft.DWT.Load();
 ```
 
 > NOTE

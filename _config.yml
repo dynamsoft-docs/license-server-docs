@@ -2,64 +2,64 @@
 # replace the <branch name> with the branch name used for publishing site, usually master branch.
 
 # repositoryUrl: <full url of the public repository>/blob/<branch name>
-repositoryUrl: https://github.com/dynamsoft/license-tracking-docs/blob/main
-repository: Dynamsoft/license-tracking-docs
-docRootName: Dynamsoft License Tracking
+repositoryUrl: https://github.com/dynamsoft/license-server-docs/blob/main
+repository: Dynamsoft/license-server-docs
+docRootName: Dynamsoft License Server
 # Full url of the publicshed site without last '/'.
 # For example: the full url of dbr doc sit is https://www.dynamsoft.com/barcode-reader/
 # then set docFullPath with https://www.dynamsoft.com/barcode-reader
 
 # docFullPath: <full url of the published site> (eg - https://www.dynamsoft.com/barcode-reader)
-docFullPath: https://www.dynamsoft.com/license-tracking/docs
+docFullPath: https://www.dynamsoft.com/license-server/docs
 
 # Relative path to first-level domain name without last '/'.
 # For example: the full url of dbr doc sit is https://www.dynamsoft.com/barcode-reader/
 # then set firstLevelUrl with /barcode-reader
 
 # firstLevelUrl: #<relative path to first-level domain> (eg - /barcode-reader)
-firstLevelUrl: /license-tracking/docs
+firstLevelUrl: /license-server/docs
 
 # docHomePage: #<relative path of homepage to first-level domain>
 # if index.md in the repo is the homepage, set the value same as firstLevelUrl.
-docHomePage: /license-tracking/docs
+docHomePage: /license-server/docs/about/
 
 # Notice the root of the path is the first-level domain, so the relative path shall be started 
 # with the first-level path rather than the root path of the repository.
 
-about: /license-tracking/docs/about/
-common: /license-tracking/docs/common/
-dshosting: /license-tracking/docs/dshosting/
-selfhosting: /license-tracking/docs/selfhosting/
-schedule: /license-tracking/docs/schedule/
+about: /license-server/docs/about/
+common: /license-server/docs/common/
+dshosting: /license-server/docs/dshosting/
+selfhosting: /license-server/docs/selfhosting/
+schedule: /license-server/docs/schedule/
 
 # Example variable:
 
 # sampleFolder: <firstLevelUrl>/sample-folder/
-sampleFolder: /license-tracking/docs/sample-folder/
+sampleFolder: /license-server/docs/sample-folder/
 
 
 # public resources.
 
 # assets: <firstLevelUrl>/assets/
-assets: /license-tracking/docs/assets/
+assets: /license-server/docs/assets/
 # edit_icon: <firstLevelUrl>/assets/img-icon/edit-icon.png
-edit_icon: /license-tracking/docs/assets/img-icon/edit-icon.png
+edit_icon: /license-server/docs/assets/img-icon/edit-icon.png
 # smile_icon: <firstLevelUrl>/assets/img-icon/icon-smile.png
-smile_icon: /license-tracking/docs/assets/img-icon/icon-smile.png
+smile_icon: /license-server/docs/assets/img-icon/icon-smile.png
 # sad_icon: <firstLevelUrl>/assets/img-icon/icon-sad.png
-sad_icon: /license-tracking/docs/assets/img-icon/icon-sad.png
+sad_icon: /license-server/docs/assets/img-icon/icon-sad.png
 # dbr_icon: <firstLevelUrl>/assets/img-icon/icon-dbr.svg
-dbr_icon: /license-tracking/docs/assets/img-icon/icon-dbr.svg
+dbr_icon: /license-server/docs/assets/img-icon/icon-dbr.svg
 # dwt_icon: <firstLevelUrl>/assets/img-icon/icon-dwt.svg
-dwt_icon: /license-tracking/docs/assets/img-icon/icon-dwt.svg
+dwt_icon: /license-server/docs/assets/img-icon/icon-dwt.svg
 # dnt_icon: <firstLevelUrl>/assets/img-icon/icon-dnt.svg
-dnt_icon: /license-tracking/docs/assets/img-icon/icon-dnt.svg
+dnt_icon: /license-server/docs/assets/img-icon/icon-dnt.svg
 
 
 # Replace the <firstLevelUrl> with the value of firstLevelUrl defined above.
 
 # baseurl: "<firstLevelUrl>"
-baseurl: "/license-tracking/docs"
+baseurl: "/license-server/docs"
 
 plugins:
   - jemoji

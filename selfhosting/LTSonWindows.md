@@ -1,13 +1,13 @@
 ---
 layout: default-layout
-title: Install Dynamsoft License Tracking Server on Windows
-keywords: Install, License Tracking Server, Windows
-description: Steps and information about how to install Dynamsoft License Tracking Server on Windows
+title: Install Dynamsoft Dynamsoft License Server on Windows
+keywords: Install, Dynamsoft License Server, Windows
+description: Steps and information about how to install Dynamsoft Dynamsoft License Server on Windows
 breadcrumbText: Install LTS on Windows
 needAutoGenerateSidebar: true
 ---
 
-# Install Dynamsoft License Tracking Server on Windows Server
+# Install Dynamsoft Dynamsoft License Server on Windows Server
 
 ## Example Environment
 

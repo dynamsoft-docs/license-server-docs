@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: Terms involved in Dynamsoft License Tracking
-keywords: Terms, Dynamsoft, License Tracking, 
-description: This page has defintions and descriptions about Dynamsoft License Tracking Terms
+title: Terms involved in Dynamsoft License Server
+keywords: Terms, Dynamsoft, License Server, 
+description: This page has defintions and descriptions about Dynamsoft License Server Terms
 breadcrumbText: Terms
 needAutoGenerateSidebar: true
 ---
@@ -18,10 +18,8 @@ The following table shows the differences between License 1.0 and 2.0
 | | License 1.0 | License 2.0 |
 |:-:|:-:|:-:|
 | Expirable | Yes | Yes |
-| Usage Trackable | No | Yes |
+| Usage Trackable | No | Optional |
 | Hardware binding | Required | Optional |
-| Use Handshake Code | No | Yes |
-| Use the license itself | Yes | No |
 
 ## Public Trial License
 
@@ -35,7 +33,7 @@ Dynamsoft is gradually rolling out this license in the products. If you are havi
 
 The old trial license was a string of alphanumeric characters and was not trackable. A private trial license is designed to replace it.
 
-Simply put, a private trial license is a [Per Device]({{site.about}}licensetypes.html#per-device) license good for 30 days and 30 devices and should only be used for product evaluation purposes.
+Simply put, a private trial license is a [Per Device]({{site.about}}licensetypes.html#per-device) license good for 30 days and 300 devices and should only be used for product evaluation purposes.
 
 ## Alias
 
@@ -64,7 +62,7 @@ The permits in License Items are not consumed directly by applications because
 * The same permit can be used by multiple applications
 * The same application can use multiple permits from different License Items
 
-Therefore, Dynamsoft invented the concept of a "Handshake Code". An application using a Dynamsoft SDK gets authorized by Dynamsoft's [License Tracking Server](#license-tracking-server) through a specific Handshake Code within the License Tracking Server.
+Therefore, Dynamsoft invented the concept of a "Handshake Code". An application using a Dynamsoft SDK acquires a local license from Dynamsoft's [Dynamsoft License Server](#dynamsoft-license-server) through a specific Handshake Code.
 
 * The same Handshake Code can be configured to contain permits from different License Items
 * The permit from a single License Item can be shared by multiple Handshake Codes
@@ -74,11 +72,11 @@ By doing this, the code of your application doesn't need to change, even if diff
 A few things to note
 
 * Quota consumption is counted against the License Item in use
-* Statistics are also summarized per Handshake Code
+* Statistics are summarized both per Handshake Code and per License Item
 
 ## Default Handshake Code
 
-For each new organization added to a [ LTS ](#license-tracking-server), a default Handshake Code is created. This Handshake Code is used by default when an application only specifies the license by its [Organization ID](#organization-id).
+For each new organization added to a [Dynamsoft License Server](#dynamsoft-license-server), a default Handshake Code is created. This Handshake Code is used by default when an application only specifies the license by its [Organization ID](#organization-id).
 
 ## Validation Field
 
@@ -102,11 +100,21 @@ A Validation Field is a static characteristic of your application, meaning that 
 
 The Session Password is another way to protect your license. Unlike the Validation Field, which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you set in your application. To verify the password, all products have a similar API, let's take the Barcode Reader for example:
 
+### Dynamic Web TWAIN
+
+```javascript
+Dynamsoft.DWT.organizationID = "Your-Organization-ID";
+Dynamsoft.DWT.handshakeCode = "DynamsoftID-CustomCode";
+Dynamsoft.DWT.sessionPassword = "The-Password-You-Set";
+Dynamsoft.DWT.Load();
+```
+
 ### Dynamsoft Barcode Reader
 
 * JavaScript
 
-``` javascript
+```javascript
+Dynamsoft.DWT.BarcodeReader.organizationID = "Your-Organization-ID";
 Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
 Dynamsoft.DBR.BarcodeReader.sessionPassword = "The-Password-You-Set";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
@@ -114,14 +122,15 @@ let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 
 * C++
 
-``` cpp
+```cpp
 int iRet = -1;
 char szErrorMsg[256];
-DM_LTSConnectionParameters ltspar;    
-CBarcodeReader::InitLTSConnectionParameters(&ltspar);
-ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
-ltspar.SessionPassword = "The-Password-You-Set";
-iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+DM_DLSConnectionParameters dlspar;    
+CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+dlspar.organizationID = "Your-Organization-ID";
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+dlspar.SessionPassword = "The-Password-You-Set";
+iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 if (iRet != DBR_OK)
 {
     printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
@@ -131,44 +140,53 @@ if (iRet != DBR_OK)
 
 * CSharp
 
-``` csharp
-DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
-ltspar.HandshakeCode = "Your-HandshakeCode";
-ltspar.SessionPassword = "The-Password-You-Set";
-EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
+```csharp
+DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters();    
+dlspar.OrganizationID = "Your-Organization-ID";       
+dlspar.HandshakeCode = "Your-HandshakeCode";
+dlspar.SessionPassword = "The-Password-You-Set";
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```
 
 * Java
 
-``` java
-DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
-ltspar.handshakeCode = "Your-HandshakeCode";
-ltspar.sessionPassword = "The-Password-You-Set";
-BarcodeReader.initLicenseFromLTS(ltspar);
+```java
+DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+dlspar.organizationID = "Your-Organization-ID";
+dlspar.handshakeCode = "Your-HandshakeCode";
+dlspar.sessionPassword = "The-Password-You-Set";
+BarcodeReader.initLicenseFromDLS(dlspar);
 ```
 
 * Java for Android
 
-``` java
-DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() { 
-    @Override  
-    public void LTSLicenseVerificationCallback(boolean success, Exception error) { 
-        if (error != null){ Log.i("lts error: ", error.getMessage());  } 
-    } 
+```java
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
+    @Override
+    public void DLSLicenseVerificationCallback(boolean success, Exception error) {
+        Assert.assertEquals(false, success);
+        Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
+    }
 };
+DMDLSConnectionParameters dlspar = new DMDLSConnectionParameters();
+dlspar.organizationID = "Your-Organization-ID";
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+dlspar.sessionPassword = "The-Password-You-Set";
+dbr.initLicenseFromDLS(dlspar,dlsListener);
 ```
 
 * Objective-C for iOS
 
-``` c
-@interface <DMLTSLicenseVerificationDelegate>
+```c
+@interface <DMDLSLicenseVerificationDelegate>
 
-iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.handshakeCode = @"Your-HandshakeCode";
-lts.sessionPassword = @"The-Password-You-Set";
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+iDMDLSConnectionParameters* dlspar = [[iDMDLSConnectionParameters alloc] init];
+dlspar.organizationID = @"Your-Organization-ID";
+dlspar.handshakeCode = @"Your-HandshakeCode";
+dlspar.sessionPassword = @"The-Password-You-Set";
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDelegate:self];
 
-* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+* (void)DLSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
@@ -181,11 +199,28 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelega
 }
 ```
 
+* Python
+
+```python
+reader = BarcodeReader()
+ connection_paras = reader.init_dls_connection_parameters()
+ # Please replace the handshakeCode with your own
+ connection_paras.organization_id = "Your-Organization-ID"
+ connection_paras.handshake_code = "Your-HandshakeCode"
+ connection_paras.session_password = "The-Password-You-Set"
+ try:
+     error = reader.init_licesne_from_dls(connection_paras)
+     if error[0] != EnumErrorCode.DBR_OK:
+         print(error[1])
+ except BarcodeReaderError as bre:
+     print(bre)
+```
+
 <!--
 
 * Dynamic Web TWAIN
 
-``` javascript
+```javascript
 Dynamsoft.WebTwainEnv.SessionPassword = "";
 ```
 
@@ -197,7 +232,7 @@ A License File describes one or multiple [License Items](#license-item) and the 
 
 Each License File has a unique `LicenseId` and an [ `Alias` ](#alias). You can also find out the version of the license scheme, whether the license has been activated, etc. For example
 
-``` text
+```text
 LicenseId: 100028117
 Alias: 
 LicenseTextVersion: 2.0
@@ -209,7 +244,7 @@ LicenseItems:
 
 When you place an order, a License File containing all the License Items will automatically be generated. Before the License is activated, you will see the "LicenseStatus" as "new" in the file. Otherwise it will say "Activated".
 
-If you are using the Dynamsoft-hosting License Tracking Server, the License Files are only information about your orders for your reference and are not required for the license to operate. However, if you are hosting the License Tracking Server yourself, you need the License File in order to add the License Items to that LTS for license tracking.
+If you are using a license server hosted by Dynamsoft, the License File is only information about your order for your reference and is not necessary to run the license. However, if you are hosting your own license server, you will need the License File to actually empower the server.
 
 ## Deployment Type
 
@@ -223,14 +258,14 @@ The deployment type means how and where the software is being used. For example.
 | Desktop | An application running on Windows, Linux or macOS that handles requests on this specific device. |
 | Embedded | An application running on ARM-based Linux that handles requests on this specific device. |
 
-## License Tracking Server
+## Dynamsoft License Server
 
-The License Tracking Server, or LTS for short, is a proprietary software developed by Dynamsoft to track license usage.
+The Dynamsoft License Server, or DLS for short, is a proprietary software developed by Dynamsoft for license distribution.
 
-Dynamsoft hosts a copy of the software for customers who don't want to track the usage themselves. For customers who would rather track the license usage themselves, the software can also be self-hosted. For more information, please see:
+Dynamsoft hosts a copy of the software for customers who don't want to trouble themselves with managing the license. However, the software can also be self-hosted. For more information, please see:
 
-* [Self-hosting License Tracking]({{site.selfhosting}}index.html)
-* [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html)
+* [Self-hosting License Server]({{site.selfhosting}}index.html)
+* [Dynamsoft-hosting License Server]({{site.dshosting}}index.html)
 
 ## Tolerance Stage
 
@@ -241,16 +276,15 @@ Dynamsoft allows excessive usage of the licenses in case the licensee fails to e
 | `Per Barcode Scan` | `round(5% * quota)` is allowed after the actual quota runs out. |
 | `Per Page` | `round(5% * quota)` is allowed after the actual quota runs out. |
 | `Per Device` | `round(10% * quota)` is allowed after the actual quota runs out. |
-| `Concurrent Device` | A number of exceptions are allowed and the number grows as time passes. |
-| `Concurrent Instance` | A number of exceptions are allowed and the number grows as time passes. |
-| `Active Device` | A number of exceptions are allowed and the number grows as time passes. |
+| `Per Concurrent Device` | A number of exceptions are allowed and the number grows as time passes. |
+| `Per Concurrent Instance` | A number of exceptions are allowed and the number grows as time passes. |
 | All Types | 7 days are allowed after the license expires. |
 
-## LTS UUID
+## DLS UUID
 
-The UUID here means a unique ID for the machine where LTS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
+The UUID here means a unique ID for the machine where DLS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
 
-You can find the UUID of your LTS on the [admin portal](https://www.dynamsoft.com/license-tracking/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed LTS .
+You can find the UUID of your DLS on the [admin portal](https://www.dynamsoft.com/license-/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed DLS .
 
 A UUID is bound to one or multiple unique hardware identification labels which include
 
@@ -265,9 +299,9 @@ If the hardware changes and any of the bound labels is different, the license bi
 
 Each client machine (a device) is also identified by its UUID. This UUID is generated the first time the client machine gets authorized to use a license. All usage reports generated on this client will include this UUID too.
 
-The following table shows the differences between LTS UUID and Client UUID
+The following table shows the differences between DLS UUID and Client UUID
 
-| | LTS UUID | Client UUID |
+| | DLS UUID | Client UUID |
 |:-:|:-:|:-:|
 | Bound to the License | Yes | No |
 | Bound to usage reports | No | Yes |
@@ -295,7 +329,7 @@ For editions other than the JavaScript edition, the UUID is generated by default
 * With the UUID alone, it is impossible to know the actual device information thus ensures privacy
 * If the cached random number is accidentally lost, the UUID will fail to identify this device and it'll be regarded as a new device
 
-If you don't mind sharing the device information with the LTS , you can also generate UUID via "Hard Binding".
+If you don't mind sharing the device information with the DLS , you can also generate UUID via "Hard Binding".
 
 ### Hard Binding
 
@@ -304,13 +338,13 @@ If you don't mind sharing the device information with the LTS , you can also gen
 * Desktop/Server/Embeded: the CPU ID and OS ID are collected
 * Mobile: the unique device string provided by the device itself is collected
 
-The good news is that as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by the LTS . On the other hand, this means that the LTS can decrypt the UUID to obtain the actual device information.
+The good news is that as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by the DLS . On the other hand, this means that the DLS can decrypt the UUID to obtain the actual device information.
 
 ### Questions
 
 #### Q: Does the UUID give away information about my device?
 
-A: By default, the answer is no because [Soft Binding](#soft-binding) is used. But if you choose to use [Hard Binding](#hand-binding), hardware information will be sent to the LTS .
+A: By default, the answer is no because [Soft Binding](#soft-binding) is used. But if you choose to use [Hard Binding](#hand-binding), hardware information will be sent to the DLS .
 
 #### Q: How to switch from Soft Binding to Hard Binding and vice versa?
 
@@ -318,25 +352,25 @@ A: There is an API for making the switch. Since [Soft Binding](#soft-binding) is
 
 * C
 
-``` c
+```c
 char errorBuf[512];
-DMLTSConnectionParameters paramters;
-DBR_InitLTSConnectionParameters(&paramters);
+DMDLSConnectionParameters paramters;
+DBR_InitDLSConnectionParameters(&paramters);
 paramters.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
 paramters.handshakeCode = "handshakeCode"; // Please replace the handshakeCode with your own
-DBR_InitLicenseFromLTS(&paramters, errorBuf, 512);
+DBR_InitLicenseFromDLS(&paramters, errorBuf, 512);
 ```
 
 * C++
 
-``` cpp
+```cpp
 int iRet = -1;
 char szErrorMsg[256];
-DM_LTSConnectionParameters ltspar;    
-CBarcodeReader::InitLTSConnectionParameters(&ltspar);
-ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
-iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+DM_DLSConnectionParameters dlspar;    
+CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 if (iRet != DBR_OK)
 {
     printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
@@ -346,32 +380,32 @@ if (iRet != DBR_OK)
 
 * C#
 
-``` csharp
-DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters(); 
-ltspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
-ltspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
+```csharp
+DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters(); 
+dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
+dlspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```
 
 * Java
 
-``` java
-DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
-ltspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
-ltspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-ltspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
-BarcodeReader.initLicenseFromLTS(ltspar);
+```java
+DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+dlspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
+dlspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
+dlspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
+BarcodeReader.initLicenseFromDLS(dlspar);
 ```
 
 * Objective-C for iOS
 
-``` c
-iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.handshakeCode = @"handshakeCode"; // Please replace the handshakeCode with your own
-lts.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+```c
+iDMDLSConnectionParameters* dlspar = [[iDMDLSConnectionParameters alloc] init];
+dlspar.handshakeCode = @"handshakeCode"; // Please replace the handshakeCode with your own
+dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDelegate:self];
 
-* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+* (void)DLSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
 {
 NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
@@ -384,16 +418,32 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 * Java for Android
 
-``` java
-DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+```java
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
     @Override
-    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+    public void DLSLicenseVerificationCallback(boolean success, Exception error) {
         Assert.assertEquals(false, success);
         Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
     }
 };
-DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
-parameters.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
-parameters.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-dbr.initLicenseFromLTS(parameters,ltsListener);
+DMDLSConnectionParameters dlspar = new DMDLSConnectionParameters();
+dlspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+dbr.initLicenseFromDLS(dlspar,dlsListener);
+```
+
+* Python
+
+```python
+reader = BarcodeReader()
+ connection_paras = reader.init_dls_connection_parameters()
+ # Please replace the handshakeCode with your own
+ connection_paras.handshake_code = "Your-HandshakeCode"
+ connection_paras.uuid_generation_method = EnumDMUUIDGenerationMethod.DM_UUIDGM_HARDWARE
+ try:
+     error = reader.init_licesne_from_dls(connection_paras)
+     if error[0] != EnumErrorCode.DBR_OK:
+         print(error[1])
+ except BarcodeReaderError as bre:
+     print(bre)
 ```
