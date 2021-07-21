@@ -3,7 +3,7 @@ layout: default-layout
 title: Install Dynamsoft Dynamsoft License Server on Linux
 keywords: Install, Dynamsoft License Server, Linux
 description: Steps and information about how to install Dynamsoft Dynamsoft License Server on Linux
-breadcrumbText: Install LTS on Linux
+breadcrumbText: Install DLS on Linux
 needAutoGenerateSidebar: true
 ---
 
@@ -22,7 +22,7 @@ needAutoGenerateSidebar: true
 
 The following shows all the commands and steps required to set up the Dynamsoft License Server
 
-### Prepare a new disk to store LTS data (optional)
+### Prepare a new disk to store DLS data (optional)
 
 ``` shell
 mkdir /data
@@ -74,10 +74,10 @@ Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48
 
 > If you changed the port during installation, you should use that port instead.
 
-Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this LTS .
+Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this DLS .
 
 > This UUID is require when [activating your licenses]({{site.selfhosting}}index.html#activate-the-license).
 
-![LTS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
+![DLS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
 
-If you see the above page, LTS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` . Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html).
+If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` . Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html).

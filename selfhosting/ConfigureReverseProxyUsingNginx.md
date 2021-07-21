@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # Configure Reverse Proxy Using Nginx
 
-The following is an example on how to set up a reverse proxy using `nginx` for LTS for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to "https://www.yoursite.com/lts/\*" to "https://127.0.0.1:48080/\*".
+The following is an example on how to set up a reverse proxy using `nginx` for DLS for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to "https://www.yoursite.com/lts/\*" to "https://127.0.0.1:48080/\*".
 
 ## Install nginx
 
@@ -117,7 +117,7 @@ After you have configured a secure port, you can then access the server by "http
 
 ## Configure the Dynamsoft License Server
 
-With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the LTS as the standby]({{site.selfhosting}}manageLTS.html#configure-a-standby-lts)). Assume the standby URL is "https://standby.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
+With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/lts/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the DLS as the standby]({{site.selfhosting}}manageDLS.html#configure-a-standby-lts)). Assume the standby URL is "https://standby.yoursite.com/lts/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-lts).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/lts/", "https://standby.yoursite.com/lts/"];

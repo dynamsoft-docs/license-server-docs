@@ -17,6 +17,6 @@ The License Items page shows all the active License Items which can be configure
 
 These license items may come from different license files but all of them are listed on this page.
 
-If you are hosting LTS yourself, you'll also see a button to import License Files as shown below. Read more on [how to import the License File]({{site.selfhosting}}managelts.html#import-the-license-file).
+If you are hosting DLS yourself, you'll also see a button to import License Files as shown below. Read more on [how to import the License File]({{site.selfhosting}}managedls.html#import-the-license-file).
 
 ![License Items - Self]({{site.assets}}imgs/licenseitems-002.png)

@@ -38,26 +38,26 @@ Dynamsoft.DWT.licenseServer = ["https://your.mainServer.com"];
 // DBR
 int iRet = -1;
 char szErrorMsg[256];
-DM_LTSConnectionParameters ltspar;    
-CBarcodeReader::InitLTSConnectionParameters(&ltspar);
-ltspar.mainServerURL = "https://your.mainServer.com"; // Please replace the server URL with your own
-iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+DM_DLSConnectionParameters dlspar;    
+CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+dlspar.mainServerURL = "https://your.mainServer.com"; // Please replace the server URL with your own
+iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 ```
 
 * CSharp
 
 ``` csharp
 // DBR
-DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
-ltspar.MainServerURL = "https://your.mainServer.com";
+DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters();           
+dlspar.MainServerURL = "https://your.mainServer.com";
 ```
 
 * Java
 
 ``` java
 // DBR
-DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
-ltspar.mainServerURL = "https://your.mainServer.com";
+DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+dlspar.mainServerURL = "https://your.mainServer.com";
 ```
 
 * Python
@@ -65,22 +65,22 @@ ltspar.mainServerURL = "https://your.mainServer.com";
 ``` python
 // DBR
 br = BarcodeReader();
-ltspar = reader.init_lts_connection_parameters();
-ltspar.mainServerURL = "https://your.mainServer.com";
+dlspar = reader.init_dls_connection_parameters();
+dlspar.mainServerURL = "https://your.mainServer.com";
 ```
 
 On Android
 
 ``` java
 // DBR
-DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
     @Override
-    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+    public void DLSLicenseVerificationCallback(boolean success, Exception error) {
         Assert.assertEquals(false, success);
         Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
     }
 };
-DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+DMDLSConnectionParameters parameters = new DMDLSConnectionParameters();
 parameters.mainServerURL = "https://your.mainServer.com";
 ```
 
@@ -88,8 +88,8 @@ On iOS
 
 ``` c
 // DBR
-iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.mainServerURL = @"https://your.mainServer.com";
+iDMDLSConnectionParameters* dls = [[iDMDLSConnectionParameters alloc] init];
+dls.mainServerURL = @"https://your.mainServer.com";
 ```
 
 ## Specify the Organization ID
@@ -127,26 +127,26 @@ Dynamsoft.DWT.Load();
 * Android
 
 ``` java
-DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
     @Override
-    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+    public void DLSLicenseVerificationCallback(boolean success, Exception error) {
         Assert.assertEquals(false, success);
         Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
     }
 };
-DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+DMDLSConnectionParameters parameters = new DMDLSConnectionParameters();
 parameters.organizationId = "123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
-dbr.initLicenseFromLTS(parameters,ltsListener);
+dbr.initLicenseFromDLS(parameters,dlsListener);
 ```
 
 * iOS
 
 ``` c
-iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.organizationId = @"123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+iDMDLSConnectionParameters* dls = [[iDMDLSConnectionParameters alloc] init];
+dls.organizationId = @"123456"; // replace the number 123456 with YOUR-ORGANIZATION-ID
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dls verificationDelegate:self];
 
-* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+* (void)DLSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
@@ -187,10 +187,10 @@ For Dynamsoft Barcode Reader JavaScript Edition, the Handshake Code can also be 
 // DBR
 int iRet = -1;
 char szErrorMsg[256];
-DM_LTSConnectionParameters ltspar;    
-CBarcodeReader::InitLTSConnectionParameters(&ltspar);
-ltspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
-iRet = CBarcodeReader::InitLicenseFromLTS(&ltspar, szErrorMsg, 256);
+DM_DLSConnectionParameters dlspar;    
+CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 if (iRet != DBR_OK)
 {
     printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
@@ -202,18 +202,18 @@ if (iRet != DBR_OK)
 
 ``` csharp
 // DBR
-DMLTSConnectionParameters ltspar = BarcodeReader.InitLTSConnectionParamters();           
-ltspar.HandshakeCode = "Your-HandshakeCode";
-EnumErrorCode iRet = BarcodeReader.InitLicenseFromLTS(ltspar, out strErrorMSG);
+DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters();           
+dlspar.HandshakeCode = "Your-HandshakeCode";
+EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```
 
 * Java
 
 ``` java
 // DBR
-DMLTSConnectionParameters ltspar = BarcodeReader.initLTSConnectionParameters();
-ltspar.handshakeCode = "Your-HandshakeCode";
-BarcodeReader.initLicenseFromLTS(ltspar);
+DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+dlspar.handshakeCode = "Your-HandshakeCode";
+BarcodeReader.initLicenseFromDLS(dlspar);
 ```
 
 * Python
@@ -221,36 +221,36 @@ BarcodeReader.initLicenseFromLTS(ltspar);
 ``` python
 // DBR
 reader = BarcodeReader();
-ltspar = reader.init_lts_connection_parameters();
-ltspar.handshakeCode = "Your-HandshakeCode";
-iRet = reader.init_license_from_lts(ltspar);
+dlspar = reader.init_dls_connection_parameters();
+dlspar.handshakeCode = "Your-HandshakeCode";
+iRet = reader.init_license_from_dls(dlspar);
 ```
 
 On Android
 
 ``` java
 // DBR
-DBRLTSLicenseVerificationListener ltsListener = new DBRLTSLicenseVerificationListener() {
+DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationListener() {
     @Override
-    public void LTSLicenseVerificationCallback(boolean success, Exception error) {
+    public void DLSLicenseVerificationCallback(boolean success, Exception error) {
         Assert.assertEquals(false, success);
         Assert.assertEquals("ChargeWay for licenseItem is not matched.", error.getMessage());
     }
 };
-DMLTSConnectionParameters parameters = new DMLTSConnectionParameters();
+DMDLSConnectionParameters parameters = new DMDLSConnectionParameters();
 parameters.handshakeCode = "Your-HandshakeCode";
-dbr.initLicenseFromLTS(parameters,ltsListener);
+dbr.initLicenseFromDLS(parameters,dlsListener);
 ```
 
 On iOS
 
 ``` c
 // DBR
-iDMLTSConnectionParameters* lts = [[iDMLTSConnectionParameters alloc] init];
-lts.handshakeCode = @"Your-HandshakeCode";
-_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromLTS:lts verificationDelegate:self];
+iDMDLSConnectionParameters* dls = [[iDMDLSConnectionParameters alloc] init];
+dls.handshakeCode = @"Your-HandshakeCode";
+_dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dls verificationDelegate:self];
 
-* (void)LTSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
+* (void)DLSLicenseVerificationCallback:(bool)isSuccess error:(NSError * _Nullable)error
 
 {
     NSNumber* boolNumber = [NSNumber numberWithBool:isSuccess];
@@ -341,4 +341,4 @@ DLS receives usage reports from client devices, count the usage against certain 
 For IE 9, in order to use the license, you must make sure of two things
 
 * The option `Access data sources across domains` must be set to `Enabled` in "Security Settings"
-* The [License Server URL](#configure-lts) and your own web site URL must both be included in "Trusted Sites"
+* The [License Server URL](#configure-dls) and your own web site URL must both be included in "Trusted Sites"

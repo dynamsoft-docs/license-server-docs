@@ -1,8 +1,8 @@
 ---
 layout: default-layout
-title: LTS Error List
+title: DLS Error List
 keywords: license tracking, error list
-description: This page shows all the errors defined within LTS
+description: This page shows all the errors defined within DLS
 breadcrumbText: Error-List
 needAutoGenerateSidebar: true
 ---
@@ -11,8 +11,8 @@ needAutoGenerateSidebar: true
 
 | Error Code | Error Message |
 |:-|:-|
-| -20100 | The standby LTS refuses to provide service while the main LTS is working. |
-| -20100 | LTS refuses to provide service while under construction. |
+| -20100 | The standby DLS refuses to provide service while the main DLS is working. |
+| -20100 | DLS refuses to provide service while under construction. |
 | -20101 | The handshake code you are using does not exist on the Dynamsoft License Server. |
 | -20102 | Session password is incorrect. |
 | -20103 | AppDomain for handshake is not matched. |

@@ -65,11 +65,11 @@ Other than that, when authorized devices are used offline, their usage during th
 
 Yes. This is done differently for different hosting options.
 
-For Self-hosting LTS, simply use a semicolon to separate different emails in the LTS management portal
+For Self-hosting DLS, simply use a semicolon to separate different emails in the DLS management portal
 
 ![Configure recipients for notification on Self hosting]({{site.assets}}imgs/usagealerts-001.png)
 
-For Dynamsoft-hosting LTS, email notifications are sent to all contacts configured for a specific order. You can check the contacts or add more in the customer portl
+For Dynamsoft-hosting DLS, email notifications are sent to all contacts configured for a specific order. You can check the contacts or add more in the customer portl
 
 ![Configure recipients for notification on DS hosting1]({{site.assets}}imgs/usagealerts-002.png)
 

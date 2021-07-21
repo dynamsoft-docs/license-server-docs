@@ -201,12 +201,12 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDel
 
 * Swift for iOS
 ```swift
-let dlspar = iDMLTSConnectionParameters();
+let dlspar = iDMDLSConnectionParameters();
 dlspar.handshakeCode = "*****-hs-****";
 dlspar.sessionPassword = "******";
-_dbr = DynamsoftBarcodeReader(licenseFromLTS: dlspar, verificationDelegate: self);
+_dbr = DynamsoftBarcodeReader(licenseFromDLS: dlspar, verificationDelegate: self);
 
-func ltsLicenseVerificationCallback(_ isSuccess: Bool, error: Error?)
+func dlsLicenseVerificationCallback(_ isSuccess: Bool, error: Error?)
 {
     if isSuccess {
         DispatchQueue.main.async{
@@ -303,7 +303,7 @@ Dynamsoft allows excessive usage of the licenses in case the licensee fails to e
 
 The UUID here means a unique ID for the machine where DLS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. Therefore, make sure this machine assigned for production usage is stable.
 
-You can find the UUID of your DLS on the [admin portal](https://www.dynamsoft.com/license-/docs/selfhosting/managelts.html?ver=latest#log-in-lts-management-portal) once you have successfully installed DLS .
+You can find the UUID of your DLS on the [admin portal](https://www.dynamsoft.com/license-/docs/selfhosting/managedls.html?ver=latest#log-in-dls-management-portal) once you have successfully installed DLS .
 
 A UUID is bound to one or multiple unique hardware identification labels which include
 

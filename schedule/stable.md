@@ -1,9 +1,9 @@
 ---
 layout: default-layout
 title: Dynamsoft License Server - Stable Releases
-keywords: LTS Stable Release
+keywords: DLS Stable Release
 noTitleIndex: false
-description: This page is about the releases of LTS
+description: This page is about the releases of DLS
 breadcrumbText: Stable Releases
 needAutoGenerateSidebar: true
 ---
@@ -20,16 +20,16 @@ needAutoGenerateSidebar: true
 * Added a method `setDefaultHandShakeCode()` which takes two parameters: the first specifies an organization with its Dynamsoft ID and the second specifies a Handshake Code with either its name or its `handShakeCodeId`.
   + If an organization is new, the first Handshake Code generated for one of its license items is set as the default.
 * Added version number to all consumption chain files (.ccf).
-* Added the "revoke" feature so that LTS accepts a revoked license item as long as the original item is present and then set both items invalid.
+* Added the "revoke" feature so that DLS accepts a revoked license item as long as the original item is present and then set both items invalid.
 
 ### Improvements
 
-* Improved the communication between clients and LTS so that LTS always knows what license item is being used by a particular client. [>>Requirements]({{site.schedule}}requirements/add-item-id-in-request-n-response.html)
-  + Based on this change, now LTS supports configuring the same Handshake Code with multiple license items of the types "Concurrent Device", "Concurrent Instance" or "Per Active Device".
+* Improved the communication between clients and DLS so that DLS always knows what license item is being used by a particular client. [>>Requirements]({{site.schedule}}requirements/add-item-id-in-request-n-response.html)
+  + Based on this change, now DLS supports configuring the same Handshake Code with multiple license items of the types "Concurrent Device", "Concurrent Instance" or "Per Active Device".
 
 * Improved the overflow tolerance feature for the license options "Concurrent device", "Per Active Device" and "Concurrent Instance" so that accumulated exceptions are cleared every 365 days and the total allowed number of exceptions doesn't drop if the same license item continues to be valid. [>>Requirements]({{site.schedule}}requirements/better-overflow-tolerance.html)
 
-* Improved the API `addLicense()` so that it not only specifies a new License File but also tells LTS how to process this License File. For example
+* Improved the API `addLicense()` so that it not only specifies a new License File but also tells DLS how to process this License File. For example
   + Generate a new Handshake Code for the License File.
     - In this case, specify whether to make this new Code "Default".
   + Configure the License File to an existing Handshake Code.

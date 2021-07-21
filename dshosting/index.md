@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 > NOTE:
 > 
-> To learn how secure and reliable Dynamsoft-hosting LTS is, you can refer to [this page]({{site.about}}licensefaq.html).
+> To learn how secure and reliable Dynamsoft-hosting DLS is, you can refer to [this page]({{site.about}}licensefaq.html).
 
 > This article is about Dynamsoft-Hosting License Tracking, if you would rather track license usage yourself using your own self-hosting Dynamsoft License Server, please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
 
@@ -38,7 +38,7 @@ To configure the license is to manage the Handshake Codes for the license. For m
 
 ## Track the License
 
-For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ LTS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by Dynamsoft. You can
+For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ DLS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by Dynamsoft. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)

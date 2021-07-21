@@ -3,13 +3,13 @@ layout: default-layout
 title: Manage Security - Dynamsoft License Server
 keywords: Dynamsoft License Server, Security
 description: How to manage security of Dynamsoft License Server
-breadcrumbText: Manage LTS Security
+breadcrumbText: Manage DLS Security
 needAutoGenerateSidebar: true
 ---
 
-# Manage LTS security
+# Manage DLS security
 
-Dynamsoft recommends that you change the default password the first time you log in the management portal for LTS. Moreover, it is recommended to change the password every few months.
+Dynamsoft recommends that you change the default password the first time you log in the management portal for DLS. Moreover, it is recommended to change the password every few months.
 
 A few things to note
 
