@@ -8,7 +8,7 @@ breadcrumbText: Mange LTS
 
 # Manage LTS
 
-> Read more on [What is a LTS]({{site.about}}terms.html#license--server)
+> Read more on [What is a LTS]({{site.about}}terms.html#dynamsoft-license-server)
 
 ## How to set up LTS
 

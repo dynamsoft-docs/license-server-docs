@@ -38,7 +38,7 @@ To configure the license is to manage the Handshake Codes for the license. For m
 
 ## Track the License
 
-For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ LTS ]({{site.about}}terms.html#license--server) hosted by Dynamsoft. You can
+For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ LTS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by Dynamsoft. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)
