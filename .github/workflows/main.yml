@@ -1,0 +1,37 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the master branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      #- uses: actions/checkout@v2
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          cd /home/ubuntu
+          [ ! -d DLSDoc ] && mkdir -p DLSDoc
+          [ ! -d license-server-docs ] && git clone --depth 1 https://github.com/Dynamsoft/license-server-docs.git
+          cd license-server-docs && git pull && cd .. && cp -rfp ./license-server-docs/* ./DLSDoc/
+          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DLSDoc/
+          cd DLSDoc && bundle exec jekyll build --incremental
+          python3 /home/ubuntu/ftp.py /home/ubuntu/DLSDoc/_site/ ./www.dynamsoft.com/license-server/docs/
+
+          

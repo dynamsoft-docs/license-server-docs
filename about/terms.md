@@ -200,6 +200,7 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDel
 ```
 
 * Swift for iOS
+
 ```swift
 let dlspar = iDMDLSConnectionParameters();
 dlspar.handshakeCode = "*****-hs-****";
