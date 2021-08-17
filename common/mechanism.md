@@ -21,7 +21,7 @@ NOTE: If you are using an old browser like IE 9 to access a web application, ple
 
 > Read more on [what is DLS]({{site.about}}terms.html#dynamsoft-license-server)
 
-The following code snippets show how to configure DLS. If you are using Dynamsoft-Hosting DLS , you can skip this step.
+If you are using Dynamsoft-Hosting DLS , you can skip this step. The following code snippets show how to configure DLS. 
 
 * JavaScript
 
