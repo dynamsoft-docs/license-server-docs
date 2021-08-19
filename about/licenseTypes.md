@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## Per Barcode Scan
 
-#### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
+### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
 
 With a Per Barcode Scan License, the SDK can be used to support a given number of unique barcode scans. For example, if the SDK is used to scan an image with four barcodes, it will be counted as four scans. 
 
@@ -31,7 +31,7 @@ NOTE: For the mobile and JavaScript editions which usually scan consecutive imag
 
 ## Per Page
 
-#### Applicable products: [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
+### Applicable products: [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
 With a Per Page License, the SDK can be used for processing a given number of document pages. For example, with a license for 100K pages of the scanner module of the SDK, you can scan up to 100K document pages and save them to your server.
 
@@ -46,7 +46,7 @@ NOTE: The 'Per Page' license option is also available for addons of the Dynamic 
 
 ## Per Client Device
 
-#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/), [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/)
+### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/), [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/)
 
 A client device normally refers to the machine itself that runs a native application which has incorporated one of the SDKs. However, for a web application that uses the javascript editions of the SDKs, a client device means a browser on the machine. The difference is based on the [Deployment Type]({{site.about}}terms.html#deployment-type) of the license as shown in the following table.
 
@@ -69,7 +69,7 @@ The UUID of the device remains on the license server during the validity period 
 
 ## Per Server
 
-#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
+### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
 A Server is a device or computer that has the SDK loaded into its RAM. Server includes the following: 
 (i) a networked device with the SDK installed that's accessible by multiple users who can independently operate the SDK from another machine, 
@@ -81,7 +81,7 @@ Please contact support@dynamsoft.com for more info about how to use a per-server
 
 ## Per Domain
 
-#### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (JavaScript edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
+### Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (JavaScript edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)
 
 A Domain License allows unlimited usage of the SDK within one web application under a specific domain (e.g. *.dynamsoft.com). Multiple subdomains like subdomainA.company.com and subdomainB.company.com are counted as one Domain.
 
@@ -91,7 +91,7 @@ If you are interested in this option, please [contact Dynamsoft Team](mailto:sal
 
 ## Per Concurrent Device
 
-#### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
+### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/)
 
 With a N-concurrent-device license, N devices are allowed to read barcodes concurrently.
 
@@ -103,7 +103,7 @@ For more details on this licensing option, please [contact Dynamsoft Team](mailt
 
 ## Per Concurrent Instance
 
-#### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition)
+### Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition)
 
 An instance refers to a barcode reader object. With a N Concurrent Instance License, you can have up to N objects reading barcodes simultaneously.
 
