@@ -7,13 +7,12 @@ breadcrumbText: Self-hosting DLS
 needAutoGenerateSidebar: true
 ---
 
-# Self-hosting license tracking
+# Connect to Self-hosting License Server
 
-> This article addresses Self-Hosting License Tracking. If you would rather let Dynamsoft track your license usage and not have to set up your own server for tracking, please see [Dynamsoft-hosting license tracking]({{site.dshosting}}index.html).
+> If your production environment does not allow internet connection, an alternative option is to host the license server program on your internal server machine so all your devices or end users can connect and get licensed via intranet connection.
+> 
+> To learn security features about the License Server, you can refer to [this page]({{site.about}}licensefaq.html).
 
-> If you have not purchased any Dynamsoft SDK license that requires usage tracking, please check out [how to purchase a license]({{site.about}}purchase.html).
-
-The following assumes you have purchased a trackable license and have chosen "Self-Hosting" on the "Activate License" page in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense).
 
 ## Set Up DLS
 
