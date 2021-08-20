@@ -7,17 +7,12 @@ breadcrumbText: Dynamsoft-Hosting License Tracking
 needAutoGenerateSidebar: true
 ---
 
-# Dynamsoft-hosting license tracking
+# Connect to Dynamsoft-hosting License Server
 
-> NOTE:
-> 
-> To learn how secure and reliable Dynamsoft-hosting DLS is, you can refer to [this page]({{site.about}}licensefaq.html).
+> Dynamsoft has its license server deployed to the Amazon's AWS for customers to connect and consume their purchased license seats. As the license server is hosted on the cloud, the option only works if your to-be-licensed devices can connect to the internet. 
+> If you must keep everything within your intranet, you can instead install the License Server program on your internal server machine. Please refer to [Self-hosting License Tracking]({{site.selfhosting}}index.html).
 
-> This article is about Dynamsoft-Hosting License Tracking, if you would rather track license usage yourself using your own self-hosting Dynamsoft License Server, please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
-
-The following assumes you have purchased a trackable license and have chosen "Dynamsoft-Hosting" on the "Activate License" page in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense). 
-
-If you have not purchased any Dynamsoft SDK license that requires usage tracking, please see [how to purchase a license]({{site.about}}purchase.html).
+> To learn security features about the License Server, you can refer to [this page]({{site.about}}licensefaq.html).
 
 
 ## Activate the License
@@ -28,7 +23,6 @@ On the "Activate License" page, set an Alias for your license or leave the defau
 
 > Read more on [what is an Alias]({{site.about}}terms.html#alias)
 
-Once the activation is done, the next step is to [configure the license](#configure-the-license).
 
 ## Configure the License
 
