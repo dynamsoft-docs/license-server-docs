@@ -222,7 +222,7 @@ BarcodeReader.initLicenseFromDLS(dlspar);
 // DBR
 reader = BarcodeReader();
 dlspar = reader.init_dls_connection_parameters();
-dlspar.handshakeCode = "Your-HandshakeCode";
+dlspar.handshake_code = "Your-HandshakeCode";
 iRet = reader.init_license_from_dls(dlspar);
 ```
 
