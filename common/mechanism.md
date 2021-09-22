@@ -66,7 +66,7 @@ dlspar.mainServerURL = "https://your.mainServer.com";
 // DBR
 br = BarcodeReader();
 dlspar = reader.init_dls_connection_parameters();
-dlspar.mainServerURL = "https://your.mainServer.com";
+dlspar.main_server_url = "https://your.mainServer.com";
 ```
 
 On Android
