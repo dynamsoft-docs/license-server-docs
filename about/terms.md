@@ -81,15 +81,15 @@ A Validation Field is a static characteristic of your application, i.e., Once se
 
 * Website Domain
 
-> Applicable to Dynamsoft Barcode Reader browser deployment, Dynamic Web TWAIN
+> Applicable to Dynamsoft Barcode Reader JavaScript Edition, Dynamic Web TWAIN
 
 * Application ID
 
-> Applicable to Dynamsoft Barcode Reader mobile deployment
+> Applicable to Dynamsoft Barcode Reader Mobile Edition
 
 * Process Name
 
-> Applicable to Dynamsoft Barcode Reader desktop and server deployments; Dynamsoft Barcode Reader Embedded Edition
+> Applicable to Dynamsoft Barcode Reader desktop and server Editions (C, C++, DotNet, Java, Python, etc.); Dynamsoft Barcode Reader Embedded Edition
 
 ## Session Password
 
@@ -284,11 +284,11 @@ Dynamsoft provides both Dynamsoft-hosting and self-hosting options of DLS. For m
 * [Self-hosting License Server]({{site.selfhosting}}index.html)
 * [Dynamsoft-hosting License Server]({{site.dshosting}}index.html)
 
-## Grace Period
+## Grace Stage
 
-Dynamsoft provides some grace period in case the licensee fails to extend or expand the license in time. For difference license types:
+Dynamsoft provides a grace stage in case the licensee fails to extend or expand the license in time. For difference license types:
 
-| License Type | Grace Period |
+| License Type | Grace Stage |
 |:-:|:-:|
 | Per Barcode Scan | `round(5% * quota)` is allowed after the actual quota runs out. |
 | Per Page | `round(5% * quota)` is allowed after the actual quota runs out. |
