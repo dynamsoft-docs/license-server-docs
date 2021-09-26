@@ -92,7 +92,11 @@ iDMDLSConnectionParameters* dls = [[iDMDLSConnectionParameters alloc] init];
 dls.mainServerURL = @"https://your.mainServer.com";
 ```
 
-## Specify the Organization ID
+## How to set the license
+
+You can set the license either by specifying the Organization ID or Handshake Code
+
+#### Specify the Organization ID
 
 > Read more on [what is an Organization ID]({{site.about}}terms.html#organization-id)
 
@@ -159,7 +163,7 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dls verificationDelega
 }
 ```
 
-## Specify the Handshake Code
+#### Specify the Handshake Code
 
 > Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code)
 
