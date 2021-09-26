@@ -101,7 +101,7 @@ To verify the password, all products have a similar API. For example:
 
 ```javascript
 Dynamsoft.DWT.organizationID = "Your-Organization-ID";
-Dynamsoft.DWT.handshakeCode = "DynamsoftID-CustomCode";
+// Dynamsoft.DWT.handshakeCode = "DynamsoftID-CustomCode"; // Optional
 Dynamsoft.DWT.sessionPassword = "The-Password-You-Set";
 Dynamsoft.DWT.Load();
 ```
@@ -112,7 +112,7 @@ Dynamsoft.DWT.Load();
 
 ```javascript
 Dynamsoft.DWT.BarcodeReader.organizationID = "Your-Organization-ID";
-Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode";
+// Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode"; // Optional
 Dynamsoft.DBR.BarcodeReader.sessionPassword = "The-Password-You-Set";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
 ```
@@ -125,7 +125,7 @@ char szErrorMsg[256];
 DM_DLSConnectionParameters dlspar;    
 CBarcodeReader::InitDLSConnectionParameters(&dlspar);
 dlspar.organizationID = "Your-Organization-ID";
-dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+// dlspar.handshakeCode = "Your-HandshakeCode"; // Optional
 dlspar.SessionPassword = "The-Password-You-Set";
 iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
 if (iRet != DBR_OK)
@@ -140,7 +140,7 @@ if (iRet != DBR_OK)
 ```csharp
 DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters();    
 dlspar.OrganizationID = "Your-Organization-ID";       
-dlspar.HandshakeCode = "Your-HandshakeCode";
+// dlspar.HandshakeCode = "Your-HandshakeCode"; // Optional
 dlspar.SessionPassword = "The-Password-You-Set";
 EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```
@@ -150,7 +150,7 @@ EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
 ```java
 DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
 dlspar.organizationID = "Your-Organization-ID";
-dlspar.handshakeCode = "Your-HandshakeCode";
+// dlspar.handshakeCode = "Your-HandshakeCode"; // Optional
 dlspar.sessionPassword = "The-Password-You-Set";
 BarcodeReader.initLicenseFromDLS(dlspar);
 ```
@@ -167,7 +167,7 @@ DBRDLSLicenseVerificationListener dlsListener = new DBRDLSLicenseVerificationLis
 };
 DMDLSConnectionParameters dlspar = new DMDLSConnectionParameters();
 dlspar.organizationID = "Your-Organization-ID";
-dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
+// dlspar.handshakeCode = "Your-HandshakeCode"; // Optional
 dlspar.sessionPassword = "The-Password-You-Set";
 dbr.initLicenseFromDLS(dlspar,dlsListener);
 ```
@@ -179,7 +179,7 @@ dbr.initLicenseFromDLS(dlspar,dlsListener);
 
 iDMDLSConnectionParameters* dlspar = [[iDMDLSConnectionParameters alloc] init];
 dlspar.organizationID = @"Your-Organization-ID";
-dlspar.handshakeCode = @"Your-HandshakeCode";
+// dlspar.handshakeCode = @"Your-HandshakeCode"; // Optional
 dlspar.sessionPassword = @"The-Password-You-Set";
 _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDelegate:self];
 
@@ -200,7 +200,7 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dlspar verificationDel
 
 ```swift
 let dlspar = iDMDLSConnectionParameters();
-dlspar.handshakeCode = "*****-hs-****";
+// dlspar.handshakeCode = "*****-hs-****"; // Optional
 dlspar.sessionPassword = "******";
 _dbr = DynamsoftBarcodeReader(licenseFromDLS: dlspar, verificationDelegate: self);
 
@@ -221,9 +221,9 @@ func dlsLicenseVerificationCallback(_ isSuccess: Bool, error: Error?)
 ```python
 reader = BarcodeReader()
  connection_paras = reader.init_dls_connection_parameters()
- # Please replace the handshakeCode with your own
  connection_paras.organization_id = "Your-Organization-ID"
- connection_paras.handshake_code = "Your-HandshakeCode"
+ # handshake_code is optional
+ # connection_paras.handshake_code = "Your-HandshakeCode"
  connection_paras.session_password = "The-Password-You-Set"
  try:
      error = reader.init_licesne_from_dls(connection_paras)
