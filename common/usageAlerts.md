@@ -24,9 +24,9 @@ Notification emails are triggered when the ratio of consumed to total quota reac
 * 75%
 * 90%
 * 95%
-* 100%: Normal quota is used up, entering the tolerance stage.
-* 105% (Per Barcode Scan): Tolerance used up, the License Item is deactivated.
-* 110% (Per Device): Tolerance used up, no new device can be authorized. Devices that have been authorized will continue to work.
+* 100%: Normal quota is used up, entering the grace stage.
+* 105% (Per Barcode Scan): Grace stage ends, the License Item is deactivated.
+* 110% (Per Device): Grace stage ends, no new device can be authorized. Devices that have been authorized will continue to work.
 
 ### Concurrent Device
 

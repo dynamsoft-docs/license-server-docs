@@ -27,7 +27,7 @@ needAutoGenerateSidebar: true
 * Improved the communication between clients and DLS so that DLS always knows what license item is being used by a particular client. [>>Requirements]({{site.schedule}}requirements/add-item-id-in-request-n-response.html)
   + Based on this change, now DLS supports configuring the same Handshake Code with multiple license items of the types "Concurrent Device", "Concurrent Instance" or "Per Active Device".
 
-* Improved the overflow tolerance feature for the license options "Concurrent device", "Per Active Device" and "Concurrent Instance" so that accumulated exceptions are cleared every 365 days and the total allowed number of exceptions doesn't drop if the same license item continues to be valid. [>>Requirements]({{site.schedule}}requirements/better-overflow-tolerance.html)
+* Improved the overflow grace-stage feature for the license options "Concurrent device", "Per Active Device" and "Concurrent Instance" so that accumulated exceptions are cleared every 365 days and the total allowed number of exceptions doesn't drop if the same license item continues to be valid.
 
 * Improved the API `addLicense()` so that it not only specifies a new License File but also tells DLS how to process this License File. For example
   + Generate a new Handshake Code for the License File.
@@ -39,7 +39,7 @@ needAutoGenerateSidebar: true
 
 ### New Features
 
-* Added the "overflow tolerance" feature which allows users to use more quotas than allowed by each license item. [>>Requirements]({{site.schedule}}requirements/overflow-tolerance.html)
+* Added the "grace stage" feature which allows users to use more quotas than allowed by each license item.
 * Added a new license option called "Concurrent Instance". [Requirements]({{site.schedule}}requirements/concurrent-instance.html)
 
 ## `2.0`
