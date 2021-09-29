@@ -4,6 +4,7 @@ title: Manage Dynamsoft License Server
 keywords: Dynamsoft License Server, management
 description: This page is about how to manage Dynamsoft License Server
 breadcrumbText: Mange DLS
+needAutoGenerateSidebar: true
 ---
 
 # Manage DLS
