@@ -111,7 +111,7 @@ Dynamsoft.DWT.Load();
 * JavaScript
 
 ```javascript
-Dynamsoft.DWT.BarcodeReader.organizationID = "Your-Organization-ID";
+Dynamsoft.DBR.BarcodeReader.organizationID = "Your-Organization-ID";
 // Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode"; // Optional
 Dynamsoft.DBR.BarcodeReader.sessionPassword = "The-Password-You-Set";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
