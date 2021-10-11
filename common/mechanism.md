@@ -5,7 +5,7 @@ keywords: license tracking, mechanism
 description: This page describes how license tracking is done
 breadcrumbText: Mechanism
 needAutoGenerateSidebar: true
-noTitleIndex：true
+noTitleIndex: true
 ---
 
 # How trackable licenses work
