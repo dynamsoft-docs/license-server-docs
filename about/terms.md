@@ -111,7 +111,7 @@ Dynamsoft.DWT.Load();
 * JavaScript
 
 ```javascript
-Dynamsoft.DWT.BarcodeReader.organizationID = "Your-Organization-ID";
+Dynamsoft.DBR.BarcodeReader.organizationID = "Your-Organization-ID";
 // Dynamsoft.DBR.BarcodeReader.handshakeCode = "DynamsoftID-CustomCode"; // Optional
 Dynamsoft.DBR.BarcodeReader.sessionPassword = "The-Password-You-Set";
 let reader = await Dynamsoft.DBR.BarcodeReader.createInstance();
@@ -357,7 +357,12 @@ Another option is to generate UUID via "Hard Binding".
 * Desktop/Server/Embeded: the CPU ID and OS ID are collected
 * Mobile: the unique device string provided by the device itself is collected
 
-This way, as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by the DLS. On the other hand, this means that the DLS can decrypt the UUID to obtain the actual device information.
+This way, as long as you don't change the CPU or reinstall the operating system, a device will always be recognized by the DLS. 
+
+> Note
+> 
+> * "Hard Binding" applies one-way encryption to the collected hardware IDs, therefore the information is secure.
+> * The major difference between "Soft Binding" and "Hard Binding" is that the latter always generates the same UUID while the former generates a different UUID every time.
 
 ### Questions
 

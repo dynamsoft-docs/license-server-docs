@@ -242,7 +242,7 @@ A trackable license is accessed by either the [organization ID]({{site.about}}te
 
 Generally, each trackable license has a fixed quota. If the quota is used up, the license will no longer be valid and the software will stop running. Of course, this is unacceptable for production use, and Dynamsoft has the following measures to ensure that it does not happen accidentally.
 
-* Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. Please refer to [Tolerance Stage]({{site.about}}terms.html#tolerance-stage).
+* Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. Please refer to [Grace Stage]({{site.about}}terms.html#grace-stage).
 
 * Dynamsoft notifies the licensee multiple times about the status of the license. Please refer to [Usage Alerts]({{site.common}}usagealerts.html).
 

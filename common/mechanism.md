@@ -5,23 +5,34 @@ keywords: license tracking, mechanism
 description: This page describes how license tracking is done
 breadcrumbText: Mechanism
 needAutoGenerateSidebar: true
+noTitleIndex：true
 ---
 
 # How trackable licenses work
 
-> Important NOTE
+> NOTE:
 > 
-> The following content assumes that you have already activated your license, if you haven't, please first [activate it]({{site.about}}activate.html).
+> The following content assumes that you have already activated your license. If you haven't, please first [activate it]({{site.about}}activate.html).
 
-All Dynamsoft SDKs that support trackable licenses have a built-in mechanism to get authorization at initialization as well as collect and report its usage during runtime. This article is about how to use such a trackable license.
+All Dynamsoft SDKs that support trackable licenses have a built-in mechanism for getting authorization at initialization as well as collecting and reporting license usage during runtime. This article is about how to use such a trackable license.
 
-NOTE: If you are using an old browser like IE 9 to access a web application, please also check out [Special Notice for IE 9](#special-notice-for-ie-9).
+Currently supported products:
+
+* Dynamic Web TWAIN (v17.1+)
+* Dynamsoft Barcode Reader (JavaScript, Android and iOS Editions, v8.2.5+)
+* Dynamsoft Label Recognition (Android and iOS Editions)
+* Dynamsoft Camera Enhancer (Android and iOS Editions)
+
+The license system shall work fine in all mainstream browsers. However, if you are using an old browser like **IE 9**, please make sure to:
+
+* set the option "Access data sources across domains" under "Security Settings" to "Enabled"
+* set the [License Server URL](#configure-dls) and your own web site URL as "Trusted Sites"
 
 ## Configure DLS
 
 > Read more on [what is DLS]({{site.about}}terms.html#dynamsoft-license-server)
 
-If you are using Dynamsoft-Hosting DLS , you can skip this step. The following code snippets show how to configure DLS. 
+If you are using Dynamsoft-Hosting DLS, you can skip this step. The following code snippets show how to configure connecting to your **self-hosting DLS**.  
 
 * JavaScript
 
@@ -69,7 +80,7 @@ dlspar = reader.init_dls_connection_parameters();
 dlspar.main_server_url = "https://your.mainServer.com";
 ```
 
-On Android
+* On Android
 
 ``` java
 // DBR
@@ -84,7 +95,7 @@ DMDLSConnectionParameters parameters = new DMDLSConnectionParameters();
 parameters.mainServerURL = "https://your.mainServer.com";
 ```
 
-On iOS
+* On iOS
 
 ``` c
 // DBR
@@ -96,16 +107,21 @@ dls.mainServerURL = @"https://your.mainServer.com";
 
 You can set the license either by specifying the Organization ID or Handshake Code
 
-#### Specify the Organization ID
+During initialization, Dynamsoft SDKs connect to DLS to get authorized. The process is as follows:
+
+* The SDK sends a request to DLS. 
+
+  The request includes the [Client UUID]({{site.about}}terms.html#client-uuid) and the [Handshake Code]({{site.about}}terms.html#handshake-code) among other information. The Handshake Code is fetched from [your code](#configure-the-handshake-code) and the UUID is fetched from the local cache. If the UUID is not found in the cache, a new one is generated.
+* DLS extracts the [Handshake Code]({{site.about}}terms.html#handshake-code) from the request and checks its status in the database.
+* If the Handshake Code exists and its quota is not used up, DLS returns the authorization; Otherwise, DLS returns a failure message.
+
+To get authorization, you can mainly use Organization ID and Handshake Code (optional). 
+
+### Specify the Organization ID
 
 > Read more on [what is an Organization ID]({{site.about}}terms.html#organization-id)
 
-You can acquire the license from DLS by specifying your Organization ID. At present, this is supported in 
-
-* Dynamic Web TWAIN (17.1+)
-* JavaScript, Android and iOS editions of Dynamsoft Barcode Reader (8.2.5+)
-* Android and iOS editions of Dynamsoft Label Recognition
-* Android and iOS editions of Dynamsoft Camera Enhancer
+You can get license authorization from DLS by specifying your Organization ID. Each Organization ID comes with a default [Handshake code]({{site.about}}terms.html#handshake-code).
 
 Check out the code snippets:
 
@@ -120,10 +136,10 @@ Dynamsoft.DWT.organizationID = "YOUR-ORGANIZATION-ID";
 Dynamsoft.DWT.Load();
 ```
 
-> NOTE
+> NOTE:
 > 
-> If you are using a long product key with the API `productKeys` as shown below, you can replace it with `organizationID` once you get your own organization ID after requesting the trial. Although both ways of licensing are supported, they cannot be used together.
->
+> If you are using a long product key with the API `productKeys` as shown below, you can replace it with `organizationID` once you get your own Organization ID. Although both licensing ways are supported, they cannot be used together.
+
 > ```javascript
 > Dynamsoft.DBR.BarcodeReader.productKeys = "t0069oQAAAAWAfpGnxxsFYz....."; // The traditional product key
 > ```
@@ -163,9 +179,11 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dls verificationDelega
 }
 ```
 
-#### Specify the Handshake Code
+### Specify the Handshake Code
 
 > Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code)
+
+Usually it's enough to use Organization ID, which comes with a default Handshake code, for you to get license authorization from DLS. However, if you have configured multiple Handshake Code for differentiating license usage among different projects in license portal, you can specify the Handshake Code correspondingly in your application like below.
 
 * JavaScript
 
@@ -179,7 +197,7 @@ Dynamsoft.DWT.handshakeCode = "DynamsoftID-CustomCode";
 Dynamsoft.DWT.Load();
 ```
 
-For Dynamsoft Barcode Reader JavaScript Edition, the Handshake Code can also be set in the script tag as `data-productKeys` as shown below
+For Dynamsoft Barcode Reader JavaScript Edition, the Handshake Code can also be set in the script tag as `data-productKeys` as shown below:
 
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@8/dist/dbr.js" data-productKeys="DynamsoftID-CustomCode"></script>
@@ -230,7 +248,7 @@ dlspar.handshake_code = "Your-HandshakeCode";
 iRet = reader.init_license_from_dls(dlspar);
 ```
 
-On Android
+* On Android
 
 ``` java
 // DBR
@@ -246,7 +264,7 @@ parameters.handshakeCode = "Your-HandshakeCode";
 dbr.initLicenseFromDLS(parameters,dlsListener);
 ```
 
-On iOS
+* On iOS
 
 ``` c
 // DBR
@@ -267,22 +285,9 @@ _dbr = [[DynamsoftBarcodeReader alloc] initLicenseFromDLS:dls verificationDelega
 }
 ```
 
-## Authorization
-
-During initialization, Dynamsoft SDKs connect to DLS to get authorized. The process is simplified as follows
-
-* The SDK sends a request to DLS.
-* DLS extracts the Handshake Code from the request and checks its status in the database.
-* If the Code exists and its quota is not used up,  DLS returns the authorization.
-* Otherwise, a failure message is returned.
-
-### About the request
-
-The request includes the [Client UUID]({{site.about}}terms.html#client-uuid) and the Handshake Code among other information. The Handshake Code is fetched from [your code](#configure-the-handshake-code) and the UUID is fetched from the local cache. If the UUID is not found in the cache, a new one is generated.
-
 ### Handle authorization error
 
-For better user experience, you need to handle the authorization error should it happens. The following sample assumes JavaScript is used:
+For better user experience, it's suggested to handle the authorization error should it happens, e.g. for JavaScript:
 
 ``` javascript
 try {
@@ -296,23 +301,25 @@ try {
 
 ## License Tracking
 
-When a Dynamsoft SDK uses a trackable license, it will record every successful operation that needs to be trackable. Then it generates a minimum report for each 3-minute time slot and sumbits the report every 3 minutes. We'll dive deeper into the mechanism below.
+When a Dynamsoft SDK uses a trackable license, every successful operation that needs to be tracked will be recorded, then DLS generates a minimum report for each 3-minute time slot and sumbits the report every 3 minutes. We'll dive deeper into the mechanism below.
 
 ### Usage report
 
+A license usage report includes the meaningful data for tracking license usage. For example:
+
 #### Dynamic Web TWAIN
 
-Dynamic Web TWAIN is used to scan documents or load existing documents for further operations, etc., its usage report includes fields such as
+Dynamic Web TWAIN is used to scan documents or load existing documents for further operations. So its usage report includes fields such as
 
 * Time label (indicates which 3-minute slot it covers)
 * Handshake Code
 * Client UUID
 * Count of total processed pages
-* Type of importing operations (whether the pages are scanned, captured, etc.)
+* Type of importing operations (whether the pages are scanned, imported, etc.)
 
 #### Dynamsoft Barcode Reader
 
-The main purpose of the Barcode Reader is to locate and decode barcodes, therefore, its usage is about successful barcode scans and its report includes fields such as
+Dynamsoft Barcode Reader is mainly used for decoding barcodes. Therefore, its usage is about successful barcode scans and its report includes fields such as
 
 * Time label (indicates which 3-minute slot it covers)
 * Handshake Code
@@ -328,21 +335,14 @@ The main purpose of the Barcode Reader is to locate and decode barcodes, therefo
 
 * 3-minute for submitting reports
 
-  Unlike the time used for report generating which must be precise, report submitting needs to be done timely. Therefore, the moment the SDK finishes initialization, it'll check whether there are usage reports left unsubmitted and submit them if any. After that, it'll submit new report (if any) every 3 minutes.
+  License usage report are submitted timely. The moment the SDK finishes initialization, it'll
+  * check whether there are usage reports left unsubmitted and submit them right away if any. 
+  * submit new report (if any) every 3 minutes.
 
 ### Report submission
 
-Dynamsoft SDKs submit usage reports to DLS with HTTP Post requests. If the submission succeeds, it'll remove the local copy of the report, otherwise, the report remains on the device and will be submitted again the next time the SDK initializes. Note that the SDK won't attempt to submit failed reports during the same session.
-
-If a report is not submitted, it'll be kept on the client for up to 30 days after which it'll be purged.
+Dynamsoft SDKs submit usage reports to DLS with HTTP Post requests. If the submission succeeds, the local copy of the report will be removed; otherwise, the report remains on the device (kept up to 30 days before purging) and will be submitted again the next time the SDK initializes. The SDK won't attempt to submit failed reports during the same session.
 
 ### Report analysis
 
 DLS receives usage reports from client devices, count the usage against certain license items, and then does the math to make overall usage reports. These reports are done per each Handshake Code and per License Item. Read more on [statistics page]({{site.common}}statistics.html).
-
-## Special Notice for IE 9
-
-For IE 9, in order to use the license, you must make sure of two things
-
-* The option `Access data sources across domains` must be set to `Enabled` in "Security Settings"
-* The [License Server URL](#configure-dls) and your own web site URL must both be included in "Trusted Sites"
