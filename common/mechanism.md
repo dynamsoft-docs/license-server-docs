@@ -103,7 +103,9 @@ iDMDLSConnectionParameters* dls = [[iDMDLSConnectionParameters alloc] init];
 dls.mainServerURL = @"https://your.mainServer.com";
 ```
 
-## Authorization
+## How to set the license
+
+You can set the license either by specifying the Organization ID or Handshake Code
 
 During initialization, Dynamsoft SDKs connect to DLS to get authorized. The process is as follows:
 
