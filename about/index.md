@@ -5,7 +5,7 @@ keywords: License Server, index page
 description: This page introduces the docs and the license types involved
 breadcrumbText: About
 needAutoGenerateSidebar: true
-noTitleIndex：true
+noTitleIndex: true
 ---
 
 # About the docs
