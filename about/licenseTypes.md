@@ -5,7 +5,7 @@ keywords: Licensing mode, licensing options
 description: This page introduces all common licensing options
 breadcrumbText: License Options
 needAutoGenerateSidebar: true
-noTitleIndex：true
+noTitleIndex: true
 ---
 
 # Dynamsoft License Options
