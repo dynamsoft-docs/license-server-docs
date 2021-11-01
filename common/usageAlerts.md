@@ -9,58 +9,57 @@ needAutoGenerateSidebar: true
 
 # Usage Alerts
 
-The Dynamsoft License Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered.
+The Dynamsoft License Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered and sent to you.
 
-> If multiple conditions are met, the email will contain all the information.
+> NOTE
+>  
+> * The usage is based on a single License Item
+> * If multiple conditions are met, the email will contain all the information. 
 
-## Dynamsoft Barcode Reader
+## Per Client Device
 
-### Per Barcode Scan/Per Device  
-
-Notification emails are triggered when the ratio of consumed to total quota reaches the following targets: 
-
-> The usage is based on a single License Item
+When the number of active devices (see FAQ below). reaches a certain percentage of the allowed total, you should be aware of this and take necessary measures, such as adding a new license. The preset percentages are:
 
 * 75%
 * 90%
 * 95%
-* 100%: Normal quota is used up, entering the grace stage.
-* 105% (Per Barcode Scan): Grace stage ends, the License Item is deactivated.
-* 110% (Per Device): Grace stage ends, no new device can be authorized. Devices that have been authorized will continue to work.
+* 100%
+* 110%
 
-### Concurrent Device
+When the percentage reaches 100%, it means the license is exhausted. But considering that you may not be able to add a new license in time, the License Server allows another 10% of new devices to be authorized to use the software, so end users may not be immediately affected. When this happens, the customer should try to add a new license as soon as possible.
 
-When the ratio of failed authorization requests to the total number of requests reaches the following targets over the last 60 minutes of app activity:
+When the percentage reaches 110%, new devices will receive a license error when trying to use the software. Note that the devices that have been authorized before will continue to work.
 
-> The usage is based on single Handshake Code
+## Per Barcode Scan or Per Page
 
-* 10%
-* 25%
-* 50%
+When the number of barcodes you scan with Dynamsoft Barcode Reader or the number of pages you process with Dynamic Web TWAIN reaches a certain percentage of the allowed total, you should be aware of this and take necessary measures, such as adding a new license. The preset percentages are:
+
 * 75%
+* 90%
+* 95%
+* 100%
+* 105%
 
-> NOTE
->  
-> If the condition continues to be true, yet the ratio is not passing the next level (let's take the jump from 10% to 25%), no new email will be triggered. For example
-> * 12:40 Failure rate: 8%
-> * 12:50 Failure rate:13%, first email triggered
-> * 13:00 Failure rate:17%
-> * 13:10 Failure rate:14%
-> * 13:20 Failure rate:30%, second email triggered
-> * 13:30 Failure rate:40%
-> * 13:40 Failure rate:44%
-> * 13:50 Failure rate:42%
-> * 14:00 Failure rate:51%, third email triggered
-> ...
+When the percentage reaches 100%, it means the license is exhausted. But considering that you may not be able to add a new license in time, the License Server allows another 5% of barcode scans or pages, so end users may not be immediately affected. When this happens, the customer should try to add a new license as soon as possible.
 
-Other than that, when authorized devices are used offline, their usage during that time period will be submitted when they get online the next time and this may cause exceptions (an exception is counted when active devices exceed the quota for any given 3-minute time slot). Dynamsoft allows a number of exceptions per each License Item. As time passed and activity usage increased, this number also increased. At each check point (the 10-minute mark), if the ratio of raised exceptions to total allowed exceptions reaches the following targets, an email will be triggered as well.
+When the percentage reaches 105%, all devices will receive a license error when trying to use the software.
+
+## Per Concurrent Device or Per Concurrent Instance
+
+With these types of licenses, the limit is on the total number of "concurrent devices or instances". Dynamsoft defines "concurrency" as being active (used the software) in the same period of 3 minutes. When more devices or instances are active for a specific 3-minute period, exceptions are recorded. When the number of total exceptions reaches a certain percentage of the allowed total, it means the concurrency limit (quota) is frequently exceeded and you should consider adding a license. The preset percentages are:
 
 * 50%
 * 75%
 * 90%
-* 100%: Too many exceptions, the License Item is deactivated.
+* 100%
+
+Note that even the first email triggered at the percentage of **50%** means the license is overused and you should take necessary measures as soon as possible. When **100%** is reached, the license will stop working and all devices will receive a license error.
 
 ## Questions
+
+### How do you define 'Active Device'?
+
+An active device is one that successfully acquired the authorization to use the software. Note that a device is considered "Active" only for a limited period of time after which it no longer takes a license seat. By default, the device is active for 90 days from the first authorization.
 
 ### Can I add multiple recipients for the email notification?
 
