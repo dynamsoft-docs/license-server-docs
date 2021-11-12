@@ -37,9 +37,6 @@ Rewrite URL：http://localhost:48080/{R:1}
 
 ![DLS-on-Windows-020]({{site.assets}}imgs/dlsonwin-020.png)
 
-![DLS-on-Windows-021]({{site.assets}}imgs/dlsonwin-021.png)
-
-![DLS-on-Windows-022]({{site.assets}}imgs/dlsonwin-022.png)
 
 ## Install Application Request Routing
 
