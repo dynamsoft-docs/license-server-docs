@@ -7,7 +7,7 @@ breadcrumbText: Install DLS on Linux
 needAutoGenerateSidebar: true
 ---
 
-# Install Dynamsoft Dynamsoft License Server on Linux
+# Install Dynamsoft License Server on Linux
 
 ## Example Environment
 
