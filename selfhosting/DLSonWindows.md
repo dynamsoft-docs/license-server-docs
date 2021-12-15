@@ -7,7 +7,7 @@ breadcrumbText: Install DLS on Windows
 needAutoGenerateSidebar: true
 ---
 
-# Install Dynamsoft Dynamsoft License Server on Windows Server
+# Install Dynamsoft License Server on Windows Server
 
 ## Example Environment
 
