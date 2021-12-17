@@ -41,7 +41,7 @@ mount -a
 
 ``` shell
 cd /data
-wget https://tst.dynamsoft.com/public/download/lts/dynamsoft_dls-linux_x64-v2.2.16.tar.gz
+wget https://tst.dynamsoft.com/public/download/dls/dynamsoft_dls-linux_x64-v2.2.16.tar.gz
 ```
 
 ### Unzip and start the Dynamsoft License Server
@@ -50,9 +50,9 @@ wget https://tst.dynamsoft.com/public/download/lts/dynamsoft_dls-linux_x64-v2.2.
 # Unzip the installer
 tar zxvf dynamsoft_dls-linux_x64-v2.2.16.tar.gz
 # Set permissions
-chmod -R 777 /data/lts-linux
+chmod -R 777 /data/dls-linux
 # Start the server
-cd /data/lts-linux
+cd /data/dls-linux
 sh startup.sh
 ```
 
@@ -78,6 +78,6 @@ Upon the first visit, you will be asked to set an admin password. After that, yo
 
 > This UUID is require when [activating your licenses]({{site.selfhosting}}index.html#activate-the-license).
 
-![DLS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
+![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
 If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` . Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html).

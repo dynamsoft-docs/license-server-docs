@@ -24,7 +24,7 @@ needAutoGenerateSidebar: true
 
 Download the installer from
 
-[Dynamsoft-Licensing-Tracking-Server](https://tst.dynamsoft.com/public/download/lts/2.2/Dynamsoft-Licensing-Tracking-Server.exe)
+[Dynamsoft-Licensing-Tracking-Server](https://tst.dynamsoft.com/public/download/dls/2.2/Dynamsoft-Licensing-Tracking-Server.exe)
 
 ### Test the server
 
@@ -36,6 +36,6 @@ Upon the first visit, you will be asked to set an admin password. After that, yo
 
 > This UUID is require when [activating your licenses]({{site.selfhosting}}index.html#activate-the-license).
 
-![DLS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
+![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
 If the above page shows up, then the server is installed correctly and is ready to process requests. However, the requests may not be able to reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `IIS` . Read more on [Configure Reverse Proxy Using IIS]({{site.selfhosting}}configurereverseproxyusingiis.html).

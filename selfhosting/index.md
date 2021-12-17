@@ -33,7 +33,7 @@ On the "Activate License" page, there are a few steps for the activation.
 
 * Input the `UUID` of the DLS hosted on your server, the UUID is found on the home page of your DLS.
 
-![DLS-HomePage-001]({{site.assets}}imgs/lts-homepage.png)
+![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
 > Read more on [what is a DLS UUID]({{site.about}}terms.html#dls-uuid)
 

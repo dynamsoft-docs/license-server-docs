@@ -26,13 +26,13 @@ Please read one of the following guides
 
 For maximum up time, a standby DLS is necessary. The following are the steps to configure a standby DLS.
 
-* Find the file `lts.json.sample` in the DLS directory, rename it to `lts.json`
+* Find the file `dls.json.sample` in the DLS directory, rename it to `dls.json`
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
 
-  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/lts/"]`
+  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
 
-  + For the standby DLS: `"servers": ["https://www.yoursite.com/lts/", "self"]`
+  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
 
@@ -41,7 +41,7 @@ For maximum up time, a standby DLS is necessary. The following are the steps to 
 Once DLS is installed and configured, you can open its managment portal in the browser. The URL has the following pattern
 
 ``` 
-https://{domain or IP of the server}:{port}/lts/page/#/index.html
+https://{domain or IP of the server}:{port}/dls/page/#/index.html
 ```
 
 You need to input a password to access the portal. If the password has not been set, you will be asked to set one.
