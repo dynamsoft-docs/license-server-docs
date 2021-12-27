@@ -139,7 +139,7 @@ Table of Contents
 
 * [How to use a trackable license](#how-to-use-a-trackable-license)?
 * [What is the relationship between organizationID and handshakeCode](#what-is-the-relationship-between-organizationID-and-handshakeCode)?
-* [Does license tracking disclose any private information](#does-license-tracking-disclose-any-private-information?
+* [Does license tracking disclose any private information](#does-license-tracking-disclose-any-private-information)?
 * [How secure is the Dynamsoft License Server](#how-secure-is-the-dynamsoft-license-server)?
 * [How reliable is the Dynamsoft-Hosting Dynamsoft License Server](#how-reliable-is-the-dynamsoft-hosting-dynamsoft-license-server)?
 * [How can I protect my license](#how-can-i-protect-my-license)?
