@@ -137,22 +137,22 @@ If you are hosting your own DLS, all you need to do is purchase another license,
 
 Table of Contents
 
-* How to use a trackable license?
-* What is the relationship between organizationID and handshakeCode?
-* Does license tracking disclose any private information?
-* How secure is the Dynamsoft License Server?
-* How reliable is the Dynamsoft-Hosting Dynamsoft License Server?
-* How can I protect my license?
-* What happens if my license runs out?
-* Can a client device work offline?
-* Can I use Dynamsoft SDKs in an environment with no internet connection?
-* Can I unregister inactive devices?
-* Can I extend the quota of my license to support more devices or process more documents?
-* Can I renew my license before its current expiration date?
-* Can I purchase a license valid for more than one year?
-* Will the unused quota be rolled over to the next period?
-* What is counted as a single application?
-* Policies
+* [How to use a trackable license](#how-to-use-a-trackable-license)?
+* [What is the relationship between organizationID and handshakeCode](#what-is-the-relationship-between-organizationID-and-handshakeCode)?
+* [Does license tracking disclose any private information](#does-license-tracking-disclose-any-private-information?
+* [How secure is the Dynamsoft License Server](#how-secure-is-the-dynamsoft-license-server)?
+* [How reliable is the Dynamsoft-Hosting Dynamsoft License Server](#how-reliable-is-the-dynamsoft-hosting-dynamsoft-license-server)?
+* [How can I protect my license](#how-can-i-protect-my-license)?
+* [What happens if my license runs out](#what-happens-if-my-license-runs-out)?
+* [Can a client device work offline](#can-a-client-device-work-offline)?
+* [Can I use Dynamsoft SDKs in an environment with no internet connection](#can-i-use-dynamsoft-sdks-in-an-environment-with-no-internet-connection)?
+* [Can I unregister inactive devices](#can-i-unregister-inactive-devices)?
+* [Can I extend the quota of my license to support more devices or process more documents](#can-i-extend-the-quota-of-my-license-to-support-more-devices-or-process-more-documents)?
+* [Can I renew my license before its current expiration date](#can-i-renew-my-license-before-its-current-expiration-date)?
+* [Can I purchase a license valid for more than one year](#can-i-purchase-a-license-valid-for-more-than-one-year)?
+* [Will the unused quota be rolled over to the next period](#will-the-unused-quota-be-rolled-over-to-the-next-period)?
+* [What is counted as a single application](#what-is-counted-as-a-single-application)?
+* [Policies](#policies)
 
 ## How to use a trackable license?
 
