@@ -38,9 +38,9 @@ customLdJsonScript:
     "name": "Can a client device work offline?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, once a client device gets authorized, it can be used offline for no more than 7 days. After that, it must connect to DLS again for another authorization. Otherwise, it will stop working.
+      "text": "Yes. Depending on the license type, once a client device gets authorized, it can be used offline for 3 ~ 365 days. After that, it must connect to DLS again for another authorization. Otherwise, it will stop working.
 
-During the offline period, all usage data is kept on the client side and will be sent to the DLS all at once the next time the device gets online."
+During the offline period, by default, all usage data is kept on the client side and will be sent to the DLS all at once the next time the device gets online."
 
     }
 
@@ -225,7 +225,7 @@ Customer devices rely on the Dynamsoft License Server to get authorized for usin
 * DLS is hosted on AWS.
 * DLS database is backed up every 12 minutes.
 * The two instances of "DLS" run in parallel with each other on different machines, and their databases are synchronized every 2 minutes. If one of them fails, the other will take over all incoming requests.
-* Once a device is authorized, it can work offline for up to 7 days.
+* Once a device is authorized, it can work offline for 3 ~ 365 days.
 * Technicians are notified of any server exception within 30 seconds of its occurrence.
 
 Also, Dynamsoft has been a online service provider for over 13 years and has an experienced team who have been maintaining products like SourceAnywhere Hosted, SCMAnywhere Hosted, TFS Hosted, etc.
@@ -248,11 +248,11 @@ Generally, each trackable license has a fixed quota. If the quota is used up, th
 
 ## Can a client device work offline?
 
-Yes, once a client device gets authorized, it can be used offline for no more than 7 days. After that, it must connect to DLS again for another authorization. Otherwise, it will stop working.
+Yes. Depending on the license type, once a client device gets authorized, it can be used offline for 3 ~ 365 days. After that, it must connect to DLS again for another authorization. Otherwise, it will stop working.
 
-During the offline period, all usage data is kept on the client side and will be sent to the DLS all at once the next time the device gets online.
+During the offline period, by default, all usage data is kept on the client side and will be sent to the DLS all at once the next time the device gets online.
 
-Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you would like your devices to work offline for a longer period of time.
+Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you would like your devices to work offline for a longer period of time, you can also contact us if you don't want to share any usage data with Dynamsoft.
 
 ## Can I use Dynamsoft SDKs in an environment with no internet connection?
 
