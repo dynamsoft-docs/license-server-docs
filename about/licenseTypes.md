@@ -72,7 +72,7 @@ For a **web application** that uses the javascript editions of Dynamsoft SDKs, a
 
 | Deployment Type | Client Type |
 |:-:|:-:|
-| Browser | A specific browser on a specific [domain](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) |
+| Browser | A specific browser from one origin (i.e., same protocol, port and hostname) <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin" target="_blank">Learn more about origin</a> |
 | Mobile | A mobile device running iOS or Android |
 | Desktop | A desktop computer running Windows, Linux or macOS |
 | Embedded | An ARM-based computer running Linux |
