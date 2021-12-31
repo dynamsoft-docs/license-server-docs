@@ -37,11 +37,11 @@ vim /etc/fstab
 mount -a
 ```
 
-### Download the Dynamsoft License Server installer (dynamsoft_dls-linux_x64-v2.2.16.tar.gz), or just copy it over to the dir `/data`
+### Download the Dynamsoft License Server installer, or just copy it over to the dir `/data`
 
 ``` shell
 cd /data
-wget https://tst.dynamsoft.com/public/download/dls/dynamsoft_dls-linux_x64-v2.2.16.tar.gz
+wget https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-linux_x64-v2.2.19.tar.gz
 ```
 
 ### Unzip and start the Dynamsoft License Server

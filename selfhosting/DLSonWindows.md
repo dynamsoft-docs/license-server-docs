@@ -22,9 +22,37 @@ needAutoGenerateSidebar: true
 
 ### Run the installer
 
-Download the installer from
+Download the installer from [Dynamsoft-Licensing-Tracking-Server](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip to a proper location. In our case, it's unzipped to "E:\dynamsoft_dls-win_x64-v2.2.19".
 
-[Dynamsoft-Licensing-Tracking-Server](https://tst.dynamsoft.com/public/download/dls/2.2/Dynamsoft-Licensing-Tracking-Server.exe)
+There are two ways to get the server running. 
+
+* Simply run the batch file "startup.bat"
+* Use the tool [NSSM](https://nssm.cc/) to 
+
+We will talk a bit about using NSSM.
+
+* Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to "E:\nssm-2.24"
+* Open cmd, navigate to the directory "E:\nssm-2.24\win64" (or "E:\nssm-2.24\win32" on a x86 OS) and run the following command
+
+```cmd
+nssm install dynamsoft-dls
+```
+
+* A GUI will open, fill the parameters for the application like this (change the values according to where you put the files)
+
+  Path: `E:\dynamsoft_dls-win_x64-v2.2.19\win\bin\dynamsoftdlsx.exe`
+  Startup directory: `E:\dynamsoft_dls-win_x64-v2.2.19`
+  Arguments: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.2.19.jar" --server.port=48080 --data.port=50201`
+
+![nssm-001](({{site.assets}}imgs/nssm-001.png)
+
+* Switch to the last tab "Hooks" and choose as the Event and specify the parameter as 
+
+  Command: `E:\dynamsoft_dls-win_x64-v2.2.19\shutdown.bat`
+
+![nssm-002](({{site.assets}}imgs/nssm-002.png)
+
+* Press the button "Install Service" and you should be able to find dynamsoft-dls as one of the services in the services GUI or in **Task Manager | Service**. If it is not started, start it.
 
 ### Test the server
 
