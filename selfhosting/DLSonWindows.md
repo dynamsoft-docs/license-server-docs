@@ -35,7 +35,7 @@ This can be done simply by executing the batch file **"startup.bat"**
 This can be done with the help of the tool [NSSM](https://nssm.cc/). The following steps show how it works.
 
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**
-* Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** (or **"E:\nssm-2.24\win32"** on a x86 OS) and run the following command
+* Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
 
 ```cmd
 nssm install dynamsoft-dls
@@ -49,7 +49,7 @@ nssm install dynamsoft-dls
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
-* Switch to the last tab "Hooks" and choose as the Event and specify the parameter as 
+* Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as 
 
   + **Command**: `E:\dynamsoft_dls-win_x64-v2.2.19\shutdown.bat`
 
