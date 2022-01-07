@@ -22,7 +22,7 @@ needAutoGenerateSidebar: true
 
 ### Run the installer
 
-Download the installer from [Dynamsoft-Licensing-Tracking-Server](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
+Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.2.19](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
 
 There are two ways to get the server running:
 
