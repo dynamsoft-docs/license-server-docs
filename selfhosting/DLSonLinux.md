@@ -22,7 +22,7 @@ needAutoGenerateSidebar: true
 
 The following shows all the commands and steps required to set up the Dynamsoft License Server
 
-### Prepare a new disk to store DLS data (optional)
+<!--### Prepare a new disk to store DLS data (optional)
 
 ``` shell
 mkdir /data
@@ -36,11 +36,12 @@ vim /etc/fstab
 # Re-mount
 mount -a
 ```
+-->
 
-### Download the Dynamsoft License Server v2.2.19 installer, or just copy it over to the dir `/data`
+### Download the Dynamsoft License Server v2.2.19 installer, or just copy it over to a proper location
 
 ``` shell
-cd /data
+cd /a-proper-location
 wget https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-linux_x64-v2.2.19.tar.gz
 ```
 
@@ -50,10 +51,10 @@ wget https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-linux_x6
 # Unzip the installer
 tar zxvf dynamsoft_dls-linux_x64-v2.2.19.tar.gz
 # Set permissions
-chmod -R 777 /data/dls-linux
+chmod -R 777 ./dls-linux
 # Start the server
-cd /data/dls-linux
-sh startup.sh
+cd ./dls-linux
+./startup.sh
 ```
 
 If you use Ubuntu, to start the server, try the following instead.
@@ -72,7 +73,7 @@ ps -ef |grep dynamsoft
 
 Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the Dynamsoft License Server. 
 
-> If you changed the port during installation, you should use that port instead.
+> You can edit startup.sh to change the listening ports.
 
 Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this DLS .
 
