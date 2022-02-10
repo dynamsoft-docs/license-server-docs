@@ -80,7 +80,11 @@ At this point, you can access the server with the URL "http://www.yoursite.com/d
 
 ## Configure SSL
 
-For security, we should access the Dynamsoft License Server via HTTPS. For demoing and testing purposes, we can try the self-signed certificate when configuring `nginx` by uncommenting the 3 lines as shown below.
+For security, we should access the Dynamsoft License Server via HTTPS. 
+
+### Self-signed Certificate
+
+For demoing and testing purposes, we can try the self-signed certificate when configuring `nginx` by uncommenting the 3 lines as shown below.
 
 ``` shell
 server {
@@ -111,7 +115,23 @@ sudo apt-get install ssl-cert
 sudo make-ssl-cert generage-default-snakeoil
 ```
 
+Your client needs to be configured to trust that self-signed certificate.
+
+For browser, you can access the page through `https` 
+* Page shows warning 
+* Click `Advanced` 
+* Click `Proceed to xxxx (unsafe)`.
+* Then the site can be trusted temporarily for a while
+
 > NOTE that you shouldn't use self-signed certs in your production server.
+
+### Trusted Certificate
+
+You can get the trusted certificate from many supplier.
+
+e.g. The free one can get from [certbot](https://certbot.eff.org/)
+
+### Check the https page
 
 After you have configured a secure port, you can then access the server by "https://www.yoursite.com/dls/page/index.html#/".
 
