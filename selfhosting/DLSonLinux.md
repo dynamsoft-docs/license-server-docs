@@ -82,3 +82,7 @@ Upon the first visit, you will be asked to set an admin password. After that, yo
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
 If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` . Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosting}}configurereverseproxyusingnginx.html).
+
+### Docker Users Need to Know
+
+Dynamsoft License Server needs persistent storage like a database. Thus, be notice that after `docker stop xxxxxx`, you need to use `docker restart xxxxxx`.
