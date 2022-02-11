@@ -85,4 +85,4 @@ If you see the above page, DLS is installed correctly and is ready to process re
 
 ### Docker Users Need to Know
 
-Dynamsoft License Server needs persistent storage like a database. Thus, be notice that after `docker stop xxxxxx`, you need to use `docker restart xxxxxx`.
+Dynamsoft License Server requires persistent storage. Therefore, if `docker stop xxxxxx` was executed on the container, it needs to be restarted with `docker restart xxxxxx`.
