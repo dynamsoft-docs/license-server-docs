@@ -129,7 +129,7 @@ For browser, you can access the page through `https`
 
 You can get the trusted certificate from many suppliers.
 
-e.g. The free one can get from [certbot](https://certbot.eff.org/)
+e.g. The free one can get from [certbot](https://certbot.eff.org/).
 
 ### Check the https page
 
