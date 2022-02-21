@@ -36,5 +36,8 @@ There are three other custom variables we use in the template site:
 - needAutoGenerateSidebar: use to define whether generating in-this-article content.
 - needGenerateH3Content: use to define whether containing `<h3>` header in in-this-article content.
 
+## URL
+
+https://www.dynamsoft.com/license-server/docs/about/index.html
 
 

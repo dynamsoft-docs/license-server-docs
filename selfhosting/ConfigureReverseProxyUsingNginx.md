@@ -80,7 +80,11 @@ At this point, you can access the server with the URL "http://www.yoursite.com/d
 
 ## Configure SSL
 
-For security, we should access the Dynamsoft License Server via HTTPS. For demoing and testing purposes, we can try the self-signed certificate when configuring `nginx` by uncommenting the 3 lines as shown below.
+For security, we should access the Dynamsoft License Server via HTTPS. 
+
+### Self-signed Certificate
+
+For demoing and testing purposes, we can try the self-signed certificate when configuring `nginx` by uncommenting the 3 lines as shown below.
 
 ``` shell
 server {
@@ -111,11 +115,27 @@ sudo apt-get install ssl-cert
 sudo make-ssl-cert generage-default-snakeoil
 ```
 
-> NOTE that you shouldn't use self-signed certs in your production server.
+Your client needs to be configured to trust that self-signed certificate. For example, if you are running a web application, you can open the page "https://www.yoursite.com/dls/page/index.html#/" in the browser and do the following
+
+* Page shows warning about the self-signed certificate
+* Click `Advanced` 
+* Click `Proceed to xxxx (unsafe)`.
+
+Then this self-signed certificate will be trusted temporarily for some time.
+
+> NOTE that you should avoid using self-signed certificates in your production server.
+
+### Trusted Certificate
+
+You can get a trusted certificate from many suppliers.
+
+e.g. You can get a free one from [certbot](https://certbot.eff.org/).
+
+### Check the https page
 
 After you have configured a secure port, you can then access the server by "https://www.yoursite.com/dls/page/index.html#/".
 
-## Configure the Dynamsoft License Server
+## Configure Dynamsoft License Server
 
 With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the DLS as the standby]({{site.selfhosting}}manageDLS.html#configure-a-standby-dls)). Assume the standby URL is "https://standby.yoursite.com/dls/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-dls).
 

@@ -368,11 +368,11 @@ This way, as long as you don't change the CPU or reinstall the operating system,
 
 #### Q: Does the UUID give away information about my device?
 
-A: By default, the answer is no because [Soft Binding](#soft-binding) is used. But if you choose to use [Hard Binding](#hand-binding), hardware information will be sent to the DLS.
+A: By default, the answer is no because [Soft Binding](#soft-binding) is used. But if you choose to use [Hard Binding](#hard-binding), hardware information will be sent to the DLS.
 
 #### Q: How to switch from Soft Binding to Hard Binding and vice versa?
 
-A: There is an API `UUIDGenerationMethod` for making the switch. Since [Soft Binding](#soft-binding) is used by default, the following showcases how to switch to [Hard Binding](#hand-binding).
+A: There is an API `UUIDGenerationMethod` for making the switch. Since [Soft Binding](#soft-binding) is used by default, the following showcases how to switch to [Hard Binding](#hard-binding).
 
 * C
 
