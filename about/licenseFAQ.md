@@ -160,7 +160,7 @@ A trackable license is fetched from the Dynamsoft License Server (either hosted 
 
 The DLS can store one or multiple license items, you can specify which ones you want to fetch with the APIs [ `organizationID` ]({{site.common}}mechanism.html#specify-the-organization-id) and / or [ `handshakeCode` ]({{site.common}}mechanism.html#specify-the-handshake-code).
 
-If you have just started evaluating a Dynamsoft SDK which supports trackable licenses, you don't need to specify anything. As long as you have network connection, a 7-day (public) trial license will be automatically fetched from the DLS hosted by Dynamsoft.
+If you have just started evaluating a Dynamsoft SDK which supports trackable licenses, you don't need to specify anything. As long as you have network connection, the free public trial license will be automatically fetched from the DLS hosted by Dynamsoft.
 
 If you require more time to test the SDK or you have decided to use it in your application, you can get your own license and then make use of it with the associated organization id and/or handshake code.
 
@@ -187,7 +187,7 @@ Read more on [The relationship between organizationID and handshakeCode](#what-i
 | Specified | Empty | Return license items configured to the default `handshakeCode` of that organization. |
 | Specified | Specified | If the `handshakeCode` exists within that organization, return license items configured to the specified `handshakeCode` . |
 | Empty | Specified | Return license items configured to the specified `handshakeCode` . |
-| Empty | Empty | If the device never used the SDK before, return a 7-day (public) trial license. |
+| Empty | Empty | If the device never used the SDK before, return a public trial license. |
 
 ## Does license tracking disclose any private information?
 

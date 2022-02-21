@@ -23,7 +23,7 @@ The following table shows the differences between License 1.0 and 2.0:
 
 ## Public Trial License
 
-A public trial license is a special license provided by Dynamsoft for all users to test Dynamsoft Products for up to 7 days.
+A public trial license is a special license provided by Dynamsoft for all users to test Dynamsoft Products temporarily.
 
 This license is based on License 2.0 and network connection is required for it to work.
 
@@ -295,7 +295,7 @@ Dynamsoft provides a grace stage in case the licensee fails to extend or expand 
 | Per Device | `round(10% * quota)` is allowed after the actual quota runs out. |
 | Per Concurrent Device | A number of exceptions are allowed and the number grows as time passes. |
 | Per Concurrent Instance | A number of exceptions are allowed and the number grows as time passes. |
-| All Types | 7 days are allowed after the license expires. |
+| All Types | Extra time is allowed after the license expires, the length of the time depends on the type of the license. |
 
 ## DLS UUID
 
