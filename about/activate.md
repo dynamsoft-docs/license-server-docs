@@ -19,7 +19,7 @@ When you activate a purchased license in the [customer portal](https://www.dynam
 
 ![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
 
-Both options use the same software, [Dynamsoft License Server (DLS)](({{site.about}}terms.html#dynamsoft-license-server)), to manage the license. The differences are:
+Both options use the same software, [Dynamsoft License Server (DLS)]({{site.about}}terms.html#dynamsoft-license-server), to manage the license. The differences are:
 
 |  | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|
@@ -63,5 +63,3 @@ Dynamsoft products will submit usage reports to DLS at runtime. The usage report
 
 * [View the license usage statistics]({{site.common}}statistics.html)
 * [Get notified about license status]({{site.common}}usagealerts.html)
-
-> Read more about [the mechanism]({{site.common}}mechanism.html) behind license 2.0.

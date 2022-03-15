@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 The License Items page shows all the active License Items which can be configured to be used by Handshake Codes.
 
-> Read more on [what is a License Item]({{site.about}}terms.html#license-item)
+> Read more on [what is License Item]({{site.about}}terms.html#license-item)
 
 ![License Items Page]({{site.assets}}imgs/licenseitems-001.png)
 

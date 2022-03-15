@@ -138,9 +138,8 @@ If you are hosting your own DLS, all you need to do is purchase another license,
 Table of Contents
 
 * [How to use a trackable license](#how-to-use-a-trackable-license)?
-* [What is the relationship between organizationID and handshakeCode](#what-is-the-relationship-between-organizationid-and-handshakecode)?
 * [Does license tracking disclose any private information](#does-license-tracking-disclose-any-private-information)?
-* [How secure is the Dynamsoft License Server](#how-secure-is-the-dynamsoft-license-server)?
+* [How secure is Dynamsoft License Server](#how-secure-is-dynamsoft-license-server)?
 * [How reliable is the Dynamsoft-Hosting Dynamsoft License Server](#how-reliable-is-the-dynamsoft-hosting-dynamsoft-license-server)?
 * [How can I protect my license](#how-can-i-protect-my-license)?
 * [What happens if my license runs out](#what-happens-if-my-license-runs-out)?
@@ -158,7 +157,7 @@ Table of Contents
 
 A trackable license is fetched from the Dynamsoft License Server (either hosted by Dynamsoft or yourself, DLS for short) at runtime. Therefore, connection to the DLS is required.
 
-The DLS can store one or multiple license items, you can specify which ones you want to fetch with the APIs [ `organizationID` ]({{site.common}}mechanism.html#specify-the-organization-id) and / or [ `handshakeCode` ]({{site.common}}mechanism.html#specify-the-handshake-code).
+The DLS can store one or multiple license items, you can specify the ones you want to fetch by specifying your [License Key]({{site.about}}terms.html#license-key).
 
 If you have just started evaluating a Dynamsoft SDK which supports trackable licenses, you don't need to specify anything. As long as you have network connection, the free public trial license will be automatically fetched from the DLS hosted by Dynamsoft.
 
@@ -170,32 +169,15 @@ If you require more time to test the SDK or you have decided to use it in your a
 
 In both cases, you get a license that belongs to your organization (if you didn't have an organization / account with us before, a new one will be created). 
 
-* For the 30-day (private) trial license, it's activated automatically and configured to the default `handshakeCode` of your organization which means you can get the license by simply [specifying your organization id]({{site.common}}mechanism.html#specify-the-organization-id). 
+* For the 30-day (private) trial license, it's activated automatically and configured to the default `handshakeCode` of your organization. 
 
 * For the purchased commercial license, you need to activate it manually. During the activation, you can choose whether to configure it to the default `handshakeCode`.
-
-Read more on [The relationship between organizationID and handshakeCode](#what-is-the-relationship-between-organizationid-and-handshakecode).
-
-> NOTE: 
->  
-> To protect your licenses, you can specify a session password. This password corresponds to the handshake code specified by the above API `handshakeCode` or the default one if only the `organizationID` is specified. Read more about [How can I protect my license?]({{site.about}}licensefaq.html?ver=latest#how-can-i-protect-my-license).
-
-## What is the relationship between organizationID and handshakeCode?
-
-| organizationID | handshakeCode | Result |
-| :-: | :-: | :-: |
-| Specified | Empty | Return license items configured to the default `handshakeCode` of that organization. |
-| Specified | Specified | If the `handshakeCode` exists within that organization, return license items configured to the specified `handshakeCode` . |
-| Empty | Specified | Return license items configured to the specified `handshakeCode` . |
-| Empty | Empty | If the device never used the SDK before, return a public trial license. |
 
 ## Does license tracking disclose any private information?
 
 No, the license tracking process does not disclose any private information.
 
 For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( DLS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
-
-> Read more about [the mechanism]({{site.common}}mechanism.html) behind license tracking.
 
 In addition, to uniquely identify a device, the SDK generates an UUID that is cached locally and included in all communication with the DLS . This UUID is random and doesn't contain any information about the device itself. For more information, check out [how a UUID is generated]({{site.about}}terms.html#generate-a-uuid).
 
@@ -206,9 +188,9 @@ A few things to note
 * The DLS can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
 * Offline licenses that do not require any information to be sent anywhere are also supported. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 
-## How secure is the Dynamsoft License Server?
+## How secure is Dynamsoft License Server?
 
-The Dynamsoft License Server ( DLS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters. The following are the security features of DLS :
+The Dynamsoft License Server (DLS) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters. The following are the security features of DLS :
 
 * DLS is responsible for authorizing the SDK as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on DLS nor from DLS to the requesting clients.
 * DLS supports HTTPS and it is highly recommended that it runs via HTTPS.

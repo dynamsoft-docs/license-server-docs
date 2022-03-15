@@ -137,7 +137,7 @@ After you have configured a secure port, you can then access the server by "http
 
 ## Configure Dynamsoft License Server
 
-With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the DLS as the standby]({{site.selfhosting}}manageDLS.html#configure-a-standby-dls)). Assume the standby URL is "https://standby.yoursite.com/dls/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example). Read more information [here]({{site.common}}mechanism.html#configure-dls).
+With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the DLS as the standby]({{site.selfhosting}}manageDLS.html#configure-a-standby-dls)). Assume the standby URL is "https://standby.yoursite.com/dls/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example).
 
 ``` javascript
 Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/dls/", "https://standby.yoursite.com/dls/"];

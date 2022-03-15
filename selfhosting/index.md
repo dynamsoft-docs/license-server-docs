@@ -60,5 +60,3 @@ For Self-Hosting License Tracking, all usage data is submitted to the [ DLS ]({{
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)
 * [Get notified about license status]({{site.common}}usagealerts.html)
-
-> Read more on [the mechanism]({{site.common}}mechanism.html) behind license tracking.

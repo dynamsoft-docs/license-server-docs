@@ -1,20 +1,20 @@
 ---
 layout: default-layout
-title: How trackable licenses work
-keywords: license tracking, mechanism
+title: How License 2.0 Works
+keywords: license tracking, license client
 description: This page describes how license tracking is done
 breadcrumbText: Mechanism
 needAutoGenerateSidebar: true
 noTitleIndex: true
 ---
 
-# How trackable licenses work
+# How License 2.0 Works
 
 > NOTE:
 > 
 > The following content assumes that you have already activated your license. If you haven't, please first [activate it]({{site.about}}activate.html).
 
-All Dynamsoft SDKs that support trackable licenses have a built-in mechanism for getting authorization at initialization as well as collecting and reporting license usage during runtime. This article is about how to use such a trackable license.
+All Dynamsoft SDKs that support [Dynamsoft License 2.0]({{site.about}}terms.html#license-20) have a built-in [DLC]({{site.about}}terms.html#dynamsoft-license-client) for getting authorization at initialization as well as collecting and reporting license usage during runtime. This article is about how to use such a trackable license.
 
 Currently supported products:
 
