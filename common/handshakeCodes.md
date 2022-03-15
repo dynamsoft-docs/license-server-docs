@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # Manage the Handshake Codes for your licenses
 
-> Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code).
+> Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code).
 
 Dynamsoft trackable licenses are consumed through Handshake codes. When you click on "Configure the License" after activating a license or "Manage the License" for each activated license, you will land on the "Manage the Handshake Codes" page where you can
 

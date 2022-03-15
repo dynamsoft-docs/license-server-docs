@@ -9,30 +9,58 @@ needAutoGenerateSidebar: true
 
 # How to activate a license
 
-When you activate a purchased license, you will choose one of two activation options
+When you activate a purchased license in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense), you need to choose one of two activation options
 
-* [Dynamsoft-Hosting]({{site.dshosting}}index.html).
-* [Self-Hosting]({{site.selfhosting}}index.html)
+* [Connect to Dynamsoft's License Server]({{site.dshosting}}index.html).
+* [Connect to My Self-Hosted License Server]({{site.selfhosting}}index.html)
+
+> Once activated, this cannot be changed. So make sure you choose the correct one for your license.
 
 ![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
 
-> Once chosen and activated, this cannot be changed. So make sure you choose the correct one for your application.
-
-Both options use the same software, Dynamsoft License Server ( DLS for short), to track the license usage. The differences are shown in the following table
-
-> Read more on [what is a Dynamsoft License Server]({{site.about}}terms.html#dynamsoft-license-server)
+Both options use the same software, [Dynamsoft License Server (DLS)](({{site.about}}terms.html#dynamsoft-license-server)), to manage the license. The differences are:
 
 |  | Dynamsoft-hosting| Self-hosting |
 |:-:|:-:|:-:|
 | Need to designate a server to host DLS | No | Yes |
 | Need to install and manage DLS | No | Yes |
 | Must have connection to Dynamsoft | Yes | No |
-| Must send usage data to Dynamsoft | Yes | No |
 
 Generally, you choose to host your own DLS if
 
-* Your client devices may not be able to connect to the internet
+* Your client devices may not be able to connect to the public internet
 * You don't want to share your usage data with Dynamsoft
 * You believe your own server would work faster
 
-If you decide to host your own DLS, please follow the instructions on [Self-hosting License Tracking]({{site.selfhosting}}index.html). Otherwise, read more on [Dynamsoft-hosting License Tracking]({{site.dshosting}}index.html).
+If you decide to host your own DLS, please follow the instructions on [Host DLS Myself]({{site.selfhosting}}index.html). Otherwise, read the instructions below.
+
+## Activate License
+
+On the "Activate License" page, set an Alias for your license or leave the default Alias and click the "Activate" button.
+
+> Read more on [what is Alias]({{site.about}}terms.html#alias)
+
+![Choose-Activation-Option]({{site.assets}}imgs/activate-001.png)
+
+You will be prompted to confirm the request, click "OK" to proceed.
+
+![Choose-Activation-Option]({{site.assets}}imgs/activate-002.png)
+
+After the activation, you will be redirected to the "License Details" page where you can find the license key to use the activated license.
+
+> Read more on [what is license key]({{site.about}}terms.html#license-key)
+
+## Manage License Keys
+
+To manage a license key is to configure the Handshake Code bound to this license key. For more details, please see [how to configure a handshake code]({{site.common}}handshakeCodes.html).
+
+> Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code).
+
+## Check License Usage
+
+Dynamsoft products will submit usage reports to DLS at runtime. The usage reports contain no actual information captured by the product, but merely numbers like how many barcodes have been scanned or how many characters have been recognized, etc. With these reports, DLS generates reports about the usage of the licenses.
+
+* [View the license usage statistics]({{site.common}}statistics.html)
+* [Get notified about license status]({{site.common}}usagealerts.html)
+
+> Read more about [the mechanism]({{site.common}}mechanism.html) behind license tracking.
