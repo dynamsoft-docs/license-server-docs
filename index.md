@@ -9,10 +9,9 @@ description: Documentation Homepage
 # Dynamsoft License Server
 
 * [About]({{site.about}}index.html)
-    - [Purchase]({{site.about}}purchase.html)
-    - [License Types]({{site.about}}licensetypes.html)
     - [Terms]({{site.about}}terms.html)
-    - [Activate]({{site.about}}activate.html)
+    - [License Types]({{site.about}}licensetypes.html)
+    - [Activation]({{site.about}}activate.html)
     - [FAQs]({{site.about}}licensefaq.html)
 * [Dynamsoft-Hosting]({{site.dshosting}}index.html)
 * [Self-Hosting]({{site.selfhosting}}index.html)

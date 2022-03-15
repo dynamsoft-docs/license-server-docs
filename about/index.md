@@ -10,23 +10,19 @@ noTitleIndex: true
 
 # About the docs
 
-These docs aim to help you learn and understand how Dynamsoft License Server works. 
+These docs aim to help you learn and understand how Dynamsoft License Server (DLS) works. 
 
 ## Terms
 
-To learn about Dynamsoft License Server and related terms like "License 2.0", "Organization ID", "Handshake Codes", etc., please see the [Terms]({{site.about}}terms.html) page.
+To learn about DLS and related terms like "License 2.0", "License Key", "Handshake Codes", etc., please see the [Terms]({{site.about}}terms.html) page.
 
-## Purchase Dynamsoft products
+## License Options
 
-If you are interested in acquiring a license for one of Dynamsoft's products, please visit the [purchase page]({{site.about}}purchase.html).
+DLS only hosts licenses which are compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-20). To learn more, please see the [License Options]({{site.about}}licensetypes.html) page.
 
-## Types of trackable licenses
+## Activate A License
 
-Not all Dynamsoft Licenses are trackable. A trackable license is one that is compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-20). To learn more, please see the [Trackable Licenses]({{site.about}}licensetypes.html) page.
-
-## Activate trackable licenses
-
-Activation is required for trackable licenses to work. Please see [how to Activate a license]({{site.about}}activate.html).
+Activation is a critical step when using DLS. Please see [how to Activate a license]({{site.about}}activate.html).
 
 ## FAQ
 
