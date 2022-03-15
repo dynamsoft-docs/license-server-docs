@@ -5,6 +5,7 @@ keywords: license, activation
 description: This page describes how to activate a trackable license
 breadcrumbText: Activate a License
 needAutoGenerateSidebar: true
+noTitleIndex: true
 ---
 
 # How to activate a license
@@ -44,7 +45,7 @@ On the "Activate License" page, set an Alias for your license or leave the defau
 
 You will be prompted to confirm the request, click "OK" to proceed.
 
-![Choose-Activation-Option]({{site.assets}}imgs/activate-002.png)
+![Proceed with activation]({{site.assets}}imgs/activate-002.png)
 
 After the activation, you will be redirected to the "License Details" page where you can find the license key to use the activated license.
 
@@ -52,7 +53,7 @@ After the activation, you will be redirected to the "License Details" page where
 
 ## Manage License Keys
 
-To manage a license key is to configure the Handshake Code bound to this license key. For more details, please see [how to configure a handshake code]({{site.common}}handshakeCodes.html).
+To manage a license key is to configure the Handshake Code bound to this license key. For more details, please see [Configure Handshake Codes]({{site.common}}handshakeCodes.html).
 
 > Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code).
 
@@ -63,4 +64,4 @@ Dynamsoft products will submit usage reports to DLS at runtime. The usage report
 * [View the license usage statistics]({{site.common}}statistics.html)
 * [Get notified about license status]({{site.common}}usagealerts.html)
 
-> Read more about [the mechanism]({{site.common}}mechanism.html) behind license tracking.
+> Read more about [the mechanism]({{site.common}}mechanism.html) behind license 2.0.

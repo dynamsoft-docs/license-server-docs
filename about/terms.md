@@ -115,6 +115,8 @@ Validation Field is a security feature meant to protect the license configured i
 
 > Applicable to desktop/server/embedded applications. For example: *DynamsoftBarcodeReader.exe*.
 
+In the HandShake Details page, the Validation Field is configured as "Binding Information".
+
 ### Session Password
 
 Session Password is another way to protect the license configured in a Handshake Code. Unlike the Validation Field, which essentially validates application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
