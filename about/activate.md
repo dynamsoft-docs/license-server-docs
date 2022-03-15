@@ -12,8 +12,8 @@ noTitleIndex: true
 
 When you activate a purchased license in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense), you need to choose one of two activation options
 
-* [Connect to Dynamsoft's License Server]({{site.dshosting}}index.html).
-* [Connect to My Self-Hosted License Server]({{site.selfhosting}}index.html)
+* Connect to Dynamsoft's License Server
+* Connect to My Self-Hosted License Server
 
 > Once activated, this cannot be changed. So make sure you choose the correct one for your license.
 

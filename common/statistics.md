@@ -19,6 +19,6 @@ On the top of the page, you see the Handshake Code and all License Items configu
 On the right, there is a line chart showing the trend of the usage and a table of numbers showing the detailed usage (per two hours).
 
 > NOTE
->  
+> * Depending on the License Items configured to the Handshake Code, you may not see all the charts or numbers as shown in the above screenshot.
 > * A License Item may be configured to multiple Handshake Codes, only the usage associated with the current Handshake Code is counted.
 > * The usage of all License Items will be counted together as long as the usage is associated with the current Handshake Code.
