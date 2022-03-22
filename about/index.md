@@ -10,7 +10,7 @@ noTitleIndex: true
 
 # About the docs
 
-These docs aim to help you learn and understand how Dynamsoft License Server (DLS) works. 
+These docs aim to help you learn and understand how Dynamsoft License Server (DLS) works.
 
 ## Terms
 
@@ -18,7 +18,9 @@ To learn about DLS and related terms like "License 2.0", "License Key", "Handsha
 
 ## License Options
 
-DLS only hosts licenses which are compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-20). To learn more, please see the [License Options]({{site.about}}licensetypes.html) page.
+DLS only hosts licenses which are compliant with [Dynamsoft License 2.0]({{site.about}}terms.html#license-20). These licenses are considered ["online licenses"]({{site.about}}licensefaq.html#what-are-the-differences-between-online-and-offline-licenses). 
+
+To find what license options are available, see the [License Options]({{site.about}}licensetypes.html) page.
 
 ## Activate A License
 

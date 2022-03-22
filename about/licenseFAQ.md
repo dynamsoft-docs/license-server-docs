@@ -18,7 +18,7 @@ customLdJsonScript:
     "name": "Does license tracking disclose any private information?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No, the license tracking process does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( DLS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
+      "text": "No, the license tracking process does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use online licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( DLS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
 
     }
 
@@ -137,11 +137,11 @@ If you are hosting your own DLS, all you need to do is purchase another license,
 
 Table of Contents
 
-* [How to use a trackable license](#how-to-use-a-trackable-license)?
-* [Does license tracking disclose any private information](#does-license-tracking-disclose-any-private-information)?
+* [What are the differences between online and offline licenses](#what-are-the-differences-between-online-and-offline-licenses)?
+* [Does online licenses disclose any private information](#does-online-licenses-disclose-any-private-information)?
 * [How secure is Dynamsoft License Server](#how-secure-is-dynamsoft-license-server)?
-* [How reliable is the Dynamsoft-Hosting Dynamsoft License Server](#how-reliable-is-the-dynamsoft-hosting-dynamsoft-license-server)?
-* [How can I protect my license](#how-can-i-protect-my-license)?
+* [How reliable is the License Server hosted by Dynamsoft](#how-reliable-is-the-license-server-hosted-by-dynamsoft)?
+* [How can I protect my online license](#how-can-i-protect-my-online-license)?
 * [What happens if my license runs out](#what-happens-if-my-license-runs-out)?
 * [Can a client device work offline](#can-a-client-device-work-offline)?
 * [Can I use Dynamsoft SDKs in an environment with no internet connection](#can-i-use-dynamsoft-sdks-in-an-environment-with-no-internet-connection)?
@@ -153,86 +153,74 @@ Table of Contents
 * [What is counted as a single application](#what-is-counted-as-a-single-application)?
 * [Policies](#policies)
 
-## How to use a trackable license?
+## What are the differences between online and offline licenses?
 
-A trackable license is fetched from the Dynamsoft License Server (either hosted by Dynamsoft or yourself, DLS for short) at runtime. Therefore, connection to the DLS is required.
+An online license is a license that a client needs to acquire from Dynamsoft License Server (DLS) at runtime. On the contrary, an offline license is one that the client can use on its own. In other words, the license key for an online license contains only information on how to connect to DLS to acquire the actual license content while an offline license is the license content itself.
 
-The DLS can store one or multiple license items, you can specify the ones you want to fetch by specifying your [License Key]({{site.about}}terms.html#license-key).
+## Does online licenses disclose any private information?
 
-If you have just started evaluating a Dynamsoft SDK which supports trackable licenses, you don't need to specify anything. As long as you have network connection, the free public trial license will be automatically fetched from the DLS hosted by Dynamsoft.
+No, online licenses does not disclose any private information.
 
-If you require more time to test the SDK or you have decided to use it in your application, you can get your own license and then make use of it with the associated organization id and/or handshake code.
+* About the license usage
 
-* To get a 30-day (private) trial license, you can log into the customer portal (register for an Dynamsoft account if you haven't already done so) and navigate to the [Free Trial](https://www.dynamsoft.com/customer/license/trialLicense) page.
+For licensing purposes, Dynamsoft SDKs that use online licenses will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to DLS every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
 
-* To get a commercial license, you can [purchase a license](https://www.dynamsoft.com/purchase-center/).
+* About device identification
 
-In both cases, you get a license that belongs to your organization (if you didn't have an organization / account with us before, a new one will be created). 
+To uniquely identify a device, an UUID is generated per device that is cached locally and included in all communications with DLS. This UUID is encoded with a random string and there is no way to tell any private information about this device.
 
-* For the 30-day (private) trial license, it's activated automatically and configured to the default `handshakeCode` of your organization. 
-
-* For the purchased commercial license, you need to activate it manually. During the activation, you can choose whether to configure it to the default `handshakeCode`.
-
-## Does license tracking disclose any private information?
-
-No, the license tracking process does not disclose any private information.
-
-For licensing purposes, Dynamsoft SDKs that use trackable licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( DLS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
-
-In addition, to uniquely identify a device, the SDK generates an UUID that is cached locally and included in all communication with the DLS . This UUID is random and doesn't contain any information about the device itself. For more information, check out [how a UUID is generated]({{site.about}}terms.html#generate-a-uuid).
-
-Apart from the license usage and the UUID, the DLS collects no more information which means it does not know anything about the user or device except that it is using Dynamsoft SDKs.
+Apart from the license usage and the UUID, DLS collects nothing else. In other words, DLS does not know anything about the user or device except that it is using Dynamsoft SDKs.
 
 A few things to note
 
-* The DLS can either be the official one provided by Dynamsoft or one that’s hosted by the customers on their own servers.
-* Offline licenses that do not require any information to be sent anywhere are also supported. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
+* DLS can either be the official one provided by Dynamsoft or one that’s hosted by yourself.
+* If you don't want to share any information with Dynamsoft, you can contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) to get an offline license.
 
 ## How secure is Dynamsoft License Server?
 
-The Dynamsoft License Server (DLS) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters. The following are the security features of DLS :
+DLS is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters. The following are the security features of DLS :
 
-* DLS is responsible for authorizing the SDK as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on DLS nor from DLS to the requesting clients.
+* DLS is responsible for authorizing the SDKs as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on DLS nor from DLS to the requesting clients.
 * DLS supports HTTPS and it is highly recommended that it runs via HTTPS.
-* DLS supports domain binding. With domain binding, authorization to use the SDK is only granted to requests sent from the specified domain(s).
-* DLS also supports setting a session password to avoid abuse.
-* The authorization sent back from DLS and the usage reports sent to DLS are both encrypted.
+* DLS supports application binding. With application binding, authorization to use the SDK is only granted to requests sent from the application that has its ID, name or domain bound.
+* DLS supports setting a session password to avoid abuse.
+* Authorizations sent back by DLS and usage reports sent to DLS are specially encrypted and cannot be deciphered by any other party.
 
-Last but not least, Dynamsoft is [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) certified.
+Last but not least, Dynamsoft is [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) certified and we take information & data security seriously.
 
-## How reliable is the Dynamsoft-Hosting Dynamsoft License Server?
+## How reliable is the License Server hosted by Dynamsoft?
 
-Customer devices rely on the Dynamsoft License Server to get authorized for using Dynamsoft SDKs, therefore, its reliability is crucial. The following are the measures we have in place for maximum uptime:
+Customer devices rely on the License Server to get authorizations for using Dynamsoft SDKs, therefore, its reliability is crucial. The following are the measures we have in place for maximum uptime:
 
 * DLS is hosted on AWS.
-* DLS database is backed up every 12 minutes.
-* The two instances of "DLS" run in parallel with each other on different machines, and their databases are synchronized every 2 minutes. If one of them fails, the other will take over all incoming requests.
-* Once a device is authorized, it can work offline for 3 ~ 365 days.
+* DLS database is backed up every 60 minutes.
+* There are always two instances of "DLS" running in parallel on different machines with their databases synchronized every 10 minutes. If one of them fails, the other will step up to take over all incoming requests.
+* Once a device is authorized, it can work offline for up to 365 days or even longer.
 * Technicians are notified of any server exception within 30 seconds of its occurrence.
 
-Also, Dynamsoft has been a online service provider for over 13 years and has an experienced team who have been maintaining products like SourceAnywhere Hosted, SCMAnywhere Hosted, TFS Hosted, etc.
+Also, Dynamsoft has been an online service provider for over 13 years and has an experienced team who have been maintaining products like SourceAnywhere Hosted, SCMAnywhere Hosted, TFS Hosted, etc.
 
-## How can I protect my license?
+## How can I protect my online license?
 
-A trackable license is accessed by either the [organization ID]({{site.about}}terms.html#organization-id) or the [handshake code]({{site.about}}terms.html#handshake-code) or both. When you use the organization ID, it is equivalent to using the [default Handshake Code]({{site.about}}terms.html#default-handshake-code). Therefore, to protect your license is to restrict the access of a specific handshake code. The following are the measures we have in place
+To protect your online license, we recommend you take the following measures:
 
-* You can set a [session password]({{site.about}}terms.html#session-password) for this handshake code. The license only works when the password in your application matches the one you set for the code in the DLS, therefore you can update this password each time you update your application.
+* Set a [session password]({{site.about}}terms.html#session-password). The license only works when the license key you use in your application contains the same session password you set for the license on DLS. If it is not too much trouble, you can update this password each time you update your application.
 
-* You can limit the access by [validation fields]({{site.about}}terms.html#valication-field). A validation field is acquired at runtime from the application (e.g. the domain or the process name of the application) and sent to the server. If it doesn't match any field you have set on the DLS, the authorization fails.
+* Set a [validation field]({{site.about}}terms.html#valication-field). A validation field is a static characteristic of the application (e.g. the domain of a web application, the process name of a desktop application, etc.). Dynamsoft SDKs will collect this information and include it in the requests sent to DLS. If you have set the field on DLS and the information doesn't match, the authorization will fail.
 
 ## What happens if my license runs out?
 
-Generally, each trackable license has a fixed quota. If the quota is used up, the license will no longer be valid and the software will stop running. Of course, this is unacceptable for production use, and Dynamsoft has the following measures to ensure that it does not happen accidentally.
+Generally, each online license has a fixed quota. If the quota is used up, the license will no longer be valid and the software will stop running. Of course, this is unacceptable for production use, and Dynamsoft has the following measures to ensure that it does not happen accidentally.
 
-* Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. Please refer to [Grace Stage]({{site.about}}terms.html#grace-stage).
+* Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 
-* Dynamsoft notifies the licensee multiple times about the status of the license. Please refer to [Usage Alerts]({{site.common}}usagealerts.html).
+* Dynamsoft notifies the licensee multiple times about the status of the license. See [Usage Alerts]({{site.common}}usagealerts.html) for more information.
 
 ## Can a client device work offline?
 
-Yes. Depending on the license type, once a client device gets authorized, it can be used offline for 3 ~ 365 days. After that, it must connect to DLS again for another authorization. Otherwise, it will stop working.
+Yes. Depending on the license type, once a client device gets authorized, it can be used offline for up to 365 days or even longer before it must connect to DLS again for another authorization.
 
-During the offline period, by default, all usage data is kept on the client side and will be sent to the DLS all at once the next time the device gets online.
+During the offline period, by default, all usage data is kept on the client side and will be sent to DLS all at once the next time the device gets online.
 
 Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you would like your devices to work offline for a longer period of time, you can also contact us if you don't want to share any usage data with Dynamsoft.
 
@@ -242,33 +230,31 @@ Yes. There are two scenarios in this case
 
 * All client devices can connect to a local network within the organization.
 
-  In this case, you can simply host your own DLS for license tracking. Please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
+  In this case, you can simply host your own DLS. See [Self-hosting License Tracking]({{site.selfhosting}}index.html) for more information.
 
 * Client devices never connect to any network.
 
-  In this case, you may require a special license. Please contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for details.
+  In this case, you may require a special license. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 
 ## Can I unregister inactive devices?
 
-As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-device), Dynamsoft keeps a list of UUIDs which identify the active devices. By default, only if a device hasn't been used for over 90 days will its UUID be removed from the list. This is done automatically.
+As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-client-device), DLS keeps a list of UUIDs which identify the active devices. By default, a device is only unregistered (removed from the list) after it expires which could be after 90/30 days for Quaterly/Monthly active license.
 
-If you are in a business with a high turnover rate of your devices/users, you can choose a different license option, like [Concurrent Device license]({{site.about}}licensetypes.html#cucurrent-device) or [Per Active Device license]({{site.about}}licensetypes.html#per-active-device).
-
-If you use a Per-Device license and would like to clear the registered devices so that you can use other devices. You can contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) and pay a certain amount for the service (which comes in the form of temporary quota expansion).
+If your business/user turnover is high, you can choose to use a Daily active license or even a [Concurrent Device license]({{site.about}}licensetypes.html#per-concurrent-device).
 
 ## Can I extend the quota of my license to support more devices or process more documents?
 
-Yes. If you are using Dynamsoft-Hosting DLS , you can either contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) to add quota or log in the [customer portal](https://www.dynamsoft.com/customer/order/list) and place an order for extra quota yourself. Rest assured that the [Handshake Code]({{site.about}}terms.html#handshake-code) remains unchanged during the process, so no code change is required to your application once the quota is added.
+Yes. You can either contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) to add quota or log in the [customer portal](https://www.dynamsoft.com/customer/order/list) and place an order for extra quota yourself.
 
-If you are hosting your own DLS , all you need to do is purchase another license, import it in the DLS and configure it to the Handshake Code you have been using.
+If you are hosting your own DLS , all you need to do is purchase another license, import it in the DLS and configure it to the same license key.
 
 ## Can I renew my license before its current expiration date?
 
-Yes, you can log into the customer portal to renew your license by credit card or PayPal any time before it expires. Alternatively, you can contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) if you prefer other payment methods (wire transfer or check).
+Yes, you can log into the customer portal to renew your license by credit card or PayPal any time before it expires. Alternatively, you can contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) if you prefer other payment methods (wire transfer or check, etc.).
 
-If you are using Dynamsoft-Hosting DLS , the new license will be automatically configured to the same [Handshake Code]({{site.about}}terms.html#handshake-code) that you have been using, so no code change is required to your application.
+If you are using Dynamsoft's License Servers , the new license will be automatically configured to the same license key that you have been using, so no code change is required to your application.
 
-If you are hosting your own DLS , you need to download the new license file after the renewal, import it in the DLS and configure it to the Handshake Code you have been using.
+If you are hosting your own DLS , you need to download the new license file after the renewal, import it in DLS and configure it to the license key you have been using.
 
 ## Can I purchase a license valid for more than one year?
 
