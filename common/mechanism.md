@@ -32,7 +32,7 @@ The license system shall work fine in all mainstream browsers. However, if you a
 
 > Read more on [what is DLS]({{site.about}}terms.html#dynamsoft-license-server)
 
-If you are using Dynamsoft-Hosting DLS, you can skip this step. The following code snippets show how to configure connecting to your **self-hosting DLS**.  
+If you are using Dynamsoft-Hosted DLS, you can skip this step. The following code snippets show how to configure connecting to your **self-hosted DLS**.  
 
 * JavaScript
 

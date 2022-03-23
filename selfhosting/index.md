@@ -1,13 +1,13 @@
 ---
 layout: default-layout
-title: Self-hosting License Tracking
-keywords: self-hosting, activation, import
-description: This page is about how to use self-hosting license tracking.
-breadcrumbText: Self-hosting DLS
+title: Self-hosted License Tracking
+keywords: self-hosted, activation, import
+description: This page is about how to use self-hosted license tracking.
+breadcrumbText: Self-hosted DLS
 needAutoGenerateSidebar: true
 ---
 
-# Connect to Self-hosting License Server
+# Connect to Self-hosted License Server
 
 > If your production environment does not allow internet connection, an alternative option is to host the license server program on your internal server machine so all your devices or end users can connect and get licensed via intranet connection.
 > 
@@ -18,8 +18,8 @@ needAutoGenerateSidebar: true
 
 To track the license yourself, you first need to install the Dynamsoft License Server (DLS). Please read one of the following guides
 
-* [Set up DLS on Windows]({{site.selfhosting}}dlsonwindows.html)
-* [Set up DLS on Linux]({{site.selfhosting}}dlsonlinux.html)
+* [Set up DLS on Windows]({{site.selfhosted}}dlsonwindows.html)
+* [Set up DLS on Linux]({{site.selfhosted}}dlsonlinux.html)
 
 After you have installed DLS on your server and got its UUID, you can proceed to the next step.
 
@@ -45,7 +45,7 @@ Once the activation is done, an activated License File will be generated and dow
 
 ## Import the License
 
-This step imports the License File into DLS so that you can configure and use the purchased license(s). Please see steps on [how to import the License File]({{site.selfhosting}}manageDLS.html#import-the-license-file).
+This step imports the License File into DLS so that you can configure and use the purchased license(s). Please see steps on [how to import the License File]({{site.selfhosted}}manageDLS.html#import-the-license-file).
 
 ## Configure the License
 
@@ -55,7 +55,7 @@ To configure the license is to manage the Handshake Code for the license. For mo
 
 ## Track the License
 
-For Self-Hosting License Tracking, all usage data is submitted to the [ DLS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by yourself. You can
+For Self-Hosted License Tracking, all usage data is submitted to the [ DLS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by yourself. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)

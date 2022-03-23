@@ -28,8 +28,8 @@ docHomePage: /license-server/docs/about/
 
 about: /license-server/docs/about/
 common: /license-server/docs/common/
-dshosting: /license-server/docs/dshosting/
-selfhosting: /license-server/docs/selfhosting/
+dshosted: /license-server/docs/dshosting/
+selfhosted: /license-server/docs/selfhosting/
 schedule: /license-server/docs/schedule/
 
 # Example variable:

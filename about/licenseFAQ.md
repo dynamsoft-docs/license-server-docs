@@ -52,7 +52,7 @@ During the offline period, by default, all usage data is kept on the client side
       "@type": "Answer",
       "text": "Yes. There are two scenarios in this case.
 
-All client devices can connect to a local network within the organization. In this case, you can simply host your own DLS for license tracking. Please see Self-hosting License Tracking.
+All client devices can connect to a local network within the organization. In this case, you can simply host your own DLS for license tracking. Please see Self-hosted License Tracking.
 Client devices never connect to any network. In this case, you may require a special license. Please contact Dynamsoft Support Team for details."
 
     }
@@ -73,7 +73,7 @@ Client devices never connect to any network. In this case, you may require a spe
     "name": "Can I extend the quota of my license to support more devices or process more documents?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. If you are using Dynamsoft-Hosting DLS, you can either contact sales@dynamsoft.com to add quota or log in the customer portal and place an order for extra quota yourself. Rest assured that the Handshake Code remains unchanged during the process, so no code change is required to your application once the quota is added.
+      "text": "Yes. If you are using Dynamsoft-Hosted DLS, you can either contact sales@dynamsoft.com to add quota or log in the customer portal and place an order for extra quota yourself. Rest assured that the Handshake Code remains unchanged during the process, so no code change is required to your application once the quota is added.
 
 If you are hosting your own DLS, all you need to do is purchase another license, import it in the DLS and configure it to the Handshake Code you have been using."
 
@@ -230,7 +230,7 @@ Yes. There are two scenarios in this case
 
 * All client devices can connect to a local network within the organization.
 
-  In this case, you can simply host your own DLS. See [Self-hosting License Tracking]({{site.selfhosting}}index.html) for more information.
+  In this case, you can simply host your own DLS. See [Self-hosted License Tracking]({{site.selfhosted}}index.html) for more information.
 
 * Client devices never connect to any network.
 

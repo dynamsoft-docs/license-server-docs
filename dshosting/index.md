@@ -1,17 +1,17 @@
 ---
 layout: default-layout
-title: Dynamsoft-hosting license tracking
-keywords: dynamsoft-hosting, license tracking
-description: This page is about license tracking with Dynamsoft-Hosting Dynamsoft License Server
-breadcrumbText: Dynamsoft-Hosting License Tracking
+title: Dynamsoft-hosted license tracking
+keywords: dynamsoft-hosted, license tracking
+description: This page is about license tracking with Dynamsoft-Hosted Dynamsoft License Server
+breadcrumbText: Dynamsoft-Hosted License Tracking
 needAutoGenerateSidebar: true
 ---
 
-# Connect to Dynamsoft-hosting License Server
+# Connect to Dynamsoft-hosted License Server
 
 > Dynamsoft has its license server deployed to the Amazon's AWS for customers to connect and consume their purchased license seats. As the license server is hosted on the cloud, the option only works if your to-be-licensed devices can connect to the internet. 
 
-> If you must keep everything within your intranet, you can instead install the License Server program on your internal server machine. Please refer to [Self-hosting License Tracking]({{site.selfhosting}}index.html).
+> If you must keep everything within your intranet, you can instead install the License Server program on your internal server machine. Please refer to [Self-hosted License Tracking]({{site.selfhosted}}index.html).
 
 > To learn security features about the License Server, you can refer to [this page]({{site.about}}licensefaq.html).
 
@@ -32,7 +32,7 @@ To configure the license is to manage the Handshake Codes for the license. For m
 
 ## Track the License
 
-For Dynamsoft-Hosting License Tracking, all usage data is submitted to the [ DLS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by Dynamsoft. You can
+For Dynamsoft-Hosted License Tracking, all usage data is submitted to the [ DLS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by Dynamsoft. You can
 
 * [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)

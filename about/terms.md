@@ -26,10 +26,10 @@ The following table shows the major differences between License 1.0 and 2.0:
 
 Dynamsoft License Server (DLS) is proprietary software developed by Dynamsoft to manage and distribute License 2.0 based licenses.
 
-Dynamsoft provides both Dynamsoft-hosting and self-hosting options of DLS. For more information, please see:
+Dynamsoft provides both Dynamsoft-hosted and self-hosted options of DLS. For more information, please see:
 
-* [Use DLS Hosted by Dynamsoft]({{site.dshosting}}index.html)
-* [Use Your own DLS]({{site.selfhosting}}index.html)
+* [Use DLS Hosted by Dynamsoft]({{site.dshosted}}index.html)
+* [Use Your own DLS]({{site.selfhosted}}index.html)
 
 ## Dynamsoft License Client
 
