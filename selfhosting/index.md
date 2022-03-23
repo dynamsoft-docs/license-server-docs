@@ -49,7 +49,7 @@ This step imports the License File into DLS so that you can configure and use th
 
 ## Configure the License
 
-To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}handshakeCodes.html).
+To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}project.html).
 
 > Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
 

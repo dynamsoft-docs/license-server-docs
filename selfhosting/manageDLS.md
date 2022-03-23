@@ -72,7 +72,7 @@ The next step is to [Configure the License](#configure-the-license)
 
 ## Configure the License
 
-To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}handshakeCodes.html).
+To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the project]({{site.common}}project.html).
 
 > Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
 

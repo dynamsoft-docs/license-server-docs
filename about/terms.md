@@ -37,9 +37,9 @@ Dynamsoft License Client (DLC) is proprietary software developed by Dynamsoft to
 
 ## License File
 
-When you acquire a license based on License 2.0, you get a License File that contains the license definition.
+A License File defines a license based on License 2.0.
 
-Each License File has a unique `LicenseId` and an [`Alias`](#alias). You can also find out information like the licensee (OrganizationID) and whether the license has been activated (LicenseStatus), etc. For example:
+Each License File has a unique `LicenseId`, an [`Alias`](#alias) and detailed license information (defined by License Item(s)). It also includes information like the licensee (OrganizationID) and whether the license has been activated (LicenseStatus), etc. For example:
 
 ```text
 LicenseId: 100028117
@@ -84,24 +84,20 @@ License Key is an alphanumeric string that tells DLC how to connect to DLS and g
 
 Each License Key corresponds to a specific Handshake Code within an organization.
 
-## Handshake Code
+## Project
 
-If you have multiple projects for which you want to assign different License Items, you can configure different Handshake Codes and use their corresponding License Keys in these projects.
+If you have multiple projects for which you want to assign different License Items, you can configure different projects with different License Items. Each project has an ID (previously known as Handshake Code).
 
 A few things to note:
 
-* One Handshake Code can contain permits of multiple License Items.
-* Multiple Handshake Codes can share the permit of one single License Item.
-* Quota consumption is counted against the License Item in use.
-* Statistics are summarized both per Handshake Code and per License Item.
-
-### Default Handshake Code
-
-For each "new" organization added to DLS during the importing of a license file, a default Handshake Code is created. This Default Handshake Code is used when the license key used to connect to DLS specifies only the ID of the organization without specifying a Handshake Code.
+* A project can be assigned multiple License Items.
+* Multiple projects can share the same License Item.
+* Quota consumption is based on individual License Items.
+* Statistics are aggregated both per project and per License Item.
 
 ### Validation Field
 
-Validation Field is a security feature meant to protect the license configured in a Handshake Code. This field is a static characteristic of the application using the license. At present, the following three Validation Fields are supported:
+Validation Field is a security feature meant to protect the license items configured to a project. This field is a static characteristic of the application for this project. At present, the following three Validation Fields are supported:
 
 * Website Domain
 
@@ -115,11 +111,13 @@ Validation Field is a security feature meant to protect the license configured i
 
 > Applicable to desktop/server/embedded applications. For example: *DynamsoftBarcodeReader.exe*.
 
-In the HandShake Details page, the Validation Field is configured as "Binding Information".
+In the Project Details page, the Validation Field can be configured in "Optional Security Settings".
 
 ### Session Password
 
-Session Password is another way to protect the license configured in a Handshake Code. Unlike the Validation Field, which essentially validates application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
+Session Password is another way to protect the the license items configured to a project. Unlike the Validation Field that validates static application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
+
+In the Project Details page, the Session Password can be configured in "Optional Security Settings".
 
 > When you change the Session Password, the License Key will be updated to reflect the change.
 
@@ -127,7 +125,7 @@ Session Password is another way to protect the license configured in a Handshake
 
 ### Public Trial License
 
-A public trial license is a special license based on [license 2.0](#license-20) which is provided by Dynamsoft to all users for the purpose of testing Dynamsoft products for a temporary period of time. This license is implemented in most code samples for Dynamsoft products like the ones found in the [Dynamsoft Github repositories](https://github.com/orgs/Dynamsoft/repositories).
+A public trial license is a special license based on [license 2.0](#license-20). It is provided by Dynamsoft to all users for the purpose of testing Dynamsoft products for a temporary period of time. This license is implemented in most code samples for Dynamsoft products like the ones found in the [Dynamsoft Github repositories](https://github.com/orgs/Dynamsoft/repositories).
 
 > As of March, 2022, the license is good for 24 hours.
 

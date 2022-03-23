@@ -26,7 +26,7 @@ On the "Activate License" page, set an Alias for your license or leave the defau
 
 ## Configure the License
 
-To configure the license is to manage the Handshake Codes for the license. For more details, please see [how to manage handshake codes]({{site.common}}handshakeCodes.html).
+To configure the license is to manage the Handshake Codes for the license. For more details, please see [how to manage project]({{site.common}}project.html).
 
 > Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
 

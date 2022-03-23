@@ -49,13 +49,13 @@ You will be prompted to confirm the request, click "OK" to proceed.
 
 After the activation, you will be redirected to the "License Details" page where you can find the license key to use the activated license.
 
+![Check the license key]({{site.assets}}imgs/activate-003.png)
+
 > Read more on [what is license key]({{site.about}}terms.html#license-key)
 
 ## Manage License Keys
 
-To manage a license key is to configure the Handshake Code bound to this license key. For more details, please see [Configure Handshake Codes]({{site.common}}handshakeCodes.html).
-
-> Read more on [what is Handshake Code]({{site.about}}terms.html#handshake-code).
+To manage a license key is to configure the project bound to this license key. For more details, please see [Configure A Project]({{site.common}}project.html).
 
 ## Check License Usage
 

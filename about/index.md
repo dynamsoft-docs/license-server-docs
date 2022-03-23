@@ -14,7 +14,7 @@ These docs aim to help you learn and understand how Dynamsoft License Server (DL
 
 ## Terms
 
-To learn about DLS and related terms like "License 2.0", "License Key", "Handshake Codes", etc., please see the [Terms]({{site.about}}terms.html) page.
+To learn about DLS and related terms like "License 2.0", "License Key", etc., please see the [Terms]({{site.about}}terms.html) page.
 
 ## License Options
 

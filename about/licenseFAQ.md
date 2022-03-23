@@ -73,9 +73,9 @@ Client devices never connect to any network. In this case, you may require a spe
     "name": "Can I extend the quota of my license to support more devices or process more documents?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. If you are using Dynamsoft-Hosted DLS, you can either contact sales@dynamsoft.com to add quota or log in the customer portal and place an order for extra quota yourself. Rest assured that the Handshake Code remains unchanged during the process, so no code change is required to your application once the quota is added.
+      "text": "Yes. If you are using Dynamsoft-Hosted DLS, you can either contact sales@dynamsoft.com to add quota or log in the customer portal and place an order for extra quota yourself. Rest assured that the license key remains unchanged during the process, so no code change is required to your application once the quota is added.
 
-If you are hosting your own DLS, all you need to do is purchase another license, import it in the DLS and configure it to the Handshake Code you have been using."
+If you are hosting your own DLS, all you need to do is purchase another license, import it in the DLS and configure it to the license key you have been using."
 
     }
 
