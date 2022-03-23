@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # License Items Page
 
-The License Items page shows all the active License Items which can be configured to be used by Handshake Codes.
+The License Items page shows all the active License Items which can be configured to be used by different projects.
 
 > Read more on [what is License Item]({{site.about}}terms.html#license-item)
 
