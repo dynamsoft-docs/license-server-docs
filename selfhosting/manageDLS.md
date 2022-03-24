@@ -64,7 +64,7 @@ During [license activation]({{site.selfhosted}}index.html#activate-the-license),
 Once imported
 
 * You will see the license items contained in that License File in the *Activated License Items* table.
-* A Handshake Code will be generated for that imported License File which includes all the license items.
+* A Project will be generated for that imported License File which includes all the license items.
 
 The next step is to [Configure the License](#configure-the-license)
 
@@ -72,9 +72,7 @@ The next step is to [Configure the License](#configure-the-license)
 
 ## Configure the License
 
-To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the project]({{site.common}}project.html).
-
-> Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
+To configure the license is to manage the Project for the license. For more details, please see [how to manage the project]({{site.common}}project.html).
 
 ## Configure usage alerts
 

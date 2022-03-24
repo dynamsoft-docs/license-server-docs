@@ -15,7 +15,7 @@ description: Documentation Homepage
     - [FAQs]({{site.about}}licensefaq.html)
 * [Manage DLS]({{site.selfhosted}}manageDLS.html)
     - [License Items]({{site.common}}licenseitems.html)
-    - [Handshake Codes]({{site.common}}handshakecodes.html)
+    - [Projects]({{site.common}}project.html)
     - [Statistics]({{site.common}}statistics.html)
     - [Usage Alerts]({{site.common}}usagealerts.html)
 * [Self-Hosted]({{site.selfhosted}}index.html)

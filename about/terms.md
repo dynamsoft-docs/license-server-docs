@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## License 2.0
 
-License 2.0 is a new generation licensing protocol designed and implemented by Dynamsoft for its products, including Dynamsoft Barcode Reader, Dynamic Web TWAIN, and more.
+**License 2.0** is a next-generation license agreement designed and implemented by Dynamsoft for its products, including Dynamsoft Barcode Reader, Dynamic Web TWAIN, and more.
 
 The following table shows the major differences between License 1.0 and 2.0:
 
@@ -24,22 +24,17 @@ The following table shows the major differences between License 1.0 and 2.0:
 
 ## Dynamsoft License Server
 
-Dynamsoft License Server (DLS) is proprietary software developed by Dynamsoft to manage and distribute License 2.0 based licenses.
-
-Dynamsoft provides both Dynamsoft-hosted and self-hosted options of DLS. For more information, please see:
-
-* [Use DLS Hosted by Dynamsoft]({{site.dshosted}}index.html)
-* [Use Your own DLS]({{site.selfhosted}}index.html)
+**Dynamsoft License Server** (DLS) is proprietary software developed by Dynamsoft to manage and distribute License 2.0 based licenses.
 
 ## Dynamsoft License Client
 
-Dynamsoft License Client (DLC) is proprietary software developed by Dynamsoft to acquire License 2.0 based licenses from DLS and manage them in a local device. The software is embedded in all Dynamsoft products that support License 2.0.
+**Dynamsoft License Client** (DLC) is proprietary software developed by Dynamsoft to acquire License 2.0 based licenses from DLS and manage them in a local device. The software is embedded in all Dynamsoft products that support License 2.0.
 
 ## License File
 
-A License File defines a license based on License 2.0.
+A **License File** defines a license based on License 2.0.
 
-Each License File has a unique `LicenseId`, an [`Alias`](#alias) and detailed license information (defined by License Item(s)). It also includes information like the licensee (OrganizationID) and whether the license has been activated (LicenseStatus), etc. For example:
+Each License File has a unique **LicenseId**, an [**Alias**](#alias) and detailed license information (defined by License Item(s)). It also includes information like the licensee (**OrganizationID**) and whether the license has been activated (**LicenseStatus**), etc. For example:
 
 ```text
 LicenseId: 100028117
@@ -57,36 +52,36 @@ If you are using Dynamsoft-Hosted DLS, the License File will be imported immedia
 
 ### Alias
 
-Alias is another way to identify a license. You can set a meaningful Alias to a license so that you can easily identify the purpose of the license.
+**Alias** is another way to identify a license. You can set a meaningful Alias to a license so that you can easily identify the purpose of the license.
 
 A default Alias is created automatically that follows the pattern `DM_{License Id}_Date{Activation Date}`.  A more meaningful Alias could be something like `BarcodeReader_License_For_Dynamsoft_Project_ABC`.
 
 A few things to know about the Alias:
 
 * It will show up in the [License File](#license-file) and there can only be one Alias per license file.
-* It can only be changed when the "LicenseStatus" is "New".
+* It can only be changed when the **LicenseStatus** is "New".
 
 ### LicenseTextVersion
 
-"LicenseTextVersion" tells DLS how to parse this license file.
+**LicenseTextVersion** tells DLS how to parse this license file.
 
 ### OrganizationID
 
-OrganizationID uniquely designates an organization as the licensee.
+**OrganizationID** uniquely designates an organization as the licensee.
 
 ### License Item
 
-License Item is the basic concept of License 2.0. It defines the exact restrictions for using a Dynamsoft product and is the basic unit when purchasing a license. For example, a license item can be described as a "30-device package for using Dynamsoft Barcode Reader within Browsers".
+**License Item** is the basic concept of License 2.0. It defines the exact restrictions for using a Dynamsoft product and is the basic unit when purchasing a license. For example, a license item can be described as a "30-device package for using Dynamsoft Barcode Reader within Browsers".
 
 ## License Key
 
-License Key is an alphanumeric string that tells DLC how to connect to DLS and get the required licenses.
+**License Key** is an alphanumeric string that tells DLC how to connect to DLS and get the required licenses.
 
-Each License Key corresponds to a specific Handshake Code within an organization.
+Each License Key corresponds to a specific Project within an organization.
 
 ## Project
 
-If you have multiple projects for which you want to assign different License Items, you can configure different projects with different License Items. Each project has an ID (previously known as Handshake Code).
+A **Project** defines a group of License Items used together. Each project has an ID (previously known as Handshake Code).
 
 A few things to note:
 
@@ -97,7 +92,7 @@ A few things to note:
 
 ### Validation Field
 
-Validation Field is a security feature meant to protect the license items configured to a project. This field is a static characteristic of the application for this project. At present, the following three Validation Fields are supported:
+**Validation Field** is a security feature meant to protect the license items configured to a project. This field is a static characteristic of the application for this project. At present, the following three Validation Fields are supported:
 
 * Website Domain
 
@@ -115,7 +110,7 @@ In the Project Details page, the Validation Field can be configured in "Optional
 
 ### Session Password
 
-Session Password is another way to protect the the license items configured to a project. Unlike the Validation Field that validates static application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
+**Session Password** is another way to protect the the license items configured to a project. Unlike the Validation Field that validates static application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
 
 In the Project Details page, the Session Password can be configured in "Optional Security Settings".
 
@@ -125,7 +120,7 @@ In the Project Details page, the Session Password can be configured in "Optional
 
 ### Public Trial License
 
-A public trial license is a special license based on [license 2.0](#license-20). It is provided by Dynamsoft to all users for the purpose of testing Dynamsoft products for a temporary period of time. This license is implemented in most code samples for Dynamsoft products like the ones found in the [Dynamsoft Github repositories](https://github.com/orgs/Dynamsoft/repositories).
+**Public Trial License** is a special license based on [license 2.0](#license-20). It is provided by Dynamsoft to all users for the purpose of testing Dynamsoft products for a temporary period of time. This license is implemented in most code samples for Dynamsoft products like the ones found in the [Dynamsoft Github repositories](https://github.com/orgs/Dynamsoft/repositories).
 
 > As of March, 2022, the license is good for 24 hours.
 
@@ -133,7 +128,7 @@ Dynamsoft is gradually rolling out this license in the products. If you are havi
 
 ### Private Trial License
 
-Private trial licenses are also based on [license 2.0](#license-20) and are meant for customers who have registered with Dynamsoft. These licenses are good for 30 days and can be extended for another 15 days when necessary.
+**Private Trial License** is also based on [license 2.0](#license-20) and are meant for customers who have registered with Dynamsoft. These licenses are good for 30 days and can be extended for another 15 days when necessary.
 
 After registering with Dynamsoft, you can log in and request the private trial license in the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense).
 

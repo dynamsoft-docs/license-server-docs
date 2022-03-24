@@ -47,7 +47,7 @@ For this license option, the notification is about overusage. DLS allows a limit
 
 Note that even the first email triggered at the percentage of **60%** means the license is overused and you should take necessary measures as soon as possible.
 
-## Per Handshake Code
+## Per Project
 
 When the number of failed authorization requests reaches the following percentages of all authorization requests, it means quite a few of your end users are not able to use your application. When you get the notification, you should either check the status of your license or get in touch with Dynamsoft as soon as possible.
 
