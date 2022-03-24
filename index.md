@@ -18,6 +18,7 @@ description: Documentation Homepage
     - [Projects]({{site.common}}project.html)
     - [Statistics]({{site.common}}statistics.html)
     - [Usage Alerts]({{site.common}}usagealerts.html)
+    - [Mechanism]({{site.common}}mechanism.html)
 * [Self-Hosted]({{site.selfhosted}}index.html)
     - [Install DLS on Windows]({{site.selfhosted}}DLSonwindows.html)
         - [Configure Reverse Proxy Using IIS]({{site.selfhosted}}configurereverseproxyusingiis.html)
