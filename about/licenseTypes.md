@@ -100,14 +100,7 @@ For this license option, unlimited devices can be authorized and only after they
 
 This license option limits the total number of active servers.
 
-An active server is a device or computer that has the SDK loaded into its RAM. 
-
-The definition of a server could be:
-
-- a networked device with the SDK installed that's accessible by multiple users who can independently operate the SDK from another machine;
-- a networked device with the SDK running as a service that accepts connections from other machines or applications;
-- a computer with the SDK running to serve multiple users, e.g. a kiosk or a scan station;
-- a web server with the SDK deployed that accepts end user connection to run the SDK on the client machines.
+An active server is a device or computer that has the SDK loaded into its RAM to perform operations like reading barcodes or recognizing text, etc.
 
 Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more information on how to use a per server license.
 
@@ -117,7 +110,7 @@ Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more informat
 
 This license option limits the domain name of a web application.
 
-A per domain license allows unlimited usage of the SDK within one web application under a specific domain (e.g. `\*.dynamsoft.com`). Multiple subdomains like `subdomainA.company.com` and `subdomainB.company.com` are counted as one domain.
+A per domain license allows unlimited usage of the SDK within one web application under a specific domain (e.g. `*.dynamsoft.com`). Multiple subdomains like `subdomainA.company.com` and `subdomainB.company.com` are counted as one domain.
 
 For websites that use public domain names of multi-tenant cloud platforms (e.g. `force.com`), the domain license would be limited to a unique subdomain such as `dynamsoft.force.com`.
 

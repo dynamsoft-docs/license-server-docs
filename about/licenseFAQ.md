@@ -6,6 +6,7 @@ description: This page lists the frequently asked questions about Dynamsoft's Dy
 breadcrumbText: Licensing FAQ
 needAutoGenerateSidebar: true
 hasCustomLdJson: true
+noTitleIndex: true
 customLdJsonScript: 
 ---
 <script type="application/ld+json">
@@ -133,7 +134,7 @@ If you are hosting your own DLS, all you need to do is purchase another license,
 }
 </script>
 
-# Dynamsoft Licensing FAQ
+# Dynamsoft License Server FAQ
 
 Table of Contents
 
@@ -180,10 +181,10 @@ A few things to note
 
 DLS is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters. The following are the security features of DLS :
 
-* DLS is responsible for authorizing the SDKs as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on DLS nor from DLS to the requesting clients.
 * DLS supports HTTPS and it is highly recommended that it runs via HTTPS.
 * DLS supports application binding. With application binding, authorization to use the SDK is only granted to requests sent from the application that has its ID, name or domain bound.
 * DLS supports setting a session password to avoid abuse.
+* DLS is responsible for authorizing the SDKs as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on DLS nor from DLS to the requesting clients.
 * Authorizations sent back by DLS and usage reports sent to DLS are specially encrypted and cannot be deciphered by any other party.
 
 Last but not least, Dynamsoft is [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) certified and we take information & data security seriously.
@@ -195,8 +196,8 @@ Customer devices rely on the License Server to get authorizations for using Dyna
 * DLS is hosted on AWS.
 * DLS database is backed up every 60 minutes.
 * There are always two instances of "DLS" running in parallel on different machines with their databases synchronized every 10 minutes. If one of them fails, the other will step up to take over all incoming requests.
-* Once a device is authorized, it can work offline for up to 365 days or even longer.
-* Technicians are notified of any server exception within 30 seconds of its occurrence.
+* Once a device is authorized, it can work offline for a period of time (from 3 minutes to a maximum of 365 days or more, depending on the license type).
+* Dynamsoft server administrators are notified within 30 seconds of any server exceptions.
 
 Also, Dynamsoft has been an online service provider for over 13 years and has an experienced team who have been maintaining products like SourceAnywhere Hosted, SCMAnywhere Hosted, TFS Hosted, etc.
 
@@ -204,13 +205,13 @@ Also, Dynamsoft has been an online service provider for over 13 years and has an
 
 To protect your online license, we recommend you take the following measures:
 
-* Set a [session password]({{site.about}}terms.html#session-password). The license only works when the license key you use in your application contains the same session password you set for the license on DLS. If it is not too much trouble, you can update this password each time you update your application.
+* Set a [session password]({{site.about}}terms.html#session-password). The license only works when the license key you use in your application contains the same session password you set for the license on DLS. If it's not too much trouble, you can update this password every time you update your app.
 
-* Set a [validation field]({{site.about}}terms.html#valication-field). A validation field is a static characteristic of the application (e.g. the domain of a web application, the process name of a desktop application, etc.). Dynamsoft SDKs will collect this information and include it in the requests sent to DLS. If you have set the field on DLS and the information doesn't match, the authorization will fail.
+* Set a [validation field]({{site.about}}terms.html#valication-field). A validation field (also called binding information) is a static characteristic of the application (e.g. the domain of a web application, the process name of a desktop application, etc.). Dynamsoft SDKs will collect this information at runtime and include it in the requests sent to DLS. This way, you can limit license usage to your application.
 
 ## What happens if my license runs out?
 
-Generally, each online license has a fixed quota. If the quota is used up, the license will no longer be valid and the software will stop running. Of course, this is unacceptable for production use, and Dynamsoft has the following measures to ensure that it does not happen accidentally.
+Generally, each online license has a fixed quota. If the quota is exhausted, the license will no longer be valid and the software will stop functioning, which is unacceptable for a production environment. To make sure it doesn't happen accidentally, Dynamsoft has the following measures:
 
 * Dynamsoft allows excessive usage of the licenses in case the licensee fails to extend or expand the license in time. Contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) for more information.
 
@@ -218,11 +219,11 @@ Generally, each online license has a fixed quota. If the quota is used up, the l
 
 ## Can a client device work offline?
 
-Yes. Depending on the license type, once a client device gets authorized, it can be used offline for up to 365 days or even longer before it must connect to DLS again for another authorization.
+Yes. Depending on the license type, once a client device gets authorized, it can be used offline for a period of time (from 3 minutes to a maximum of 365 days or more).
 
-During the offline period, by default, all usage data is kept on the client side and will be sent to DLS all at once the next time the device gets online.
+During offline, all usage data is saved on the client by default and sent to DLS in one go the next time the device goes online.
 
-Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you would like your devices to work offline for a longer period of time, you can also contact us if you don't want to share any usage data with Dynamsoft.
+Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you would like your devices to work offline for a longer period of time. You can also contact us if you don't want to share any usage data with Dynamsoft.
 
 ## Can I use Dynamsoft SDKs in an environment with no internet connection?
 
@@ -238,27 +239,27 @@ Yes. There are two scenarios in this case
 
 ## Can I unregister inactive devices?
 
-As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-client-device), DLS keeps a list of UUIDs which identify the active devices. By default, a device is only unregistered (removed from the list) after it expires which could be after 90/30 days for Quaterly/Monthly active license.
+As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-client-device), DLS keeps a list of UUIDs which identify the active devices. By default, a device is only unregistered (removed from the list) after it expires. For example, a device is unregistered if it stays offline or idle for more than 90 days for a Quaterly active license.
 
-If your business/user turnover is high, you can choose to use a Daily active license or even a [Concurrent Device license]({{site.about}}licensetypes.html#per-concurrent-device).
+If your business/user turnover is high, you can choose to use a Daily Active license or even a [Concurrent Device license]({{site.about}}licensetypes.html#per-concurrent-device).
 
 ## Can I extend the quota of my license to support more devices or process more documents?
 
-Yes. You can either contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) to add quota or log in the [customer portal](https://www.dynamsoft.com/customer/order/list) and place an order for extra quota yourself.
+Yes. You can either contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) to add quota or log in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense) and place an order for extra quota yourself.
 
-If you are hosting your own DLS , all you need to do is purchase another license, import it in the DLS and configure it to the same license key.
+If you are hosting your own DLS , all you need to do is purchase another license, import it in the DLS and configure it to the same project (the same license key).
 
 ## Can I renew my license before its current expiration date?
 
-Yes, you can log into the customer portal to renew your license by credit card or PayPal any time before it expires. Alternatively, you can contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) if you prefer other payment methods (wire transfer or check, etc.).
+Yes, you can log into the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense) to renew your license by credit card or PayPal any time before it expires. Alternatively, you can contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) if you prefer other payment methods (wire transfer or check, etc.).
 
-If you are using Dynamsoft's License Servers , the new license will be automatically configured to the same license key that you have been using, so no code change is required to your application.
+If you are using Dynamsoft's License Servers , the new license will be automatically configured to the same project (the same license key) that you have been using, so no code change is required to your application.
 
-If you are hosting your own DLS , you need to download the new license file after the renewal, import it in DLS and configure it to the license key you have been using.
+If you are hosting your own DLS , you need to download the new license file after the renewal, import it in DLS and configure it to the project you have been using.
 
 ## Can I purchase a license valid for more than one year?
 
-Yes. Please contact [sales@dynamsoft.com](mailto:sales@dynamsoft.com) with your request.
+Yes. Please contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) with your request.
 
 ## Will the unused quota be rolled over to the next period?
 

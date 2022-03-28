@@ -24,7 +24,7 @@ To find what license options are available, see the [License Options]({{site.abo
 
 ## Activate A License
 
-Activation is a critical step when using DLS. Please see [how to Activate a license]({{site.about}}activate.html).
+Activation is a critical step when using DLS. Please see [how to activate a license]({{site.about}}activate.html).
 
 ## FAQ
 
