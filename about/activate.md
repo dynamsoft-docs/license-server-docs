@@ -33,7 +33,7 @@ Generally, you choose to host your own DLS if
 * You don't want to share your usage data with Dynamsoft
 * You believe your own server would work faster
 
-If you decide to host your own DLS, please follow the instructions on [Host DLS Myself]({{site.selfhosted}}index.html). Otherwise, read the instructions below.
+If you decide to host your own DLS, please follow the instructions on [Self-hosted DLS]({{site.selfhosted}}index.html). Otherwise, read the instructions below.
 
 ## Activate License
 
@@ -55,7 +55,7 @@ After the activation, you will be redirected to the "License Details" page where
 
 ## Manage License Keys
 
-To manage a license key is to configure the project bound to this license key. For more details, please see [Configure A Project]({{site.common}}project.html).
+To manage a license key is to configure the project bound to this license key. For more details, please see [Project Configurartion]({{site.common}}project.html).
 
 ## Check License Usage
 
