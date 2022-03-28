@@ -5,6 +5,7 @@ keywords: Dynamsoft License Server, Security
 description: How to manage security of Dynamsoft License Server
 breadcrumbText: Manage DLS Security
 needAutoGenerateSidebar: true
+noTitleIndex: true
 ---
 
 # Manage DLS security
@@ -19,6 +20,6 @@ A few things to note
 
 ## Change The Password
 
-Click "Security" on the left menu and you will see the UI to change the password. It is quite standard, you just input the old password, type the new password twice and submit.
+Click "Change Password" on the left menu and you will see the UI to change the password. It is quite standard, you just input the old password, type the new password twice and submit.
 
 After the password is changed, you will need to use the new password the next time you try to log in.
