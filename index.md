@@ -18,8 +18,6 @@ description: Documentation Homepage
         - [Configure Reverse Proxy Using IIS]({{site.selfhosted}}configurereverseproxyusingiis.html)
     - [Install DLS on Linux]({{site.selfhosted}}DLSonlinux.html)
         - [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html)
-    - [Usage Alerts]({{site.common}}usagealerts.html)
-    - [Security]({{site.selfhosted}}security.html)
 * [Manage DLS]({{site.common}}project.html)
     - [Projects]({{site.common}}project.html)
     - [Statistics]({{site.common}}statistics.html)
