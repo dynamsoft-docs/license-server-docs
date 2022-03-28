@@ -80,7 +80,7 @@ At this point, you can access the server with the URL "http://www.yoursite.com/d
 
 ## Configure SSL
 
-For security, we should access the Dynamsoft License Server via HTTPS. 
+For security, we should access DLS via HTTPS. 
 
 ### Self-signed Certificate
 
@@ -137,8 +137,20 @@ After you have configured a secure port, you can then access the server by "http
 
 ## Configure Dynamsoft License Server
 
-With the above steps, the Dynamsoft License Server will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server(read more on [configure the DLS as the standby]({{site.selfhosted}}manageDLS.html#configure-a-standby-dls)). Assume the standby URL is "https://standby.yoursite.com/dls/", the following shows how to configure the server to be used (we take the JavaScript edition of Dynamsoft Barcode Reader as an example).
+With the above steps, DLS will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server.
 
-``` javascript
-Dynamsoft.DBR.BarcodeReader.licenseServer = ["https://www.yoursite.com/dls/", "https://standby.yoursite.com/dls/"];
-```
+### Configure a Standby DLS
+
+> This step is optional but highly recommended, if you are installing DLS for the first time, you can skip this step and come back to this step once the main DLS is installed and working properly.
+
+For maximum up time, a standby DLS is necessary. The following are the steps to configure a standby DLS.
+
+* Find the file `dls.json.sample` in the DLS directory, rename it to `dls.json`
+
+* In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
+
+  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
+
+  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
+
+> NOTE that you need to configure both the main DLS and the standby DLS separately.

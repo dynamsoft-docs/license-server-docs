@@ -13,7 +13,7 @@ description: Documentation Homepage
     - [License Options]({{site.about}}licensetypes.html)
     - [Activate A License]({{site.about}}activate.html)
     - [FAQs]({{site.about}}licensefaq.html)
-* [Manage DLS]({{site.selfhosted}}manageDLS.html)
+* Manage DLS
     - [Projects]({{site.common}}project.html)
     - [Statistics]({{site.common}}statistics.html)
     - [Usage Alerts]({{site.common}}usagealerts.html)
