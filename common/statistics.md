@@ -19,6 +19,7 @@ On the top of the page, you see the Project name and all License Items configure
 On the right, there is a line chart showing the trend of the usage and a table of numbers showing the detailed usage (per two hours).
 
 > NOTE
-> * Depending on the License Items configured to the Project, you may not see all the charts or numbers as shown in the above screenshot.
-> * A License Item may be configured to multiple Projects, only the usage associated with the current Project is counted.
-> * The usage of all License Items will be counted together as long as the usage is associated with the current Project.
+> * Depending on the License Items configured to the Project, you may not see all the charts or numbers as shown in the above screenshot;
+> * The usage of all License Items will be counted together as long as the usage is associated with the current Project;
+> * A License Item may be configured to multiple Projects, only the usage associated with the current Project is counted against the current Project;
+> * To view more precise usage numbers, check the page for a specific License Item.

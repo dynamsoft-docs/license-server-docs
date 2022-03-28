@@ -5,17 +5,20 @@ keywords: usage alert, notification
 description: This page is about the email notifcation feature (usage alerts) of Dynamsoft Dynamsoft License Server
 breadcrumbText: Usage Alerts
 needAutoGenerateSidebar: true
+noTitleIndex: true
 ---
 
 # Usage Alerts
 
-The Dynamsoft License Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered and sent.
+Dynamsoft License Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered and sent.
 
 > NOTE
 >  
-> * If multiple conditions are met, the email will contain all the information. 
+> * If multiple conditions are met, there will only be one email containing all the information. 
 
-## Per License Item: Per Client Device
+## Per License Item
+
+### Per Client Device
 
 When the number of active devices reaches a certain percentage of the allowed total, you should be aware of this and take necessary measures such as adding a new license. The preset percentages are:
 
@@ -27,7 +30,7 @@ When the number of active devices reaches a certain percentage of the allowed to
 
 When the percentage reaches 100%, it means the license is exhausted. Considering that you may not be able to add a new license in time, DLS allows another 10% of new devices to be authorized to use the software. When this happens, you should try to add a new license as soon as possible. When the percentage reaches 110%, new devices will receive a license error when trying to use the software. Note that the devices that have been authorized before will continue to work.
 
-## Per License Item: Per Barcode Scan or Per Page
+### Per Barcode Scan or Per Page
 
 When the number of barcodes you scan with Dynamsoft Barcode Reader or the number of pages you process with Dynamic Web TWAIN reaches a certain percentage of the allowed total, you should be aware of this and take necessary measures, such as adding a new license. The preset percentages are:
 
@@ -37,7 +40,7 @@ When the number of barcodes you scan with Dynamsoft Barcode Reader or the number
 
 When the percentage reaches 100%, it means the license is exhausted. Considering that you may not be able to add a new license in time, DLS allows another 5% of barcode scans or pages. When this happens, you should try to add a new license as soon as possible. When the percentage reaches 105%, all devices will receive a license error when trying to use the software.
 
-## Per License Item: Per Concurrent Device
+### Per Concurrent Device
 
 For this license option, the notification is about overusage. DLS allows a limited amount of overusage per concurrent license item. When the overusage is consumed to a certain percentage, you should be aware of this and take necessary measures such as adding a new license. The preset percentages are:
 
