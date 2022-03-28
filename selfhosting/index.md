@@ -5,58 +5,57 @@ keywords: self-hosted, activation, import
 description: This page is about how to use self-hosted license tracking.
 breadcrumbText: Self-hosted DLS
 needAutoGenerateSidebar: true
+noTitleIndex: true
 ---
 
-# Connect to Self-hosted License Server
+# Self-hosted DLS
 
-> If your production environment does not allow internet connection, an alternative option is to host the license server program on your internal server machine so all your devices or end users can connect and get licensed via intranet connection.
-> 
-> To learn security features about the License Server, you can refer to [this page]({{site.about}}licensefaq.html).
-
+If your production environment does not allow internet connection, an alternative option is to host the license server program on your internal server machine so all your devices or end users can connect and get licensed via intranet connection.
 
 ## Set Up DLS
 
-To track the license yourself, you first need to install the Dynamsoft License Server (DLS). Please read one of the following guides
+The first step in using your own DLS is to install it. Please read one of the following guides
 
 * [Set up DLS on Windows]({{site.selfhosted}}dlsonwindows.html)
 * [Set up DLS on Linux]({{site.selfhosted}}dlsonlinux.html)
 
-After you have installed DLS on your server and got its UUID, you can proceed to the next step.
+After the installation, you can proceed to the next step.
 
 ## Activate the License
 
-On the "Activate License" page, there are a few steps for the activation.
+In the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense), activate a license you want to use in your own DLS and select "Connect to My Self-Hosted License Server".
 
-* Set an Alias for your license
+![Choose-Activation-Option-2]({{site.assets}}imgs/activate-004.png)
 
-> This step is optional, you can just use the default Alias. Read more on [what is an Alias]({{site.about}}terms.html#alias).
-
-* Input the `UUID` of the DLS hosted on your server, the UUID is found on the home page of your DLS.
+You'll be asked to input the `UUID` of your DLS, the UUID is found on the home page of your DLS.
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-> Read more on [what is a DLS UUID]({{site.about}}terms.html#dls-uuid)
+Once done, an activated License File will be generated and downloaded automatically, the next step is to [import the license](#import-the-license).
 
-* Click the "Activate" button.
-
-Once the activation is done, an activated License File will be generated and downloaded automatically, the next step is to [import the license](#import-the-license).
-
-> Read more on [what is a License File]({{site.about}}terms.html#license-file)
+> Read more on [what is License File]({{site.about}}terms.html#license-file)
 
 ## Import the License
 
-This step imports the License File into DLS so that you can configure and use the purchased license(s). Please see steps on [how to import the License File]({{site.selfhosted}}manageDLS.html#import-the-license-file).
+This step imports the License File into DLS so that you can configure and use the purchased license(s). 
 
-## Configure the License
+* Click "License Items" on the license menu to go to the **License Items** page
+* Click "Select File" to open the License File you just downloaded and select "Import"
 
-To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}project.html).
+![License Items - import]({{site.assets}}imgs/licenseitems-002.png)
 
-> Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
+Once imported
+
+* You will see the license items contained in that License File in the **Activated License Items** table.
+* A Project will be generated for that imported License File which includes all the license items.
+
+## Manage License Keys
+
+To manage a license key is to configure the project bound to this license key. For more details, please see [Project Configurartion]({{site.common}}project.html).
 
 ## Track the License
 
-For Self-Hosted License Tracking, all usage data is submitted to the [ DLS ]({{site.about}}terms.html#dynamsoft-license-server) hosted by yourself. You can
+For Self-Hosted DLS, all usage data is submitted to [DLS]({{site.about}}terms.html#dynamsoft-license-server) hosted by yourself. You can
 
-* [View activated license items]({{site.common}}licenseitems.html)
 * [View the license usage statistics]({{site.common}}statistics.html)
 * [Get notified about license status]({{site.common}}usagealerts.html)

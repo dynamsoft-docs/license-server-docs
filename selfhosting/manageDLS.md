@@ -7,9 +7,7 @@ breadcrumbText: Mange DLS
 needAutoGenerateSidebar: true
 ---
 
-# Manage DLS
-
-> Read more on [What is a DLS]({{site.about}}terms.html#dynamsoft-license-server)
+# Manage Dynamsoft License Server (DLS)
 
 ## How to set up DLS
 
@@ -67,8 +65,6 @@ Once imported
 * A Project will be generated for that imported License File which includes all the license items.
 
 The next step is to [Configure the License](#configure-the-license)
-
-> Read more on [About License Items]({{site.common}}licenseitems.html)
 
 ## Configure the License
 

@@ -14,7 +14,6 @@ description: Documentation Homepage
     - [Activate A License]({{site.about}}activate.html)
     - [FAQs]({{site.about}}licensefaq.html)
 * [Manage DLS]({{site.selfhosted}}manageDLS.html)
-    - [License Items]({{site.common}}licenseitems.html)
     - [Projects]({{site.common}}project.html)
     - [Statistics]({{site.common}}statistics.html)
     - [Usage Alerts]({{site.common}}usagealerts.html)

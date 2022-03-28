@@ -67,7 +67,7 @@ When the number of failed authorization requests reaches the following percentag
 
 Yes. This is done differently for different hosting options.
 
-When using Dynamsoft's DLS, email notifications are sent to all contacts configured for a specific order. You can check the contacts or add more in the customer portl
+When using Dynamsoft's DLS, email notifications are sent to all contacts configured for a specific order. You can check the contacts or add more in the customer portal
 
 ![Configure recipients for notification on DS hosting1]({{site.assets}}imgs/usagealerts-002.png)
 
