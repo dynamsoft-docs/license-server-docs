@@ -80,7 +80,7 @@ Each client device is only active for a limited period of time, this is determin
 
 > The active time starts from the first time the device is authorized. This behaviour can be changed so that the time starts from the first time the device uses the SDK. Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more information.
 
-When a device is active, its UUID is remembered by DLS and it takes a license seat. At the same time, the device stores a local license which makes sure the device can work onlone or offline as long as it is active. The active time is refreshed each time a device connects to DLS to reauthorize or submit a usage report. If the active device remains idle or offline for longer than its active time, it will stop working. At the same time, DLS will remove its UUID and release the license seat for other new devices.
+When a device is active, its UUID is remembered by DLS and it takes a license seat. At the same time, the device stores a local license which makes sure the device can work onlone or offline as long as it is active. The active time is refreshed each time a device connects to DLS to reauthorize or submit a usage report. If the active device remains idle or offline for longer than its active time, it will stop working. At the same time, DLS will remove its UUID and release the license seat for another new device.
 
 ## Per Concurrent Device
 
@@ -98,9 +98,11 @@ For this license option, unlimited devices can be authorized and only after they
 
 *Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/) (Windows/Linux edition)*
 
-This license option limites the total number of active servers.
+This license option limits the total number of active servers.
 
-An active server is a device or computer that has the SDK loaded into its RAM. Server includes the following:
+An active server is a device or computer that has the SDK loaded into its RAM. 
+
+The definition of a server could be:
 
 - a networked device with the SDK installed that's accessible by multiple users who can independently operate the SDK from another machine;
 - a networked device with the SDK running as a service that accepts connections from other machines or applications;
@@ -113,7 +115,7 @@ Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more informat
 
 *Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (JavaScript edition) and [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)*
 
-This license option limites the domain name of a web application.
+This license option limits the domain name of a web application.
 
 A per domain license allows unlimited usage of the SDK within one web application under a specific domain (e.g. `\*.dynamsoft.com`). Multiple subdomains like `subdomainA.company.com` and `subdomainB.company.com` are counted as one domain.
 
