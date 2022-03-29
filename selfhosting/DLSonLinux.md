@@ -81,8 +81,26 @@ Upon the first visit, you will be asked to set an admin password. After that, yo
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` . Read more on [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html).
+If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` .  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for "https://www.yoursite.com/dls/\*" to "https://127.0.0.1:48080/\*".
 
-### Docker Users Need to Know
+> NOTE for Docker Users
+> 
+> DLS requires persistent storage. Therefore, if `docker stop xxxxxx` was executed on the container, it needs to be restarted with `docker restart xxxxxx`.
 
-Dynamsoft License Server requires persistent storage. Therefore, if `docker stop xxxxxx` was executed on the container, it needs to be restarted with `docker restart xxxxxx`.
+## Configuration
+
+With the above steps, DLS will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another DLS on another machine as the standby Server.
+
+### Configure a Standby DLS
+
+For maximum up time, a standby DLS is necessary. Assume you have installed two copies of DLS, the following are the steps to configure them
+
+* Find the file `dls.json.sample` in the DLS directory, rename it to `dls.json`
+
+* In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
+
+  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
+
+  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
+
+> NOTE that you need to configure both the main DLS and the standby DLS separately.

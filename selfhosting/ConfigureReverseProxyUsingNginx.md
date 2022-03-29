@@ -134,23 +134,3 @@ e.g. You can get a free one from [certbot](https://certbot.eff.org/).
 ### Check the https page
 
 After you have configured a secure port, you can then access the server by "https://www.yoursite.com/dls/page/index.html#/".
-
-## Configure Dynamsoft License Server
-
-With the above steps, DLS will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another Dynamsoft License Server on another machine as the standby server.
-
-### Configure a Standby DLS
-
-> This step is optional but highly recommended, if you are installing DLS for the first time, you can skip this step and come back to this step once the main DLS is installed and working properly.
-
-For maximum up time, a standby DLS is necessary. The following are the steps to configure a standby DLS.
-
-* Find the file `dls.json.sample` in the DLS directory, rename it to `dls.json`
-
-* In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
-
-  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
-
-  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
-
-> NOTE that you need to configure both the main DLS and the standby DLS separately.
