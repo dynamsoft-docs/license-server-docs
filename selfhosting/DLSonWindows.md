@@ -20,19 +20,11 @@ needAutoGenerateSidebar: true
 
 ## Installation
 
-### Run the installer
+### Run DLS as a service
 
-Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.2.19](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
+1. Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.2.19](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
 
-There are two ways to get the server running:
-
-#### Run DLS as an application 
-
-This can be done simply by executing the batch file **"startup.bat"**
-
-#### Run DLS as a service
-
-This can be done with the help of the tool [NSSM](https://nssm.cc/). The following steps show how it works.
+2. Install DLS as a service with the help of the tool `NSSM`. The following steps show how it works.
 
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**
 * Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
@@ -43,21 +35,21 @@ nssm install dynamsoft-dls
 
 * A GUI will open, fill the parameters for the application like this (change the values according to where you put the files)
 
-  + **Path**: `E:\dynamsoft_dls-win_x64-v2.2.19\win\bin\dynamsoftdlsx.exe`
-  + **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.2.19`
-  + **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.2.19.jar" --server.port=48080 --data.port=50201`
+  * **Path**: `E:\dynamsoft_dls-win_x64-v2.2.19\win\bin\dynamsoftdlsx.exe`
+  * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.2.19`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.2.19.jar" --server.port=48080 --data.port=50201`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
-* Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as 
+* Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as
 
-  + **Command**: `E:\dynamsoft_dls-win_x64-v2.2.19\shutdown.bat`
+  * **Command**: `E:\dynamsoft_dls-win_x64-v2.2.19\shutdown.bat`
 
 ![nssm-002]({{site.assets}}imgs/nssm-002.png)
 
 * Press the button "Install Service" and you should be able to find dynamsoft-dls as one of the services in the services GUI or in **Task Manager -> Service**. If it is not started, start it.
 
-### Test the server
+### Test the service
 
 Once the server is running, you can test it via the URL [http://127.0.0.1:48080/page/index.html](http://127.0.0.1:48080/page/index.html).
 
@@ -83,8 +75,8 @@ For maximum up time, a standby DLS is necessary. Assume you have installed two c
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
 
-  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
+  * For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
 
-  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
+  * For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
