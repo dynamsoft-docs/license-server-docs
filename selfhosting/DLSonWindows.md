@@ -22,11 +22,10 @@ needAutoGenerateSidebar: true
 
 ### Run DLS as a service
 
-1. Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.2.19](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
+* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.2.19](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
 
-2. Install DLS as a service with the help of the tool `NSSM`. The following steps show how it works.
+* Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
-* Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**
 * Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
 
 ```cmd
