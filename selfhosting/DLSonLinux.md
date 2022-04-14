@@ -42,14 +42,14 @@ mount -a
 
 ``` shell
 cd /a-proper-location
-wget https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-linux_x64-v2.2.19.tar.gz
+wget https://tst.dynamsoft.com/public/download/dls/2.3.4/dynamsoft_dls-linux_x64-v2.3.4.tar.gz
 ```
 
 ### Unzip and start the Dynamsoft License Server
 
 ``` shell
 # Unzip the installer
-tar zxvf dynamsoft_dls-linux_x64-v2.2.19.tar.gz
+tar zxvf dynamsoft_dls-linux_x64-v2.3.4.tar.gz
 # Set permissions
 chmod -R 777 ./dls-linux
 # Start the server
