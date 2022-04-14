@@ -38,7 +38,7 @@ mount -a
 ```
 -->
 
-### Download the Dynamsoft License Server v2.2.19 installer, or just copy it over to a proper location
+### Download the Dynamsoft License Server v2.3.4 installer, or just copy it over to a proper location
 
 ``` shell
 cd /a-proper-location
