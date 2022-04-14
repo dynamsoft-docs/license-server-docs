@@ -99,8 +99,8 @@ For maximum up time, a standby DLS is necessary. Assume you have installed two c
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
 
-  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
+  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/"]`
 
-  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
+  + For the standby DLS: `"servers": ["https://www.yoursite.com/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
