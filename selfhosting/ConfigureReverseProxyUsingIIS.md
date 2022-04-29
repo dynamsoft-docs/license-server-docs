@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # Configure Reverse Proxy Using IIS
 
-The following is an example on how to set up a reverse proxy using `IIS` for DLS for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to "https://www.yoursite.com/dls/\*" to "https://127.0.0.1:48080/\*".
+The following is an example on how to set up a reverse proxy using `IIS` for DLS for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
 
 ## Install IIS
 
@@ -37,7 +37,6 @@ Rewrite URL：http://localhost:48080/{R:1}
 
 ![DLS-on-Windows-020]({{site.assets}}imgs/dlsonwin-020.png)
 
-
 ## Install Application Request Routing
 
 Download and install Microsoft Application Request Routing [here](https://www.microsoft.com/en-us/download/confirmation.aspx?id=47333).
@@ -52,10 +51,10 @@ Download and install Microsoft Application Request Routing [here](https://www.mi
 
 ## Test that the configuration works
 
-Open http://www.yoursite.com/dls/page/index.html and if you see the following page then the configuration is complete.
+Open `http://www.yoursite.com/dls/page/index.html` and if you see the following page then the configuration is complete.
 
 ![DLS-on-Windows-026]({{site.assets}}imgs/dlsonwin-026.png)
 
 ## Configure SSL
 
-Prepare a SSL certificate for your site (e.g. https://www.yoursite.com) and configure it properly. After that, you should be able to access the server by "https://www.yoursite.com/dls/page/index.html#/".
+Prepare a SSL certificate for your site (e.g. `https://www.yoursite.com`) and configure it properly. After that, you should be able to access the server by `https://www.yoursite.com/dls/page/index.html#/`.

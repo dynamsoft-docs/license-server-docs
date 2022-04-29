@@ -38,18 +38,18 @@ mount -a
 ```
 -->
 
-### Download the Dynamsoft License Server v2.3.4 installer, or just copy it over to a proper location
+### Download the Dynamsoft License Server v2.3.5 installer, or just copy it over to a proper location
 
 ``` shell
 cd /a-proper-location
-wget https://tst.dynamsoft.com/public/download/dls/2.3.4/dynamsoft_dls-linux_x64-v2.3.4.tar.gz
+wget https://tst.dynamsoft.com/public/download/dls/2.3.5/dynamsoft_dls-linux_x64-v2.3.5.tar.gz
 ```
 
 ### Unzip and start the Dynamsoft License Server
 
 ``` shell
 # Unzip the installer
-tar zxvf dynamsoft_dls-linux_x64-v2.3.4.tar.gz
+tar zxvf dynamsoft_dls-linux_x64-v2.3.5.tar.gz
 # Set permissions
 chmod -R 777 ./dls-linux
 # Start the server
