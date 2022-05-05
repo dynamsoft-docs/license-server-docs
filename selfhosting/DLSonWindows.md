@@ -56,7 +56,7 @@ Once the server is running, you can test it via the URL [http://127.0.0.1:48080/
 
 Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this DLS .
 
-> This UUID is require when [activating your licenses]({{site.selfhosted}}index.html#activate-the-license).
+> This UUID is required when [activating your licenses]({{site.selfhosted}}index.html#activate-the-license).
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
