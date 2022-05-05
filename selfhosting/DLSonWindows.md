@@ -90,6 +90,6 @@ By default, when you first import a license and create a project, the license st
 
 Then the license string will contain server URL as `https://192.168.8.221`. In our case, this is incorrect and we need to change it to `https://192.168.8.221/dls`. We can click the button "Set Server URL" and change it
 
-![dls-url-001]({{site.assets}}imgs/dls-url-config-002.png)
+![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
 
-![dls-url-001]({{site.assets}}imgs/dls-url-config-003.png)
+![dls-url-003]({{site.assets}}imgs/dls-url-config-003.png)

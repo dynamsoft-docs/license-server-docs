@@ -104,3 +104,17 @@ For maximum up time, a standby DLS is necessary. Assume you have installed two c
   * For the standby DLS: `"servers": ["https://www.yoursite.com:port/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
+
+### Configure Server URLs
+
+In order for the license client to know where to find DLS, the server URLs need to be embedded in the license string.
+
+By default, when you first import a license and create a project, the license string for the project will already contain a server URL which is simply the host of the website. For example, if DLS is being visited like this
+
+![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
+
+Then the license string will contain server URL as `https://192.168.8.221`. In our case, this is incorrect and we need to change it to `https://192.168.8.221/dls`. We can click the button "Set Server URL" and change it
+
+![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
+
+![dls-url-003]({{site.assets}}imgs/dls-url-config-003.png)
