@@ -20,21 +20,12 @@ needAutoGenerateSidebar: true
 
 ## Installation
 
-### Run the installer
+### Run DLS as a service
 
-Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.2.19](https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-win_x64-v2.2.19.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.2.19"**.
+* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.3.5](https://tst.dynamsoft.com/public/download/dls/2.3.5/dynamsoft_dls-win_x64-v2.3.5.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.3.5"**.
 
-There are two ways to get the server running:
+* Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
-#### Run DLS as an application 
-
-This can be done simply by executing the batch file **"startup.bat"**
-
-#### Run DLS as a service
-
-This can be done with the help of the tool [NSSM](https://nssm.cc/). The following steps show how it works.
-
-* Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**
 * Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
 
 ```cmd
@@ -43,21 +34,21 @@ nssm install dynamsoft-dls
 
 * A GUI will open, fill the parameters for the application like this (change the values according to where you put the files)
 
-  + **Path**: `E:\dynamsoft_dls-win_x64-v2.2.19\win\bin\dynamsoftdlsx.exe`
-  + **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.2.19`
-  + **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.2.19.jar" --server.port=48080 --data.port=50201`
+  * **Path**: `E:\dynamsoft_dls-win_x64-v2.3.5\win\bin\dynamsoftdlsx.exe`
+  * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.3.5`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.3.5.jar" --server.port=48080 --data.port=50201`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
-* Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as 
+* Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as
 
-  + **Command**: `E:\dynamsoft_dls-win_x64-v2.2.19\shutdown.bat`
+  * **Command**: `E:\dynamsoft_dls-win_x64-v2.3.5\shutdown.bat`
 
 ![nssm-002]({{site.assets}}imgs/nssm-002.png)
 
 * Press the button "Install Service" and you should be able to find dynamsoft-dls as one of the services in the services GUI or in **Task Manager -> Service**. If it is not started, start it.
 
-### Test the server
+### Test the service
 
 Once the server is running, you can test it via the URL [http://127.0.0.1:48080/page/index.html](http://127.0.0.1:48080/page/index.html).
 
@@ -69,7 +60,7 @@ Upon the first visit, you will be asked to set an admin password. After that, yo
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If the above page shows up, then the server is installed correctly and is ready to process requests. However, the requests may not be able to reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `IIS` . See [Configure Reverse Proxy Using IIS]({{site.selfhosted}}configurereverseproxyusingiis.html) on how to redirect requests sent to "https://www.yoursite.com/dls/\*" to "https://127.0.0.1:48080/\*".
+If the above page shows up, then the server is installed correctly and is ready to process requests. However, the requests may not be able to reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `IIS` . See [Configure Reverse Proxy Using IIS]({{site.selfhosted}}configurereverseproxyusingiis.html) on how to redirect requests sent to `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
 
 ## Configuration
 
@@ -83,8 +74,23 @@ For maximum up time, a standby DLS is necessary. Assume you have installed two c
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
 
-  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
+  * For the main DLS: `"servers": ["self", "https://standby.yoursite.com:port/"]`
 
-  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
+  * For the standby DLS: `"servers": ["https://www.yoursite.com:port/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
+
+### Configure Server URLs
+
+In order for the license client to know where to find DLS, the server URLs need to be embedded in the license string.
+
+By default, when you first import a license and create a project, the license string for the project will already contain a server URL which is simply the host of the website. For example, if DLS is being visited like this
+
+![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
+
+Then the license string will contain server URL as `https://192.168.8.221`. In our case, this is incorrect and we need to change it to `https://192.168.8.221/dls`. We can click the button "Set Server URL" and change it
+
+![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
+
+![dls-url-003]({{site.assets}}imgs/dls-url-config-003.png)
+

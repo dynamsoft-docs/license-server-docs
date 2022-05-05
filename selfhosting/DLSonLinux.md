@@ -38,18 +38,18 @@ mount -a
 ```
 -->
 
-### Download the Dynamsoft License Server v2.2.19 installer, or just copy it over to a proper location
+### Download the Dynamsoft License Server v2.3.5 installer, or just copy it over to a proper location
 
 ``` shell
 cd /a-proper-location
-wget https://tst.dynamsoft.com/public/download/dls/2.2.19/dynamsoft_dls-linux_x64-v2.2.19.tar.gz
+wget https://tst.dynamsoft.com/public/download/dls/2.3.5/dynamsoft_dls-linux_x64-v2.3.5.tar.gz
 ```
 
 ### Unzip and start the Dynamsoft License Server
 
 ``` shell
 # Unzip the installer
-tar zxvf dynamsoft_dls-linux_x64-v2.2.19.tar.gz
+tar zxvf dynamsoft_dls-linux_x64-v2.3.5.tar.gz
 # Set permissions
 chmod -R 777 ./dls-linux
 # Start the server
@@ -99,8 +99,22 @@ For maximum up time, a standby DLS is necessary. Assume you have installed two c
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
 
-  + For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
+  * For the main DLS: `"servers": ["self", "https://standby.yoursite.com:port/"]`
 
-  + For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
+  * For the standby DLS: `"servers": ["https://www.yoursite.com:port/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
+
+### Configure Server URLs
+
+In order for the license client to know where to find DLS, the server URLs need to be embedded in the license string.
+
+By default, when you first import a license and create a project, the license string for the project will already contain a server URL which is simply the host of the website. For example, if DLS is being visited like this
+
+![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
+
+Then the license string will contain server URL as `https://192.168.8.221`. In our case, this is incorrect and we need to change it to `https://192.168.8.221/dls`. We can click the button "Set Server URL" and change it
+
+![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
+
+![dls-url-003]({{site.assets}}imgs/dls-url-config-003.png)
