@@ -14,8 +14,8 @@ needAutoGenerateSidebar: true
 * CPU: 2 Core
 * Memory：2 GB
 * Disk Space
-  + System: 8 GB
-  + Data: 20 GB
+  * System: 8 GB
+  * Data: 20 GB
 * OS：CentOs7.4
 
 ## Installation
@@ -71,7 +71,7 @@ sudo apt install net-tools
 ps -ef |grep dynamsoft
 ```
 
-Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the Dynamsoft License Server. 
+Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48080/page/index.html#/) in the browser, you should be able to see the management portal of the Dynamsoft License Server.
 
 > You can edit startup.sh to change the listening ports.
 
@@ -81,15 +81,15 @@ Upon the first visit, you will be asked to set an admin password. After that, yo
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` .  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for "https://www.yoursite.com/dls/\*" to "https://127.0.0.1:48080/\*".
+If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` .  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
 
 > NOTE for Docker Users
-> 
+>
 > DLS requires persistent storage. Therefore, if `docker stop xxxxxx` was executed on the container, it needs to be restarted with `docker restart xxxxxx`.
 
 ## Configuration
 
-With the above steps, DLS will be listening on requests sent to this URL "https://www.yoursite.com/dls/". We recommend that you set up another DLS on another machine as the standby Server.
+With the above steps, DLS will be listening on requests sent to this URL `https://www.yoursite.com/dls/`. We recommend that you set up another DLS on another machine as the standby Server.
 
 ### Configure a Standby DLS
 

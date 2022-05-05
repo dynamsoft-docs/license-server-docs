@@ -15,8 +15,8 @@ needAutoGenerateSidebar: true
 * Memory: 2G
 * OS: Windows Server 2016
 * Disk Space
-  + System: 30 GB
-  + Data: 20 GB
+  * System: 30 GB
+  * Data: 20 GB
 
 ## Installation
 
