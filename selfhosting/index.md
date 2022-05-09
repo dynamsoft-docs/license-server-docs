@@ -12,6 +12,12 @@ noTitleIndex: true
 
 If your production environment does not allow internet connection, an alternative option is to host the license server program on your internal server machine so all your devices or end users can connect and get licensed via intranet connection.
 
+* [Set Up DLS](#set-up-dls)
+* [Activate the License](#activate-the-license)
+* [Import the License](#import-the-license)
+* [Manage License Keys](#manage-license-keys)
+* [Upgrade DLS](#upgrade-dls)
+
 ## Set Up DLS
 
 The first step in using your own DLS is to install it. Please read one of the following guides
@@ -59,3 +65,7 @@ For Self-Hosted DLS, all usage data is submitted to [DLS]({{site.about}}terms.ht
 
 * [View the license usage statistics]({{site.common}}statistics.html)
 * [Get notified about license status]({{site.common}}usagealerts.html)
+
+## Upgrade DLS
+
+Because a license gets bound to a copy of DLS as soon as it's activated, you must be cautious when upgrading DLS. Dynamsoft recommends that DLS should not be upgraded unless absolutely necessary. An important thing to keep in mind is that the license itself usually needs to be regenerated during a DLS upgrade, so always contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) before you plan a DLS upgrade.
