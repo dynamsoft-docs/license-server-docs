@@ -48,6 +48,10 @@ nssm install dynamsoft-dls
 
 * Press the button "Install Service" and you should be able to find dynamsoft-dls as one of the services in the services GUI or in **Task Manager -> Service**. If it is not started, start it.
 
+> NOTE
+>
+> It usually takes a few seconds for the service to start. Sometimes it might take longer.
+
 ### Test the service
 
 Once the server is running, you can test it via the URL [http://127.0.0.1:48080/page/index.html](http://127.0.0.1:48080/page/index.html).
