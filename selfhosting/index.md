@@ -45,16 +45,16 @@ Once done, an activated License File will be generated and downloaded automatica
 
 This step imports the License File into DLS so that you can configure and use the purchased license(s).
 
-* Click "License Items" on the license menu to go to the **License Items** page
-* Click "Select File" to open the License File you just downloaded and select "Import"
+* Click "Items" to go to the **License Items** page
+* Click "Select File" to open the License File you just downloaded
 
 ![License Items - import]({{site.assets}}imgs/licenseitems-002.png)
 
-After that, you will be asked to either create a new project for this license or add it to an existing project.
+After that, you will be asked to either create a new project for this license or insert it to an existing project
 
 ![License Items - import]({{site.assets}}imgs/licenseitems-003.png)
 
-If you clicked "New Project", you will be asked to provide a name for this project.
+If you clicked "New Project", you will be asked to provide a name for this project
 
 ![License Items - import]({{site.assets}}imgs/licenseitems-004.png)
 
