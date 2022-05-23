@@ -80,7 +80,7 @@ Each client device is only active for a limited period of time, this is determin
 
 > The active time starts from the first time the device is authorized. This behaviour can be changed so that the time starts from the first time the device uses the SDK. Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more information.
 
-When a device is active, its UUID is remembered by DLS and it takes a license seat. At the same time, the device stores a local license which makes sure the device can work onlone or offline as long as it is active. The active time is refreshed each time a device connects to DLS to reauthorize or submit a usage report. If the active device remains idle or offline for longer than its active time, it will stop working. At the same time, DLS will remove its UUID and release the license seat for another new device.
+When a device is active, its UUID is remembered by DLS and it takes a license seat. At the same time, the device stores a local license which makes sure the device can work online or offline as long as it is active. The active time is refreshed each time a device connects to DLS to reauthorize or submit a usage report. If the active device remains idle or offline for longer than its active time, it will stop working. At the same time, DLS will remove its UUID and release the license seat for another new device.
 
 ## Per Concurrent Device
 
