@@ -62,7 +62,7 @@ Upon the first visit, you will be asked to set an admin password. A few things t
 
 > 1. The default password is empty;
 > 2. The user name is admin and it can not be changed;
-> 3. Currently, there isn’t a way to retrieve the password should it get lost. **Therefore, please keep the password secure**.
+> 3. **Currently, there isn’t a way to retrieve the password should it get lost. Therefore, please keep the password secure**.
 
 After that, you will land on the home page where you can find the UUID of this DLS .
 
