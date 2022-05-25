@@ -75,7 +75,13 @@ Now, if you visit [http://127.0.0.1:48080/page/index.html#/](http://127.0.0.1:48
 
 > You can edit startup.sh to change the listening ports.
 
-Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this DLS .
+Upon the first visit, you will be asked to set an admin password. A few things to note:
+
+> 1. The default password is empty;
+> 2. The user name is admin and it can not be changed;
+> 3. Currently, there isn’t a way to retrieve the password should it get lost. **Therefore, please keep the password secure**.
+
+After that, you will land on the home page where you can find the UUID of this DLS .
 
 > This UUID is require when [activating your licenses]({{site.selfhosted}}index.html#activate-the-license).
 

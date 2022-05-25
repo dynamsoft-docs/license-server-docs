@@ -58,7 +58,13 @@ Once the server is running, you can test it via the URL [http://127.0.0.1:48080/
 
 > If you changed the port during installation, you should use that port instead.
 
-Upon the first visit, you will be asked to set an admin password. After that, you will land on the home page where you can find the UUID of this DLS .
+Upon the first visit, you will be asked to set an admin password. A few things to note:
+
+> 1. The default password is empty;
+> 2. The user name is admin and it can not be changed;
+> 3. Currently, there isn’t a way to retrieve the password should it get lost. **Therefore, please keep the password secure**.
+
+After that, you will land on the home page where you can find the UUID of this DLS .
 
 > This UUID is required when [activating your licenses]({{site.selfhosted}}index.html#activate-the-license).
 
