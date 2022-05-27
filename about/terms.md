@@ -11,7 +11,7 @@ needAutoGenerateSidebar: true
 
 ## License 2.0
 
-**License 2.0** is a next-generation license agreement designed and implemented by Dynamsoft for its products, including Dynamsoft Barcode Reader, Dynamic Web TWAIN, and more.
+**License 2.0** is the next generation licensing mechanism designed and implemented by Dynamsoft for its products, including Dynamsoft Barcode Reader, Dynamic Web TWAIN, and more.
 
 The following table shows the major differences between License 1.0 and 2.0:
 
@@ -21,6 +21,10 @@ The following table shows the major differences between License 1.0 and 2.0:
 | Network | Not required | Required |
 | Usage trackable | No | Optional |
 | Hardware binding | Optional | Optional |
+
+## Online License
+
+At Dynamsoft, if a license is **License 2.0** compliant, we call it an **Online License** because it requires a network connection to the Dynamsoft license server. In contrast, an offline license refers to a traditional license that operates independently.
 
 ## Dynamsoft License Server
 
