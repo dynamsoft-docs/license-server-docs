@@ -37,7 +37,6 @@
                         <input id="txtSearch" class="search" type="text">
                     </div>
                     <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
-                        <li><a href="{{ site.common}}errorlist.html" class="otherLinkColour">Error List</a></li>
                     </ul>
                 </div>
             </div>
@@ -78,6 +77,9 @@
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
+
+    
+    <iframe id="sideBarIframe" src="{{site.firstLevelUrl}}/Hide_Tree_Page.html" allow="" height="0" frameborder="0"></iframe>
     <script>
         anchors.add();
     </script>
