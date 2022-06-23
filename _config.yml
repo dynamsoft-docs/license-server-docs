@@ -9,6 +9,7 @@ docRootName: Dynamsoft License Server
 # For example: the full url of dbr doc sit is https://www.dynamsoft.com/barcode-reader/
 # then set docFullPath with https://www.dynamsoft.com/barcode-reader
 
+useVersionTree: true
 # docFullPath: <full url of the published site> (eg - https://www.dynamsoft.com/barcode-reader)
 docFullPath: https://www.dynamsoft.com/license-server/docs
 
