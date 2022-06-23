@@ -17,8 +17,8 @@ needAutoGenerateSidebar: true
 
 Please read one of the following guides
 
-* [On Windows]({{site.selfhosted}}dlsonwindows.html)
-* [On Linux]({{site.selfhosted}}dlsonlinux.html)
+* [On Windows]({{site.selfhosting}}dlsonwindows.html)
+* [On Linux]({{site.selfhosting}}dlsonlinux.html)
 
 ### Configure a Standby DLS
 
@@ -52,7 +52,7 @@ Once logged in, you should be able to see the `UUID` of the DLS on the home page
 
 ### Download the License File
 
-During [license activation]({{site.selfhosted}}index.html#activate-the-license), the License File should have already been downloaded. If you don't have the file yet, you can download it from the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense) by clicking the download icon for that license.
+During [license activation]({{site.selfhosting}}index.html#activate-the-license), the License File should have already been downloaded. If you don't have the file yet, you can download it from the [customer portal](https://officecn.dynamsoft.com:808/customer/license/fullLicense) by clicking the download icon for that license.
 
 ![Full-License-Page-001]({{site.assets}}imgs/full-license-page-001.png)
 
@@ -64,7 +64,7 @@ During [license activation]({{site.selfhosted}}index.html#activate-the-license),
 Once imported
 
 * You will see the license items contained in that License File in the *Activated License Items* table.
-* A Project will be generated for that imported License File which includes all the license items.
+* A Handshake Code will be generated for that imported License File which includes all the license items.
 
 The next step is to [Configure the License](#configure-the-license)
 
@@ -72,7 +72,9 @@ The next step is to [Configure the License](#configure-the-license)
 
 ## Configure the License
 
-To configure the license is to manage the Project for the license. For more details, please see [how to manage the project]({{site.common}}project.html).
+To configure the license is to manage the Handshake Code for the license. For more details, please see [how to manage the handshake code]({{site.common}}handshakeCodes.html).
+
+> Read more on [what is a Handshake Code]({{site.about}}terms.html#handshake-code)
 
 ## Configure usage alerts
 
@@ -80,4 +82,4 @@ When the quota on the license is about to be used up, you may want to be notifie
 
 ## Manage security
 
-DLS manages your licenses, so it's important to restrict access to the management portal. Therefore, make sure to [change the default password]({{site.selfhosted}}security.html#change-the-password) and keep the password secure.
+DLS manages your licenses, so it's important to restrict access to the management portal. Therefore, make sure to [change the default password]({{site.selfhosting}}security.html#change-the-password) and keep the password secure.

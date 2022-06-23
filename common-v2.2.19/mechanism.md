@@ -1,20 +1,20 @@
 ---
 layout: default-layout
-title: How License 2.0 Works
-keywords: license tracking, license client
+title: How trackable licenses work
+keywords: license tracking, mechanism
 description: This page describes how license tracking is done
 breadcrumbText: Mechanism
 needAutoGenerateSidebar: true
 noTitleIndex: true
 ---
 
-# How License 2.0 Works
+# How trackable licenses work
 
 > NOTE:
 > 
 > The following content assumes that you have already activated your license. If you haven't, please first [activate it]({{site.about}}activate.html).
 
-All Dynamsoft SDKs that support [Dynamsoft License 2.0]({{site.about}}terms.html#license-20) have a built-in [DLC]({{site.about}}terms.html#dynamsoft-license-client) for getting authorization at initialization as well as collecting and reporting license usage during runtime. This article is about how to use such a trackable license.
+All Dynamsoft SDKs that support trackable licenses have a built-in mechanism for getting authorization at initialization as well as collecting and reporting license usage during runtime. This article is about how to use such a trackable license.
 
 Currently supported products:
 
@@ -32,7 +32,7 @@ The license system shall work fine in all mainstream browsers. However, if you a
 
 > Read more on [what is DLS]({{site.about}}terms.html#dynamsoft-license-server)
 
-If you are using Dynamsoft-Hosted DLS, you can skip this step. The following code snippets show how to configure connecting to your **self-hosted DLS**.  
+If you are using Dynamsoft-Hosting DLS, you can skip this step. The following code snippets show how to configure connecting to your **self-hosting DLS**.  
 
 * JavaScript
 
