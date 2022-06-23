@@ -51,7 +51,7 @@
                     <div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs">
                         <div id="compatibleInfo">
                             <p>This page is compatible for:</p>
-                            <p class="compatibleCurVersion">Version 7.5</p>
+                            <p class="compatibleCurVersion">Version 2.2.19</p>
                         </div>
                         <div id="feedbackFooter" style="color: #306877;">
                             <p class="fontOswald">Is this page helpful? </p>
@@ -70,7 +70,7 @@
     <div class="history list">
         <div class="container">
             <div class="col-xs-12">
-                {%- include liquid_autoGenerateHistoryList.html -%}
+                {%- include liquid_autoGenerateHistoryList.html -%} {%- include auto-version-list.html -%}
             </div>
         </div>
     </div>
@@ -84,22 +84,13 @@
         anchors.add();
     </script>
 
-    <script>
+    <script type="text/javascript">
         UrlReplace();
     </script>
-    {%- if page.needAutoGenerateSidebar -%} {%- unless page.needGenerateH3Content -%}
-    <script>
-        FullTreeMenuList(true, false);
+
+    <script type="text/javascript">
+        FullTreeMenuList('{{page.needAutoGenerateSidebar}}', '{{page.needGenerateH3Content}}', '{{page.pageStartVer}}', '{{site.useVersionTree}}');
     </script>
-    {%- else -%}
-    <script>
-        FullTreeMenuList(true);
-    </script>
-    {%- endunless -%} {%- else -%}
-    <script>
-        FullTreeMenuList(false);
-    </script>
-    {%- endif -%}
 
     <!-- dbr docs -->
     <script type="text/javascript">
@@ -146,8 +137,6 @@
 
     {%- include livehelp.html -%}
 
-
-
     <!-- Google Tag Manager -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-538F83" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -168,9 +157,6 @@
         })(window, document, 'script', 'dataLayer', 'GTM-538F83');
     </script>
     <!-- End Google Tag Manager -->
-
-
-
 
 </body>
 
