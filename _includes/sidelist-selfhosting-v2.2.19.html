@@ -1,0 +1,22 @@
+<li><a href="{{ site.selfhosted }}index.html" class="otherLinkColour">Self-hosted</a>
+    <ul>
+        {%- if page.url contains '/selfhosting/' -%}
+        <li><a href="{{ site.selfhosted }}DLSonwindows.html" class="otherLinkColour">Install DLS on Windows</a>
+            <ul>
+                <li><a href="{{ site.selfhosted }}configurereverseproxyusingiis.html" class="otherLinkColour">Configure
+                        Reverse Proxy Using IIS</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{{ site.selfhosted }}DLSonlinux.html" class="otherLinkColour">Install DLS on Linux</a>
+            <ul>
+                <li><a href="{{ site.selfhosted }}configurereverseproxyusingnginx.html"
+                        class="otherLinkColour">Configure Reverse Proxy Using Nginx</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{{ site.common }}usagealerts.html" class="otherLinkColour">Usage Alerts</a></li>
+        <li><a href="{{ site.selfhosted }}security.html" class="otherLinkColour">Security</a></li>
+        {%- endif -%}
+    </ul>
+</li>
