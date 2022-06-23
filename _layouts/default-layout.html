@@ -3,10 +3,25 @@
 
 {%- include head.html -%}
 <style>
-#docHead { top: 95px }
-.docContainer, .sideBar { padding-top: 0px; }
-#sideBarCnt.sidebar-fixed { position: fixed; top: 0px; max-height: unset; }
-.rightSideMenu.rsm-fixed { position: fixed; top: 20px; }
+    #docHead {
+        top: 95px
+    }
+    
+    .docContainer,
+    .sideBar {
+        padding-top: 0px;
+    }
+    
+    #sideBarCnt.sidebar-fixed {
+        position: fixed;
+        top: 0px;
+        max-height: unset;
+    }
+    
+    .rightSideMenu.rsm-fixed {
+        position: fixed;
+        top: 20px;
+    }
 </style>
 
 <body class="noSubMenuDoc">
@@ -22,9 +37,6 @@
                         <input id="txtSearch" class="search" type="text">
                     </div>
                     <ul class="mainPage" id="fullTreeMenuListContainer" name="listLevel1">
-                        {%- include sidelist-about/index.html -%}
-                        {%- include sidelist-selfhosting/index.html -%}
-                        {%- include sidelist-managedls/index.html -%}
                         <li><a href="{{ site.common}}errorlist.html" class="otherLinkColour">Error List</a></li>
                     </ul>
                 </div>
@@ -34,8 +46,7 @@
                     {%- include main-page-head.html -%}
                 </div>
                 <div class="main row">
-                    <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10"
-                        style="margin-bottom: 20px;">
+                    <div class="content markdown-body headCounter col-xs-12 col-md-12 col-lg-9 col-xl-10" style="margin-bottom: 20px;">
                         {{ content }}
                     </div>
                     <div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs">
@@ -45,15 +56,10 @@
                         </div>
                         <div id="feedbackFooter" style="color: #306877;">
                             <p class="fontOswald">Is this page helpful? </p>
-                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink"
-                                onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}"
-                                    alt="Yes" />Yes</a>
-                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink"
-                                onclick="UsefulRecord(false)"><img class="icon-sad" src="{{ site.sad_icon }}"
-                                    alt="No" />No</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="{{ site.smile_icon }}" alt="Yes" />Yes</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecord(false)"><img class="icon-sad" src="{{ site.sad_icon }}" alt="No" />No</a>
                         </div>
-                        <hr />
-                        {%- if page.needAutoGenerateSidebar -%}
+                        <hr /> {%- if page.needAutoGenerateSidebar -%}
                         <p class="fontOswald" style="color: #306877;"> In this article: </p>
                         <div id="AutoGenerateSidebar"></div>
                         {%- endif -%}
@@ -72,13 +78,14 @@
     <div id="footerWrapper">
         {%- include page_footer.html -%}
     </div>
-    <script>anchors.add();</script>
+    <script>
+        anchors.add();
+    </script>
 
     <script>
         UrlReplace();
     </script>
-    {%- if page.needAutoGenerateSidebar -%}
-    {%- unless page.needGenerateH3Content -%}
+    {%- if page.needAutoGenerateSidebar -%} {%- unless page.needGenerateH3Content -%}
     <script>
         FullTreeMenuList(true, false);
     </script>
@@ -86,8 +93,7 @@
     <script>
         FullTreeMenuList(true);
     </script>
-    {%- endunless -%}
-    {%- else -%}
+    {%- endunless -%} {%- else -%}
     <script>
         FullTreeMenuList(false);
     </script>
@@ -95,15 +101,15 @@
 
     <!-- dbr docs -->
     <script type="text/javascript">
-        $('#txtSearch').keydown(function (e) {
+        $('#txtSearch').keydown(function(e) {
             if (e.keyCode == 13) {
                 window.location.href = '/license-server/docs/search.html?q=' + $('#txtSearch').val()
             }
         })
 
-        $(document).ready(function(){ 
+        $(document).ready(function() {
             var sd = $(window).scrollTop()
-            if(sd > 0) {
+            if (sd > 0) {
                 realFunc2();
             }
 
@@ -119,12 +125,18 @@
                     var sd = $(window).scrollTop();
                     if (sd >= $('#overall-header').height()) {
                         // head and sidebar fixed
-                        $('#docHead').css({'top': '0px'});
+                        $('#docHead').css({
+                            'top': '0px'
+                        });
                     } else {
-                        $('#docHead').css({'top': (menuHeight - sd + 1) + 'px'});
+                        $('#docHead').css({
+                            'top': (menuHeight - sd + 1) + 'px'
+                        });
                     }
                 } else {
-                    $('#docHead').css({'top': 'unset'});
+                    $('#docHead').css({
+                        'top': 'unset'
+                    });
                 }
             }
         })
@@ -137,19 +149,27 @@
     <!-- Google Tag Manager -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-538F83" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-538F83');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-538F83');
+    </script>
     <!-- End Google Tag Manager -->
 
 
 
-   
+
 </body>
 
 </html>
