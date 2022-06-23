@@ -31,7 +31,7 @@ jobs:
           [ ! -d license-server-docs ] && git clone --depth 1 https://github.com/Dynamsoft/license-server-docs.git
           cd license-server-docs && git pull && cd .. && cp -rfp ./license-server-docs/* ./DLSDoc/
           cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DLSDoc/
-          cd DLSDoc && bundle exec jekyll build --incremental
+          cd DLSDoc && bundle exec jekyll build
           python3 /home/ubuntu/ftp.py /home/ubuntu/DLSDoc/_site/ ./www.dynamsoft.com/license-server/docs/ prod
 
           
