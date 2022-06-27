@@ -368,69 +368,71 @@ With hard binding, the UUID is not saved because the same information can be gat
 
 A: No. Check out [Client UUID](#client-uuid) for more information.
 
-#### Q: How to switch from Soft Binding to Hard Binding and vice versa?
+#### Q: How to switch to Hard Binding?
 
-A: There is an API `UUIDGenerationMethod` for making the switch. Since [Soft Binding](#soft-binding) is used by default, the following showcases how to switch to [Hard Binding](#hard-binding).
+A: To switch to Hard Binding, you need to configure your project to specify that it will use Hard Binding which will be reflected in a changed License Key. Replace the old key with the updated key to finish the switching.
 
-* C
-
-```c
-char errorBuf[512];
-DMDLSConnectionParameters paramters;
-DBR_InitDLSConnectionParameters(&paramters);
-paramters.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-paramters.handshakeCode = "handshakeCode"; // Please replace the handshakeCode with your own
-DBR_InitLicenseFromDLS(&paramters, errorBuf, 512);
-```
-
-* C++
-
-```cpp
-int iRet = -1;
-char szErrorMsg[256];
-DM_DLSConnectionParameters dlspar;    
-CBarcodeReader::InitDLSConnectionParameters(&dlspar);
-dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
-dlspar.handshakeCode = "Your-HandshakeCode"; // Please replace the handshakeCode with your own
-iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
-if (iRet != DBR_OK)
-{
-    printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
-    return -1;
-}
-```
-
-* C#
-
-```csharp
-DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters(); 
-dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
-dlspar.HandshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
-```
-
-* Java
-
-```java
-DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
-dlspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
-dlspar.handshakeCode = "200***001-1000*****"; // Please replace the handshakeCode with your own
-dlspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; // Please replace the deploymentType with your own
-BarcodeReader.initLicenseFromDLS(dlspar);
-```
-
-* Python
-
-```python
-reader = BarcodeReader()
- connection_paras = reader.init_dls_connection_parameters()
- # Please replace the handshakeCode with your own
- connection_paras.handshake_code = "Your-HandshakeCode"
- connection_paras.uuid_generation_method = EnumDMUUIDGenerationMethod.DM_UUIDGM_HARDWARE
- try:
-     error = reader.init_licesne_from_dls(connection_paras)
-     if error[0] != EnumErrorCode.DBR_OK:
-         print(error[1])
- except BarcodeReaderError as bre:
-     print(bre)
-```
+> NOTE: Previously, for Dynamsoft Barcode Reader, there was an API `UUIDGenerationMethod` for making the switch. The following code snippets show how to switch to [Hard Binding](#hard-binding).
+>
+> * Python
+>
+> ```python
+>  reader = BarcodeReader()
+>  connection_paras = reader.init_dls_connection_parameters()
+>  # Please replace the handshakeCode with your own
+>  connection_paras.handshake_code = "Your-HandshakeCode"
+>  connection_paras.uuid_generation_method = EnumDMUUIDGenerationMethod.DM_UUIDGM_HARDWARE
+>  try:
+>      error = reader.init_licesne_from_dls(connection_paras)
+>      if error[0] != EnumErrorCode.DBR_OK:
+>          print(error[1])
+>  except BarcodeReaderError as bre:
+>      print(bre)
+> ```
+>
+> * C#
+>
+> ```csharp
+> DMDLSConnectionParameters dlspar = BarcodeReader.InitDLSConnectionParamters(); 
+> dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;          
+> dlspar.HandshakeCode = "200***001-1000*****"; > Please replace the handshakeCode with your own
+> EnumErrorCode iRet = BarcodeReader.InitLicenseFromDLS(dlspar, out strErrorMSG);
+> ```
+>
+> * Java
+>
+> ```java
+> DMDLSConnectionParameters dlspar = BarcodeReader.initDLSConnectionParameters();
+> dlspar.uuidGenerationMethod = DM_UUIDGM_HARDWARE;
+> dlspar.handshakeCode = "200***001-1000*****"; > Please replace the handshakeCode with your own
+> dlspar.deploymentType = EnumDMDeploymentType.DM_DT_DESKTOP; > Please replace the deploymentType with your own
+> BarcodeReader.initLicenseFromDLS(dlspar);
+> ```
+>
+> * C++
+>
+> ```cpp
+> int iRet = -1;
+> char szErrorMsg[256];
+> DM_DLSConnectionParameters dlspar;    
+> CBarcodeReader::InitDLSConnectionParameters(&dlspar);
+> dlspar.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+> dlspar.handshakeCode = "Your-HandshakeCode"; > Please replace the handshakeCode with your own
+> iRet = CBarcodeReader::InitLicenseFromDLS(&dlspar, szErrorMsg, 256);
+> if (iRet != DBR_OK)
+> {
+>     printf("Error code: %d. Error message: %s\n", iRet, szErrorMsg);
+>     return -1;
+> }
+> ```
+>
+> * C
+>
+> ```c
+> char errorBuf[512];
+> DMDLSConnectionParameters paramters;
+> DBR_InitDLSConnectionParameters(&paramters);
+> paramters.UUIDGenerationMethod = DM_UUIDGM_HARDWARE;
+> paramters.handshakeCode = "handshakeCode"; // Please replace the handshakeCode with your own
+> DBR_InitLicenseFromDLS(&paramters, errorBuf, 512);
+> ```
