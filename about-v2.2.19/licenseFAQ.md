@@ -178,7 +178,7 @@ Read more on [The relationship between organizationID and handshakeCode](#what-i
 
 > NOTE: 
 >  
-> To protect your licenses, you can specify a session password. This password corresponds to the handshake code specified by the above API `handshakeCode` or the default one if only the `organizationID` is specified. Read more about [How can I protect my license?]({{site.about}}licensefaq.html?ver=latest#how-can-i-protect-my-license).
+> To protect your licenses, you can specify a session password. This password corresponds to the handshake code specified by the above API `handshakeCode` or the default one if only the `organizationID` is specified. Read more about [How can I protect my license?]({{site.about}}licensefaq.html?ver=2.2.19#how-can-i-protect-my-license).
 
 ## What is the relationship between organizationID and handshakeCode?
 
