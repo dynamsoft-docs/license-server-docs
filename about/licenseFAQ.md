@@ -158,9 +158,9 @@ Table of Contents
 
 An online license is a license that a client needs to acquire from Dynamsoft License Server (DLS) at runtime. On the contrary, an offline license is one that the client can use on its own. In other words, the license key for an online license contains only information on how to connect to DLS to acquire the actual license content while an offline license is the license content itself.
 
-## Does online licenses disclose any private information?
+## Does online license disclose any private information?
 
-No, online licenses does not disclose any private information.
+No, online license does not disclose any private information.
 
 * About the license usage
 
