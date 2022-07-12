@@ -22,7 +22,7 @@ needAutoGenerateSidebar: true
 
 ### Run DLS as a service
 
-* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.3.5](https://tst.dynamsoft.com/public/download/dls/2.3.5/dynamsoft_dls-win_x64-v2.3.5.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.3.5"**.
+* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.4.1](https://tst.dynamsoft.com/public/download/dls/2.4.1/dynamsoft_dls-win_x64-v2.4.1.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.1"**.
 
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
@@ -34,15 +34,15 @@ nssm install dynamsoft-dls
 
 * A GUI will open, fill the parameters for the application like this (change the values according to where you put the files)
 
-  * **Path**: `E:\dynamsoft_dls-win_x64-v2.3.5\win\bin\dynamsoftdlsx.exe`
-  * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.3.5`
-  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.3.5.jar" --server.port=48080 --data.port=50201`
+  * **Path**: `E:\dynamsoft_dls-win_x64-v2.4.1\win\bin\dynamsoftdlsx.exe`
+  * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.4.1`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.1.jar" --server.port=48080 --data.port=50201`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
 * Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as
 
-  * **Command**: `E:\dynamsoft_dls-win_x64-v2.3.5\shutdown.bat`
+  * **Command**: `E:\dynamsoft_dls-win_x64-v2.4.1\shutdown.bat`
 
 ![nssm-002]({{site.assets}}imgs/nssm-002.png)
 
