@@ -114,11 +114,11 @@ In the Project Details page, the Validation Field can be configured in "Optional
 
 ### Session Password
 
-**Session Password** is another way to protect the the license items configured to a project. Unlike the Validation Field that validates static application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
+**Session Password**, also called "Credential Secret", is another way to protect the the license items configured to a project. Unlike the Validation Field that validates static application characteristics, the Session Password is a simpler, more flexible string used to authenticate the connection to the DLS itself.
 
-In the Project Details page, the Session Password can be configured in "Optional Security Settings".
+In the Project Details page, the Session Password (Credential Secret) can be configured in "Optional Security Settings".
 
-> When you change the Session Password, the License Key will be updated to reflect the change.
+> When you change the Session Password (Credential Secret), the License Key will be updated to reflect the change. Remember to update the license key you use in your application.
 
 ## Trial License
 

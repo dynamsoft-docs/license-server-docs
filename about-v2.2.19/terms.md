@@ -93,7 +93,7 @@ A Validation Field is a static characteristic of your application, i.e., Once se
 
 ## Session Password
 
-The Session Password is another way to protect your license. Unlike the Validation Field, which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you can set in your application. 
+The Session Password (also called "Credential Secret") is another way to protect your license. Unlike the Validation Field, which is essentially validating a characteristic of your application, the Session Password is a simpler and more flexible string that you can set in your application.
 
 To verify the password, all products have a similar API. For example:
 
