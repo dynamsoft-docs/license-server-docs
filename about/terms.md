@@ -22,6 +22,18 @@ The following table shows the major differences between License 1.0 and 2.0:
 | Usage trackable | No | Optional |
 | Hardware binding | Optional | Optional |
 
+## Deployment Type
+
+The Deployment Type means how and where the application with Dynamsoft's SDK is used. For example, the type "mobile" means the application runs in native mobile devices such as iOS or Android; while the type "browser" means the application runs in browsers on any operating system. At present, the types include:
+
+| Deployment Type | Application Type |
+|:-:|:-:|
+| Browser | A web application running in browsers |
+| Mobile | A native application running on iOS or Android |
+| Server (Workstation) | An application running on Windows or Linux that processes requests from other client devices |
+| Desktop | An application running on Windows, Linux or macOS that handles requests on this specific device. |
+| Embedded | An application running on ARM-based Linux that handles requests on this specific device. |
+
 ## Online License
 
 At Dynamsoft, if a license is **License 2.0** compliant, we call it an **Online License** because it requires a network connection to the Dynamsoft license server. In contrast, an offline license refers to a traditional license that operates independently.
@@ -136,3 +148,56 @@ Dynamsoft is gradually rolling out this license in the products. If you are havi
 
 After registering with Dynamsoft, you can log in and request the private trial license in the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense).
 
+## Client UUID
+
+Each client machine (a device) is also identified by its UUID which is generated the first time a client machine gets authorized to use a license. All usage reports generated on this client will include this UUID.
+
+The following table shows the differences between DLS UUID and Client UUID:
+
+| | DLS UUID | Client UUID |
+|:-:|:-:|:-:|
+| Bound to the License | Yes | No |
+| Bound to usage reports | No | Yes |
+| Hardware binding | Required | Optional |
+
+For each device, a Client UUID is generated which is used to uniquely identify the device. In other words, we use UUIDs to count the number of devices supported by a license.
+
+### Generate a UUID
+
+Different product editions use different mechanisms to generate UUIDs.
+
+* JavaScript Edition: The UUID is a random string generated when the SDK is first used. The UUID is cached in the browser's indexedDB which represents a specific browser on a certain domain.
+
+  > NOTE:
+  >
+  > * Multiple browsers on the same device are counted as multiple devices since there will be a UUID generated for each browser.
+  > * The same browsers accessing multiple websites with different domains is counted separately per domain.
+
+* Mobile Edition:
+  * on iOS: The UUID is a random string stored in the keychain associated with the developer's vendor ID (IDFV) and the application ID.
+  * on Android: The UUID is a combination of a random string and information about the OS which is either the Android SERIAL number (before Android v8.0) or ANDROID_ID (Android v8.0+). The UUID is saved as part of the application data.
+
+* Other Editions: The UUID is a combination of a random string and information about the device including one or more of the following: CPU ID, OS ID and MAC Addresses. The UUID is saved on the machine in a system directory.
+
+All these mechanisms have one thing in common: the UUIDs all contain random information and will be different each time they are regenerated, even if they are generated on/in the same device/browser. In order to maintain the consistency of the information to avoid overcounting the same device/browser, the generated UUID is saved for later retrieval.
+
+In some cases, we may want to make sure a UUID stays unchanged no matter when it is generated. For this purpose, we have an alternative way to generate UUIDs for desktop, embedded or server environments called "Hard Binding".
+
+#### Hard Binding
+
+When using Hard Binding, a UUID is directly generated with information about the device:
+
+* If the device uses an ARM processor, it's based on the OS ID and the MAC Addresses;
+* In other cases, it's based on the OS ID and the CPU ID.
+
+With hard binding, the UUID is not saved because the same information can be gathered to regenerate the exact same UUID. However, if you do replace the CPU (or network adapter) or reinstall the operating system, the device will be considered new.
+
+> Note
+>
+> * When generating the UUID, part of the gathered device information is ignored in the encryption. Therefore the actual device information is never shared with DLS.
+
+### Questions
+
+#### Q: Does the UUID give away information about my device?
+
+A: No. Check out [Client UUID](#client-uuid) for more information.

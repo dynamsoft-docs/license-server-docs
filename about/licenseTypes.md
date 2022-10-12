@@ -12,12 +12,16 @@ noTitleIndex: true
 
 The following shows the regular license options supported by Dynamsoft License Server (DLS).
 
-- [Per Barcode Scan](#per-barcode-scan)
-- [Per Page](#per-page)
-- [Per Client Device](#per-client-device)
-- [Per Concurrent Device](#per-concurrent-device)
-- [Per Server](#per-server)
-- [Per Domain](#per-domain)
+- [Dynamsoft License Options](#dynamsoft-license-options)
+  - [Per Barcode Scan](#per-barcode-scan)
+  - [Per Page](#per-page)
+  - [Per Client Device](#per-client-device)
+  - [Per Concurrent Device](#per-concurrent-device)
+  - [Per Server](#per-server)
+  - [Per Domain](#per-domain)
+  - [Per Instance](#per-instance)
+    - [How the license restricts usage](#how-the-license-restricts-usage)
+    - [How does the license handle multiple servers](#how-does-the-license-handle-multiple-servers)
 
 > If these license options don't work for your application, you can contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) to learn about other available options.
 
@@ -27,17 +31,17 @@ The following shows the regular license options supported by Dynamsoft License S
 
 This license option limits the total number of unique & successful barcode scans that the SDK can perform.
 
-To filter unneeded barcodes and reduce license consumption, you can configure your barcode scanning settings in a few ways. For example, you can specify the expected barcode formats, limit the scanning to predefined regions or return only high-confidence results. To learn more, see [How to filter and sort decoding results](https://www.dynamsoft.com/barcode-reader/parameters/scenario-settings/decode-result.html).
+To filter unneeded barcodes and reduce license consumption, you can configure your barcode scanning settings in a few ways. For example, you can specify the expected barcode formats, limit the scanning to predefined regions of the images or return only high-confidence results. To learn more, see [How to filter and sort decoding results](https://www.dynamsoft.com/barcode-reader/docs/core/programming/features/filter-and-sort.html?ver=latest).
 
 NOTE: For the **Mobile** and **JavaScript** editions which usually scan consecutive image frames from a video input, there is a built-in deduplication logic which significantly lowers the number of scans, for example:
 
-| Examples	| Count of barcode scans |
+| Examples| Count of barcode scans |
 |:-:|:-:|
 | 2 identical barcodes on the same image frame | 1 |
 | 2 different barcodes on the same image frame | 2 |
 | Multiple identical barcodes on consecutive image frames | 1 |
 
-The deduplication is based on a preset interval which is 3 seconds by default. For the JavaScript edition, the interval can be set with the API [duplicateForgetTime](https://www.dynamsoft.com/barcode-reader/programming/javascript/api-reference/interface/ScanSettings.html?ver=latest).
+The deduplication is based on a preset interval which is 3 seconds by default. For the JavaScript edition, the interval can be set with the API [duplicateForgetTime](https://www.dynamsoft.com/barcode-reader/docs/web/programming/javascript/api-reference/interface/ScanSettings.html).
 
 ## Per Page
 
@@ -86,7 +90,9 @@ When a device is active, its UUID is remembered by DLS and it takes a license se
 
 *Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/), [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/)*
 
-This license option limits the maximum number of active client devices in a given 3-minute period.
+The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server devide each day into 480 such time slices.
+
+This license option limits the maximum number of active client devices in a given time slice.
 
 > The definition of a client device in different application types is the same as [Per Client Device](#per-client-device)
 
@@ -115,3 +121,35 @@ A per domain license allows unlimited usage of the SDK within one web applicatio
 For websites that use public domain names of multi-tenant cloud platforms (e.g. `force.com`), the domain license would be limited to a unique subdomain such as `dynamsoft.force.com`.
 
 Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you are interested in this license option.
+
+## Per Instance
+
+*Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux Server Edition)*
+
+> At present, this option is limited to the "Server" [Deployment Type]({{site.about}}terms.html#deployment-type) only.
+
+The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server devide each day into 480 such time slices.
+
+An instance refers to a barcode reader object running in a thread. This license option limits the maximum number of barcode reader instance in a given time slice.
+
+Basic steps to use a per-instance license in your application:
+
+- Step 1: identify how many instances might be needed on the device (server), then request the license seats from the license server;
+  > Note that these license seats are shared by all barcode-reading applications on the device.
+- Step 2: Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance;
+  > In version 9.6.x (not yet released), Dynamsoft Barcode Reader will maintain an intermal thread pool so that you no longer need to monitor the idle seats anymore. Instead, you can initiate as many jobs as possible but expect different performance when the count of seats differs.
+- Step 3: Destroy an instance when it finishes its job to release the license seat on the device.
+
+### How the license restricts usage
+
+Each per-instance license has a fixed quota N, when requesting license seats, you can ask for no more than N instances. These license seats are only considered "in use" when Dynamsoft Barcode Reader is used for barcode reading during a specific time slice. Such a time slice is called an active time slice.
+
+### How does the license handle multiple servers
+
+When running your application on a server farm or a scalable cloud service, each server machine makes its own license request. These individual license requests will all be granted which means all these servers can have their own independent license seats (up to N seats on each machine). This way, one server doesn't need to wait for other servers to release the license seats before getting its own.
+
+Since multiple servers can get license seats at the same time, they can also run Dynamsoft Barcode Reader at the same time. Therefore, in a given time slice, more instances may be running than permitted by the licensing quota. Dynamsoft License Server handles this overusage through its built-in tolerance design, which allows 1000 x N additional active time slices for N instance licenses.
+
+For example, let's say you purchased a license for 10 instances and ran your application on a server farm. During peak business hours, suppose there are 10 servers reading barcodes, each with 10 barcode reader instance seats. Then for each time slice, the recorded usage will be 100, with 90 considered extra and deducted from the total of 1000 x 10 = 10,000. When this carries on for a total of 112 time slices (5 hours 36 minutes), you will use up all the extra time slices (90 x 112 = 10080 > 10,000). When this happens, the Dynamsoft license server will flag the license as overused, and from that point on, only 10 license seats are allowed on all servers (if a server asks for 10 seats, the other servers cannot ask for any seats).
+
+For more details on this licensing option, please [contact Dynamsoft Team](mailto:sales@dynamsoft.com).
