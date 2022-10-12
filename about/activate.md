@@ -55,7 +55,7 @@ After the activation, you will be redirected to the "License Details" page where
 
 ## Manage License Keys
 
-To manage a license key is to configure the project bound to this license key. For more details, please see [Project Configurartion]({{site.common}}project.html).
+To manage a license key is to configure the project bound to this license key. For more details, please see [Project Configuration]({{site.common}}project.html).
 
 ## Check License Usage
 
