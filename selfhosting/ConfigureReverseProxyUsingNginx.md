@@ -56,11 +56,13 @@ Open "http://localhost" in a browser. If `nginx` was installed and started succe
 
 The file could either be `/etc/nginx/conf.d/default.conf` or `/etc/nginx/sites-enabled/default` .
 
+<!--
 ### Add your server name
 
 ``` shell
 server_name www.yoursite.com;
 ```
+-->
 
 ### Add reverse proxy
 
@@ -76,7 +78,9 @@ location /dls/ {
 sudo systemctl restart nginx
 ```
 
-At this point, you can access the server with the URL `http://www.yoursite.com/dls/page/index.html#/`.
+At this point, you can access the server with the URL `http://localhost/dls/page/index.html#/` or `http://<IP or www.yoursite.com>/dls/page/index.html#/`.
+
+<!--At this point, you can access the server with the URL `http://www.yoursite.com/dls/page/index.html#/`.-->
 
 ## Configure SSL
 
@@ -115,7 +119,7 @@ sudo apt-get install ssl-cert
 sudo make-ssl-cert generage-default-snakeoil
 ```
 
-Your client needs to be configured to trust that self-signed certificate. For example, if you are running a web application, you can open the page `https://www.yoursite.com/dls/page/index.html#/` in the browser and do the following
+Your client needs to be configured to trust that self-signed certificate. For example, if you are running a web application, you can open the page `https://<IP or www.yoursite.com>/dls/page/index.html#/` in the browser and do the following
 
 * Page shows warning about the self-signed certificate
 * Click `Advanced`
@@ -130,7 +134,3 @@ Then this self-signed certificate will be trusted temporarily for some time.
 You can get a trusted certificate from many suppliers.
 
 e.g. You can get a free one from [certbot](https://certbot.eff.org/).
-
-### Check the https page
-
-After you have configured a secure port, you can then access the server by `https://www.yoursite.com/dls/page/index.html#/`.

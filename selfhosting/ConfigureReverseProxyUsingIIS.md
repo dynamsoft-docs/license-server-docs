@@ -19,6 +19,18 @@ Skip this step if you already have IIS installed.
 
 Download and install IIS URL Rewrite from [here](https://www.iis.net/downloads/microsoft/url-rewrite).
 
+## Install Application Request Routing
+
+Download and install Microsoft Application Request Routing [here](https://www.microsoft.com/en-us/download/confirmation.aspx?id=47333).
+
+## Configure the proxy
+
+![DLS-on-Windows-023]({{site.assets}}imgs/dlsonwin-023.png)
+
+![DLS-on-Windows-024]({{site.assets}}imgs/dlsonwin-024.png)
+
+![DLS-on-Windows-025]({{site.assets}}imgs/dlsonwin-025.png)
+
 ## Configure URL Rewrite rules
 
 ![DLS-on-Windows-017]({{site.assets}}imgs/dlsonwin-017.png)
@@ -36,18 +48,6 @@ Rewrite URL：http://localhost:48080/{R:1}
 ```
 
 ![DLS-on-Windows-020]({{site.assets}}imgs/dlsonwin-020.png)
-
-## Install Application Request Routing
-
-Download and install Microsoft Application Request Routing [here](https://www.microsoft.com/en-us/download/confirmation.aspx?id=47333).
-
-## Configure the proxy
-
-![DLS-on-Windows-023]({{site.assets}}imgs/dlsonwin-023.png)
-
-![DLS-on-Windows-024]({{site.assets}}imgs/dlsonwin-024.png)
-
-![DLS-on-Windows-025]({{site.assets}}imgs/dlsonwin-025.png)
 
 ## Test that the configuration works
 
