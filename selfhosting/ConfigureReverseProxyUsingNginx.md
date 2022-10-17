@@ -9,7 +9,7 @@ needAutoGenerateSidebar: true
 
 # Configure Reverse Proxy Using Nginx
 
-The following is an example on how to set up a reverse proxy using `nginx` for DLS for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
+The following is an example on how to set up a reverse proxy using `nginx` for DLS for your reference. You can do the configuration yourself as long as you can achieve the requirement which is to redirect requests sent to `https://www.yoursite.com/dls/*` to `http://127.0.0.1:48080/*`.
 
 ## Install nginx
 
