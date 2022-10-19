@@ -59,4 +59,4 @@ Open `http://www.yoursite.com/dls/page/index.html` and if you see the following 
 
 Prepare a SSL certificate for your site (e.g. `https://www.yoursite.com`) and configure it properly. After that, you should be able to access the server by `https://www.yoursite.com/dls/page/index.html#/`.
 
-> If you use a JavaScript-based SDK, such as Dynamic Web TWAIN or Dynamsoft Barcode Reader JavaScript Edition, you must configure the self-hosted DLS to run over a secure connection (HTTPS).
+> If you use a JavaScript-based SDK, such as Dynamic Web TWAIN WebAssembly Edition or Dynamsoft Barcode Reader JavaScript Edition, you must configure the self-hosted DLS to run over a secure connection (HTTPS).
