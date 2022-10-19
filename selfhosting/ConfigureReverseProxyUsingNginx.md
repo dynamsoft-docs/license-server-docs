@@ -134,3 +134,5 @@ Then this self-signed certificate will be trusted temporarily for some time.
 You can get a trusted certificate from many suppliers.
 
 e.g. You can get a free one from [certbot](https://certbot.eff.org/).
+
+> If you use a JavaScript-based SDK, such as Dynamic Web TWAIN or Dynamsoft Barcode Reader JavaScript Edition, you must configure the self-hosted DLS to run over a secure connection (HTTPS).
