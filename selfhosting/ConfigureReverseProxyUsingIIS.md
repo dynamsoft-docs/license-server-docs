@@ -42,9 +42,9 @@ Download and install Microsoft Application Request Routing [here](https://www.mi
 Let's configure the following rule for the server
 
 ``` text
-Name：DLS-rewrite-rule
-Pattern： ^dls/(.*)$
-Rewrite URL：http://localhost:48080/{R:1}
+Name:DLS-rewrite-rule
+Pattern: ^dls/(.*)$
+Rewrite URL:http://localhost:48080/{R:1}
 ```
 
 ![DLS-on-Windows-020]({{site.assets}}imgs/dlsonwin-020.png)

@@ -64,7 +64,7 @@ Client devices never connect to any network. In this case, you may require a spe
     "name": "Can I unregister inactive devices?", 
     "acceptedAnswer": {
       "@type": "Answer", 
-      "text": "As mentioned in Per Device license, Dynamsoft keeps a list of UUIDs which identify the active devices. By default, only if a device hasn’t been used for over 365 days will its UUID be removed from the list. This is done automatically."
+      "text": "As mentioned in Per Device license, Dynamsoft keeps a list of UUIDs which identify the active devices. By default, only if a device hasn't been used for over 365 days will its UUID be removed from the list. This is done automatically."
 
     }
 
@@ -174,7 +174,7 @@ Apart from the license usage and the UUID, DLS collects nothing else. In other w
 
 A few things to note
 
-* DLS can either be the official one provided by Dynamsoft or one that’s hosted by yourself.
+* DLS can either be the official one provided by Dynamsoft or one that's hosted by yourself.
 * If you don't want to share any information with Dynamsoft, you can contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) to get an offline license.
 
 ## How secure is Dynamsoft License Server?

@@ -12,11 +12,11 @@ needAutoGenerateSidebar: true
 ## Example Environment
 
 * CPU: 2 Core
-* Memory：2 GB
+* Memory:2 GB
 * Disk Space
   + System: 8 GB
   + Data: 20 GB
-* OS：CentOs7.4
+* OS:CentOs7.4
 
 ## Installation
 
