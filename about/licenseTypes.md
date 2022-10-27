@@ -102,7 +102,7 @@ For this license option, unlimited devices can be authorized and only after they
 
 ## Per Server
 
-*Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/) (Windows/Linux edition)*
+*Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition), [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/) (Windows/Linux edition)*
 
 > For [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/), an offline "Per Server" license option is available but it uses a different licensing mechanism. Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more information.
 
