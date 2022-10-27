@@ -104,6 +104,8 @@ For this license option, unlimited devices can be authorized and only after they
 
 *Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux edition) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/) (Windows/Linux edition)*
 
+> For [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/), an offline "Per Server" license option is available but it uses a different licensing mechanism. Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) for more information.
+
 This license option limits the total number of active servers.
 
 An active server is a device or computer that has the SDK loaded into its RAM to perform operations like reading barcodes or recognizing text, etc.
