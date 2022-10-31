@@ -260,7 +260,7 @@ Yes. There are two scenarios in this case
 
 * All client devices can connect to a local network within the organization.
 
-  In this case, you can simply host your own DLS for license tracking. Please see [Self-hosting License Tracking]({{site.selfhosting}}index.html).
+  In this case, you can simply host your own DLS for license tracking. Please see [Self-hosting License Tracking](https://www.dynamsoft.com/license-server/docs/selfhosting/index.html?ver=latest).
 
 * Client devices never connect to any network.
 
