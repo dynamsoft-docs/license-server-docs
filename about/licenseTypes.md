@@ -66,7 +66,7 @@ This license option limits the total number of active client devices.
 
 For different applications, the definition of a client device is as follows:
 
-| Aplication Type | Client Definition |
+| Application Type | Client Definition |
 |:-:|:-:|
 | Web | A specific browser from one origin (i.e., same protocol, port and hostname) <a href="https://developer.mozilla.org/en-US/docs/Glossary/Origin" target="_blank">Learn more about origin</a> |
 | Mobile | A mobile device running iOS or Android |
