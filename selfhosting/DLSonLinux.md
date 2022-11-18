@@ -51,7 +51,7 @@ wget https://tst.dynamsoft.com/public/download/dls/2.4.1/dynamsoft_dls-linux_x64
 # Unzip the installer
 tar zxvf dynamsoft_dls-linux_x64-v2.4.1.tar.gz
 # Set permissions
-chmod -R 777 ./dls-linux
+chmod -R 755 ./dls-linux
 # Start the server
 cd ./dls-linux
 ./startup.sh
@@ -87,7 +87,11 @@ After that, you will land on the home page where you can find the UUID of this D
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` .  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
+If you see the above page, DLS is installed correctly and is ready to process requests. In order to better integrate with your original service, and make the service more secure on the Internet. The next step is to configure the network environment - reverse proxy - for it with the help of `nginx`.  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/` to `https://127.0.0.1:48080/`.
+
+> NOTE proxy and https are optional, except those products who need https to run normally (like Dynamsoft BarcodeReader Javascript Edition).
+>
+> If you not config them please use `http://ip:port/` in the following steps.
 
 > NOTE for Docker Users
 >
@@ -101,13 +105,13 @@ With the above steps, DLS will be listening on requests sent to this URL `https:
 
 For maximum up time, a standby DLS is necessary. Assume you have installed two copies of DLS, the following are the steps to configure them
 
-* Find the file `dls.json.sample` in the DLS directory, rename it to `dls.json`
+* Find the file `dls.json.sample` in the DLS directory, copy and rename it to `dls.json`
 
 * In the configuration, there are two settings: "serverMode" and "servers". We only need to change "servers". It accepts two values, the first specifies the main DLS URL and the second, the standby URL.
 
-  * For the main DLS: `"servers": ["self", "https://standby.yoursite.com:port/"]`
+  * For the main DLS: `"servers": ["self", "https://standby.yoursite.com/dls/"]`
 
-  * For the standby DLS: `"servers": ["https://www.yoursite.com:port/", "self"]`
+  * For the standby DLS: `"servers": ["https://www.yoursite.com/dls/", "self"]`
 
 > NOTE that you need to configure both the main DLS and the standby DLS separately.
 
@@ -115,7 +119,7 @@ For maximum up time, a standby DLS is necessary. Assume you have installed two c
 
 In order for the license client to know where to find DLS, the server URLs need to be embedded in the license string.
 
-By default, when you first import a license and create a project, the license string for the project will already contain a server URL which is simply the host of the website. For example, if DLS is being visited like shown in the following image, then the license string will contain server URL as `http://192.168.8.221`.
+By default, when you first import a license and create a project, the license string for the project will already contain a server URL which is simply the host of the website. For example, if DLS is being visited like shown in the following image, then the license string will contain server URL as `http://192.168.8.221/`.
 
 ![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
 
