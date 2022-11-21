@@ -70,7 +70,7 @@ After that, you will land on the home page where you can find the UUID of this D
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If the above page shows up, then the server is installed correctly and is ready to process requests. 
+If the above page shows up, then the server is installed correctly and is ready to process requests. The requests may not be able to reach the license server if you are developing a Web application.
 
 
 ### Configure reverse proxy (Web applications only)
