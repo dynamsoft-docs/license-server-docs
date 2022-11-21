@@ -87,7 +87,11 @@ After that, you will land on the home page where you can find the UUID of this D
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If you see the above page, DLS is installed correctly and is ready to process requests. However, the requests can not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` .  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
+If you see the above page, DLS is installed correctly and is ready to process requests. The requests may not be able to reach the license server if you are developing a Web application.
+
+
+### Configure reverse proxy (Web applications only)
+The requests may not reach it because it only listens on a local IP / Port. Therefore, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx` .  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/\*` to `https://127.0.0.1:48080/\*`.
 
 > NOTE for Docker Users
 >
