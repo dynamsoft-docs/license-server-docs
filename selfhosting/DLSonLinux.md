@@ -87,7 +87,7 @@ After that, you will land on the home page where you can find the UUID of this D
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-If you see the above page, DLS is installed correctly and is ready to process requests. In order to better integrate with your original service, and make the service more secure on the Internet. The next step is to configure the network environment - reverse proxy - for it with the help of `nginx`.  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/` to `https://127.0.0.1:48080/`.
+If you see the above page, DLS is installed correctly and is ready to process requests, in order to better integrate with your original service, and make the service more secure on the Internet, the next step is to configure the network environment - reverse proxy - for it with the help of `nginx`.  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/` to `https://127.0.0.1:48080/`.
 
 > NOTE proxy and https are optional, except those products who need https to run normally (like Dynamsoft BarcodeReader Javascript Edition).
 >
@@ -123,7 +123,7 @@ By default, when you first import a license and create a project, the license st
 
 ![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
 
-While the client devices may visit the DLS through a proxy, the automatically detected URL is incorrect. We can click the button "Set Server URL" and change it:
+Since the client devices may visit the DLS through a proxy, the automatically detected URL is incorrect. We can click the button "Set Server URL" and change it:
 
 ![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
 
