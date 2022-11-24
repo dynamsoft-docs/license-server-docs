@@ -99,7 +99,7 @@ If you see the above page, DLS is installed correctly and is ready to process re
 
 ## Configuration
 
-With the above steps, DLS will be listening on requests sent to this URL `https://www.yoursite.com/dls/`. We recommend that you set up another DLS on another machine as the standby Server.
+With the above steps, DLS will be listening on requests sent to this URL `https://www.yoursite.com/dls/`. You can set up another DLS on another machine as the standby Server, in case the main server is briefly unavailable.
 
 ### Configure a Standby DLS
 
