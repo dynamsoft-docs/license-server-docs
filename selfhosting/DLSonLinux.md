@@ -123,7 +123,7 @@ By default, when you first import a license and create a project, the license st
 
 ![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
 
-Since the client devices may visit the DLS through a proxy, the automatically detected URL may be incorrect. We can click the button "Set Server URL" and correct it:
+Since the client devices may visit the DLS through a proxy, the automatically detected URL can be incorrect. We can click the button "Set Server URL" and correct it:
 
 ![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
 
