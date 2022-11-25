@@ -89,9 +89,9 @@ After that, you will land on the home page where you can find the UUID of this D
 
 If you see the above page, DLS is installed correctly and is ready to process requests. In order to better integrate with your original service, and make the service more secure on the Internet, the next step is to configure the network environment - (set up a reverse proxy) - for it with the help of `nginx`.  See [Configure Reverse Proxy Using Nginx]({{site.selfhosted}}configurereverseproxyusingnginx.html) on how to redirect requests for `https://www.yoursite.com/dls/*` to `https://127.0.0.1:48080/*`.
 
-> NOTE proxy and https are optional, except those products who need https to run normally (like Dynamsoft BarcodeReader Javascript Edition).
->
-> If you not config them please use `http://ip:port/` in the following steps.
+> NOTE 
+> 
+> * The "proxy" and "https" are optional, unless the product requires it (like Dynamsoft BarcodeReader Javascript Edition). If they are not configured, please use `http://ip:port/` in the following steps.
 
 > NOTE for Docker Users
 >
