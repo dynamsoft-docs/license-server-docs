@@ -99,7 +99,7 @@ If you see the above page, DLS is installed correctly and is ready to process re
 
 ## Configuration
 
-With the above steps, DLS will be listening on requests sent to this URL `https://www.yoursite.com/dls/`. You can set up another DLS on another machine as the standby server just in case the main server might briefly become unavailable.
+With the above steps, DLS will be listening on requests sent to this URL `https://www.yoursite.com/dls/`. You can set up another DLS on another machine as the standby server just in case the main server is temporarily unavailable due to network and other reasons.
 
 ### Configure a Standby DLS
 
@@ -123,7 +123,7 @@ By default, when you first import a license and create a project, the license st
 
 ![dls-url-001]({{site.assets}}imgs/dls-url-config-001.png)
 
-Since the client devices may visit the DLS through a proxy, the automatically detected URL may be incorrect. We can click the button "Set Server URL" and correct it:
+Since the client devices may visit the DLS through a proxy, the automatically detected URL can be incorrect. We can click the button "Set Server URL" and correct it:
 
 ![dls-url-002]({{site.assets}}imgs/dls-url-config-002.png)
 
