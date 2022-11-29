@@ -74,7 +74,11 @@ If the above page shows up, then the server is installed correctly and is ready 
 
 > NOTE 
 > 
-> * The "proxy" and "https" are optional, unless the product requires it (like Dynamsoft BarcodeReader Javascript Edition). If they are not configured, please use `http://ip:port/` in the following steps.
+> The "proxy" and "https" are optional. However many products require it:
+> * SDKs for Javascript without local services (like Dynamsoft BarcodeReader Javascript Edition) require a secure connection.
+> * SDKs for iOS require a secure connection, unless app allows an exception. ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (refer: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
+>
+> If they are not configured, please use `http://ip:port/` in the following steps.
 
 ## Configuration
 
