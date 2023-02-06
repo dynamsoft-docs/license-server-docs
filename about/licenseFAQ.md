@@ -207,7 +207,7 @@ To protect your online license, we recommend you take the following measures:
 
 * Set a [session password]({{site.about}}terms.html#session-password). The license only works when the license key you use in your application contains the same session password you set for the license on DLS. If it's not too much trouble, you can update this password every time you update your app.
 
-* Set a [validation field]({{site.about}}terms.html#valication-field). A validation field (also called binding information) is a static characteristic of the application (e.g. the domain of a web application, the process name of a desktop application, etc.). Dynamsoft SDKs will collect this information at runtime and include it in the requests sent to DLS. This way, you can limit license usage to your application.
+* Set a [validation field]({{site.about}}terms.html#validation-field). A validation field (also called binding information) is a static characteristic of the application (e.g. the domain of a web application, the process name of a desktop application, etc.). Dynamsoft SDKs will collect this information at runtime and include it in the requests sent to DLS. This way, you can limit license usage to your application.
 
 ## What happens if my license runs out?
 
