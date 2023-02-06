@@ -30,7 +30,6 @@ needAutoGenerateSidebar: true
 
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
-
 * Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
 
 ```cmd
