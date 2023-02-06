@@ -24,6 +24,10 @@ needAutoGenerateSidebar: true
 
 * Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.4.1](https://tst.dynamsoft.com/public/download/dls/2.4.1/dynamsoft_dls-win_x64-v2.4.1.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.1"**.
 
+> NOTE
+>
+> **dynamsoft_dls-win_x64-v2.4.1\win\bin\PsExec64.exe** is a tool that helps create independent user accounts for deployment. Feel free to remove this tool if you choose NSSM which does not require a user account.
+
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
 * Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
