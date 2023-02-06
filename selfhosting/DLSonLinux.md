@@ -96,7 +96,7 @@ If you see the above page, DLS is installed correctly and is ready to process re
 > * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
 > * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
 >
-> If they are not configured, please use `http://ip:port/` in the following steps.
+> If "proxy" and "https" are not configured, please use `http://ip:port/` in the following steps.
 
 > NOTE for Docker Users
 >
