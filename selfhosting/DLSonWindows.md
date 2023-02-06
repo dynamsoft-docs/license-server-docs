@@ -24,10 +24,6 @@ needAutoGenerateSidebar: true
 
 * Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.4.1](https://tst.dynamsoft.com/public/download/dls/2.4.1/dynamsoft_dls-win_x64-v2.4.1.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.1"**.
 
-> NOTE
->
-> **dynamsoft_dls-win_x64-v2.4.1\win\bin\PsExec64.exe** is a tool that helps create independent user accounts for deployment. Feel free to remove this tool if you choose NSSM which does not require a user account.
-
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
 * Open cmd, navigate to the directory **"E:\nssm-2.24\win64"** and run the following command
@@ -77,6 +73,14 @@ After that, you will land on the home page where you can find the UUID of this D
 
 If the above page shows up, then the server is installed correctly and is ready to process requests. In order to better integrate with your original service, and make the service more secure on the Internet, the next step is to configure the network environment - (set up a reverse proxy) - for it with the help of `IIS` . See [Configure Reverse Proxy Using IIS]({{site.selfhosted}}configurereverseproxyusingiis.html) on how to redirect requests sent to `https://www.yoursite.com/dls/*` to `https://127.0.0.1:48080/*`.
 
+> ABOUT `PsExec64.exe`
+>
+> `PsExec64.exe` is a powerful tool on windows, but it is also considered risky by antivirus software.
+>
+> Normally, DLS does not allow to start as administrator. However, in order to meet some simple needs, we allow the administrator to create another user to start DLS, which requires the use of `PsExec64.exe`.
+>
+> In the `NSSM` startup method described in this article, the startup user is `Local System Account`. Therefore, you can remove `win/bin/PsExec64.exe`.
+
 > NOTE 
 > 
 > "proxy" and "https" are only required if you use one of the following products:
@@ -84,7 +88,7 @@ If the above page shows up, then the server is installed correctly and is ready 
 > * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
 > * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
 >
-> If they are not configured, please use `http://ip:port/` in the following steps.
+> If "proxy" and "https" are not configured, please use `http://ip:port/` in the following steps.
 
 ## Configuration
 
