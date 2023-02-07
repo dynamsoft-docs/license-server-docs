@@ -70,20 +70,19 @@ After that, you will land on the home page where you can find the UUID of this D
 
 ![DLS-HomePage-001]({{site.assets}}imgs/dls-homepage.png)
 
-
 If the above page shows up, then the server is installed correctly and is ready to process requests. In order to better integrate with your original service, and make the service more secure on the Internet, the next step is to configure the network environment - (set up a reverse proxy) - for it with the help of `IIS` . See [Configure Reverse Proxy Using IIS]({{site.selfhosted}}configurereverseproxyusingiis.html) on how to redirect requests sent to `https://www.yoursite.com/dls/*` to `https://127.0.0.1:48080/*`.
 
-> ABOUT `PsExec64.exe`
+> Notes
+>
+> 1. About `PsExec64.exe`
 >
 > `PsExec64.exe` is a powerful tool on windows, but it is also considered risky by antivirus software.
 >
-> Normally, DLS does not allow to start as administrator. However, in order to meet some simple needs, we allow the administrator to create another user to start DLS, which requires the use of `PsExec64.exe`.
+> Normally, DLS does not allow "start as administrator". However, in order to meet some specific needs, we allow "administrator" to create another user to start DLS, which requires the use of `PsExec64.exe`.
 >
-> In the `NSSM` startup method described in this article, the startup user is `Local System Account`. Therefore, you can remove `win/bin/PsExec64.exe`.
-
-> NOTE 
-> 
-> "proxy" and "https" are only required if you use one of the following products:
+> When using `NSSM` as described in this article, the startup user is `Local System Account`, which means you can safely remove `win/bin/PsExec64.exe`.
+>
+> 2. "proxy" and "https" are only required if you use one of the following products:
 >
 > * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
 > * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
