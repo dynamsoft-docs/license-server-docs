@@ -91,16 +91,19 @@ If you see the above page, DLS is installed correctly and is ready to process re
 
 > NOTE 
 > 
-> "proxy" and "https" are only required if you use one of the following products:
+> 1. "proxy" and "https" are only required if you use one of the following products:
 >
-> * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
-> * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
+>    * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
+>    * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
 >
-> If "proxy" and "https" are not configured, please use `http://ip:port/` in the following steps.
-
-> NOTE for Docker Users
+>    If "proxy" and "https" are not configured, please use `http://ip:port/` in the following steps.
+> 
+> 2. For Docker Users
 >
-> DLS requires persistent storage. Therefore, if `docker stop xxxxxx` was executed on the container, it needs to be restarted with `docker restart xxxxxx`.
+>    DLS binds the hysical information of a machine. After DLS runs for the first time, you can not change the host machine. Since it is difficult to ensure that a service is deployed on a fixed physical machine on k8s, we do not recommend deploying DLS on k8s.
+>
+>    Some data in the DLS installation directory requires persistent storage. One way is to use the container like a virtual machine. If "docker stop <containerID>" was executed, use "docker restart <containerID>" to restart.
+>    Another way is to use [volume mounts](https://docs.docker.com/get-started/05_persisting_data/) or [bind mounts](https://docs.docker.com/get-started/06_bind_mounts/).
 
 ## Configuration
 
