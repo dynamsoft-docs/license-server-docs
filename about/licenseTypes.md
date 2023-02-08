@@ -14,7 +14,6 @@ The following shows the regular license options supported by Dynamsoft License S
 
 - [Dynamsoft License Options](#dynamsoft-license-options)
   - [Per Barcode Scan](#per-barcode-scan)
-  - [Per Page](#per-page)
   - [Per Client Device](#per-client-device)
   - [Per Concurrent Device](#per-concurrent-device)
   - [Per Server](#per-server)
@@ -43,6 +42,7 @@ NOTE: For the **Mobile** and **JavaScript** editions which usually scan consecut
 
 The deduplication is based on a preset interval which is 3 seconds by default. For the JavaScript edition, the interval can be set with the API [duplicateForgetTime](https://www.dynamsoft.com/barcode-reader/docs/web/programming/javascript/api-reference/interface/ScanSettings.html).
 
+<!--
 ## Per Page
 
 *Applicable product: [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/)*
@@ -57,6 +57,7 @@ This license option limits the total number of document pages that the SDK can p
 | OCR | The number of pages processed by the OCR engine. |
 
 NOTE: The 'Per Page' license option also applies to the add-ons of the Dynamic Web TWAIN SDK, except for Barcode Reader which uses [Per Barcode Scan](#per-barcode-scan).
+-->
 
 ## Per Client Device
 
@@ -88,9 +89,9 @@ When a device is active, its UUID is remembered by DLS and it takes a license se
 
 ## Per Concurrent Device
 
-*Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/), [Dynamic Web TWAIN SDK](https://www.dynamsoft.com/web-twain/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/)*
+*Applicable products: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) and [Dynamsoft Label Recognizer SDK](https://www.dynamsoft.com/label-recognition/overview/)*
 
-The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server devide each day into 480 such time slices.
+The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server divides each day into 480 such time slices.
 
 This license option limits the maximum number of active client devices in a given time slice.
 
