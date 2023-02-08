@@ -76,18 +76,18 @@ If the above page shows up, then the server is installed correctly and is ready 
 >
 > 1. About `PsExec64.exe`
 >
-> `PsExec64.exe` is a powerful tool on windows, but it is also considered risky by antivirus software.
+>   `PsExec64.exe` is a powerful tool on windows, but it is also considered risky by antivirus software.
 >
-> Normally, DLS does not allow "start as administrator". However, in order to meet some specific needs, we allow "administrator" to create another user to start DLS, which requires the use of `PsExec64.exe`.
+>   Normally, DLS does not allow "start as administrator". However, in order to meet some specific needs, we allow "administrator" to create another user to start DLS, which requires the use of `PsExec64.exe`.
 >
-> When using `NSSM` as described in this article, the startup user is `Local System Account`, which means you can safely remove `win/bin/PsExec64.exe`.
+>   When using `NSSM` as described in this article, the startup user is `Local System Account`, which means you can safely remove `win/bin/PsExec64.exe`.
 >
 > 2. "proxy" and "https" are only required if you use one of the following products:
 >
-> * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
-> * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
+>   * SDKs for Javascript without a local service (like Dynamsoft BarcodeReader Javascript Edition).
+>   * SDKs for iOS (unless the user makes an exception for the application). ![dls iOS allow http]({{site.assets}}imgs/dls-iOS-allow-http.png) (Reference: https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http#answer-33712228)
 >
-> If "proxy" and "https" are not configured, please use `http://ip:port/` in the following steps.
+>   If "proxy" and "https" are not configured, please use `http://ip:port/` in the following steps.
 
 ## Configuration
 
