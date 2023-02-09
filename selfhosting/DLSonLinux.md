@@ -102,7 +102,7 @@ If you see the above page, DLS is installed correctly and is ready to process re
 >
 >    DLS binds the physical information of a machine. After DLS runs for the first time, you can not change the host machine. Since it is difficult to ensure that a service is deployed on a fixed physical machine on k8s, we do not recommend deploying DLS on k8s.
 >
->    Some data in the DLS installation directory requires persistent storage. One way is to use the container like a virtual machine. If "docker stop <containerID>" was executed, use "docker restart <containerID>" to restart.
+>    Some data in the DLS installation directory requires persistent storage. One way is to use the container like a virtual machine. If `docker stop <containerID>` was executed, use `docker restart <containerID>` to restart.
 >    Another way is to use [volume mounts](https://docs.docker.com/get-started/05_persisting_data/) or [bind mounts](https://docs.docker.com/get-started/06_bind_mounts/).
 
 ## Configuration
