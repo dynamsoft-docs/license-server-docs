@@ -139,7 +139,7 @@ If you are hosting your own DLS, all you need to do is purchase another license,
 Table of Contents
 
 * [What are the differences between online and offline licenses](#what-are-the-differences-between-online-and-offline-licenses)?
-* [Does online licenses disclose any private information](#does-online-licenses-disclose-any-private-information)?
+* [Does online licenses disclose any private information](#does-online-license-disclose-any-private-information)?
 * [How secure is Dynamsoft License Server](#how-secure-is-dynamsoft-license-server)?
 * [How reliable is the License Server hosted by Dynamsoft](#how-reliable-is-the-license-server-hosted-by-dynamsoft)?
 * [How can I protect my online license](#how-can-i-protect-my-online-license)?
