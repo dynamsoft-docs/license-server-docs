@@ -32,11 +32,11 @@ needAutoGenerateSidebar: true
 nssm install dynamsoft-dls
 ```
 
-* A GUI will open, fill the parameters for the application like this (change the values according to where you put the files)
+* A GUI will open, fill the parameters for the application like this (change the values according to where you put the files, and change ports if ports are occupied)
 
   * **Path**: `E:\dynamsoft_dls-win_x64-v2.4.1\win\bin\dynamsoftdlsx.exe`
   * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.4.1`
-  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.1.jar" --server.port=48080 --data.port=50201`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.1.jar" --server.port=48080 --data.port=30201 -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
