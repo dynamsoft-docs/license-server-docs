@@ -1,6 +1,6 @@
 ---
 layout: default-layout
-title: Install Dynamsoft Dynamsoft License Server on Windows
+title: Configure Reverse Proxy Using IIS
 keywords: Install, Dynamsoft License Server, Windows
 description: Steps and information about how to install Dynamsoft Dynamsoft License Server on Windows
 breadcrumbText: Install DLS on Windows
