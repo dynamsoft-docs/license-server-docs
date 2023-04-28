@@ -16,26 +16,6 @@ customLdJsonScript:
   "mainEntity": [{
 
     "@type": "Question",
-    "name": "Does license tracking disclose any private information?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No, the license tracking process does not disclose any private information. For licensing purposes, Dynamsoft SDKs that use online licensing will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader), then the usage information is condensed into a report and sent to the Dynamsoft License Server ( DLS ) every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations."
-
-    }
-
-  }, {
-
-    "@type": "Question",
-    "name": "How secure is the Dynamsoft License Server?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The Dynamsoft License Server ( DLS ) is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters."
-
-    }
-
-  }, {
-
-    "@type": "Question",
     "name": "Can a client device work offline?",
     "acceptedAnswer": {
       "@type": "Answer",
@@ -139,10 +119,6 @@ If you are hosting your own DLS, all you need to do is purchase another license,
 Table of Contents
 
 * [What are the differences between online and offline licenses](#what-are-the-differences-between-online-and-offline-licenses)?
-* [Does online licenses disclose any private information](#does-online-license-disclose-any-private-information)?
-* [How secure is Dynamsoft License Server](#how-secure-is-dynamsoft-license-server)?
-* [How reliable is the License Server hosted by Dynamsoft](#how-reliable-is-the-license-server-hosted-by-dynamsoft)?
-* [How can I protect my online license](#how-can-i-protect-my-online-license)?
 * [What happens if my license runs out](#what-happens-if-my-license-runs-out)?
 * [Can a client device work offline](#can-a-client-device-work-offline)?
 * [Can I use Dynamsoft SDKs in an environment with no internet connection](#can-i-use-dynamsoft-sdks-in-an-environment-with-no-internet-connection)?
@@ -157,57 +133,6 @@ Table of Contents
 ## What are the differences between online and offline licenses?
 
 An online license is a license that a client needs to acquire from Dynamsoft License Server (DLS) at runtime. On the contrary, an offline license is one that the client can use on its own. In other words, the license key for an online license contains only information on how to connect to DLS to acquire the actual license content while an offline license is the license content itself.
-
-## Does online license disclose any private information?
-
-No, online license does not disclose any private information.
-
-* About the license usage
-
-For licensing purposes, Dynamsoft SDKs that use online licenses will keep track of the actual usage locally (for example, the symbology types and number of scans for Dynamsoft Barcode Reader or the number of images acquired by Dynamic Web TWAIN), then the usage information is condensed into a report and sent to DLS every 3 minutes. Once submitted, the records are purged on the local machine. Note that the report is all about usage of certain features and nothing about the actual output of these operations.
-
-* About device identification
-
-To uniquely identify a device, an UUID is generated per device that is cached locally and included in all communications with DLS. This UUID is encoded with a random string and there is no way to tell any private information about this device.
-
-Apart from the license usage and the UUID, DLS collects nothing else. In other words, DLS does not know anything about the user or device except that it is using Dynamsoft SDKs.
-
-A few things to note
-
-* DLS can either be the official one provided by Dynamsoft or one that's hosted by yourself.
-* If you don't want to share any information with Dynamsoft, you can contact [Dynamsoft Sales](mailto:sales@dynamsoft.com) to get an offline license.
-
-## How secure is Dynamsoft License Server?
-
-DLS is the only software that Dynamsoft SDKs would be communicating with at runtime, so the security of DLS matters. The following are the security features of DLS :
-
-* DLS supports HTTPS and it is highly recommended that it runs via HTTPS.
-* DLS supports application binding. With application binding, authorization to use the SDK is only granted to requests sent from the application that has its ID, name or domain bound.
-* DLS supports setting a session password to avoid abuse.
-* DLS is responsible for authorizing the SDKs as well as tracking the usage. It is designed to send/receive static data only when requested. No script can be run remotely on DLS nor from DLS to the requesting clients.
-* Authorizations sent back by DLS and usage reports sent to DLS are specially encrypted and cannot be deciphered by any other party.
-
-Last but not least, Dynamsoft is [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) certified and we take information & data security seriously.
-
-## How reliable is the License Server hosted by Dynamsoft?
-
-Customer devices rely on the License Server to get authorizations for using Dynamsoft SDKs, therefore, its reliability is crucial. The following are the measures we have in place for maximum uptime:
-
-* DLS is hosted on AWS.
-* DLS database is backed up every 60 minutes.
-* There are always two instances of "DLS" running in parallel on different machines with their databases synchronized every 10 minutes. If one of them fails, the other will step up to take over all incoming requests.
-* Once a device is authorized, it can work offline for a period of time (from 3 minutes to a maximum of 365 days or more, depending on the license type).
-* Dynamsoft server administrators are notified within 30 seconds of any server exceptions.
-
-Also, Dynamsoft has been an online service provider for over 13 years and has an experienced team who have been maintaining products like SourceAnywhere Hosted, SCMAnywhere Hosted, TFS Hosted, etc.
-
-## How can I protect my online license?
-
-To protect your online license, we recommend you take the following measures:
-
-* Set a [session password]({{site.about}}terms.html#session-password). The license only works when the license key you use in your application contains the same session password you set for the license on DLS. If it's not too much trouble, you can update this password every time you update your app.
-
-* Set a [validation field]({{site.about}}terms.html#validation-field). A validation field (also called binding information) is a static characteristic of the application (e.g. the domain of a web application, the process name of a desktop application, etc.). Dynamsoft SDKs will collect this information at runtime and include it in the requests sent to DLS. This way, you can limit license usage to your application.
 
 ## What happens if my license runs out?
 
