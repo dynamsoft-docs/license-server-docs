@@ -1,6 +1,6 @@
 ---
 layout: default-layout
-title: Project Configurartion
+title: Project Configuration
 keywords: projects, manage license
 description: This page is about managing projects for licenses.
 breadcrumbText: projects
@@ -8,7 +8,7 @@ needAutoGenerateSidebar: true
 noTitleIndex: true
 ---
 
-# Project Configurartion 
+# Project Configuration 
 
 In this article, we'll cover the following topics:
 
