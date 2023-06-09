@@ -36,7 +36,7 @@ nssm install dynamsoft-dls
 
   * **Path**: `E:\dynamsoft_dls-win_x64-v2.4.1\win\bin\dynamsoftdlsx.exe`
   * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.4.1`
-  * **Arguments**: `".\win\jre\bin\dynamsoftdls" --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.1.jar" --server.port=48080 --data.port=30201 -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdls" -Duser.language=en -Duser.region=CA -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.1.jar" --server.port=48080 --data.port=30201`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
