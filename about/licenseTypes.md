@@ -131,7 +131,7 @@ Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you are intere
 
 > At present, this option is limited to the "Server" [Deployment Type]({{site.about}}terms.html#deployment-type) only.
 
-The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server devide each day into 480 such time slices.
+The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server divides each day into 480 such time slices.
 
 An instance refers to a barcode reader object running in a thread. This license option limits the maximum number of barcode reader instance in a given time slice.
 
