@@ -34,4 +34,9 @@ jobs:
           cd DLSDoc && bundle exec jekyll build
           python3 /home/ubuntu/ftp.py /home/ubuntu/DLSDoc/_site/ ./www.dynamsoft.com/license-server/docs/ prod
 
+
+      - name: Trigger Webhook 
+        run: | 
+          curl -X POST -H "${{ secrets.WEBHOOK_USER }}" -H "${{ secrets.WEBHOOK_TOKEN }}" -H "Content-Type: application/json" -d "[\"/license-server/docs/*\"]" ${{ secrets.WEBHOOK_URL }}
+
           
