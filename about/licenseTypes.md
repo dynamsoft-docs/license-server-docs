@@ -18,7 +18,7 @@ The following shows the regular license options supported by Dynamsoft License S
   - [Per Concurrent Device](#per-concurrent-device)
   - [Per Server](#per-server)
   - [Per Domain](#per-domain)
-  - [Per Instance](#per-instance)
+  - [Per Concurrent Instance](#per-concurrent-instance)
     - [How the license restricts usage](#how-the-license-restricts-usage)
     - [How does the license handle multiple servers](#how-does-the-license-handle-multiple-servers)
 
@@ -125,7 +125,7 @@ For websites that use public domain names of multi-tenant cloud platforms (e.g. 
 
 Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you are interested in this license option.
 
-## Per Instance
+## Per Concurrent Instance
 
 *Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux Server Edition)*
 
@@ -140,7 +140,7 @@ Basic steps to use a per-instance license in your application:
 - Step 1: identify how many instances might be needed on the device (server), then request the license seats from the license server;
   > Note that these license seats are shared by all barcode-reading applications on the device.
 - Step 2: Check whether all license seats are taken with the API `GetIdleInstancesCount()` before creating a new instance;
-  > In version 9.6.x (not yet released), Dynamsoft Barcode Reader will maintain an intermal thread pool so that you no longer need to monitor the idle seats anymore. Instead, you can initiate as many jobs as possible but expect different performance when the count of seats differs.
+  > In version 9.6.30, Dynamsoft Barcode Reader will maintain an intermal thread pool so that you no longer need to monitor the idle seats anymore. Instead, you can initiate as many jobs as possible but expect different performance when the count of seats differs.
 - Step 3: Destroy an instance when it finishes its job to release the license seat on the device.
 
 ### How the license restricts usage
