@@ -129,7 +129,7 @@ Contact [Dynamsoft Support Team](mailto:support@dynamsoft.com) if you are intere
 
 *Applicable product: [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) (Windows/Linux Server Edition)*
 
-> At present, this option is limited to the "Server" [Deployment Type]({{site.about}}terms.html#deployment-type) only.
+> At present, this option is limited to the "Server" [Deployment Type]({{site.about}}terms.html#deployment-type) only. [Serverless Environment](https://en.wikipedia.org/wiki/Serverless_computing) is not supported.
 
 The minimum time used for recording license usage is 3 minutes which is called a "time slice". Dynamsoft License Server divides each day into 480 such time slices.
 
