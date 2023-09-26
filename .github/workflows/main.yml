@@ -33,7 +33,7 @@ jobs:
       - name: Build the site
         run: |
           cd /home/ubuntu
-          mkdir -p RSDoc
+          mkdir -p DLSDoc
           [ ! -d license-server-docs ] && git clone --depth 1 https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/license-server-docs.git license-server-docs
           [ ! -d Docs-Template-Repo-Preview ] && git clone --depth 1 --branch preview https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview
           cd license-server-docs && git pull && cd .. && cp -rfp ./license-server-docs/* ./DLSDoc/
