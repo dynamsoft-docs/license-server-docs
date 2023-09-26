@@ -22,18 +22,33 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       #- uses: actions/checkout@v2
+      - name: clear space
+        run: |
+          cd /home/ubuntu 
+          [ -d DLSDoc ] && rm -rf DLSDoc
+          [ -d license-server-docs ] && rm -rf license-server-docs
+          [ -d Docs-Template-Repo-Preview ] && rm -rf Docs-Template-Repo-Preview
+          cd /home/ubuntu
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Build the site
         run: |
           cd /home/ubuntu
-          [ ! -d DLSDoc ] && mkdir -p DLSDoc
-          [ ! -d license-server-docs ] && git clone --depth 1 https://github.com/Dynamsoft/license-server-docs.git
+          mkdir -p RSDoc
+          [ ! -d license-server-docs ] && git clone --depth 1 https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/license-server-docs.git license-server-docs
+          [ ! -d Docs-Template-Repo-Preview ] && git clone --depth 1 --branch preview https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview
           cd license-server-docs && git pull && cd .. && cp -rfp ./license-server-docs/* ./DLSDoc/
-          cd Docs-Template-Repo && git pull && cd .. && cp -rfp ./Docs-Template-Repo/* ./DLSDoc/
-          cd DLSDoc && bundle exec jekyll build
-          python3 /home/ubuntu/ftp.py /home/ubuntu/DLSDoc/_site/ ./www.dynamsoft.com/license-server/docs/ prod
-
+          cd Docs-Template-Repo-Preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-Preview/* ./DLSDoc/
+          cd DLSDoc && bundle install && bundle exec jekyll build
+          
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_DYNAMSOFT_LOCAL_SERVER }}
+          username: ${{ secrets.FTP_DYNAMSOFT_LOCAL_USER }}
+          password: ${{ secrets.FTP_DYNAMSOFT_LOCAL_PASSWORD }}
+          port: 21 
+          local-dir: /home/ubuntu/DLSDoc/_site/
+          server-dir: /www.dynamsoft.com/license-server/docs/   
 
       - name: Trigger Webhook 
         run: | 

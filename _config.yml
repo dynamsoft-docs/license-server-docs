@@ -64,5 +64,10 @@ baseurl: "/license-server/docs"
 
 plugins:
   - jemoji
+  - jekyll-webp
+  - jekyll-relative-links
+  - jekyll-redirect-from
+  - jekyll-readme-index
+  - jekyll-seo-tag
 
 url: "https://www.dynamsoft.com" # sitemap root
