@@ -4,54 +4,21 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push events but only for the master branch
   push:
-    branches: [ main ]
+    branches: 
+    - main 
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: self-hosted
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      #- uses: actions/checkout@v2
-      - name: clear space
-        run: |
-          cd /home/ubuntu 
-          [ -d DLSDoc ] && rm -rf DLSDoc
-          [ -d license-server-docs ] && rm -rf license-server-docs
-          [ -d Docs-Template-Repo-Preview ] && rm -rf Docs-Template-Repo-Preview
-          cd /home/ubuntu
-
-      - name: Build the site
-        run: |
-          cd /home/ubuntu
-          mkdir -p DLSDoc
-          [ ! -d license-server-docs ] && git clone --depth 1 https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/license-server-docs.git license-server-docs
-          [ ! -d Docs-Template-Repo-Preview ] && git clone --depth 1 --branch preview https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PAT }}@github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo-Preview
-          cd license-server-docs && git pull && cd .. && cp -rfp ./license-server-docs/* ./DLSDoc/
-          cd Docs-Template-Repo-Preview && git pull && cd .. && cp -rfp ./Docs-Template-Repo-Preview/* ./DLSDoc/
-          cd DLSDoc && bundle install && bundle exec jekyll build
-          
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_DYNAMSOFT_LOCAL_SERVER }}
-          username: ${{ secrets.FTP_DYNAMSOFT_LOCAL_USER }}
-          password: ${{ secrets.FTP_DYNAMSOFT_LOCAL_PASSWORD }}
-          port: 21 
-          local-dir: /home/ubuntu/DLSDoc/_site/
-          server-dir: /www.dynamsoft.com/license-server/docs/   
-
-      - name: Trigger Webhook 
-        run: | 
-          curl -X POST -H "${{ secrets.WEBHOOK_USER }}" -H "${{ secrets.WEBHOOK_TOKEN }}" -H "Content-Type: application/json" -d "[\"/license-server/docs/*\"]" ${{ secrets.WEBHOOK_URL }}
-
-          
+  # This workflow contains jobs called "Build-Main" and "Build-Preview"
+  Build-Main:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-production.yml@main
+    with:
+      doc-repo: license-server-docs
+      doc-url: license-server/docs
+    secrets: inherit
+       
