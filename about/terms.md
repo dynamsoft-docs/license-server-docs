@@ -144,7 +144,7 @@ Dynamsoft is gradually rolling out this license in the products. If you are havi
 
 ### Private Trial License
 
-**Private Trial License** is also based on [license 2.0](#license-20) and are meant for customers who have registered with Dynamsoft. These licenses are good for 30 days and can be extended for another 15 days when necessary.
+**Private Trial License** is also based on [license 2.0](#license-20) and are meant for customers who have registered with Dynamsoft. These license is good for 30 days and up to 10,000 devices. If more time is required, the license can be extended for another 15 days.
 
 After registering with Dynamsoft, you can log in and request the private trial license in the [customer portal](https://www.dynamsoft.com/customer/license/trialLicense).
 
