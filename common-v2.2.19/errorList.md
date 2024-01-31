@@ -9,24 +9,29 @@ needAutoGenerateSidebar: true
 
 # Error List
 
-| Error Code | Error Message |
-|:-|:-|
-| -20100 | The standby DLS refuses to provide service while the main DLS is working. |
-| -20100 | DLS refuses to provide service while under construction. |
-| -20101 | The handshake code you are using does not exist on the Dynamsoft License Server. |
-| -20102 | Session password is incorrect. |
-| -20103 | AppDomain for handshake is not matched. |
-| -20104 | No item matched. Please check your handshake and client settings. |
-| -20105 | License item does not exist. |
-| -20106 | Product is not matched. |
-| -20107 | Version mismatch. |
-| -20108 | DeploymentType is not matched. |
-| -20109 | Edition is not matched. |
-| -20111 | License has expired. |
-| -20111 | License for this ip has expired. |
-| -20112 | License has not yet taken effect. |
-| -20113 | This license item "+item.getLicenseItemId()+" has been invalid. |
-| -20114 | AppDomain for licenseItem is not matched. |
-| -20115 | ChargeWay for licenseItem is not matched. |
-| -20120 | License has exceeded its limit. |
-| -20151 | Cloned device detected. |
+| Error Code | Revised Error Message                                                   |
+| ---------- | ----------------------------------------------------------------------- |
+| -20100     | Service unavailable from standby DLS while primary DLS is operational.  |
+| -20100     | DLS cannot provide service during construction phase.                   |
+| -20101     | Non-existent handshake code on Dynamsoft License Server.                |
+| -20102     | Incorrect session password.                                             |
+| -20103     | Mismatch in AppDomain for handshake.                                    |
+| -20104     | No matched license found. Verify handshake and client settings.         |
+| -20105     | Provided handShakeId is not compliant with version 1.5.                 |
+| -20106     | Product mismatch detected.                                              |
+| -20107     | Incompatible version.                                                   |
+| -20108     | License unsuitable for the current context.                             |
+| -20109     | Edition mismatch identified.                                            |
+| -20111     | License expired.                                                        |
+| -20111     | License expired for this IP address.                                    |
+| -20112     | License not yet effective.                                              |
+| -20113     | License item invalid or revoked.                                        |
+| -20114     | License validation field mismatch with configuration.                   |
+| -20115     | Incompatible ChargeWay for licenseItem.                                 |
+| -20120     | License usage exceeded its limit.                                       |
+| -20121     | Organization ID does not exist or lacks a configured default handshake. |
+| -20122     | Handshake Code and Organization ID mismatch.                            |
+| -20123     | No specified handshake or organization.                                 |
+| -20124     | Missing licenseItem dependency in handshake.                            |
+| -20130     | License quota exceeded by request count.                                |
+| -20151     | Unauthorized device clone detected.                                     |
