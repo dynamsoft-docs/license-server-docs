@@ -301,7 +301,7 @@ Dynamsoft provides a grace stage in case the licensee fails to extend or expand 
 
 The UUID here means a unique ID for the machine where DLS is deployed. This UUID will be bound to the license during license activation. After that, this license can only be imported and used on this particular machine. 
 
-After installing DLS, you can find the UUID of your DLS in the [admin portal](https://www.dynamsoft.com/license-/docs/selfhosting/managedls.html?ver=latest#log-in-dls-management-portal) .
+After installing DLS, you can find the UUID of your DLS in the [admin portal](https://www.dynamsoft.com/license-server/docs/selfhosting/managedls.html?ver=latest#log-in-dls-management-portal) .
 
 A UUID is bound to one or multiple unique hardware identification labels which include:
 
