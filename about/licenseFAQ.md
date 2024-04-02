@@ -164,7 +164,7 @@ Yes. There are two scenarios in this case
 
 ## Can I unregister inactive devices?
 
-As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-client-device), DLS keeps a list of UUIDs which identify the active devices. By default, a device is only unregistered (removed from the list) after it expires. For example, a device is unregistered if it stays offline or idle for more than 90 days for a Quaterly active license.
+As mentioned in [Per Device license]({{site.about}}licensetypes.html#per-client-device), DLS keeps a list of UUIDs which identify the active devices. By default, a device is only unregistered (removed from the list) after it expires. For example, a device is unregistered if it stays offline or idle for more than 90 days for a Quarterly active license.
 
 If your business/user turnover is high, you can choose to use a Daily Active license or even a [Concurrent Device license]({{site.about}}licensetypes.html#per-concurrent-device).
 
