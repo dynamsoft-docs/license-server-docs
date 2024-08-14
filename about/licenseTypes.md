@@ -40,7 +40,7 @@ NOTE: For the **Mobile** and **JavaScript** editions which usually scan consecut
 | 2 different barcodes on the same image frame | 2 |
 | Multiple identical barcodes on consecutive image frames | 1 |
 
-The deduplication is based on a preset interval which is 3 seconds by default. For the JavaScript edition, the interval can be set with the API [duplicateForgetTime](https://www.dynamsoft.com/barcode-reader/docs/web/programming/javascript/api-reference/interface/ScanSettings.html).
+The deduplication is based on a preset interval which is 3 seconds by default. For the JavaScript edition, the interval can be set with the API [setDuplicateForgetTime](https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/api-reference/utility/multi-frame-result-cross-filter.html?product=dbr&lang=javascript#setduplicateforgettime).
 
 <!--
 ## Per Page
