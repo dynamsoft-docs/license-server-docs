@@ -22,7 +22,7 @@ needAutoGenerateSidebar: true
 
 ### Run DLS as a service
 
-* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.4.11](https://tst.dynamsoft.com/public/download/dls/2.4.11/dynamsoft_dls-win_x64-v2.4.11.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.11"**.
+* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.4.1](https://tst.dynamsoft.com/public/download/dls/2.4.1/dynamsoft_dls-win_x64-v2.4.1.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.1"**.
 
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
@@ -34,15 +34,15 @@ nssm install dynamsoft-dls
 
 * A GUI will open, fill the parameters for the application like this (change the values according to where you put the files, and change ports if ports are occupied)
 
-  * **Path**: `E:\dynamsoft_dls-win_x64-v2.4.11\win\bin\dynamsoftdlsx.exe`
-  * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.4.11`
-  * **Arguments**: `".\win\jre\bin\dynamsoftdls" -Duser.language=en -Duser.region=CA -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.11.jar" --server.port=48080 --data.port=30201`
+  * **Path**: `E:\dynamsoft_dls-win_x64-v2.4.1\win\bin\dynamsoftdlsx.exe`
+  * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.4.1`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdls" -Duser.language=en -Duser.region=CA -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.1.jar" --server.port=48080 --data.port=30201`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
 * Switch to the last tab "Hooks" and choose "Application exit" as the Event and specify the parameter as
 
-  * **Command**: `E:\dynamsoft_dls-win_x64-v2.4.11\shutdown.bat`
+  * **Command**: `E:\dynamsoft_dls-win_x64-v2.4.1\shutdown.bat`
 
 ![nssm-002]({{site.assets}}imgs/nssm-002.png)
 
