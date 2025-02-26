@@ -20,7 +20,7 @@ needAutoGenerateSidebar: true
 | 105                 | -20105                           | Provided handShakeId is not compliant with version 1.5.                 |
 | 106                 | -20106                           | Product mismatch detected.                                              |
 | 107                 | -20107                           | Incompatible version.                                                   |
-| 108                 | -20108                           | License unsuitable for the current context.                             |
+| 108                 | -20108                           | Deployment type mismatch identified.                                    |
 | 109                 | -20109                           | Edition mismatch identified.                                            |
 | 111                 | -20111                           | License expired.                                                        |
 | 111                 | -20111                           | License expired for this IP address.                                    |
