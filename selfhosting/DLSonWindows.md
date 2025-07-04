@@ -36,7 +36,7 @@ needAutoGenerateSidebar: true
 
   * **Path**: `E:\dynamsoft_dls-win_x64-v2.4.11\win\bin\dynamsoftdlsx.exe`
   * **Startup directory**: `E:\dynamsoft_dls-win_x64-v2.4.11`
-  * **Arguments**: `".\win\jre\bin\java.exe" -Duser.language=en -Duser.region=CA -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.11.jar" --server.port=48080 --data.port=30201`
+  * **Arguments**: `".\win\jre\bin\dynamsoftdlsx.exe" -Duser.language=en -Duser.region=CA -Djavax.net.ssl.trustStoreType=WINDOWS-ROOT --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar ".\dls-2.4.11.jar" --server.port=48080 --data.port=30201`
 
 ![nssm-001]({{site.assets}}imgs/nssm-001.png)
 
