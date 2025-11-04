@@ -21,11 +21,11 @@ When you activate a purchased license in the [customer portal](https://www.dynam
 
 Both options use the same software, [Dynamsoft License Server (DLS)]({{site.about}}terms.html#dynamsoft-license-server), to manage the license. The differences are:
 
-|  | Dynamsoft-hosted| Self-hosted |
-|:-:|:-:|:-:|
-| Need to designate a server to host DLS | No | Yes |
-| Need to install and manage DLS | No | Yes |
-| Must have connection to Dynamsoft | Yes | No |
+|                                        | Dynamsoft-hosted | Self-hosted |
+| :------------------------------------: | :--------------: | :---------: |
+| Need to designate a server to host DLS |        No        |     Yes     |
+|     Need to install and manage DLS     |        No        |     Yes     |
+|   Must have connection to Dynamsoft    |       Yes        |     No      |
 
 Generally, you choose to host your own DLS if
 

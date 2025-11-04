@@ -9,6 +9,7 @@ hasCustomLdJson: true
 noTitleIndex: true
 customLdJsonScript: 
 ---
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org", 

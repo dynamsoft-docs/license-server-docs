@@ -10,7 +10,6 @@ The following are some configuration files you may need to change:
 
 Please follow the explanation to replace the information with your product.
 
-
 ## Front Matter
 
 You can use the front matter to change the value of page varibales or define your own custom varibales. Detailed information can be found in [Jekyll Documentation](https://jekyllrb.com/docs/front-matter/).
