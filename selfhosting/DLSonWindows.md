@@ -22,7 +22,7 @@ needAutoGenerateSidebar: true
 
 ### Run DLS as a service
 
-* Download the installer from [Dynamsoft-Licensing-Tracking-Server v2.4.11](https://tst.dynamsoft.com/public/download/dls/2.4.11/dynamsoft_dls-win_x64-v2.4.11.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.11"**.
+* Download the installer from [Dynamsoft-Licensing-Server v2.4.11](https://download2.dynamsoft.com/dls/dynamsoft_dls-win_x64-v2.4.11.zip) and unzip it to a proper location. In our case, it's unzipped to **"E:\dynamsoft_dls-win_x64-v2.4.11"**.
 
 * Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) and unzip, in our case, it's unzipped to **"E:\nssm-2.24"**.
 
