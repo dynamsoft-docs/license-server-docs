@@ -14,14 +14,6 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains jobs called "Build-Main" and "Build-Preview"
-  # Build-Main:
-  #   if: ${{ github.ref == 'refs/heads/main' }}
-  #   uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-production.yml@main
-  #   with:
-  #     doc-repo: license-server-docs
-  #     doc-url: license-server/docs
-  #   secrets: inherit
-
   Build-Main:
     if: ${{ github.ref == 'refs/heads/main' }}
     uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-production.yml@main
@@ -29,11 +21,4 @@ jobs:
       doc-repo: license-server-docs
       doc-url: license-server/docs
     secrets: inherit
-
-  Build-Preview:
-    if: ${{ github.ref == 'refs/heads/preview' }}
-    uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-testing.yml@preview
-    with:
-      doc-repo: license-server-docs
-      doc-url: license-server/docs
-    secrets: inherit
+       
