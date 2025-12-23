@@ -1,4 +1,14 @@
-# How to activate a license
+---
+layout: default-layout
+title: Dynamsoft License Activation
+keywords: License Server, activation, license activation
+description: Learn how to activate Dynamsoft 
+breadcrumbText: Activation
+needAutoGenerateSidebar: true
+noTitleIndex: true
+---
+
+# How to Activate a License
 
 When you activate a purchased license in the [customer portal](https://www.dynamsoft.com/customer/license/fullLicense), you must choose one of two activation options:
 
