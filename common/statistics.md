@@ -8,18 +8,60 @@ breadcrumbText: Statistics
 needAutoGenerateSidebar: true
 ---
 
-# Statistics page
+# Usage Statistics
 
-Usage statistics are summarized per Project and per License Item. By default, the usage for each Project is displayed.
+Usage statistics are available at two levels: **License Item** and **Project**.
 
-![Statistics Page]({{site.assets}}imgs/statistics-001.png)
+- The **License Item** stats page shows usage and configuration details for a single license item,
+  including which project it belongs to.
+- The **Project** stats page aggregates usage across all license items configured to that project.
 
-On the top of the page, you see the Project name and all License Items configured to this Project. You can click on each of the License Items to get to the statistics page for that specific Item. Below that on the left, you can see 3 pie charts showing the usage of "All History", "The selected period" and "Today".
+## How to Get Here
 
-On the right, there is a line chart showing the trend of the usage and a table of numbers showing the detailed usage (per two hours).
+**License Item stats page:**
+Log into the Customer Portal → **Order** → **Full License** → locate the license item →
+**Manage** → **Usage Statistics**
 
-> NOTE
-> * Depending on the License Items configured to the Project, you may not see all the charts or numbers as shown in the above screenshot;
-> * The usage of all License Items will be counted together as long as the usage is associated with the current Project;
-> * A License Item may be configured to multiple Projects, only the usage associated with the current Project is counted against the current Project;
-> * To view more precise usage numbers, check the page for a specific License Item.
+**Project stats page:**
+From any License Item stats page, click the linked project name to navigate to the
+project-level view.
+
+## License Item Stats Page
+
+![License Item Statistics Page]({{site.assets}}imgs/statistics-002.png)
+
+The License Item stats page includes (but is not limited to):
+
+- **License Item ID and name** — displayed at the top
+- **Tags** — key attributes of the license item, such as product, version, deployment type
+  (computer or device), and refresh interval (e.g. `refresh/1d`)
+- **Usage** — number and percentage of the allocated quota used; the quota type (devices or
+  scans) depends on the license item type
+- **Validity period** — the active date range for this license item
+- **Modules** — the specific feature modules covered by this license
+- **Project association** — the project this license item is configured to; click the project
+  name to go to the Project stats page
+- **Pie charts** — three charts showing usage for "All History", "The selected period",
+  and "Today"
+- **Line chart** — usage trend over the selected time period
+
+> **Notes**
+> - Depending on the type of the license item, some charts or data columns may not appear.
+
+## Project Stats Page
+
+![Project Statistics Page]({{site.assets}}imgs/statistics-001.png)
+
+The Project stats page includes (but is not limited to):
+
+- **Project name and associated license items** — listed at the top; click any license item
+  to go to its License Item stats page
+- **Pie charts** — three charts showing usage for "All History", "The selected period",
+  and "Today"
+- **Line chart** — usage trend over the selected time period
+- **Usage table** — detailed usage broken down in 2-hour intervals
+
+> **Notes**
+> - Depending on the license items configured to the project, some charts or data columns may not appear.
+> - Usage from all license items configured to the project is counted together.
+> - A license item may be configured to multiple projects; only usage associated with the current project is shown on that project's stats page.
