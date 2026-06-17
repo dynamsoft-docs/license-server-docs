@@ -42,7 +42,7 @@ mount -a
 
 ``` shell
 cd /a-proper-location
-wget https://tst.dynamsoft.com/public/download/dls/2.4.11/dynamsoft_dls-linux_x64-v2.4.11.tar.gz
+wget https://download2.dynamsoft.com/dls/dynamsoft_dls-linux_x64-v2.4.11.tar.gz
 ```
 
 ### Unzip and start the Dynamsoft License Server
