@@ -13,8 +13,8 @@ noTitleIndex: true
 Dynamsoft License Server checks the usage data every 10 minutes and if one of the following conditions is met, a notification email will be triggered and sent.
 
 > NOTE
->  
-> * If multiple conditions are met, there will only be one email containing all the information. 
+>
+> * If multiple conditions are met, there will only be one email containing all the information.
 
 ## Per License Item
 
@@ -22,8 +22,9 @@ Dynamsoft License Server checks the usage data every 10 minutes and if one of th
 
 When the number of active devices reaches a certain percentage of the allowed total, you should be aware of this and take necessary measures such as adding a new license. The preset percentages are:
 
-* 60%
-* 80%
+* 75%
+* 90%
+* 95%
 * 100%
 
 > For Daily Active Device License, the email is only triggered at 100%.
@@ -34,8 +35,9 @@ When the percentage reaches 100%, it means the license is exhausted. Considering
 
 When the number of barcodes you scan with Dynamsoft Barcode Reader or the number of pages you process with Dynamic Web TWAIN reaches a certain percentage of the allowed total, you should be aware of this and take necessary measures, such as adding a new license. The preset percentages are:
 
-* 60%
-* 80%
+* 75%
+* 90%
+* 95%
 * 100%
 
 When the percentage reaches 100%, it means the license is exhausted. Considering that you may not be able to add a new license in time, DLS allows another 5% of barcode scans or pages. When this happens, you should try to add a new license as soon as possible. When the percentage reaches 105%, all devices will receive a license error when trying to use the software.
@@ -44,8 +46,9 @@ When the percentage reaches 100%, it means the license is exhausted. Considering
 
 For this license option, the notification is about overusage. DLS allows a limited amount of overusage per concurrent license item. When the overusage is consumed to a certain percentage, you should be aware of this and take necessary measures such as adding a new license. The preset percentages are:
 
-* 60%
-* 80%
+* 50%
+* 70%
+* 90%
 * 100%
 
 Note that even the first email triggered at the percentage of **60%** means the license is overused and you should take necessary measures as soon as possible.
